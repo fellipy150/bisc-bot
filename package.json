@@ -4,15 +4,17 @@
     "dotenv": "^16.5.0"
   },
   "name": "biscast-bot",
-  "version": "1.0.2",
+  "version": "1.0.0",
   "description": "biscast bot, projeto pessoal para servidor do discord dos meus amigos.",
   "main": "heart.js",
   "author": "Fellipy",
   "license": "MIT",
-  "devDependencies": {
-    "standard-version": "^9.5.0"
-  },
   "scripts": {
-    "release": "node node_modules/standard-version/bin/cli.js"
+  "changelog": "node node_modules/auto-changelog/src/cli.js --template compact",
+  "bot": "node src/heart.js"
+}
+,
+  "devDependencies": {
+    "auto-changelog": "^2.5.0"
   }
 }
