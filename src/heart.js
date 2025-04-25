@@ -37,38 +37,38 @@ SISTEMA DE COMANDOS
 client.commands = new Map();
 
 // Caminho para a pasta de comandos (usando path.join para compatibilidade entre sistemas)
-const commandsPath = path.join(__dirname, "src", "comandos");
+const commandsPath = path.join(__dirname, "comandos");
 
 // Lê todos as pastas dentro da pasta de comandos
 const commandFolders = fs.readdirSync(commandsPath);
 
-// Loop através de cada pasta de comandos
-for (const folder of commandFolders)
-			{
-	    // Cria o caminho completo para a pasta atual
-	    const folderPath = path.join(commandsPath, folder);
-	    
-	    // Filtra apenas arquivos JavaScript (.js)
-	    const commandFiles = fs
-	        .readdirSync(folderPath)
-	        .filter(file => file.endsWith(".js"));
-	    
-	    // Loop através de cada arquivo de comando
-	    for (const file of commandFiles) {
-	        const filePath = path.join(folderPath, file);
-	        const command = require(filePath); // Importa o comando
-	        
-	        // Verifica se o comando tem a estrutura correta
-	        if ("data" in command && "execute" in command) {
-	            // Adiciona o comando ao mapa usando o nome como chave
-	            client.commands.set(command.data.name, command);
-	        } else {
-	            console.log(
-	                `[AVISO] O comando em ${filePath} está com formato incorreto.`
-	            );
-	        }
-	    }
-			}
+// Loop através de cada item dentro da pasta de comandos
+for (const folder of commandFolders) {
+    const folderPath = path.join(commandsPath, folder);
+
+    // Verifique se é um diretório
+    if (fs.statSync(folderPath).isDirectory()) {
+        const commandFiles = fs
+            .readdirSync(folderPath)
+            .filter(file => file.endsWith(".js"));
+
+        // Loop através de cada arquivo de comando
+        for (const file of commandFiles) {
+            const filePath = path.join(folderPath, file);
+            const command = require(filePath); // Importa o comando
+
+            // Verifica se o comando tem a estrutura correta
+            if ("data" in command && "execute" in command) {
+                // Adiciona o comando ao mapa usando o nome como chave
+                client.commands.set(command.data.name, command);
+            } else {
+                console.log(
+                    `[AVISO] O comando em ${filePath} está com formato incorreto.`
+                );
+            }
+        }
+    }
+}
 
 /* 
 =============
@@ -79,20 +79,20 @@ EVENTOS DO BOT
 // Evento disparado quando o bot fica online
 client.once("ready", () => 
 {
-    console.log(`✅ ${client.user.tag} está online!`);
-    console.log(`📂 Prefixo configurado: ${process.env.PREFIX}`);
+    console.log(` ${client.user.tag} está online!`);
+    console.log(` Prefixo configurado: ${process.env.prefixo}`);
 });
 
 // Evento disparado sempre que uma mensagem é enviada
 client.on("messageCreate", async message => {
     // Ignora mensagens de outros bots ou que não começam com o prefixo
-    if (!message.content.startsWith(process.env.PREFIX) return;
+    if (!message.content.startsWith(process.env.prefixo)) return;
     if (message.author.bot) return;
 
     // Separa o comando dos argumentos:
     // Exemplo: "!ping 123" vira ["ping", "123"]
     const args = message.content
-        .slice(process.env.PREFIX.length) // Remove o prefixo
+        .slice(process.env.prefixo.length) // Remove o prefixo
         .trim() // Remove espaços extras
         .split(/ +/); // Divide por espaços
     
