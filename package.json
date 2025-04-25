@@ -4,7 +4,7 @@
     "dotenv": "^16.5.0"
   },
   "name": "biscast-bot",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "biscast bot, projeto pessoal para servidor do discord dos meus amigos.",
   "main": "heart.js",
   "author": "Fellipy",
