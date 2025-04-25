@@ -1,0 +1,20 @@
+{
+  "dependencies": {
+    "discord.js": "^14.18.0",
+    "dotenv": "^16.5.0"
+  },
+  "name": "biscast-bot",
+  "version": "1.0.0",
+  "description": "biscast bot, projeto pessoal para servidor do discord dos meus amigos.",
+  "main": "heart.js",
+  "author": "Fellipy",
+  "license": "MIT",
+  "devDependencies": {
+    "standard-version": "^9.5.0"
+  },
+  "scripts": {
+  "release": "node node_modules/standard-version/bin/cli.js"
+}
+
+}
+
