@@ -1,20 +1,27 @@
 {
-  "dependencies": {
-    "discord.js": "^14.18.0",
-    "dotenv": "^16.5.0"
-  },
-  "name": "biscast-bot",
-  "version": "1.0.0",
-  "description": "biscast bot, projeto pessoal para servidor do discord dos meus amigos.",
-  "main": "heart.js",
-  "author": "Fellipy",
+  "name": "bisc-bot",
+  "version": "BIS.0.4.4-alpha",
+  "description": "bis bot, meu  projeto pessoal de uma sucessora do biscast bot para servidor do discord dos meus amigos.",
+  "author": "Felos",
   "license": "MIT",
+  "type": "module",
+  "main": "heart.js",
+
   "scripts": {
-  "changelog": "node node_modules/auto-changelog/src/cli.js --template compact",
-  "bot": "node src/heart.js"
-}
-,
+    "start": "node --watch ./index.js",
+    "dev": "nodemon src/index.js"
+  },
+
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "discord.js": "^14.19.3",
+    "dotenv": "^16.5.0",
+    "mongodb": "^6.16.0",
+    "mongoose": "^8.14.1",
+    "pretty-error": "^4.0.0"
+  },
+
   "devDependencies": {
-    "auto-changelog": "^2.5.0"
+    "nodemon": "^3.1.10"
   }
 }
