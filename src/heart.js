@@ -1,128 +1,60 @@
-/* 
-=============
-CONFIGURAÇÃO INICIAL
-=============
-*/
+import dotenv from 'dotenv';
+import { dirname, join } from 'path';
+import { fileURLToPath } from 'url';
+import { gerarClienteDiscord, validarAmbiente } from './util/connection.js';
+import { connectToMongoDB as conectarBancoDados } from './database/connection.js';
 
-// Importando módulos necessários
-const { Client, GatewayIntentBits } = require("discord.js"); // Biblioteca do Discord.js
-const dotenv = require("dotenv"); // Para ler variáveis de ambiente do arquivo .env
-const fs = require("fs"); // Módulo de sistema de arquivos do Node.js
-const path = require("path"); // Para trabalhar com caminhos de arquivos/diretórios
+import registrarComandos from './commands.js';
+import registrarEventos from './events.js';
 
-// Carregar variáveis de ambiente do arquivo .env para process.env
-dotenv.config();
+const diretorioAtual = dirname(fileURLToPath(import.meta.url));
+const caminhoArquivoEnv = join(diretorioAtual, '../.config/.env');
 
-/* 
-=============
-CRIAÇÃO DO CLIENTE DO DISCORD
-=============
-*/
-// Intents são permissões que definem quais eventos o bot pode receber
-const client = new Client({
-    intents: [
-        GatewayIntentBits.Guilds, // Permite interagir com servidores
-        GatewayIntentBits.GuildMessages, // Permite ver mensagens de servidores
-        GatewayIntentBits.MessageContent // Permite ler conteúdo das mensagens
-    ]
-});
+dotenv.config({ path: caminhoArquivoEnv });
 
-/* 
-=============
-SISTEMA DE COMANDOS
-=============
-*/
+async function inicializarDependencias(clienteDiscord) {
+  // 1. Conexão com Banco de Dados
+  const conexao = await conectarBancoDados();
+  
+  if (!conexao) {
+    console.warn('⚠️ Aviso: Banco de dados offline. Funcionalidades limitadas.');
+  }
 
-// Cria um mapa (dicionário) para armazenar todos os comandos
-client.commands = new Map();
-
-// Caminho para a pasta de comandos (usando path.join para compatibilidade entre sistemas)
-const commandsPath = path.join(__dirname, "comandos");
-
-// Lê todos as pastas dentro da pasta de comandos
-const commandFolders = fs.readdirSync(commandsPath);
-
-// Loop através de cada item dentro da pasta de comandos
-for (const folder of commandFolders) {
-    const folderPath = path.join(commandsPath, folder);
-
-    // Verifique se é um diretório
-    if (fs.statSync(folderPath).isDirectory()) {
-        const commandFiles = fs
-            .readdirSync(folderPath)
-            .filter(file => file.endsWith(".js"));
-
-        // Loop através de cada arquivo de comando
-        for (const file of commandFiles) {
-            const filePath = path.join(folderPath, file);
-            const command = require(filePath); // Importa o comando
-
-            // Verifica se o comando tem a estrutura correta
-            if ("data" in command && "execute" in command) {
-                // Adiciona o comando ao mapa usando o nome como chave
-                client.commands.set(command.data.name, command);
-            } else {
-                console.log(
-                    `[AVISO] O comando em ${filePath} está com formato incorreto.`
-                );
-            }
-        }
-    }
+  // 2. Carregamento de Módulos do Bot
+  // ADICIONADO AWAIT: Essencial para ESM pois o carregamento de arquivos agora é async
+  await registrarComandos(clienteDiscord);
+  await registrarEventos(clienteDiscord);
 }
 
-/* 
-=============
-EVENTOS DO BOT
-=============
-*/
+async function conectarAoDiscord(clienteDiscord) {
+  const tokenBot = process.env.BOT_TOKEN;
 
-// Evento disparado quando o bot fica online
-client.once("ready", () => 
-{
-    console.log(` ${client.user.tag} está online!`);
-    console.log(` Prefixo configurado: ${process.env.prefixo}`);
-});
+  if (!tokenBot) {
+    throw new Error('BOT_TOKEN ausente nas variáveis de ambiente.');
+  }
 
-// Evento disparado sempre que uma mensagem é enviada
-client.on("messageCreate", async message => {
-    // Ignora mensagens de outros bots ou que não começam com o prefixo
-    if (!message.content.startsWith(process.env.prefixo)) return;
-    if (message.author.bot) return;
+  const prefixoSeguro = tokenBot.substring(0, 5);
+  console.log(`📡 Conectando via token (prefixo: ${prefixoSeguro})...`);
+  
+  await clienteDiscord.login(tokenBot);
+  // O tag só fica disponível após o login
+  console.log(`🚀 Status: Online | Usuário: ${clienteDiscord.user.tag}`);
+}
 
-    // Separa o comando dos argumentos:
-    // Exemplo: "!ping 123" vira ["ping", "123"]
-    const args = message.content
-        .slice(process.env.prefixo.length) // Remove o prefixo
-        .trim() // Remove espaços extras
-        .split(/ +/); // Divide por espaços
-    
-    const commandName = args.shift().toLowerCase(); // Pega o primeiro elemento (nome do comando)
+async function sistema() {
+  try {
+    validarAmbiente();
 
-    // Busca o comando no mapa de comandos
-    const command = client.commands.get(commandName);
+    const clienteDiscord = gerarClienteDiscord();
 
-    // Se o comando não existir
-    if (!command) {
-        return message.reply(
-            "Comando desconhecido! Use `!ajuda` para ver a lista."
-        );
-    }
+    // Aguarda carregar tudo (comandos, eventos, banco) antes de logar
+    await inicializarDependencias(clienteDiscord);
+    await conectarAoDiscord(clienteDiscord);
 
-    // Tenta executar o comando
-    try {
-        await command.execute(message, args);
-    } catch (error) {
-        console.error("Erro no comando:", error);
-        message.reply("❌ Ops! Algo deu errado ao executar este comando.");
-    }
-});
+  } catch (erro) {
+    console.error('❌ Falha crítica na inicialização:', erro.message);
+    process.exit(1);
+  }
+}
 
-/* 
-=============
-INICIALIZAÇÃO DO BOT
-=============
-*/
-// Conecta o bot ao Discord usando o token do .env
-client.login(process.env.BOT_TOKEN)
-    .then(() => console.log("🤖 Iniciando conexão com o Discord..."))
-    .catch(error => console.error("Falha na conexão:", error));
+sistema();
