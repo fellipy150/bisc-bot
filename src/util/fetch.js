@@ -1,4 +1,4 @@
-const readline = require("readline");
+import readline from 'readline';
 
 function perguntarLink() {
   return new Promise((resolve) => {
