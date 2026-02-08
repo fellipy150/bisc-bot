@@ -1,0 +1,46 @@
+{
+  "ID_DO_SERVIDOR": {
+    "chatid": "ID_DO_CANAL_PARA_WELCOME",
+    "welcome": {
+      "content": "Opa, eae <@{user_id}>",
+      "embed": {
+        "description": "Eae {user_tag}, relaxe e se junte à família",
+        "color": "#ffffff",
+        "image": {
+          "url": "https://img1.picmix.com/output/pic/normal/4/7/0/5/5005074_c630f.gif"
+        },
+        "thumbnail": {
+          "url": "{user_avatar_url}"
+        },
+        "footer": {
+          "text": ""
+        },
+        "author": {
+          "name": "{user_tag}"
+        }
+      }
+    }
+  },
+  "1124123595925368862": {
+    "chatid": "1365379262109978644",
+    "welcome": {
+      "content": "Opa, eae <@{user_id}>",
+      "embed": {
+        "description": "Eae {user_tag}, relaxe e se junte à família",
+        "color": "#ffffff",
+        "image": {
+          "url": "https://img1.picmix.com/output/pic/normal/4/7/0/5/5005074_c630f.gif"
+        },
+        "thumbnail": {
+          "url": "{user_avatar_url}"
+        },
+        "footer": {
+          "text": ""
+        },
+        "author": {
+          "name": "{user_tag}"
+        }
+      }
+    }
+  }
+}

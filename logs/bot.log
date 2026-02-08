@@ -1,0 +1,2534 @@
+[2026-01-06T03:11:04.645Z] [INFO] Iniciando interface de comando...
+[2026-01-06T03:19:33.483Z] [INFO] Iniciando interface de comando...
+[2026-01-06T03:19:45.124Z] [INFO] === INICIANDO SISTEMA (CORE) ===
+[2026-01-06T03:19:47.021Z] [INFO] ✅ MongoDB Conectado.
+[2026-01-06T03:19:47.023Z] [INFO] 🔄 Carregando comandos...
+[2026-01-06T03:19:47.351Z] [INFO] 🔄 Registrando eventos do sistema...
+[2026-01-06T03:19:47.376Z] [INFO] ✅ Eventos vinculados: 4
+[2026-01-06T03:19:47.377Z] [INFO] 📡 Estabelecendo conexão com o Discord...
+[2026-01-06T03:23:10.928Z] [INFO] Iniciando interface de comando...
+[2026-01-06T03:23:27.276Z] [INFO] === INICIANDO SISTEMA (CORE) ===
+[2026-01-06T03:23:29.177Z] [INFO] ✅ MongoDB Conectado.
+[2026-01-06T03:23:29.186Z] [INFO] 🔄 Carregando comandos...
+[2026-01-06T03:23:29.454Z] [INFO] 🔄 Registrando eventos do sistema...
+[2026-01-06T03:23:29.474Z] [INFO] ✅ Eventos vinculados: 4
+[2026-01-06T03:23:29.475Z] [INFO] 📡 Estabelecendo conexão com o Discord...
+[2026-01-06T03:23:31.025Z] [INFO] 🚀 Bot online: project-bot#3069
+[2026-01-06T03:23:31.062Z] [INFO] Sessão iniciada como project-bot#3069
+[2026-01-06T03:23:31.064Z] [INFO] Prefixos configurados: .., ,,
+[2026-01-06T03:33:50.976Z] [INFO] Iniciando interface de comando...
+[2026-01-06T03:42:58.553Z] [INFO] Iniciando interface de comando...
+[2026-01-06T03:43:13.490Z] [INFO] Iniciando interface de comando...
+[2026-01-06T03:48:29.353Z] [INFO] Iniciando interface de comando...
+[2026-01-06T03:49:00.492Z] [INFO] === INICIANDO SISTEMA (CORE) ===
+[2026-01-06T03:49:01.887Z] [INFO] ✅ MongoDB Conectado.
+[2026-01-06T03:49:01.899Z] [INFO] 🔄 Carregando comandos...
+[2026-01-06T03:49:02.157Z] [INFO] 🔄 Registrando eventos do sistema...
+[2026-01-06T03:49:02.210Z] [INFO] ✅ Eventos vinculados: 4
+[2026-01-06T03:49:02.211Z] [INFO] 📡 Estabelecendo conexão com o Discord...
+[2026-01-06T03:49:03.842Z] [INFO] 🚀 Bot online: project-bot#3069
+[2026-01-06T03:49:03.867Z] [INFO] Sessão iniciada como project-bot#3069
+[2026-01-06T03:49:03.873Z] [INFO] Prefixos configurados: .., ,,
+[2026-01-06T03:53:44.530Z] [INFO] Iniciando interface de comando...
+[2026-01-06T03:54:08.504Z] [INFO] === INICIANDO SISTEMA (CORE) ===
+[2026-01-06T03:54:10.159Z] [INFO] ✅ MongoDB Conectado.
+[2026-01-06T03:54:10.167Z] [INFO] 🔄 Carregando comandos...
+[2026-01-06T03:54:10.479Z] [INFO] 🔄 Registrando eventos do sistema...
+[2026-01-06T03:54:10.503Z] [INFO] ✅ Eventos vinculados: 4
+[2026-01-06T03:54:10.504Z] [INFO] 📡 Estabelecendo conexão com o Discord...
+[2026-01-06T03:54:12.093Z] [INFO] 🚀 Bot online: project-bot#3069
+[2026-01-06T03:54:12.126Z] [INFO] Sessão iniciada como project-bot#3069
+[2026-01-06T03:54:12.142Z] [INFO] Prefixos configurados: .., ,,
+[2026-01-06T04:12:41.208Z] [INFO] Iniciando interface de comando...
+[2026-01-06T04:25:56.948Z] [INFO] Iniciando interface de comando...
+[2026-01-06T04:29:10.125Z] [INFO] Iniciando interface de comando...
+[2026-01-06T04:29:18.937Z] [INFO] Iniciando interface de comando...
+[2026-01-06T04:29:26.791Z] [INFO] Iniciando interface de comando...
+[2026-01-06T04:47:49.513Z] [INFO] Iniciando interface de comando...
+[2026-01-06T04:51:03.614Z] [INFO] Iniciando interface de comando...
+[2026-01-06T04:54:34.006Z] [INFO] Iniciando interface de comando...
+[2026-01-06T04:55:16.876Z] [INFO] Iniciando interface de comando...
+[2026-01-06T04:58:55.667Z] [INFO] Iniciando interface de comando...
+[2026-01-06T05:00:26.301Z] [INFO] Iniciando interface de comando...
+[2026-01-06T05:00:51.540Z] [INFO] Iniciando interface de comando...
+[2026-01-06T05:01:15.866Z] [INFO] Iniciando interface de comando...
+[2026-01-06T05:01:38.904Z] [INFO] Iniciando interface de comando...
+[2026-01-06T05:02:09.178Z] [INFO] Iniciando interface de comando...
+[2026-01-06T05:02:24.458Z] [INFO] Iniciando interface de comando...
+[2026-01-06T05:03:09.951Z] [INFO] Iniciando interface de comando...
+[2026-01-06T05:04:18.469Z] [INFO] === INICIANDO SISTEMA (CORE) ===
+[2026-01-06T05:04:20.060Z] [INFO] ✅ MongoDB Conectado.
+[2026-01-06T05:04:20.063Z] [INFO] 🔄 Carregando comandos...
+[2026-01-06T05:04:20.314Z] [INFO] 🔄 Registrando eventos do sistema...
+[2026-01-06T05:04:20.372Z] [INFO] ✅ Eventos vinculados: 4
+[2026-01-06T05:04:20.373Z] [INFO] 📡 Estabelecendo conexão com o Discord...
+[2026-01-06T05:04:21.910Z] [INFO] 🚀 Bot online: project-bot#3069
+[2026-01-06T05:04:21.945Z] [INFO] Sessão iniciada como project-bot#3069
+[2026-01-06T05:04:21.956Z] [INFO] Prefixos configurados: .., ,,
+[2026-01-06T05:16:29.713Z] [INFO] Iniciando interface de comando...
+[2026-01-06T05:16:35.240Z] [INFO] === INICIANDO SISTEMA (CORE) ===
+[2026-01-06T05:16:36.851Z] [INFO] ✅ MongoDB Conectado.
+[2026-01-06T05:16:36.859Z] [INFO] 🔄 Carregando comandos...
+[2026-01-06T05:16:37.132Z] [INFO] 🔄 Registrando eventos do sistema...
+[2026-01-06T05:16:37.171Z] [INFO] ✅ Eventos vinculados: 4
+[2026-01-06T05:16:37.172Z] [INFO] 📡 Estabelecendo conexão com o Discord...
+[2026-01-06T05:16:38.983Z] [INFO] 🚀 Bot online: project-bot#3069
+[2026-01-06T05:16:39.008Z] [INFO] Sessão iniciada como project-bot#3069
+[2026-01-06T05:16:39.012Z] [INFO] Prefixos configurados: .., ,,
+[2026-02-05T18:47:30.458Z] [INFO] Iniciando interface de comando...
+[2026-02-05T18:48:11.524Z] [INFO] Iniciando interface de comando...
+[2026-02-05T18:48:36.467Z] [INFO] Iniciando interface de comando...
+[2026-02-05T19:29:01.022Z] [INFO] Iniciando interface de comando...
+[2026-02-05T19:29:44.344Z] [INFO] Iniciando interface de comando...
+[2026-02-05T19:37:19.930Z] [INFO] Iniciando interface de comando...
+[2026-02-05T19:38:32.886Z] [INFO] Iniciando interface de comando...
+[2026-02-05T19:40:36.659Z] [INFO] Iniciando interface de comando...
+[2026-02-05T19:40:48.113Z] [INFO] ✅ MongoDB Conectado.
+[2026-02-05T19:40:48.127Z] [INFO] 🔄 Carregando comandos...
+[2026-02-05T19:40:48.166Z] [ERROR] Erro ao carregar bye.js | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-05T19:40:48.173Z] [ERROR] Erro ao carregar removebye.js | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-05T19:40:48.175Z] [ERROR] Erro ao carregar setbye.js | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-05T19:40:48.181Z] [ERROR] Erro ao carregar viewbye.js | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-05T19:40:48.322Z] [ERROR] Erro ao carregar removewelcome.js | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-05T19:40:48.329Z] [ERROR] Erro ao carregar setwelcome.js | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-05T19:40:48.336Z] [ERROR] Erro ao carregar viewwelcome.js | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-05T19:40:48.343Z] [ERROR] Erro ao carregar welcome.js | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-05T19:40:48.346Z] [INFO] 🔄 Registrando eventos do sistema...
+[2026-02-05T19:40:48.355Z] [ERROR] Erro no evento GuildMemberAdd.js: | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-05T19:40:48.368Z] [ERROR] Erro no evento guildMemberRemove.js: | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-05T19:40:48.369Z] [INFO] ✅ Eventos vinculados: 2
+[2026-02-05T19:40:50.000Z] [INFO] Sessão iniciada como project-bot#3069
+[2026-02-05T19:40:50.014Z] [INFO] Prefixos configurados: .., ,,
+[2026-02-05T19:42:07.949Z] [INFO] ✅ MongoDB Conectado.
+[2026-02-05T19:42:07.987Z] [INFO] 🔄 Carregando comandos...
+[2026-02-05T19:42:08.019Z] [ERROR] Erro ao carregar bye.js | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-05T19:42:08.026Z] [ERROR] Erro ao carregar removebye.js | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-05T19:42:08.027Z] [ERROR] Erro ao carregar setbye.js | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-05T19:42:08.166Z] [ERROR] Erro ao carregar removewelcome.js | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-05T19:42:08.033Z] [ERROR] Erro ao carregar viewbye.js | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-05T19:42:08.171Z] [ERROR] Erro ao carregar setwelcome.js | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-05T19:42:08.179Z] [ERROR] Erro ao carregar viewwelcome.js | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-05T19:42:08.186Z] [ERROR] Erro ao carregar welcome.js | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-05T19:42:08.188Z] [INFO] 🔄 Registrando eventos do sistema...
+[2026-02-05T19:42:08.196Z] [ERROR] Erro no evento GuildMemberAdd.js: | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-05T19:42:08.208Z] [ERROR] Erro no evento guildMemberRemove.js: | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-05T19:42:08.209Z] [INFO] ✅ Eventos vinculados: 2
+[2026-02-05T19:42:09.912Z] [INFO] Sessão iniciada como project-bot#3069
+[2026-02-05T19:42:09.915Z] [INFO] Prefixos configurados: .., ,,
+[2026-02-05T19:49:51.749Z] [INFO] Iniciando interface de comando...
+[2026-02-05T19:49:58.778Z] [INFO] ✅ MongoDB Conectado.
+[2026-02-05T19:49:58.796Z] [INFO] 🔄 Carregando comandos...
+[2026-02-05T19:49:58.831Z] [ERROR] Erro ao carregar bye.js | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-05T19:49:58.838Z] [ERROR] Erro ao carregar removebye.js | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-05T19:49:58.839Z] [ERROR] Erro ao carregar setbye.js | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-05T19:49:58.846Z] [ERROR] Erro ao carregar viewbye.js | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-05T19:49:59.002Z] [ERROR] Erro ao carregar setwelcome.js | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-05T19:49:59.010Z] [ERROR] Erro ao carregar viewwelcome.js | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-05T19:49:59.017Z] [ERROR] Erro ao carregar welcome.js | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-05T19:49:59.020Z] [INFO] 🔄 Registrando eventos do sistema...
+[2026-02-05T19:49:58.996Z] [ERROR] Erro ao carregar removewelcome.js | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-05T19:49:59.029Z] [ERROR] Erro no evento GuildMemberAdd.js: | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-05T19:49:59.042Z] [ERROR] Erro no evento guildMemberRemove.js: | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-05T19:49:59.042Z] [INFO] ✅ Eventos vinculados: 2
+[2026-02-05T19:50:00.641Z] [INFO] Sessão iniciada como project-bot#3069
+[2026-02-05T19:50:00.643Z] [INFO] Prefixos configurados: .., ,,
+[2026-02-05T19:59:35.032Z] [INFO] Iniciando interface de comando...
+[2026-02-05T19:59:53.871Z] [INFO] Iniciando interface de comando...
+[2026-02-05T20:00:09.077Z] [INFO] Iniciando interface de comando...
+[2026-02-05T20:00:21.182Z] [INFO] ✅ MongoDB Conectado.
+[2026-02-05T20:00:21.197Z] [INFO] 🔄 Carregando comandos...
+[2026-02-05T20:00:21.234Z] [ERROR] Erro ao carregar bye.js | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-05T20:00:21.242Z] [ERROR] Erro ao carregar removebye.js | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-05T20:00:21.243Z] [ERROR] Erro ao carregar setbye.js | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-05T20:00:21.250Z] [ERROR] Erro ao carregar viewbye.js | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-05T20:00:21.423Z] [ERROR] Erro ao carregar removewelcome.js | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-05T20:00:21.430Z] [ERROR] Erro ao carregar setwelcome.js | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-05T20:00:21.437Z] [ERROR] Erro ao carregar viewwelcome.js | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-05T20:00:21.444Z] [ERROR] Erro ao carregar welcome.js | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-05T20:00:21.446Z] [INFO] 🔄 Registrando eventos do sistema...
+[2026-02-05T20:00:21.454Z] [ERROR] Erro no evento GuildMemberAdd.js: | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-05T20:00:21.468Z] [ERROR] Erro no evento guildMemberRemove.js: | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-05T20:00:21.468Z] [INFO] ✅ Eventos vinculados: 2
+[2026-02-05T20:00:23.144Z] [INFO] Sessão iniciada como project-bot#3069
+[2026-02-05T20:00:23.146Z] [INFO] Prefixos configurados: .., ,,
+[2026-02-05T20:00:28.801Z] [INFO] ✅ MongoDB Conectado.
+[2026-02-05T20:00:28.806Z] [INFO] 🔄 Carregando comandos...
+[2026-02-05T20:00:28.834Z] [ERROR] Erro ao carregar bye.js | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-05T20:00:28.840Z] [ERROR] Erro ao carregar removebye.js | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-05T20:00:28.842Z] [ERROR] Erro ao carregar setbye.js | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-05T20:00:28.847Z] [ERROR] Erro ao carregar viewbye.js | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-05T20:00:28.964Z] [ERROR] Erro ao carregar removewelcome.js | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-05T20:00:28.968Z] [ERROR] Erro ao carregar setwelcome.js | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-05T20:00:28.973Z] [ERROR] Erro ao carregar viewwelcome.js | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-05T20:00:28.979Z] [ERROR] Erro ao carregar welcome.js | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-05T20:00:28.980Z] [INFO] 🔄 Registrando eventos do sistema...
+[2026-02-05T20:00:28.986Z] [ERROR] Erro no evento GuildMemberAdd.js: | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-05T20:00:28.995Z] [ERROR] Erro no evento guildMemberRemove.js: | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-05T20:00:28.996Z] [INFO] ✅ Eventos vinculados: 2
+[2026-02-05T20:00:30.613Z] [INFO] Sessão iniciada como project-bot#3069
+[2026-02-05T20:00:30.613Z] [INFO] Prefixos configurados: .., ,,
+[2026-02-06T16:13:49.109Z] [INFO] Iniciando interface de comando...
+[2026-02-06T16:13:55.262Z] [INFO] ✅ MongoDB Conectado.
+[2026-02-06T16:13:55.269Z] [INFO] 🔄 Carregando comandos...
+[2026-02-06T16:13:55.307Z] [ERROR] Erro ao carregar bye.js | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-06T16:13:55.314Z] [ERROR] Erro ao carregar removebye.js | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-06T16:13:55.316Z] [ERROR] Erro ao carregar setbye.js | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-06T16:13:55.323Z] [ERROR] Erro ao carregar viewbye.js | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-06T16:13:55.481Z] [ERROR] Erro ao carregar removewelcome.js | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-06T16:13:55.487Z] [ERROR] Erro ao carregar setwelcome.js | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-06T16:13:55.494Z] [ERROR] Erro ao carregar viewwelcome.js | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-06T16:13:55.505Z] [ERROR] Erro ao carregar welcome.js | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-06T16:13:55.506Z] [INFO] 🔄 Registrando eventos do sistema...
+[2026-02-06T16:13:55.516Z] [ERROR] Erro no evento GuildMemberAdd.js: | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-06T16:13:55.537Z] [ERROR] Erro no evento guildMemberRemove.js: | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-06T16:13:55.537Z] [INFO] ✅ Eventos vinculados: 2
+[2026-02-06T16:13:57.737Z] [INFO] Sessão iniciada como project-bot#3069
+[2026-02-06T16:13:57.746Z] [INFO] Prefixos configurados: .., ,,
+[2026-02-06T17:56:44.557Z] [INFO] Iniciando interface de comando...
+[2026-02-06T17:57:02.605Z] [INFO] ✅ MongoDB Conectado.
+[2026-02-06T17:57:02.611Z] [INFO] 🔄 Carregando comandos...
+[2026-02-06T17:57:02.647Z] [ERROR] Erro ao carregar bye.js | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-06T17:57:02.657Z] [ERROR] Erro ao carregar removebye.js | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-06T17:57:02.658Z] [ERROR] Erro ao carregar setbye.js | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-06T17:57:02.665Z] [ERROR] Erro ao carregar viewbye.js | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-06T17:57:02.852Z] [ERROR] Erro ao carregar removewelcome.js | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-06T17:57:02.858Z] [ERROR] Erro ao carregar setwelcome.js | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-06T17:57:02.864Z] [ERROR] Erro ao carregar viewwelcome.js | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-06T17:57:02.872Z] [ERROR] Erro ao carregar welcome.js | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-06T17:57:02.874Z] [INFO] 🔄 Registrando eventos do sistema...
+[2026-02-06T17:57:02.882Z] [ERROR] Erro no evento GuildMemberAdd.js: | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-06T17:57:02.898Z] [ERROR] Erro no evento guildMemberRemove.js: | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-06T17:57:02.898Z] [INFO] ✅ Eventos vinculados: 2
+[2026-02-06T17:57:04.709Z] [INFO] Sessão iniciada como project-bot#3069
+[2026-02-06T17:57:04.716Z] [INFO] Prefixos configurados: .., ,,
+[2026-02-06T18:00:22.609Z] [INFO] Modo direto ativado. Iniciando bot sem TUI...
+[2026-02-06T18:00:23.998Z] [INFO] ✅ MongoDB Conectado.
+[2026-02-06T18:00:24.010Z] [INFO] 🔄 Carregando comandos...
+[2026-02-06T18:00:24.056Z] [ERROR] Erro ao carregar bye.js | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-06T18:00:24.062Z] [ERROR] Erro ao carregar removebye.js | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-06T18:00:24.065Z] [ERROR] Erro ao carregar setbye.js | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-06T18:00:24.071Z] [ERROR] Erro ao carregar viewbye.js | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-06T18:00:24.217Z] [ERROR] Erro ao carregar setwelcome.js | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-06T18:00:24.209Z] [ERROR] Erro ao carregar removewelcome.js | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-06T18:00:24.226Z] [ERROR] Erro ao carregar viewwelcome.js | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-06T18:00:24.232Z] [ERROR] Erro ao carregar welcome.js | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-06T18:00:24.234Z] [INFO] 🔄 Registrando eventos do sistema...
+[2026-02-06T18:00:24.241Z] [ERROR] Erro no evento GuildMemberAdd.js: | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-06T18:00:24.260Z] [ERROR] Erro no evento guildMemberRemove.js: | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-06T18:00:24.261Z] [INFO] ✅ Eventos vinculados: 2
+[2026-02-06T18:00:25.925Z] [INFO] Sessão iniciada como project-bot#3069
+[2026-02-06T18:00:25.926Z] [INFO] Prefixos configurados: .., ,,
+[2026-02-06T18:11:30.788Z] [INFO] Modo direto ativado. Iniciando bot sem TUI...
+[2026-02-06T18:11:32.626Z] [INFO] ✅ MongoDB Conectado.
+[2026-02-06T18:11:32.629Z] [INFO] 🔄 Carregando comandos...
+[2026-02-06T18:11:32.679Z] [ERROR] Erro ao carregar bye.js | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-06T18:11:32.685Z] [ERROR] Erro ao carregar removebye.js | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-06T18:11:32.687Z] [ERROR] Erro ao carregar setbye.js | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-06T18:11:32.693Z] [ERROR] Erro ao carregar viewbye.js | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-06T18:11:32.852Z] [ERROR] Erro ao carregar removewelcome.js | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-06T18:11:32.859Z] [ERROR] Erro ao carregar setwelcome.js | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-06T18:11:32.869Z] [ERROR] Erro ao carregar viewwelcome.js | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-06T18:11:32.876Z] [ERROR] Erro ao carregar welcome.js | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-06T18:11:32.879Z] [INFO] 🔄 Registrando eventos do sistema...
+[2026-02-06T18:11:32.889Z] [ERROR] Erro no evento GuildMemberAdd.js: | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-06T18:11:32.903Z] [ERROR] Erro no evento guildMemberRemove.js: | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-06T18:11:32.917Z] [INFO] ✅ Eventos vinculados: 2
+[2026-02-06T18:11:35.134Z] [INFO] Sessão iniciada como project-bot#3069
+[2026-02-06T18:11:35.173Z] [INFO] Prefixos configurados: .., ,,
+[2026-02-06T19:14:49.258Z] [INFO] Modo direto ativado. Iniciando bot sem TUI...
+[2026-02-06T19:14:50.376Z] [INFO] ✅ MongoDB Conectado.
+[2026-02-06T19:14:50.378Z] [INFO] 🔄 Carregando comandos...
+[2026-02-06T19:14:50.412Z] [ERROR] Erro ao carregar bye.js | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-06T19:14:50.418Z] [ERROR] Erro ao carregar removebye.js | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-06T19:14:50.420Z] [ERROR] Erro ao carregar setbye.js | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-06T19:14:50.425Z] [ERROR] Erro ao carregar viewbye.js | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-06T19:14:50.551Z] [ERROR] Erro ao carregar removewelcome.js | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-06T19:14:50.557Z] [ERROR] Erro ao carregar setwelcome.js | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-06T19:14:50.564Z] [ERROR] Erro ao carregar viewwelcome.js | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-06T19:14:50.570Z] [ERROR] Erro ao carregar welcome.js | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-06T19:14:50.572Z] [INFO] 🔄 Registrando eventos do sistema...
+[2026-02-06T19:14:50.578Z] [ERROR] Erro no evento GuildMemberAdd.js: | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-06T19:14:50.588Z] [ERROR] Erro no evento guildMemberRemove.js: | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-06T19:14:50.589Z] [INFO] ✅ Eventos vinculados: 2
+[2026-02-06T19:14:52.350Z] [INFO] Sessão iniciada como project-bot#3069
+[2026-02-06T19:14:52.352Z] [INFO] Prefixos configurados: .., ,,
+[2026-02-06T19:22:47.461Z] [INFO] Modo direto ativado. Iniciando bot sem TUI...
+[2026-02-06T19:22:48.615Z] [INFO] ✅ MongoDB Conectado.
+[2026-02-06T19:22:48.617Z] [INFO] 🔄 Carregando comandos...
+[2026-02-06T19:22:48.665Z] [ERROR] Erro ao carregar bye.js | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-06T19:22:48.671Z] [ERROR] Erro ao carregar removebye.js | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-06T19:22:48.673Z] [ERROR] Erro ao carregar setbye.js | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-06T19:22:48.679Z] [ERROR] Erro ao carregar viewbye.js | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-06T19:22:48.780Z] [ERROR] Erro ao carregar daily.js | Error [ERR_MODULE_NOT_FOUND]: Cannot find module '/data/data/com.termux/files/home/bisc-bot/src/commands/infra/logger/index.js' imported from /data/data/com.termux/files/home/bisc-bot/src/commands/economy/daily.js
+    at finalizeResolution (node:internal/modules/esm/resolve:274:11)
+    at moduleResolve (node:internal/modules/esm/resolve:859:10)
+    at defaultResolve (node:internal/modules/esm/resolve:983:11)
+    at #cachedDefaultResolve (node:internal/modules/esm/loader:731:20)
+    at ModuleLoader.resolve (node:internal/modules/esm/loader:708:38)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:310:38)
+    at ModuleJob._link (node:internal/modules/esm/module_job:183:49)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-06T19:22:48.823Z] [ERROR] Erro ao carregar removewelcome.js | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-06T19:22:48.831Z] [ERROR] Erro ao carregar setwelcome.js | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-06T19:22:48.837Z] [ERROR] Erro ao carregar viewwelcome.js | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-06T19:22:48.844Z] [ERROR] Erro ao carregar welcome.js | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-06T19:22:48.847Z] [INFO] 🔄 Registrando eventos do sistema...
+[2026-02-06T19:22:48.852Z] [ERROR] Erro no evento GuildMemberAdd.js: | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-06T19:22:48.865Z] [ERROR] Erro no evento guildMemberRemove.js: | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-06T19:22:48.865Z] [INFO] ✅ Eventos vinculados: 2
+[2026-02-06T19:22:50.247Z] [INFO] Sessão iniciada como project-bot#3069
+[2026-02-06T19:22:50.258Z] [INFO] Prefixos configurados: .., ,,
+[2026-02-06T19:44:08.036Z] [INFO] Modo direto ativado. Iniciando bot sem TUI...
+[2026-02-06T19:44:09.341Z] [INFO] ✅ MongoDB Conectado.
+[2026-02-06T19:44:09.355Z] [INFO] 🔄 Carregando comandos...
+[2026-02-06T19:44:09.390Z] [ERROR] Erro ao carregar bye.js | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-06T19:44:09.395Z] [ERROR] Erro ao carregar removebye.js | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-06T19:44:09.403Z] [ERROR] Erro ao carregar viewbye.js | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-06T19:44:09.397Z] [ERROR] Erro ao carregar setbye.js | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-06T19:44:09.506Z] [ERROR] Erro ao carregar daily.js | Error [ERR_MODULE_NOT_FOUND]: Cannot find module '/data/data/com.termux/files/home/bisc-bot/src/commands/infra/logger/index.js' imported from /data/data/com.termux/files/home/bisc-bot/src/commands/economy/daily.js
+    at finalizeResolution (node:internal/modules/esm/resolve:274:11)
+    at moduleResolve (node:internal/modules/esm/resolve:859:10)
+    at defaultResolve (node:internal/modules/esm/resolve:983:11)
+    at #cachedDefaultResolve (node:internal/modules/esm/loader:731:20)
+    at ModuleLoader.resolve (node:internal/modules/esm/loader:708:38)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:310:38)
+    at ModuleJob._link (node:internal/modules/esm/module_job:183:49)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-06T19:44:09.541Z] [ERROR] Erro ao carregar removewelcome.js | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-06T19:44:09.549Z] [ERROR] Erro ao carregar setwelcome.js | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-06T19:44:09.556Z] [ERROR] Erro ao carregar viewwelcome.js | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-06T19:44:09.562Z] [ERROR] Erro ao carregar welcome.js | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-06T19:44:09.565Z] [INFO] 🔄 Registrando eventos do sistema...
+[2026-02-06T19:44:09.571Z] [ERROR] Erro no evento GuildMemberAdd.js: | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-06T19:44:09.581Z] [ERROR] Erro no evento guildMemberRemove.js: | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-06T19:44:09.581Z] [INFO] ✅ Eventos vinculados: 2
+[2026-02-06T19:44:10.949Z] [INFO] Sessão iniciada como project-bot#3069
+[2026-02-06T19:44:10.958Z] [INFO] Prefixos configurados: .., ,,
+[2026-02-06T19:44:57.347Z] [INFO] Modo direto ativado. Iniciando bot sem TUI...
+[2026-02-06T19:44:58.379Z] [INFO] ✅ MongoDB Conectado.
+[2026-02-06T19:44:58.381Z] [INFO] 🔄 Carregando comandos...
+[2026-02-06T19:44:58.405Z] [ERROR] Erro ao carregar bye.js | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-06T19:44:58.409Z] [ERROR] Erro ao carregar removebye.js | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-06T19:44:58.411Z] [ERROR] Erro ao carregar setbye.js | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-06T19:44:58.416Z] [ERROR] Erro ao carregar viewbye.js | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-06T19:44:58.504Z] [ERROR] Erro ao carregar daily.js | Error [ERR_MODULE_NOT_FOUND]: Cannot find module '/data/data/com.termux/files/home/bisc-bot/src/commands/infra/logger/index.js' imported from /data/data/com.termux/files/home/bisc-bot/src/commands/economy/daily.js
+    at finalizeResolution (node:internal/modules/esm/resolve:274:11)
+    at moduleResolve (node:internal/modules/esm/resolve:859:10)
+    at defaultResolve (node:internal/modules/esm/resolve:983:11)
+    at #cachedDefaultResolve (node:internal/modules/esm/loader:731:20)
+    at ModuleLoader.resolve (node:internal/modules/esm/loader:708:38)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:310:38)
+    at ModuleJob._link (node:internal/modules/esm/module_job:183:49)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-06T19:44:58.528Z] [ERROR] Erro ao carregar removewelcome.js | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-06T19:44:58.534Z] [ERROR] Erro ao carregar setwelcome.js | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-06T19:44:58.539Z] [ERROR] Erro ao carregar viewwelcome.js | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-06T19:44:58.544Z] [ERROR] Erro ao carregar welcome.js | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-06T19:44:58.546Z] [INFO] 🔄 Registrando eventos do sistema...
+[2026-02-06T19:44:58.551Z] [ERROR] Erro no evento GuildMemberAdd.js: | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-06T19:44:58.558Z] [INFO] ✅ Eventos vinculados: 2
+[2026-02-06T19:44:58.558Z] [ERROR] Erro no evento guildMemberRemove.js: | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-06T19:45:00.104Z] [INFO] Sessão iniciada como project-bot#3069
+[2026-02-06T19:45:00.105Z] [INFO] Prefixos configurados: .., ,,
+[2026-02-06T19:48:14.921Z] [INFO] Modo direto ativado. Iniciando bot sem TUI...
+[2026-02-06T19:48:16.234Z] [INFO] ✅ MongoDB Conectado.
+[2026-02-06T19:48:16.248Z] [INFO] 🔄 Carregando comandos...
+[2026-02-06T19:48:16.280Z] [ERROR] 
+--- ❌ ERRO DE CARREGAMENTO NO ARQUIVO: bye.js --- | 
+[2026-02-06T19:48:16.282Z] [ERROR] Sintaxe inválida na Linha 346: | 
+[2026-02-06T19:48:16.282Z] [ERROR] > undefined | 
+[2026-02-06T19:48:16.289Z] [ERROR] Caminho: /data/data/com.termux/files/home/bisc-bot/src/commands/bye/bye.js | 
+[2026-02-06T19:48:16.290Z] [ERROR] ---------------------------------------------------
+ | 
+[2026-02-06T19:48:16.296Z] [ERROR] 
+--- ❌ ERRO DE CARREGAMENTO NO ARQUIVO: removebye.js --- | 
+[2026-02-06T19:48:16.298Z] [ERROR] Sintaxe inválida na Linha 346: | 
+[2026-02-06T19:48:16.298Z] [ERROR] > undefined | 
+[2026-02-06T19:48:16.299Z] [ERROR] Caminho: /data/data/com.termux/files/home/bisc-bot/src/commands/bye/removebye.js | 
+[2026-02-06T19:48:16.300Z] [ERROR] 
+--- ❌ ERRO DE CARREGAMENTO NO ARQUIVO: setbye.js --- | 
+[2026-02-06T19:48:16.301Z] [ERROR] Sintaxe inválida na Linha 346: | 
+[2026-02-06T19:48:16.299Z] [ERROR] ---------------------------------------------------
+ | 
+[2026-02-06T19:48:16.301Z] [ERROR] > undefined | 
+[2026-02-06T19:48:16.302Z] [ERROR] Caminho: /data/data/com.termux/files/home/bisc-bot/src/commands/bye/setbye.js | 
+[2026-02-06T19:48:16.302Z] [ERROR] ---------------------------------------------------
+ | 
+[2026-02-06T19:48:16.308Z] [ERROR] 
+--- ❌ ERRO DE CARREGAMENTO NO ARQUIVO: viewbye.js --- | 
+[2026-02-06T19:48:16.309Z] [ERROR] Sintaxe inválida na Linha 346: | 
+[2026-02-06T19:48:16.309Z] [ERROR] > undefined | 
+[2026-02-06T19:48:16.309Z] [ERROR] Caminho: /data/data/com.termux/files/home/bisc-bot/src/commands/bye/viewbye.js | 
+[2026-02-06T19:48:16.310Z] [ERROR] ---------------------------------------------------
+ | 
+[2026-02-06T19:48:16.416Z] [ERROR] 
+--- ❌ ERRO DE CARREGAMENTO NO ARQUIVO: daily.js --- | 
+[2026-02-06T19:48:16.422Z] [ERROR] Caminho: /data/data/com.termux/files/home/bisc-bot/src/commands/economy/daily.js | 
+[2026-02-06T19:48:16.422Z] [ERROR] ---------------------------------------------------
+ | 
+[2026-02-06T19:48:16.457Z] [ERROR] 
+--- ❌ ERRO DE CARREGAMENTO NO ARQUIVO: removewelcome.js --- | 
+[2026-02-06T19:48:16.458Z] [ERROR] Sintaxe inválida na Linha 346: | 
+[2026-02-06T19:48:16.458Z] [ERROR] > undefined | 
+[2026-02-06T19:48:16.459Z] [ERROR] Caminho: /data/data/com.termux/files/home/bisc-bot/src/commands/welcome/removewelcome.js | 
+[2026-02-06T19:48:16.459Z] [ERROR] ---------------------------------------------------
+ | 
+[2026-02-06T19:48:16.464Z] [ERROR] 
+--- ❌ ERRO DE CARREGAMENTO NO ARQUIVO: setwelcome.js --- | 
+[2026-02-06T19:48:16.465Z] [ERROR] Sintaxe inválida na Linha 346: | 
+[2026-02-06T19:48:16.465Z] [ERROR] > undefined | 
+[2026-02-06T19:48:16.466Z] [ERROR] Caminho: /data/data/com.termux/files/home/bisc-bot/src/commands/welcome/setwelcome.js | 
+[2026-02-06T19:48:16.466Z] [ERROR] ---------------------------------------------------
+ | 
+[2026-02-06T19:48:16.471Z] [ERROR] 
+--- ❌ ERRO DE CARREGAMENTO NO ARQUIVO: viewwelcome.js --- | 
+[2026-02-06T19:48:16.471Z] [ERROR] Sintaxe inválida na Linha 346: | 
+[2026-02-06T19:48:16.472Z] [ERROR] > undefined | 
+[2026-02-06T19:48:16.473Z] [ERROR] Caminho: /data/data/com.termux/files/home/bisc-bot/src/commands/welcome/viewwelcome.js | 
+[2026-02-06T19:48:16.473Z] [ERROR] ---------------------------------------------------
+ | 
+[2026-02-06T19:48:16.480Z] [ERROR] 
+--- ❌ ERRO DE CARREGAMENTO NO ARQUIVO: welcome.js --- | 
+[2026-02-06T19:48:16.481Z] [ERROR] Sintaxe inválida na Linha 346: | 
+[2026-02-06T19:48:16.481Z] [ERROR] > undefined | 
+[2026-02-06T19:48:16.482Z] [ERROR] Caminho: /data/data/com.termux/files/home/bisc-bot/src/commands/welcome/welcome.js | 
+[2026-02-06T19:48:16.482Z] [ERROR] ---------------------------------------------------
+ | 
+[2026-02-06T19:48:16.484Z] [INFO] 🔄 Registrando eventos do sistema...
+[2026-02-06T19:48:16.489Z] [ERROR] Erro no evento GuildMemberAdd.js: | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-06T19:48:16.508Z] [ERROR] Erro no evento guildMemberRemove.js: | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-06T19:48:16.509Z] [INFO] ✅ Eventos vinculados: 2
+[2026-02-06T19:48:18.054Z] [INFO] Sessão iniciada como project-bot#3069
+[2026-02-06T19:48:18.056Z] [INFO] Prefixos configurados: .., ,,
+[2026-02-06T19:49:42.372Z] [INFO] Modo direto ativado. Iniciando bot sem TUI...
+[2026-02-06T19:49:43.488Z] [INFO] ✅ MongoDB Conectado.
+[2026-02-06T19:49:43.490Z] [INFO] 🔄 Carregando comandos...
+[2026-02-06T19:49:43.537Z] [ERROR] 
+--- ❌ ERRO DE CARREGAMENTO NO ARQUIVO: bye.js --- | 
+[2026-02-06T19:49:43.540Z] [ERROR] Sintaxe inválida na Linha 346: | 
+[2026-02-06T19:49:43.540Z] [ERROR] > undefined | 
+[2026-02-06T19:49:43.548Z] [ERROR] Caminho: /data/data/com.termux/files/home/bisc-bot/src/commands/bye/bye.js | 
+[2026-02-06T19:49:43.549Z] [ERROR] ---------------------------------------------------
+ | 
+[2026-02-06T19:49:43.556Z] [ERROR] 
+--- ❌ ERRO DE CARREGAMENTO NO ARQUIVO: removebye.js --- | 
+[2026-02-06T19:49:43.557Z] [ERROR] Sintaxe inválida na Linha 346: | 
+[2026-02-06T19:49:43.558Z] [ERROR] > undefined | 
+[2026-02-06T19:49:43.558Z] [ERROR] Caminho: /data/data/com.termux/files/home/bisc-bot/src/commands/bye/removebye.js | 
+[2026-02-06T19:49:43.559Z] [ERROR] ---------------------------------------------------
+ | 
+[2026-02-06T19:49:43.560Z] [ERROR] 
+--- ❌ ERRO DE CARREGAMENTO NO ARQUIVO: setbye.js --- | 
+[2026-02-06T19:49:43.561Z] [ERROR] Sintaxe inválida na Linha 346: | 
+[2026-02-06T19:49:43.561Z] [ERROR] > undefined | 
+[2026-02-06T19:49:43.562Z] [ERROR] Caminho: /data/data/com.termux/files/home/bisc-bot/src/commands/bye/setbye.js | 
+[2026-02-06T19:49:43.563Z] [ERROR] ---------------------------------------------------
+ | 
+[2026-02-06T19:49:43.569Z] [ERROR] 
+--- ❌ ERRO DE CARREGAMENTO NO ARQUIVO: viewbye.js --- | 
+[2026-02-06T19:49:43.569Z] [ERROR] Sintaxe inválida na Linha 346: | 
+[2026-02-06T19:49:43.570Z] [ERROR] > undefined | 
+[2026-02-06T19:49:43.570Z] [ERROR] ---------------------------------------------------
+ | 
+[2026-02-06T19:49:43.570Z] [ERROR] Caminho: /data/data/com.termux/files/home/bisc-bot/src/commands/bye/viewbye.js | 
+[2026-02-06T19:49:43.669Z] [ERROR] 
+--- ❌ ERRO DE CARREGAMENTO NO ARQUIVO: daily.js --- | 
+[2026-02-06T19:49:43.674Z] [ERROR] Caminho: /data/data/com.termux/files/home/bisc-bot/src/commands/economy/daily.js | 
+[2026-02-06T19:49:43.674Z] [ERROR] ---------------------------------------------------
+ | 
+[2026-02-06T19:49:43.725Z] [ERROR] 
+--- ❌ ERRO DE CARREGAMENTO NO ARQUIVO: removewelcome.js --- | 
+[2026-02-06T19:49:43.726Z] [ERROR] Sintaxe inválida na Linha 346: | 
+[2026-02-06T19:49:43.726Z] [ERROR] > undefined | 
+[2026-02-06T19:49:43.727Z] [ERROR] Caminho: /data/data/com.termux/files/home/bisc-bot/src/commands/welcome/removewelcome.js | 
+[2026-02-06T19:49:43.727Z] [ERROR] ---------------------------------------------------
+ | 
+[2026-02-06T19:49:43.733Z] [ERROR] 
+--- ❌ ERRO DE CARREGAMENTO NO ARQUIVO: setwelcome.js --- | 
+[2026-02-06T19:49:43.733Z] [ERROR] Sintaxe inválida na Linha 346: | 
+[2026-02-06T19:49:43.733Z] [ERROR] > undefined | 
+[2026-02-06T19:49:43.735Z] [ERROR] Caminho: /data/data/com.termux/files/home/bisc-bot/src/commands/welcome/setwelcome.js | 
+[2026-02-06T19:49:43.735Z] [ERROR] ---------------------------------------------------
+ | 
+[2026-02-06T19:49:43.741Z] [ERROR] 
+--- ❌ ERRO DE CARREGAMENTO NO ARQUIVO: viewwelcome.js --- | 
+[2026-02-06T19:49:43.741Z] [ERROR] Sintaxe inválida na Linha 346: | 
+[2026-02-06T19:49:43.742Z] [ERROR] > undefined | 
+[2026-02-06T19:49:43.743Z] [ERROR] Caminho: /data/data/com.termux/files/home/bisc-bot/src/commands/welcome/viewwelcome.js | 
+[2026-02-06T19:49:43.744Z] [ERROR] ---------------------------------------------------
+ | 
+[2026-02-06T19:49:43.757Z] [ERROR] 
+--- ❌ ERRO DE CARREGAMENTO NO ARQUIVO: welcome.js --- | 
+[2026-02-06T19:49:43.758Z] [ERROR] Sintaxe inválida na Linha 346: | 
+[2026-02-06T19:49:43.758Z] [ERROR] > undefined | 
+[2026-02-06T19:49:43.759Z] [ERROR] Caminho: /data/data/com.termux/files/home/bisc-bot/src/commands/welcome/welcome.js | 
+[2026-02-06T19:49:43.760Z] [ERROR] ---------------------------------------------------
+ | 
+[2026-02-06T19:49:43.762Z] [INFO] 🔄 Registrando eventos do sistema...
+[2026-02-06T19:49:43.767Z] [ERROR] Erro no evento GuildMemberAdd.js: | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-06T19:49:43.779Z] [ERROR] Erro no evento guildMemberRemove.js: | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-06T19:49:43.779Z] [INFO] ✅ Eventos vinculados: 2
+[2026-02-06T19:49:45.277Z] [INFO] Sessão iniciada como project-bot#3069
+[2026-02-06T19:49:45.285Z] [INFO] Prefixos configurados: .., ,,
+[2026-02-06T19:50:58.690Z] [INFO] Modo direto ativado. Iniciando bot sem TUI...
+[2026-02-06T19:50:59.809Z] [INFO] ✅ MongoDB Conectado.
+[2026-02-06T19:50:59.811Z] [INFO] 🔄 Carregando comandos...
+[2026-02-06T19:50:59.839Z] [ERROR] 
+--- ❌ ERRO DE CARREGAMENTO NO ARQUIVO: bye.js --- | 
+[2026-02-06T19:50:59.842Z] [ERROR] Sintaxe inválida na Linha 346: | 
+[2026-02-06T19:50:59.842Z] [ERROR] > undefined | 
+[2026-02-06T19:50:59.848Z] [ERROR] Caminho: /data/data/com.termux/files/home/bisc-bot/src/commands/bye/bye.js | 
+[2026-02-06T19:50:59.849Z] [ERROR] ---------------------------------------------------
+ | 
+[2026-02-06T19:50:59.856Z] [ERROR] 
+--- ❌ ERRO DE CARREGAMENTO NO ARQUIVO: removebye.js --- | 
+[2026-02-06T19:50:59.858Z] [ERROR] Sintaxe inválida na Linha 346: | 
+[2026-02-06T19:50:59.858Z] [ERROR] > undefined | 
+[2026-02-06T19:50:59.859Z] [ERROR] Caminho: /data/data/com.termux/files/home/bisc-bot/src/commands/bye/removebye.js | 
+[2026-02-06T19:50:59.859Z] [ERROR] ---------------------------------------------------
+ | 
+[2026-02-06T19:50:59.860Z] [ERROR] 
+--- ❌ ERRO DE CARREGAMENTO NO ARQUIVO: setbye.js --- | 
+[2026-02-06T19:50:59.860Z] [ERROR] Sintaxe inválida na Linha 346: | 
+[2026-02-06T19:50:59.860Z] [ERROR] > undefined | 
+[2026-02-06T19:50:59.862Z] [ERROR] Caminho: /data/data/com.termux/files/home/bisc-bot/src/commands/bye/setbye.js | 
+[2026-02-06T19:50:59.862Z] [ERROR] ---------------------------------------------------
+ | 
+[2026-02-06T19:50:59.867Z] [ERROR] 
+--- ❌ ERRO DE CARREGAMENTO NO ARQUIVO: viewbye.js --- | 
+[2026-02-06T19:50:59.868Z] [ERROR] > undefined | 
+[2026-02-06T19:50:59.868Z] [ERROR] Sintaxe inválida na Linha 346: | 
+[2026-02-06T19:50:59.868Z] [ERROR] Caminho: /data/data/com.termux/files/home/bisc-bot/src/commands/bye/viewbye.js | 
+[2026-02-06T19:50:59.869Z] [ERROR] ---------------------------------------------------
+ | 
+[2026-02-06T19:51:00.005Z] [ERROR] 
+--- ❌ ERRO DE CARREGAMENTO NO ARQUIVO: removewelcome.js --- | 
+[2026-02-06T19:51:00.005Z] [ERROR] Sintaxe inválida na Linha 346: | 
+[2026-02-06T19:51:00.006Z] [ERROR] > undefined | 
+[2026-02-06T19:51:00.006Z] [ERROR] Caminho: /data/data/com.termux/files/home/bisc-bot/src/commands/welcome/removewelcome.js | 
+[2026-02-06T19:51:00.006Z] [ERROR] ---------------------------------------------------
+ | 
+[2026-02-06T19:51:00.012Z] [ERROR] 
+--- ❌ ERRO DE CARREGAMENTO NO ARQUIVO: setwelcome.js --- | 
+[2026-02-06T19:51:00.012Z] [ERROR] Sintaxe inválida na Linha 346: | 
+[2026-02-06T19:51:00.012Z] [ERROR] > undefined | 
+[2026-02-06T19:51:00.013Z] [ERROR] Caminho: /data/data/com.termux/files/home/bisc-bot/src/commands/welcome/setwelcome.js | 
+[2026-02-06T19:51:00.013Z] [ERROR] ---------------------------------------------------
+ | 
+[2026-02-06T19:51:00.018Z] [ERROR] 
+--- ❌ ERRO DE CARREGAMENTO NO ARQUIVO: viewwelcome.js --- | 
+[2026-02-06T19:51:00.019Z] [ERROR] Sintaxe inválida na Linha 346: | 
+[2026-02-06T19:51:00.019Z] [ERROR] > undefined | 
+[2026-02-06T19:51:00.021Z] [ERROR] Caminho: /data/data/com.termux/files/home/bisc-bot/src/commands/welcome/viewwelcome.js | 
+[2026-02-06T19:51:00.021Z] [ERROR] ---------------------------------------------------
+ | 
+[2026-02-06T19:51:00.028Z] [ERROR] 
+--- ❌ ERRO DE CARREGAMENTO NO ARQUIVO: welcome.js --- | 
+[2026-02-06T19:51:00.029Z] [ERROR] Sintaxe inválida na Linha 346: | 
+[2026-02-06T19:51:00.029Z] [ERROR] > undefined | 
+[2026-02-06T19:51:00.030Z] [ERROR] Caminho: /data/data/com.termux/files/home/bisc-bot/src/commands/welcome/welcome.js | 
+[2026-02-06T19:51:00.030Z] [ERROR] ---------------------------------------------------
+ | 
+[2026-02-06T19:51:00.031Z] [INFO] 🔄 Registrando eventos do sistema...
+[2026-02-06T19:51:00.038Z] [ERROR] Erro no evento GuildMemberAdd.js: | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-06T19:51:00.049Z] [ERROR] Erro no evento guildMemberRemove.js: | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-06T19:51:00.050Z] [INFO] ✅ Eventos vinculados: 2
+[2026-02-06T19:51:01.517Z] [INFO] Sessão iniciada como project-bot#3069
+[2026-02-06T19:51:01.527Z] [INFO] Prefixos configurados: .., ,,
+[2026-02-06T19:51:34.152Z] [INFO] Modo direto ativado. Iniciando bot sem TUI...
+[2026-02-06T19:51:35.089Z] [INFO] ✅ MongoDB Conectado.
+[2026-02-06T19:51:35.091Z] [INFO] 🔄 Carregando comandos...
+[2026-02-06T19:51:35.108Z] [ERROR] 
+--- ❌ ERRO DE CARREGAMENTO NO ARQUIVO: bye.js --- | 
+[2026-02-06T19:51:35.110Z] [ERROR] Sintaxe inválida na Linha 346: | 
+[2026-02-06T19:51:35.111Z] [ERROR] > undefined | 
+[2026-02-06T19:51:35.118Z] [ERROR] Caminho: /data/data/com.termux/files/home/bisc-bot/src/commands/bye/bye.js | 
+[2026-02-06T19:51:35.120Z] [ERROR] ---------------------------------------------------
+ | 
+[2026-02-06T19:51:35.125Z] [ERROR] 
+--- ❌ ERRO DE CARREGAMENTO NO ARQUIVO: removebye.js --- | 
+[2026-02-06T19:51:35.126Z] [ERROR] Sintaxe inválida na Linha 346: | 
+[2026-02-06T19:51:35.126Z] [ERROR] > undefined | 
+[2026-02-06T19:51:35.127Z] [ERROR] Caminho: /data/data/com.termux/files/home/bisc-bot/src/commands/bye/removebye.js | 
+[2026-02-06T19:51:35.127Z] [ERROR] ---------------------------------------------------
+ | 
+[2026-02-06T19:51:35.128Z] [ERROR] 
+--- ❌ ERRO DE CARREGAMENTO NO ARQUIVO: setbye.js --- | 
+[2026-02-06T19:51:35.129Z] [ERROR] Sintaxe inválida na Linha 346: | 
+[2026-02-06T19:51:35.129Z] [ERROR] > undefined | 
+[2026-02-06T19:51:35.130Z] [ERROR] Caminho: /data/data/com.termux/files/home/bisc-bot/src/commands/bye/setbye.js | 
+[2026-02-06T19:51:35.131Z] [ERROR] ---------------------------------------------------
+ | 
+[2026-02-06T19:51:35.135Z] [ERROR] 
+--- ❌ ERRO DE CARREGAMENTO NO ARQUIVO: viewbye.js --- | 
+[2026-02-06T19:51:35.136Z] [ERROR] Sintaxe inválida na Linha 346: | 
+[2026-02-06T19:51:35.136Z] [ERROR] > undefined | 
+[2026-02-06T19:51:35.136Z] [ERROR] Caminho: /data/data/com.termux/files/home/bisc-bot/src/commands/bye/viewbye.js | 
+[2026-02-06T19:51:35.137Z] [ERROR] ---------------------------------------------------
+ | 
+[2026-02-06T19:51:35.246Z] [ERROR] 
+--- ❌ ERRO DE CARREGAMENTO NO ARQUIVO: removewelcome.js --- | 
+[2026-02-06T19:51:35.247Z] [ERROR] Sintaxe inválida na Linha 346: | 
+[2026-02-06T19:51:35.247Z] [ERROR] > undefined | 
+[2026-02-06T19:51:35.248Z] [ERROR] Caminho: /data/data/com.termux/files/home/bisc-bot/src/commands/welcome/removewelcome.js | 
+[2026-02-06T19:51:35.248Z] [ERROR] ---------------------------------------------------
+ | 
+[2026-02-06T19:51:35.252Z] [ERROR] 
+--- ❌ ERRO DE CARREGAMENTO NO ARQUIVO: setwelcome.js --- | 
+[2026-02-06T19:51:35.252Z] [ERROR] Sintaxe inválida na Linha 346: | 
+[2026-02-06T19:51:35.253Z] [ERROR] > undefined | 
+[2026-02-06T19:51:35.253Z] [ERROR] Caminho: /data/data/com.termux/files/home/bisc-bot/src/commands/welcome/setwelcome.js | 
+[2026-02-06T19:51:35.253Z] [ERROR] ---------------------------------------------------
+ | 
+[2026-02-06T19:51:35.257Z] [ERROR] 
+--- ❌ ERRO DE CARREGAMENTO NO ARQUIVO: viewwelcome.js --- | 
+[2026-02-06T19:51:35.258Z] [ERROR] Sintaxe inválida na Linha 346: | 
+[2026-02-06T19:51:35.258Z] [ERROR] > undefined | 
+[2026-02-06T19:51:35.259Z] [ERROR] Caminho: /data/data/com.termux/files/home/bisc-bot/src/commands/welcome/viewwelcome.js | 
+[2026-02-06T19:51:35.259Z] [ERROR] ---------------------------------------------------
+ | 
+[2026-02-06T19:51:35.264Z] [ERROR] 
+--- ❌ ERRO DE CARREGAMENTO NO ARQUIVO: welcome.js --- | 
+[2026-02-06T19:51:35.265Z] [ERROR] Sintaxe inválida na Linha 346: | 
+[2026-02-06T19:51:35.265Z] [ERROR] > undefined | 
+[2026-02-06T19:51:35.266Z] [ERROR] Caminho: /data/data/com.termux/files/home/bisc-bot/src/commands/welcome/welcome.js | 
+[2026-02-06T19:51:35.266Z] [ERROR] ---------------------------------------------------
+ | 
+[2026-02-06T19:51:35.267Z] [INFO] 🔄 Registrando eventos do sistema...
+[2026-02-06T19:51:35.273Z] [ERROR] Erro no evento GuildMemberAdd.js: | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-06T19:51:35.290Z] [ERROR] Erro no evento guildMemberRemove.js: | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-06T19:51:35.290Z] [INFO] ✅ Eventos vinculados: 2
+[2026-02-06T19:51:36.838Z] [INFO] Sessão iniciada como project-bot#3069
+[2026-02-06T19:51:36.838Z] [INFO] Prefixos configurados: .., ,,
+[2026-02-06T19:55:42.034Z] [INFO] Modo direto ativado. Iniciando bot sem TUI...
+[2026-02-06T19:55:43.221Z] [INFO] ✅ MongoDB Conectado.
+[2026-02-06T19:55:43.223Z] [INFO] 🔄 Carregando comandos...
+[2026-02-06T19:55:43.251Z] [ERROR] 
+--- ❌ ERRO DE CARREGAMENTO NO ARQUIVO: bye.js --- | 
+[2026-02-06T19:55:43.254Z] [ERROR] Sintaxe inválida na Linha 346: | 
+[2026-02-06T19:55:43.254Z] [ERROR] > undefined | 
+[2026-02-06T19:55:43.261Z] [ERROR] Caminho: /data/data/com.termux/files/home/bisc-bot/src/commands/bye/bye.js | 
+[2026-02-06T19:55:43.262Z] [ERROR] ---------------------------------------------------
+ | 
+[2026-02-06T19:55:43.267Z] [ERROR] 
+--- ❌ ERRO DE CARREGAMENTO NO ARQUIVO: removebye.js --- | 
+[2026-02-06T19:55:43.269Z] [ERROR] > undefined | 
+[2026-02-06T19:55:43.269Z] [ERROR] Sintaxe inválida na Linha 346: | 
+[2026-02-06T19:55:43.270Z] [ERROR] Caminho: /data/data/com.termux/files/home/bisc-bot/src/commands/bye/removebye.js | 
+[2026-02-06T19:55:43.270Z] [ERROR] ---------------------------------------------------
+ | 
+[2026-02-06T19:55:43.271Z] [ERROR] 
+--- ❌ ERRO DE CARREGAMENTO NO ARQUIVO: setbye.js --- | 
+[2026-02-06T19:55:43.271Z] [ERROR] Sintaxe inválida na Linha 346: | 
+[2026-02-06T19:55:43.272Z] [ERROR] > undefined | 
+[2026-02-06T19:55:43.273Z] [ERROR] Caminho: /data/data/com.termux/files/home/bisc-bot/src/commands/bye/setbye.js | 
+[2026-02-06T19:55:43.273Z] [ERROR] ---------------------------------------------------
+ | 
+[2026-02-06T19:55:43.278Z] [ERROR] 
+--- ❌ ERRO DE CARREGAMENTO NO ARQUIVO: viewbye.js --- | 
+[2026-02-06T19:55:43.278Z] [ERROR] Sintaxe inválida na Linha 346: | 
+[2026-02-06T19:55:43.279Z] [ERROR] > undefined | 
+[2026-02-06T19:55:43.279Z] [ERROR] Caminho: /data/data/com.termux/files/home/bisc-bot/src/commands/bye/viewbye.js | 
+[2026-02-06T19:55:43.279Z] [ERROR] ---------------------------------------------------
+ | 
+[2026-02-06T19:55:43.381Z] [ERROR] 
+--- ❌ ERRO DE CARREGAMENTO NO ARQUIVO: removewelcome.js --- | 
+[2026-02-06T19:55:43.382Z] [ERROR] > undefined | 
+[2026-02-06T19:55:43.382Z] [ERROR] Sintaxe inválida na Linha 346: | 
+[2026-02-06T19:55:43.383Z] [ERROR] Caminho: /data/data/com.termux/files/home/bisc-bot/src/commands/welcome/removewelcome.js | 
+[2026-02-06T19:55:43.383Z] [ERROR] ---------------------------------------------------
+ | 
+[2026-02-06T19:55:43.387Z] [ERROR] 
+--- ❌ ERRO DE CARREGAMENTO NO ARQUIVO: setwelcome.js --- | 
+[2026-02-06T19:55:43.387Z] [ERROR] Sintaxe inválida na Linha 346: | 
+[2026-02-06T19:55:43.388Z] [ERROR] > undefined | 
+[2026-02-06T19:55:43.388Z] [ERROR] Caminho: /data/data/com.termux/files/home/bisc-bot/src/commands/welcome/setwelcome.js | 
+[2026-02-06T19:55:43.388Z] [ERROR] ---------------------------------------------------
+ | 
+[2026-02-06T19:55:43.392Z] [ERROR] 
+--- ❌ ERRO DE CARREGAMENTO NO ARQUIVO: viewwelcome.js --- | 
+[2026-02-06T19:55:43.392Z] [ERROR] Sintaxe inválida na Linha 346: | 
+[2026-02-06T19:55:43.392Z] [ERROR] > undefined | 
+[2026-02-06T19:55:43.394Z] [ERROR] Caminho: /data/data/com.termux/files/home/bisc-bot/src/commands/welcome/viewwelcome.js | 
+[2026-02-06T19:55:43.394Z] [ERROR] ---------------------------------------------------
+ | 
+[2026-02-06T19:55:43.408Z] [ERROR] 
+--- ❌ ERRO DE CARREGAMENTO NO ARQUIVO: welcome.js --- | 
+[2026-02-06T19:55:43.409Z] [ERROR] Sintaxe inválida na Linha 346: | 
+[2026-02-06T19:55:43.409Z] [ERROR] > undefined | 
+[2026-02-06T19:55:43.410Z] [ERROR] Caminho: /data/data/com.termux/files/home/bisc-bot/src/commands/welcome/welcome.js | 
+[2026-02-06T19:55:43.410Z] [ERROR] ---------------------------------------------------
+ | 
+[2026-02-06T19:55:43.411Z] [INFO] 🔄 Registrando eventos do sistema...
+[2026-02-06T19:55:43.418Z] [ERROR] Erro no evento GuildMemberAdd.js: | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-06T19:55:43.426Z] [ERROR] Erro no evento guildMemberRemove.js: | SyntaxError: Unexpected token '/'
+    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:107:18)
+    at #translate (node:internal/modules/esm/loader:546:20)
+    at afterLoad (node:internal/modules/esm/loader:596:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:601:12)
+    at #createModuleJob (node:internal/modules/esm/loader:624:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:343:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:311:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-06T19:55:43.426Z] [INFO] ✅ Eventos vinculados: 2
+[2026-02-06T19:55:45.255Z] [INFO] Sessão iniciada como project-bot#3069
+[2026-02-06T19:55:45.262Z] [INFO] Prefixos configurados: .., ,,
+[2026-02-06T19:56:35.768Z] [INFO] Iniciando interface de comando...
+[2026-02-06T19:56:46.655Z] [INFO] Iniciando interface de comando...
+[2026-02-06T19:56:58.386Z] [INFO] Modo direto ativado. Iniciando bot sem TUI...
+[2026-02-06T19:57:39.140Z] [WARN] ⚠️  Sistema operando sem MongoDB.
+[2026-02-06T19:57:39.138Z] [ERROR] ❌ Erro na conexão MongoDB: | querySrv ETIMEOUT _mongodb._tcp.bisc-bot-cluster.duwb4fa.mongodb.net
+[2026-02-06T19:57:39.143Z] [INFO] 🔄 Carregando comandos...
+[2026-02-06T19:57:39.277Z] [ERROR] 
+--- ❌ ERRO DE CARREGAMENTO NO ARQUIVO: setwelcome.js --- | 
+[2026-02-06T19:57:39.280Z] [ERROR] Caminho: /data/data/com.termux/files/home/bisc-bot/src/commands/welcome/setwelcome.js | 
+[2026-02-06T19:57:39.280Z] [ERROR] ---------------------------------------------------
+ | 
+[2026-02-06T20:02:13.589Z] [INFO] Modo direto ativado. Iniciando bot sem TUI...
+[2026-02-06T20:02:53.296Z] [ERROR] ❌ Erro na conexão MongoDB: | querySrv ETIMEOUT _mongodb._tcp.bisc-bot-cluster.duwb4fa.mongodb.net
+[2026-02-06T20:02:53.297Z] [WARN] ⚠️  Sistema operando sem MongoDB.
+[2026-02-06T20:02:53.298Z] [INFO] 🔄 Carregando comandos...
+[2026-02-06T20:02:53.471Z] [INFO] 🔄 Registrando eventos do sistema...
+[2026-02-06T20:02:53.484Z] [INFO] ✅ Eventos vinculados: 4
+[2026-02-06T20:02:54.937Z] [INFO] Sessão iniciada como project-bot#3069
+[2026-02-06T20:02:54.943Z] [INFO] Prefixos configurados: .., ,,
+[2026-02-06T20:03:33.184Z] [INFO] Iniciando interface de comando...
+[2026-02-06T20:03:45.736Z] [INFO] ✅ MongoDB Conectado.
+[2026-02-06T20:03:45.743Z] [INFO] 🔄 Carregando comandos...
+[2026-02-06T20:03:45.940Z] [INFO] 🔄 Registrando eventos do sistema...
+[2026-02-06T20:03:45.951Z] [INFO] ✅ Eventos vinculados: 4
+[2026-02-06T20:03:47.476Z] [INFO] Sessão iniciada como project-bot#3069
+[2026-02-06T20:03:47.477Z] [INFO] Prefixos configurados: .., ,,
+[2026-02-06T21:19:05.855Z] [INFO] Modo direto ativado. Iniciando bot sem TUI...
+[2026-02-06T21:19:43.771Z] [INFO] Iniciando interface de comando...
+[2026-02-06T21:19:48.535Z] [INFO] ✅ MongoDB Conectado.
+[2026-02-06T21:19:48.549Z] [INFO] 🔄 Carregando comandos...
+[2026-02-06T21:19:48.716Z] [ERROR] 
+--- ❌ ERRO DE CARREGAMENTO NO ARQUIVO: carteira.js --- | 
+[2026-02-06T21:19:48.717Z] [ERROR] Sintaxe inválida na Linha 228: | 
+[2026-02-06T21:19:48.717Z] [ERROR] > undefined | 
+[2026-02-06T21:19:48.721Z] [ERROR] Caminho: /data/data/com.termux/files/home/bisc-bot/src/commands/economy/carteira.js | 
+[2026-02-06T21:19:48.722Z] [ERROR] ---------------------------------------------------
+ | 
+[2026-02-06T21:19:48.732Z] [ERROR] 
+--- ❌ ERRO DE CARREGAMENTO NO ARQUIVO: pay.js --- | 
+[2026-02-06T21:19:48.732Z] [ERROR] Sintaxe inválida na Linha 228: | 
+[2026-02-06T21:19:48.733Z] [ERROR] > undefined | 
+[2026-02-06T21:19:48.734Z] [ERROR] Caminho: /data/data/com.termux/files/home/bisc-bot/src/commands/economy/pay.js | 
+[2026-02-06T21:19:48.734Z] [ERROR] ---------------------------------------------------
+ | 
+[2026-02-06T21:19:48.740Z] [ERROR] 
+--- ❌ ERRO DE CARREGAMENTO NO ARQUIVO: perfil.js --- | 
+[2026-02-06T21:19:48.741Z] [ERROR] Sintaxe inválida na Linha 228: | 
+[2026-02-06T21:19:48.741Z] [ERROR] > undefined | 
+[2026-02-06T21:19:48.741Z] [ERROR] Caminho: /data/data/com.termux/files/home/bisc-bot/src/commands/economy/perfil.js | 
+[2026-02-06T21:19:48.741Z] [ERROR] ---------------------------------------------------
+ | 
+[2026-02-06T21:19:48.782Z] [INFO] 🔄 Registrando eventos do sistema...
+[2026-02-06T21:19:48.791Z] [ERROR] Erro no evento MessageCreate.js: | file:///data/data/com.termux/files/home/bisc-bot/src/infra/database/index.js:12
+export { default as userService } from './services/userService.js';
+         ^^^^^^^^^^^^^^^^^^^^^^
+SyntaxError: The requested module './services/userService.js' does not provide an export named 'default'
+    at ModuleJob._instantiate (node:internal/modules/esm/module_job:228:21)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async ModuleJob.run (node:internal/modules/esm/module_job:337:5)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:665:26)
+    at async default (file:///data/data/com.termux/files/home/bisc-bot/src/loaders/EventLoader.js:30:22)
+    at async inicializarDependencias (file:///data/data/com.termux/files/home/bisc-bot/src/app/heart.js:22:3)
+    at async startBot (file:///data/data/com.termux/files/home/bisc-bot/src/app/heart.js:35:5)
+[2026-02-06T21:19:48.798Z] [INFO] ✅ Eventos vinculados: 3
+[2026-02-06T21:19:50.572Z] [INFO] Sessão iniciada como project-bot#3069
+[2026-02-06T21:19:50.587Z] [INFO] Prefixos configurados: .., ,,
+[2026-02-06T21:59:27.969Z] [INFO] Modo direto ativado. Iniciando bot sem TUI...
+[2026-02-06T22:05:15.871Z] [INFO] Modo direto ativado. Iniciando bot sem TUI...
+[2026-02-06T22:06:00.166Z] [INFO] Iniciando interface de comando...
+[2026-02-06T22:06:05.417Z] [INFO] ✅ MongoDB Conectado.
+[2026-02-06T22:06:05.435Z] [INFO] 🔄 Carregando comandos...
+[2026-02-06T22:06:05.579Z] [ERROR] 
+--- ❌ ERRO DE CARREGAMENTO NO ARQUIVO: carteira.js --- | 
+[2026-02-06T22:06:05.580Z] [ERROR] Sintaxe inválida na Linha 228: | 
+[2026-02-06T22:06:05.580Z] [ERROR] > undefined | 
+[2026-02-06T22:06:05.584Z] [ERROR] Caminho: /data/data/com.termux/files/home/bisc-bot/src/commands/economy/carteira.js | 
+[2026-02-06T22:06:05.585Z] [ERROR] ---------------------------------------------------
+ | 
+[2026-02-06T22:06:05.595Z] [ERROR] 
+--- ❌ ERRO DE CARREGAMENTO NO ARQUIVO: pay.js --- | 
+[2026-02-06T22:06:05.595Z] [ERROR] Sintaxe inválida na Linha 228: | 
+[2026-02-06T22:06:05.596Z] [ERROR] > undefined | 
+[2026-02-06T22:06:05.597Z] [ERROR] Caminho: /data/data/com.termux/files/home/bisc-bot/src/commands/economy/pay.js | 
+[2026-02-06T22:06:05.597Z] [ERROR] ---------------------------------------------------
+ | 
+[2026-02-06T22:06:05.603Z] [ERROR] 
+--- ❌ ERRO DE CARREGAMENTO NO ARQUIVO: perfil.js --- | 
+[2026-02-06T22:06:05.604Z] [ERROR] Sintaxe inválida na Linha 228: | 
+[2026-02-06T22:06:05.604Z] [ERROR] > undefined | 
+[2026-02-06T22:06:05.604Z] [ERROR] Caminho: /data/data/com.termux/files/home/bisc-bot/src/commands/economy/perfil.js | 
+[2026-02-06T22:06:05.604Z] [ERROR] ---------------------------------------------------
+ | 
+[2026-02-06T22:06:05.644Z] [INFO] 🔄 Registrando eventos do sistema...
+[2026-02-06T22:06:05.652Z] [ERROR] Erro no evento MessageCreate.js: | file:///data/data/com.termux/files/home/bisc-bot/src/infra/database/index.js:12
+export { default as userService } from './services/userService.js';
+         ^^^^^^^^^^^^^^^^^^^^^^
+SyntaxError: The requested module './services/userService.js' does not provide an export named 'default'
+    at ModuleJob._instantiate (node:internal/modules/esm/module_job:228:21)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async ModuleJob.run (node:internal/modules/esm/module_job:337:5)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:665:26)
+    at async default (file:///data/data/com.termux/files/home/bisc-bot/src/loaders/EventLoader.js:30:22)
+    at async inicializarDependencias (file:///data/data/com.termux/files/home/bisc-bot/src/app/heart.js:22:3)
+    at async startBot (file:///data/data/com.termux/files/home/bisc-bot/src/app/heart.js:35:5)
+[2026-02-06T22:06:05.660Z] [INFO] ✅ Eventos vinculados: 3
+[2026-02-06T22:06:07.076Z] [INFO] Sessão iniciada como project-bot#3069
+[2026-02-06T22:06:07.078Z] [INFO] Prefixos configurados: .., ,,
+[2026-02-06T22:06:55.413Z] [INFO] Modo direto ativado. Iniciando bot sem TUI...
+[2026-02-06T22:06:56.454Z] [INFO] ✅ MongoDB Conectado.
+[2026-02-06T22:06:56.480Z] [INFO] 🔄 Carregando comandos...
+[2026-02-06T22:06:56.639Z] [ERROR] 
+--- ❌ ERRO DE CARREGAMENTO NO ARQUIVO: carteira.js --- | 
+[2026-02-06T22:06:56.640Z] [ERROR] Sintaxe inválida na Linha 228: | 
+[2026-02-06T22:06:56.640Z] [ERROR] > undefined | 
+[2026-02-06T22:06:56.645Z] [ERROR] Caminho: /data/data/com.termux/files/home/bisc-bot/src/commands/economy/carteira.js | 
+[2026-02-06T22:06:56.646Z] [ERROR] ---------------------------------------------------
+ | 
+[2026-02-06T22:06:56.654Z] [ERROR] 
+--- ❌ ERRO DE CARREGAMENTO NO ARQUIVO: pay.js --- | 
+[2026-02-06T22:06:56.655Z] [ERROR] Sintaxe inválida na Linha 228: | 
+[2026-02-06T22:06:56.655Z] [ERROR] > undefined | 
+[2026-02-06T22:06:56.656Z] [ERROR] Caminho: /data/data/com.termux/files/home/bisc-bot/src/commands/economy/pay.js | 
+[2026-02-06T22:06:56.656Z] [ERROR] ---------------------------------------------------
+ | 
+[2026-02-06T22:06:56.661Z] [ERROR] 
+--- ❌ ERRO DE CARREGAMENTO NO ARQUIVO: perfil.js --- | 
+[2026-02-06T22:06:56.661Z] [ERROR] Sintaxe inválida na Linha 228: | 
+[2026-02-06T22:06:56.662Z] [ERROR] > undefined | 
+[2026-02-06T22:06:56.663Z] [ERROR] Caminho: /data/data/com.termux/files/home/bisc-bot/src/commands/economy/perfil.js | 
+[2026-02-06T22:06:56.663Z] [ERROR] ---------------------------------------------------
+ | 
+[2026-02-06T22:06:56.700Z] [INFO] 🔄 Registrando eventos do sistema...
+[2026-02-06T22:06:56.713Z] [ERROR] Erro no evento MessageCreate.js: | file:///data/data/com.termux/files/home/bisc-bot/src/infra/database/index.js:12
+export { default as userService } from './services/userService.js';
+         ^^^^^^^^^^^^^^^^^^^^^^
+SyntaxError: The requested module './services/userService.js' does not provide an export named 'default'
+    at ModuleJob._instantiate (node:internal/modules/esm/module_job:228:21)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async ModuleJob.run (node:internal/modules/esm/module_job:337:5)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:665:26)
+    at async default (file:///data/data/com.termux/files/home/bisc-bot/src/loaders/EventLoader.js:30:22)
+    at async inicializarDependencias (file:///data/data/com.termux/files/home/bisc-bot/src/app/heart.js:22:3)
+    at async startBot (file:///data/data/com.termux/files/home/bisc-bot/src/app/heart.js:35:5)
+    at async bootstrap (file:///data/data/com.termux/files/home/bisc-bot/index.js:15:5)
+[2026-02-06T22:06:56.720Z] [INFO] ✅ Eventos vinculados: 3
+[2026-02-06T22:06:58.524Z] [INFO] Sessão iniciada como project-bot#3069
+[2026-02-06T22:06:58.532Z] [INFO] Prefixos configurados: .., ,,
+[2026-02-06T22:07:17.317Z] [INFO] Modo direto ativado. Iniciando bot sem TUI...
+[2026-02-06T22:07:51.825Z] [INFO] Iniciando interface de comando...
+[2026-02-06T22:14:15.571Z] [INFO] Iniciando interface de comando...
+[2026-02-06T22:14:28.473Z] [INFO] ✅ MongoDB Conectado.
+[2026-02-06T22:14:28.479Z] [INFO] 🔄 Carregando comandos...
+[2026-02-06T22:14:28.637Z] [ERROR] 
+--- ❌ ERRO DE CARREGAMENTO NO ARQUIVO: carteira.js --- | 
+[2026-02-06T22:14:28.637Z] [ERROR] Sintaxe inválida na Linha 228: | 
+[2026-02-06T22:14:28.638Z] [ERROR] > undefined | 
+[2026-02-06T22:14:28.643Z] [ERROR] Caminho: /data/data/com.termux/files/home/bisc-bot/src/commands/economy/carteira.js | 
+[2026-02-06T22:14:28.644Z] [ERROR] ---------------------------------------------------
+ | 
+[2026-02-06T22:14:28.655Z] [ERROR] 
+--- ❌ ERRO DE CARREGAMENTO NO ARQUIVO: pay.js --- | 
+[2026-02-06T22:14:28.656Z] [ERROR] Sintaxe inválida na Linha 228: | 
+[2026-02-06T22:14:28.657Z] [ERROR] > undefined | 
+[2026-02-06T22:14:28.658Z] [ERROR] Caminho: /data/data/com.termux/files/home/bisc-bot/src/commands/economy/pay.js | 
+[2026-02-06T22:14:28.659Z] [ERROR] ---------------------------------------------------
+ | 
+[2026-02-06T22:14:28.666Z] [ERROR] 
+--- ❌ ERRO DE CARREGAMENTO NO ARQUIVO: perfil.js --- | 
+[2026-02-06T22:14:28.666Z] [ERROR] Sintaxe inválida na Linha 228: | 
+[2026-02-06T22:14:28.667Z] [ERROR] > undefined | 
+[2026-02-06T22:14:28.667Z] [ERROR] Caminho: /data/data/com.termux/files/home/bisc-bot/src/commands/economy/perfil.js | 
+[2026-02-06T22:14:28.667Z] [ERROR] ---------------------------------------------------
+ | 
+[2026-02-06T22:14:28.729Z] [INFO] 🔄 Registrando eventos do sistema...
+[2026-02-06T22:14:28.740Z] [ERROR] Erro no evento MessageCreate.js: | file:///data/data/com.termux/files/home/bisc-bot/src/infra/database/index.js:12
+export { default as userService } from './services/userService.js';
+         ^^^^^^^^^^^^^^^^^^^^^^
+SyntaxError: The requested module './services/userService.js' does not provide an export named 'default'
+    at ModuleJob._instantiate (node:internal/modules/esm/module_job:228:21)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async ModuleJob.run (node:internal/modules/esm/module_job:337:5)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:665:26)
+    at async default (file:///data/data/com.termux/files/home/bisc-bot/src/loaders/EventLoader.js:30:22)
+    at async inicializarDependencias (file:///data/data/com.termux/files/home/bisc-bot/src/app/heart.js:22:3)
+    at async startBot (file:///data/data/com.termux/files/home/bisc-bot/src/app/heart.js:35:5)
+[2026-02-06T22:14:28.750Z] [INFO] ✅ Eventos vinculados: 3
+[2026-02-06T22:14:30.120Z] [INFO] Sessão iniciada como project-bot#3069
+[2026-02-06T22:14:30.122Z] [INFO] Prefixos configurados: .., ,,
+[2026-02-06T22:16:07.783Z] [INFO] Modo direto ativado. Iniciando bot sem TUI...
+[2026-02-06T22:16:08.991Z] [INFO] ✅ MongoDB Conectado.
+[2026-02-06T22:16:09.004Z] [INFO] 🔄 Carregando comandos...
+[2026-02-06T22:16:09.153Z] [ERROR] 
+--- ❌ ERRO DE CARREGAMENTO NO ARQUIVO: carteira.js --- | 
+[2026-02-06T22:16:09.154Z] [ERROR] Sintaxe inválida na Linha 228: | 
+[2026-02-06T22:16:09.155Z] [ERROR] > undefined | 
+[2026-02-06T22:16:09.162Z] [ERROR] Caminho: /data/data/com.termux/files/home/bisc-bot/src/commands/economy/carteira.js | 
+[2026-02-06T22:16:09.163Z] [ERROR] ---------------------------------------------------
+ | 
+[2026-02-06T22:16:09.174Z] [ERROR] 
+--- ❌ ERRO DE CARREGAMENTO NO ARQUIVO: pay.js --- | 
+[2026-02-06T22:16:09.175Z] [ERROR] Sintaxe inválida na Linha 228: | 
+[2026-02-06T22:16:09.176Z] [ERROR] > undefined | 
+[2026-02-06T22:16:09.177Z] [ERROR] Caminho: /data/data/com.termux/files/home/bisc-bot/src/commands/economy/pay.js | 
+[2026-02-06T22:16:09.177Z] [ERROR] ---------------------------------------------------
+ | 
+[2026-02-06T22:16:09.183Z] [ERROR] 
+--- ❌ ERRO DE CARREGAMENTO NO ARQUIVO: perfil.js --- | 
+[2026-02-06T22:16:09.184Z] [ERROR] Sintaxe inválida na Linha 228: | 
+[2026-02-06T22:16:09.184Z] [ERROR] > undefined | 
+[2026-02-06T22:16:09.185Z] [ERROR] Caminho: /data/data/com.termux/files/home/bisc-bot/src/commands/economy/perfil.js | 
+[2026-02-06T22:16:09.186Z] [ERROR] ---------------------------------------------------
+ | 
+[2026-02-06T22:16:09.238Z] [INFO] 🔄 Registrando eventos do sistema...
+[2026-02-06T22:16:09.247Z] [ERROR] Erro no evento MessageCreate.js: | file:///data/data/com.termux/files/home/bisc-bot/src/infra/database/index.js:12
+export { default as userService } from './services/userService.js';
+         ^^^^^^^^^^^^^^^^^^^^^^
+SyntaxError: The requested module './services/userService.js' does not provide an export named 'default'
+    at ModuleJob._instantiate (node:internal/modules/esm/module_job:228:21)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async ModuleJob.run (node:internal/modules/esm/module_job:337:5)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:665:26)
+    at async default (file:///data/data/com.termux/files/home/bisc-bot/src/loaders/EventLoader.js:30:22)
+    at async inicializarDependencias (file:///data/data/com.termux/files/home/bisc-bot/src/app/heart.js:22:3)
+    at async startBot (file:///data/data/com.termux/files/home/bisc-bot/src/app/heart.js:35:5)
+    at async bootstrap (file:///data/data/com.termux/files/home/bisc-bot/index.js:15:5)
+[2026-02-06T22:16:09.256Z] [INFO] ✅ Eventos vinculados: 3
+[2026-02-06T22:16:10.626Z] [INFO] Sessão iniciada como project-bot#3069
+[2026-02-06T22:16:10.628Z] [INFO] Prefixos configurados: .., ,,
+[2026-02-07T03:09:17.073Z] [INFO] Modo direto ativado. Iniciando bot sem TUI...
+[2026-02-07T03:09:18.257Z] [INFO] ✅ MongoDB Conectado.
+[2026-02-07T03:09:18.261Z] [INFO] 🔄 Carregando comandos...
+[2026-02-07T03:09:18.420Z] [ERROR] 
+--- ❌ ERRO DE CARREGAMENTO NO ARQUIVO: carteira.js --- | 
+[2026-02-07T03:09:18.421Z] [ERROR] Sintaxe inválida na Linha 228: | 
+[2026-02-07T03:09:18.421Z] [ERROR] > undefined | 
+[2026-02-07T03:09:18.429Z] [ERROR] Caminho: /data/data/com.termux/files/home/bisc-bot/src/commands/economy/carteira.js | 
+[2026-02-07T03:09:18.430Z] [ERROR] ---------------------------------------------------
+ | 
+[2026-02-07T03:09:18.441Z] [ERROR] 
+--- ❌ ERRO DE CARREGAMENTO NO ARQUIVO: pay.js --- | 
+[2026-02-07T03:09:18.442Z] [ERROR] Sintaxe inválida na Linha 228: | 
+[2026-02-07T03:09:18.443Z] [ERROR] > undefined | 
+[2026-02-07T03:09:18.445Z] [ERROR] Caminho: /data/data/com.termux/files/home/bisc-bot/src/commands/economy/pay.js | 
+[2026-02-07T03:09:18.446Z] [ERROR] ---------------------------------------------------
+ | 
+[2026-02-07T03:09:18.453Z] [ERROR] 
+--- ❌ ERRO DE CARREGAMENTO NO ARQUIVO: perfil.js --- | 
+[2026-02-07T03:09:18.454Z] [ERROR] Sintaxe inválida na Linha 228: | 
+[2026-02-07T03:09:18.454Z] [ERROR] > undefined | 
+[2026-02-07T03:09:18.456Z] [ERROR] Caminho: /data/data/com.termux/files/home/bisc-bot/src/commands/economy/perfil.js | 
+[2026-02-07T03:09:18.456Z] [ERROR] ---------------------------------------------------
+ | 
+[2026-02-07T03:09:18.514Z] [INFO] 🔄 Registrando eventos do sistema...
+[2026-02-07T03:09:18.526Z] [ERROR] Erro no evento MessageCreate.js: | file:///data/data/com.termux/files/home/bisc-bot/src/infra/database/index.js:12
+export { default as userService } from './services/userService.js';
+         ^^^^^^^^^^^^^^^^^^^^^^
+SyntaxError: The requested module './services/userService.js' does not provide an export named 'default'
+    at ModuleJob._instantiate (node:internal/modules/esm/module_job:228:21)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async ModuleJob.run (node:internal/modules/esm/module_job:337:5)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:665:26)
+    at async default (file:///data/data/com.termux/files/home/bisc-bot/src/loaders/EventLoader.js:30:22)
+    at async inicializarDependencias (file:///data/data/com.termux/files/home/bisc-bot/src/app/heart.js:22:3)
+    at async startBot (file:///data/data/com.termux/files/home/bisc-bot/src/app/heart.js:35:5)
+    at async bootstrap (file:///data/data/com.termux/files/home/bisc-bot/index.js:15:5)
+[2026-02-07T03:09:18.535Z] [INFO] ✅ Eventos vinculados: 3
+[2026-02-07T03:09:20.141Z] [INFO] Sessão iniciada como project-bot#3069
+[2026-02-07T03:09:20.144Z] [INFO] Prefixos configurados: .., ,,
+[2026-02-07T03:11:16.662Z] [INFO] Modo direto ativado. Iniciando bot sem TUI...
+[2026-02-07T03:12:46.503Z] [INFO] Modo direto ativado. Iniciando bot sem TUI...
+[2026-02-07T03:12:47.671Z] [INFO] ✅ MongoDB Conectado.
+[2026-02-07T03:12:47.684Z] [INFO] 🔄 Carregando comandos...
+[2026-02-07T03:12:47.844Z] [ERROR] 
+--- ❌ ERRO DE CARREGAMENTO NO ARQUIVO: carteira.js --- | 
+[2026-02-07T03:12:47.846Z] [ERROR] > undefined | 
+[2026-02-07T03:12:47.845Z] [ERROR] Sintaxe inválida na Linha 228: | 
+[2026-02-07T03:12:47.853Z] [ERROR] Caminho: /data/data/com.termux/files/home/bisc-bot/src/commands/economy/carteira.js | 
+[2026-02-07T03:12:47.854Z] [ERROR] ---------------------------------------------------
+ | 
+[2026-02-07T03:12:47.865Z] [ERROR] 
+--- ❌ ERRO DE CARREGAMENTO NO ARQUIVO: pay.js --- | 
+[2026-02-07T03:12:47.867Z] [ERROR] Sintaxe inválida na Linha 228: | 
+[2026-02-07T03:12:47.867Z] [ERROR] > undefined | 
+[2026-02-07T03:12:47.868Z] [ERROR] Caminho: /data/data/com.termux/files/home/bisc-bot/src/commands/economy/pay.js | 
+[2026-02-07T03:12:47.869Z] [ERROR] ---------------------------------------------------
+ | 
+[2026-02-07T03:12:47.876Z] [ERROR] 
+--- ❌ ERRO DE CARREGAMENTO NO ARQUIVO: perfil.js --- | 
+[2026-02-07T03:12:47.876Z] [ERROR] > undefined | 
+[2026-02-07T03:12:47.878Z] [ERROR] Caminho: /data/data/com.termux/files/home/bisc-bot/src/commands/economy/perfil.js | 
+[2026-02-07T03:12:47.876Z] [ERROR] Sintaxe inválida na Linha 228: | 
+[2026-02-07T03:12:47.878Z] [ERROR] ---------------------------------------------------
+ | 
+[2026-02-07T03:12:47.940Z] [INFO] 🔄 Registrando eventos do sistema...
+[2026-02-07T03:12:47.950Z] [ERROR] Erro no evento MessageCreate.js: | file:///data/data/com.termux/files/home/bisc-bot/src/infra/database/index.js:12
+export { default as userService } from './services/userService.js';
+         ^^^^^^^^^^^^^^^^^^^^^^
+SyntaxError: The requested module './services/userService.js' does not provide an export named 'default'
+    at ModuleJob._instantiate (node:internal/modules/esm/module_job:228:21)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async ModuleJob.run (node:internal/modules/esm/module_job:337:5)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:665:26)
+    at async default (file:///data/data/com.termux/files/home/bisc-bot/src/loaders/EventLoader.js:30:22)
+    at async inicializarDependencias (file:///data/data/com.termux/files/home/bisc-bot/src/app/heart.js:22:3)
+    at async startBot (file:///data/data/com.termux/files/home/bisc-bot/src/app/heart.js:35:5)
+    at async bootstrap (file:///data/data/com.termux/files/home/bisc-bot/index.js:15:5)
+[2026-02-07T03:12:47.960Z] [INFO] ✅ Eventos vinculados: 3
+[2026-02-07T03:12:49.459Z] [INFO] Sessão iniciada como project-bot#3069
+[2026-02-07T03:12:49.469Z] [INFO] Prefixos configurados: .., ,,
+[2026-02-07T03:16:19.704Z] [INFO] Iniciando interface de comando...
+[2026-02-07T03:16:41.580Z] [INFO] Modo direto ativado. Iniciando bot sem TUI...
+[2026-02-07T03:16:42.779Z] [INFO] ✅ MongoDB Conectado.
+[2026-02-07T03:16:42.781Z] [INFO] 🔄 Carregando comandos...
+[2026-02-07T03:16:42.941Z] [ERROR] 
+--- ❌ ERRO DE CARREGAMENTO NO ARQUIVO: carteira.js --- | 
+[2026-02-07T03:16:42.942Z] [ERROR] Sintaxe inválida na Linha 228: | 
+[2026-02-07T03:16:42.942Z] [ERROR] > undefined | 
+[2026-02-07T03:16:42.950Z] [ERROR] Caminho: /data/data/com.termux/files/home/bisc-bot/src/commands/economy/carteira.js | 
+[2026-02-07T03:16:42.964Z] [ERROR] 
+--- ❌ ERRO DE CARREGAMENTO NO ARQUIVO: pay.js --- | 
+[2026-02-07T03:16:42.951Z] [ERROR] ---------------------------------------------------
+ | 
+[2026-02-07T03:16:42.966Z] [ERROR] Sintaxe inválida na Linha 228: | 
+[2026-02-07T03:16:42.966Z] [ERROR] > undefined | 
+[2026-02-07T03:16:42.967Z] [ERROR] Caminho: /data/data/com.termux/files/home/bisc-bot/src/commands/economy/pay.js | 
+[2026-02-07T03:16:42.967Z] [ERROR] ---------------------------------------------------
+ | 
+[2026-02-07T03:16:42.974Z] [ERROR] 
+--- ❌ ERRO DE CARREGAMENTO NO ARQUIVO: perfil.js --- | 
+[2026-02-07T03:16:42.975Z] [ERROR] Sintaxe inválida na Linha 228: | 
+[2026-02-07T03:16:42.975Z] [ERROR] > undefined | 
+[2026-02-07T03:16:42.976Z] [ERROR] Caminho: /data/data/com.termux/files/home/bisc-bot/src/commands/economy/perfil.js | 
+[2026-02-07T03:16:42.977Z] [ERROR] ---------------------------------------------------
+ | 
+[2026-02-07T03:16:43.026Z] [INFO] 🔄 Registrando eventos do sistema...
+[2026-02-07T03:16:43.037Z] [ERROR] Erro no evento MessageCreate.js: | file:///data/data/com.termux/files/home/bisc-bot/src/infra/database/services/userService.js:1
+import User from '../index.js';
+       ^^^^
+SyntaxError: The requested module '../index.js' does not provide an export named 'default'
+    at ModuleJob._instantiate (node:internal/modules/esm/module_job:228:21)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async ModuleJob.run (node:internal/modules/esm/module_job:337:5)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:665:26)
+    at async default (file:///data/data/com.termux/files/home/bisc-bot/src/loaders/EventLoader.js:30:22)
+    at async inicializarDependencias (file:///data/data/com.termux/files/home/bisc-bot/src/app/heart.js:22:3)
+    at async startBot (file:///data/data/com.termux/files/home/bisc-bot/src/app/heart.js:35:5)
+    at async bootstrap (file:///data/data/com.termux/files/home/bisc-bot/index.js:15:5)
+[2026-02-07T03:16:43.054Z] [INFO] ✅ Eventos vinculados: 3
+[2026-02-07T03:16:44.441Z] [INFO] Sessão iniciada como project-bot#3069
+[2026-02-07T03:16:44.443Z] [INFO] Prefixos configurados: .., ,,
+[2026-02-07T03:20:11.164Z] [INFO] Modo direto ativado. Iniciando bot sem TUI...
+[2026-02-07T03:20:12.376Z] [INFO] ✅ MongoDB Conectado.
+[2026-02-07T03:20:12.379Z] [INFO] 🔄 Carregando comandos...
+[2026-02-07T03:20:12.580Z] [INFO] 🔄 Registrando eventos do sistema...
+[2026-02-07T03:20:12.595Z] [INFO] ✅ Eventos vinculados: 4
+[2026-02-07T03:20:14.494Z] [INFO] Sessão iniciada como project-bot#3069
+[2026-02-07T03:20:14.496Z] [INFO] Prefixos configurados: .., ,,
+[2026-02-07T03:21:22.793Z] [INFO] Modo direto ativado. Iniciando bot sem TUI...
+[2026-02-07T03:21:23.988Z] [INFO] ✅ MongoDB Conectado.
+[2026-02-07T03:21:23.990Z] [INFO] 🔄 Carregando comandos...
+[2026-02-07T03:21:24.219Z] [INFO] 🔄 Registrando eventos do sistema...
+[2026-02-07T03:21:24.238Z] [INFO] ✅ Eventos vinculados: 4
+[2026-02-07T03:21:25.660Z] [INFO] Sessão iniciada como project-bot#3069
+[2026-02-07T03:21:25.662Z] [INFO] Prefixos configurados: .., ,,
+[2026-02-07T03:26:04.786Z] [INFO] Modo direto ativado. Iniciando bot sem TUI...
+[2026-02-07T03:26:06.032Z] [INFO] ✅ MongoDB Conectado.
+[2026-02-07T03:26:06.042Z] [INFO] 🔄 Carregando comandos...
+[2026-02-07T03:26:06.265Z] [INFO] 🔄 Registrando eventos do sistema...
+[2026-02-07T03:26:06.303Z] [ERROR] Erro no evento Ready.js: | ReferenceError: Events is not defined
+    at file:///data/data/com.termux/files/home/bisc-bot/src/events/Ready.js:9:9
+    at ModuleJob.run (node:internal/modules/esm/module_job:345:25)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:665:26)
+    at async default (file:///data/data/com.termux/files/home/bisc-bot/src/loaders/EventLoader.js:30:22)
+    at async inicializarDependencias (file:///data/data/com.termux/files/home/bisc-bot/src/app/heart.js:22:3)
+    at async startBot (file:///data/data/com.termux/files/home/bisc-bot/src/app/heart.js:35:5)
+    at async bootstrap (file:///data/data/com.termux/files/home/bisc-bot/index.js:15:5)
+[2026-02-07T03:26:06.308Z] [INFO] ✅ Eventos vinculados: 3
+[2026-02-07T03:27:05.810Z] [INFO] Modo direto ativado. Iniciando bot sem TUI...
+[2026-02-07T03:27:54.149Z] [INFO] Modo direto ativado. Iniciando bot sem TUI...
+[2026-02-07T03:27:55.395Z] [INFO] ✅ MongoDB Conectado.
+[2026-02-07T03:27:55.407Z] [INFO] 🔄 Carregando comandos...
+[2026-02-07T03:27:55.708Z] [INFO] 🔄 Registrando eventos do sistema...
+[2026-02-07T03:27:55.732Z] [ERROR] Erro no evento Ready.js: | ReferenceError: Events is not defined
+    at file:///data/data/com.termux/files/home/bisc-bot/src/events/Ready.js:9:9
+    at ModuleJob.run (node:internal/modules/esm/module_job:345:25)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:665:26)
+    at async default (file:///data/data/com.termux/files/home/bisc-bot/src/loaders/EventLoader.js:30:22)
+    at async inicializarDependencias (file:///data/data/com.termux/files/home/bisc-bot/src/app/heart.js:22:3)
+    at async startBot (file:///data/data/com.termux/files/home/bisc-bot/src/app/heart.js:35:5)
+    at async bootstrap (file:///data/data/com.termux/files/home/bisc-bot/index.js:15:5)
+[2026-02-07T03:27:55.738Z] [INFO] ✅ Eventos vinculados: 3
+[2026-02-07T03:33:43.147Z] [INFO] Modo direto ativado. Iniciando bot sem TUI...
+[2026-02-07T03:33:44.328Z] [INFO] ✅ MongoDB Conectado.
+[2026-02-07T03:33:44.341Z] [INFO] 🔄 Carregando comandos...
+[2026-02-07T03:33:44.601Z] [INFO] 🔄 Registrando eventos do sistema...
+[2026-02-07T03:33:44.618Z] [INFO] ✅ Eventos vinculados: 4
+[2026-02-07T03:33:46.128Z] [INFO] Sessão iniciada como project-bot#3069
+[2026-02-07T03:33:46.135Z] [INFO] Prefixos configurados: .., ,,
+[2026-02-07T04:07:20.831Z] [INFO] Modo direto ativado. Iniciando bot sem TUI...
+[2026-02-07T04:07:22.027Z] [INFO] ✅ MongoDB Conectado.
+[2026-02-07T04:07:22.040Z] [INFO] 🔄 Iniciando carregamento do sistema de comandos...
+[2026-02-07T04:07:22.220Z] [ERROR] 
+❌ ERRO CRÍTICO NO ARQUIVO: daily.js | 
+[2026-02-07T04:07:22.220Z] [ERROR] Caminho Completo: /data/data/com.termux/files/home/bisc-bot/src/commands/economy/daily.js | 
+[2026-02-07T04:07:22.220Z] [ERROR] Mensagem: Cannot find module '/data/data/com.termux/files/home/bisc-bot/src/database/services/userService.js' imported from /data/data/com.termux/files/home/bisc-bot/src/commands/economy/daily.js | 
+[2026-02-07T04:07:22.223Z] [ERROR] -------------------------------------------
+ | 
+[2026-02-07T04:07:22.290Z] [INFO] ✨ 27 comandos carregados em 249ms.
+[2026-02-07T04:07:22.293Z] [INFO] 🔄 Registrando eventos do sistema...
+[2026-02-07T04:07:22.312Z] [INFO] ✅ Eventos vinculados: 4
+[2026-02-07T04:07:23.842Z] [INFO] Sessão iniciada como project-bot#3069
+[2026-02-07T04:07:23.851Z] [INFO] Prefixos configurados: .., ,,
+[2026-02-07T04:08:32.198Z] [INFO] Modo direto ativado. Iniciando bot sem TUI...
+[2026-02-07T04:08:33.268Z] [INFO] ✅ MongoDB Conectado.
+[2026-02-07T04:08:33.280Z] [INFO] 🔄 Iniciando carregamento do sistema de comandos...
+[2026-02-07T04:08:33.523Z] [INFO] ✨ 28 comandos carregados em 243ms.
+[2026-02-07T04:08:33.526Z] [INFO] 🔄 Registrando eventos do sistema...
+[2026-02-07T04:08:33.545Z] [INFO] ✅ Eventos vinculados: 4
+[2026-02-07T04:08:34.808Z] [INFO] Sessão iniciada como project-bot#3069
+[2026-02-07T04:08:34.811Z] [INFO] Prefixos configurados: .., ,,
+[2026-02-07T04:09:24.853Z] [INFO] Modo direto ativado. Iniciando bot sem TUI...
+[2026-02-07T04:09:26.167Z] [INFO] ✅ MongoDB Conectado.
+[2026-02-07T04:09:26.170Z] [INFO] 🔄 Iniciando carregamento do sistema de comandos...
+[2026-02-07T04:09:26.415Z] [INFO] ✨ 28 comandos carregados em 245ms.
+[2026-02-07T04:09:26.417Z] [INFO] 🔄 Registrando eventos do sistema...
+[2026-02-07T04:09:26.434Z] [INFO] ✅ Eventos vinculados: 4
+[2026-02-07T04:09:27.856Z] [INFO] Sessão iniciada como project-bot#3069
+[2026-02-07T04:09:27.865Z] [INFO] Prefixos configurados: .., ,,
+[2026-02-07T04:18:54.645Z] [INFO] Modo direto ativado. Iniciando bot sem TUI...
+[2026-02-07T04:18:55.850Z] [INFO] ✅ MongoDB Conectado.
+[2026-02-07T04:18:55.853Z] [INFO] 🔄 Iniciando carregamento do sistema de comandos...
+[2026-02-07T04:18:56.132Z] [INFO] ✨ 28 comandos carregados em 278ms.
+[2026-02-07T04:18:56.135Z] [INFO] 🔄 Registrando eventos do sistema...
+[2026-02-07T04:18:56.155Z] [INFO] ✅ Eventos vinculados: 4
+[2026-02-07T04:18:57.652Z] [INFO] Sessão iniciada como project-bot#3069
+[2026-02-07T04:18:57.655Z] [INFO] Prefixos configurados: .., ,,
+[2026-02-07T11:36:10.737Z] [INFO] Iniciando interface de comando...
+[2026-02-07T11:36:24.972Z] [INFO] ✅ MongoDB Conectado.
+[2026-02-07T11:36:25.192Z] [INFO] ✨ 28 comandos carregados em 212ms.
+[2026-02-07T11:36:24.980Z] [INFO] 🔄 Iniciando carregamento do sistema de comandos...
+[2026-02-07T11:36:25.195Z] [INFO] 🔄 Registrando eventos do sistema...
+[2026-02-07T11:36:25.212Z] [INFO] ✅ Eventos vinculados: 4
+[2026-02-07T11:36:26.779Z] [INFO] Sessão iniciada como project-bot#3069
+[2026-02-07T11:36:26.782Z] [INFO] Prefixos configurados: .., ,,
+[2026-02-07T13:12:00.396Z] [INFO] Modo direto ativado. Iniciando bot sem TUI...
+[2026-02-07T13:12:01.608Z] [INFO] ✅ MongoDB Conectado.
+[2026-02-07T13:12:01.615Z] [INFO] 🔄 Iniciando carregamento do sistema de comandos...
+[2026-02-07T13:12:01.806Z] [INFO] ✨ 28 comandos carregados em 190ms.
+[2026-02-07T13:12:01.808Z] [INFO] 🔄 Registrando eventos do sistema...
+[2026-02-07T13:12:01.821Z] [INFO] ✅ Eventos vinculados: 4
+[2026-02-07T13:12:03.399Z] [INFO] Sessão iniciada como project-bot#3069
+[2026-02-07T13:12:03.409Z] [INFO] Prefixos configurados: .., ,,
+[2026-02-07T13:22:08.188Z] [INFO] Modo direto ativado. Iniciando bot sem TUI...
+[2026-02-07T13:22:09.364Z] [INFO] ✅ MongoDB Conectado.
+[2026-02-07T13:22:09.367Z] [INFO] 🔄 Iniciando carregamento do sistema de comandos...
+[2026-02-07T13:22:09.534Z] [INFO] ✨ 28 comandos carregados em 167ms.
+[2026-02-07T13:22:09.537Z] [INFO] 🔄 Registrando eventos do sistema...
+[2026-02-07T13:22:09.556Z] [INFO] ✅ Eventos vinculados: 4
+[2026-02-07T13:22:10.883Z] [INFO] Sessão iniciada como project-bot#3069
+[2026-02-07T13:22:10.885Z] [INFO] Prefixos configurados: .., ,,
+[2026-02-07T23:34:14.469Z] [INFO] Modo direto ativado. Iniciando bot sem TUI...
+[2026-02-07T23:34:15.776Z] [INFO] ✅ MongoDB Conectado.
+[2026-02-07T23:34:15.790Z] [INFO] 🔄 Iniciando carregamento do sistema de comandos...
+[2026-02-07T23:34:15.959Z] [INFO] ✨ 28 comandos carregados em 168ms.
+[2026-02-07T23:34:15.960Z] [INFO] 🔄 Registrando eventos do sistema...
+[2026-02-07T23:34:15.980Z] [INFO] ✅ Eventos vinculados: 4
+[2026-02-07T23:34:17.447Z] [INFO] Sessão iniciada como project-bot#3069
+[2026-02-07T23:34:17.458Z] [INFO] Prefixos configurados: .., ,,
+[2026-02-07T23:50:02.443Z] [INFO] Modo direto ativado. Iniciando bot sem TUI...
+[2026-02-07T23:50:03.664Z] [INFO] ✅ MongoDB Conectado.
+[2026-02-07T23:50:03.669Z] [INFO] 🔄 Iniciando carregamento do sistema de comandos...
+[2026-02-07T23:50:03.856Z] [INFO] ✨ 28 comandos carregados em 185ms.
+[2026-02-07T23:50:03.858Z] [INFO] 🔄 Registrando eventos do sistema...
+[2026-02-07T23:50:03.877Z] [INFO] ✅ Eventos vinculados: 4
+[2026-02-07T23:50:05.302Z] [INFO] Sessão iniciada como project-bot#3069
+[2026-02-07T23:50:05.304Z] [INFO] Prefixos configurados: .., ,,
+[2026-02-08T00:02:21.464Z] [INFO] Modo direto ativado. Iniciando bot sem TUI...
+[2026-02-08T00:02:22.577Z] [INFO] ✅ MongoDB Conectado.
+[2026-02-08T00:02:22.578Z] [INFO] 🔄 Iniciando carregamento do sistema de comandos...
+[2026-02-08T00:02:22.737Z] [INFO] ✨ 28 comandos carregados em 159ms.
+[2026-02-08T00:02:22.739Z] [INFO] 🔄 Registrando eventos do sistema...
+[2026-02-08T00:02:22.750Z] [INFO] ✅ Eventos vinculados: 4
+[2026-02-08T00:02:24.220Z] [INFO] Sessão iniciada como project-bot#3069
+[2026-02-08T00:02:24.222Z] [INFO] Prefixos configurados: .., ,,
+[2026-02-08T00:09:02.364Z] [INFO] Iniciando interface de comando...
+[2026-02-08T00:10:48.203Z] [INFO] ✅ MongoDB Conectado.
+[2026-02-08T00:10:48.484Z] [INFO] ✨ 28 comandos carregados em 204ms.
+[2026-02-08T00:10:48.486Z] [INFO] 🔄 Registrando eventos do sistema...
+[2026-02-08T00:10:48.509Z] [INFO] ✅ Eventos vinculados: 4
+[2026-02-08T00:10:48.280Z] [INFO] 🔄 Iniciando carregamento do sistema de comandos...
+[2026-02-08T00:10:49.950Z] [INFO] Sessão iniciada como project-bot#3069
+[2026-02-08T00:10:49.952Z] [INFO] Prefixos configurados: .., ,,
+[2026-02-08T00:47:04.038Z] [INFO] Iniciando interface de comando...
+[2026-02-08T00:47:11.680Z] [INFO] ✅ MongoDB Conectado.
+[2026-02-08T00:47:11.704Z] [INFO] 🔄 Iniciando carregamento do sistema de comandos...
+[2026-02-08T00:47:11.888Z] [INFO] ✨ 28 comandos carregados em 183ms.
+[2026-02-08T00:47:11.889Z] [INFO] 🔄 Registrando eventos do sistema...
+[2026-02-08T00:47:11.911Z] [ERROR] Erro no evento MessageCreate.js: | Error [ERR_MODULE_NOT_FOUND]: Cannot find module '/data/data/com.termux/files/home/bisc-bot/src/utils/wrong-sort/index.js' imported from /data/data/com.termux/files/home/bisc-bot/src/events/MessageCreate.js
+    at finalizeResolution (node:internal/modules/esm/resolve:274:11)
+    at moduleResolve (node:internal/modules/esm/resolve:859:10)
+    at defaultResolve (node:internal/modules/esm/resolve:983:11)
+    at #cachedDefaultResolve (node:internal/modules/esm/loader:731:20)
+    at ModuleLoader.resolve (node:internal/modules/esm/loader:708:38)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:310:38)
+    at ModuleJob._link (node:internal/modules/esm/module_job:183:49)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-08T00:47:11.919Z] [INFO] ✅ Eventos vinculados: 3
+[2026-02-08T00:47:13.672Z] [INFO] Sessão iniciada como project-bot#3069
+[2026-02-08T00:47:13.675Z] [INFO] Prefixos configurados: .., ,,
+[2026-02-08T00:48:03.828Z] [INFO] Iniciando interface de comando...
+[2026-02-08T00:48:08.342Z] [INFO] ✅ MongoDB Conectado.
+[2026-02-08T00:48:08.348Z] [INFO] 🔄 Iniciando carregamento do sistema de comandos...
+[2026-02-08T00:48:08.523Z] [INFO] ✨ 28 comandos carregados em 173ms.
+[2026-02-08T00:48:08.524Z] [INFO] 🔄 Registrando eventos do sistema...
+[2026-02-08T00:48:08.548Z] [INFO] ✅ Eventos vinculados: 4
+[2026-02-08T00:48:09.895Z] [INFO] Sessão iniciada como project-bot#3069
+[2026-02-08T00:48:09.897Z] [INFO] Prefixos configurados: .., ,,
+[2026-02-08T00:52:51.746Z] [INFO] Iniciando interface de comando...
+[2026-02-08T00:52:57.024Z] [INFO] ✅ MongoDB Conectado.
+[2026-02-08T00:52:57.037Z] [INFO] 🔄 Iniciando carregamento do sistema de comandos...
+[2026-02-08T00:52:57.208Z] [INFO] ✨ 28 comandos carregados em 171ms.
+[2026-02-08T00:52:57.209Z] [INFO] 🔄 Registrando eventos do sistema...
+[2026-02-08T00:52:57.231Z] [INFO] ✅ Eventos vinculados: 4
+[2026-02-08T00:52:58.656Z] [INFO] Sessão iniciada como project-bot#3069
+[2026-02-08T00:52:58.662Z] [INFO] Prefixos configurados: .., ,,
+[2026-02-08T00:55:07.080Z] [INFO] Modo direto ativado. Iniciando bot sem TUI...
+[2026-02-08T00:55:08.481Z] [INFO] ✅ MongoDB Conectado.
+[2026-02-08T00:55:08.485Z] [INFO] 🔄 Iniciando carregamento do sistema de comandos...
+[2026-02-08T00:55:08.689Z] [INFO] ✨ 28 comandos carregados em 203ms.
+[2026-02-08T00:55:08.690Z] [INFO] 🔄 Registrando eventos do sistema...
+[2026-02-08T00:55:08.703Z] [INFO] ✅ Eventos vinculados: 4
+[2026-02-08T00:55:10.570Z] [INFO] Sessão iniciada como project-bot#3069
+[2026-02-08T00:55:10.583Z] [INFO] Prefixos configurados: .., ,,
+[2026-02-08T00:56:10.866Z] [INFO] Modo direto ativado. Iniciando bot sem TUI...
+[2026-02-08T00:56:12.159Z] [INFO] ✅ MongoDB Conectado.
+[2026-02-08T00:56:12.161Z] [INFO] 🔄 Iniciando carregamento do sistema de comandos...
+[2026-02-08T00:56:12.352Z] [INFO] ✨ 28 comandos carregados em 191ms.
+[2026-02-08T00:56:12.353Z] [INFO] 🔄 Registrando eventos do sistema...
+[2026-02-08T00:56:12.369Z] [INFO] ✅ Eventos vinculados: 4
+[2026-02-08T00:56:13.821Z] [INFO] Sessão iniciada como project-bot#3069
+[2026-02-08T00:56:13.822Z] [INFO] Prefixos configurados: .., ,,
+[2026-02-08T00:56:30.097Z] [INFO] Modo direto ativado. Iniciando bot sem TUI...
+[2026-02-08T00:56:31.015Z] [INFO] ✅ MongoDB Conectado.
+[2026-02-08T00:56:31.020Z] [INFO] 🔄 Iniciando carregamento do sistema de comandos...
+[2026-02-08T00:56:31.183Z] [INFO] ✨ 28 comandos carregados em 161ms.
+[2026-02-08T00:56:31.184Z] [INFO] 🔄 Registrando eventos do sistema...
+[2026-02-08T00:56:31.194Z] [INFO] ✅ Eventos vinculados: 4
+[2026-02-08T00:56:32.527Z] [INFO] Sessão iniciada como project-bot#3069
+[2026-02-08T00:56:32.528Z] [INFO] Prefixos configurados: .., ,,
+[2026-02-08T00:57:11.356Z] [INFO] Modo direto ativado. Iniciando bot sem TUI...
+[2026-02-08T00:57:12.558Z] [INFO] ✅ MongoDB Conectado.
+[2026-02-08T00:57:12.560Z] [INFO] 🔄 Iniciando carregamento do sistema de comandos...
+[2026-02-08T00:57:12.763Z] [INFO] ✨ 28 comandos carregados em 203ms.
+[2026-02-08T00:57:12.765Z] [INFO] 🔄 Registrando eventos do sistema...
+[2026-02-08T00:57:12.805Z] [INFO] ✅ Eventos vinculados: 4
+[2026-02-08T00:57:14.327Z] [INFO] Sessão iniciada como project-bot#3069
+[2026-02-08T00:57:14.328Z] [INFO] Prefixos configurados: .., ,,
+[2026-02-08T01:07:52.245Z] [INFO] Modo direto ativado. Iniciando bot sem TUI...
+[2026-02-08T01:07:53.367Z] [INFO] ✅ MongoDB Conectado.
+[2026-02-08T01:07:53.568Z] [INFO] ✨ 28 comandos carregados em 198ms.
+[2026-02-08T01:07:53.569Z] [INFO] 🔄 Registrando eventos do sistema...
+[2026-02-08T01:07:53.587Z] [INFO] ✅ Eventos vinculados: 4
+[2026-02-08T01:07:53.368Z] [INFO] 🔄 Iniciando carregamento do sistema de comandos...
+[2026-02-08T01:07:55.118Z] [INFO] Sessão iniciada como project-bot#3069
+[2026-02-08T01:07:55.121Z] [INFO] Prefixos configurados: .., ,,
+[2026-02-08T01:08:06.833Z] [INFO] Modo direto ativado. Iniciando bot sem TUI...
+[2026-02-08T01:08:07.792Z] [INFO] ✅ MongoDB Conectado.
+[2026-02-08T01:08:07.795Z] [INFO] 🔄 Iniciando carregamento do sistema de comandos...
+[2026-02-08T01:08:08.003Z] [INFO] ✨ 28 comandos carregados em 207ms.
+[2026-02-08T01:08:08.004Z] [INFO] 🔄 Registrando eventos do sistema...
+[2026-02-08T01:08:08.021Z] [INFO] ✅ Eventos vinculados: 4
+[2026-02-08T01:08:09.752Z] [INFO] Sessão iniciada como project-bot#3069
+[2026-02-08T01:08:09.764Z] [INFO] Prefixos configurados: .., ,,
+[2026-02-08T01:10:42.298Z] [INFO] Modo direto ativado. Iniciando bot sem TUI...
+[2026-02-08T01:10:43.541Z] [INFO] ✅ MongoDB Conectado.
+[2026-02-08T01:10:43.546Z] [INFO] 🔄 Iniciando carregamento do sistema de comandos...
+[2026-02-08T01:10:43.744Z] [INFO] ✨ 28 comandos carregados em 198ms.
+[2026-02-08T01:10:43.745Z] [INFO] 🔄 Registrando eventos do sistema...
+[2026-02-08T01:10:43.771Z] [INFO] ✅ Eventos vinculados: 4
+[2026-02-08T01:10:45.263Z] [INFO] Sessão iniciada como project-bot#3069
+[2026-02-08T01:10:45.272Z] [INFO] Prefixos configurados: .., ,,
+[2026-02-08T01:12:49.060Z] [INFO] Modo direto ativado. Iniciando bot sem TUI...
+[2026-02-08T01:12:50.382Z] [INFO] ✅ MongoDB Conectado.
+[2026-02-08T01:12:50.384Z] [INFO] 🔄 Iniciando carregamento do sistema de comandos...
+[2026-02-08T01:12:50.704Z] [INFO] ✨ 28 comandos carregados em 320ms.
+[2026-02-08T01:12:50.706Z] [INFO] 🔄 Registrando eventos do sistema...
+[2026-02-08T01:12:50.745Z] [INFO] ✅ Eventos vinculados: 4
+[2026-02-08T01:12:52.135Z] [INFO] Sessão iniciada como project-bot#3069
+[2026-02-08T01:12:52.136Z] [INFO] Prefixos configurados: .., ,,
+[2026-02-08T01:23:54.603Z] [INFO] Modo direto ativado. Iniciando bot sem TUI...
+[2026-02-08T01:23:55.761Z] [INFO] ✅ MongoDB Conectado.
+[2026-02-08T01:23:55.763Z] [INFO] 🔄 Iniciando carregamento do sistema de comandos...
+[2026-02-08T01:23:56.145Z] [INFO] ✨ 28 comandos carregados em 381ms.
+[2026-02-08T01:23:56.146Z] [INFO] 🔄 Registrando eventos do sistema...
+[2026-02-08T01:23:56.214Z] [INFO] ✅ Eventos vinculados: 4
+[2026-02-08T01:23:58.050Z] [INFO] Sessão iniciada como project-bot#3069
+[2026-02-08T01:23:58.052Z] [INFO] Prefixos configurados: .., ,,
+[2026-02-08T01:26:28.486Z] [INFO] Modo direto ativado. Iniciando bot sem TUI...
+[2026-02-08T01:26:29.633Z] [INFO] ✅ MongoDB Conectado.
+[2026-02-08T01:26:29.637Z] [INFO] 🔄 Iniciando carregamento do sistema de comandos...
+[2026-02-08T01:26:29.830Z] [INFO] ✨ 29 comandos carregados em 192ms.
+[2026-02-08T01:26:29.831Z] [INFO] 🔄 Registrando eventos do sistema...
+[2026-02-08T01:26:29.849Z] [INFO] ✅ Eventos vinculados: 4
+[2026-02-08T01:26:31.193Z] [INFO] Sessão iniciada como project-bot#3069
+[2026-02-08T01:26:31.193Z] [INFO] Prefixos configurados: .., ,,

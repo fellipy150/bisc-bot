@@ -1,0 +1,6 @@
+{
+  "watch": [],
+  "ignore": [],
+  "ext": "js,json",
+  "exec": "node index.js"
+}
