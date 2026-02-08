@@ -1,0 +1,2085 @@
+[
+  {
+    "ts": 1767814494217,
+    "type": "focus",
+    "data": {
+      "element": "list"
+    }
+  },
+  {
+    "ts": 1767814495831,
+    "type": "mouse",
+    "data": {
+      "name": "mouse",
+      "ctrl": false,
+      "meta": false,
+      "shift": false,
+      "type": "X10",
+      "raw": [
+        32,
+        35,
+        34,
+        "\u001b[M #\""
+      ],
+      "buf": {
+        "type": "Buffer",
+        "data": [
+          27,
+          91,
+          77,
+          32,
+          35,
+          34,
+          27,
+          91,
+          77,
+          35,
+          35,
+          34
+        ]
+      },
+      "x": 2,
+      "y": 1,
+      "action": "mousedown",
+      "button": "left"
+    }
+  },
+  {
+    "ts": 1767814496489,
+    "type": "mouse",
+    "data": {
+      "name": "mouse",
+      "ctrl": false,
+      "meta": false,
+      "shift": false,
+      "type": "X10",
+      "raw": [
+        32,
+        34,
+        35,
+        "\u001b[M \"#"
+      ],
+      "buf": {
+        "type": "Buffer",
+        "data": [
+          27,
+          91,
+          77,
+          32,
+          34,
+          35,
+          27,
+          91,
+          77,
+          35,
+          34,
+          35
+        ]
+      },
+      "x": 1,
+      "y": 2,
+      "action": "mousedown",
+      "button": "left"
+    }
+  },
+  {
+    "ts": 1767814497070,
+    "type": "mouse",
+    "data": {
+      "name": "mouse",
+      "ctrl": false,
+      "meta": false,
+      "shift": false,
+      "type": "X10",
+      "raw": [
+        32,
+        35,
+        38,
+        "\u001b[M #&"
+      ],
+      "buf": {
+        "type": "Buffer",
+        "data": [
+          27,
+          91,
+          77,
+          32,
+          35,
+          38,
+          27,
+          91,
+          77,
+          35,
+          35,
+          38
+        ]
+      },
+      "x": 2,
+      "y": 5,
+      "action": "mousedown",
+      "button": "left"
+    }
+  },
+  {
+    "ts": 1767814497584,
+    "type": "mouse",
+    "data": {
+      "name": "mouse",
+      "ctrl": false,
+      "meta": false,
+      "shift": false,
+      "type": "X10",
+      "raw": [
+        32,
+        35,
+        41,
+        "\u001b[M #)"
+      ],
+      "buf": {
+        "type": "Buffer",
+        "data": [
+          27,
+          91,
+          77,
+          32,
+          35,
+          41,
+          27,
+          91,
+          77,
+          35,
+          35,
+          41
+        ]
+      },
+      "x": 2,
+      "y": 8,
+      "action": "mousedown",
+      "button": "left"
+    }
+  },
+  {
+    "ts": 1767814498296,
+    "type": "mouse",
+    "data": {
+      "name": "mouse",
+      "ctrl": false,
+      "meta": false,
+      "shift": false,
+      "type": "X10",
+      "raw": [
+        32,
+        35,
+        35,
+        "\u001b[M ##"
+      ],
+      "buf": {
+        "type": "Buffer",
+        "data": [
+          27,
+          91,
+          77,
+          32,
+          35,
+          35,
+          27,
+          91,
+          77,
+          35,
+          35,
+          35
+        ]
+      },
+      "x": 2,
+      "y": 2,
+      "action": "mousedown",
+      "button": "left"
+    }
+  },
+  {
+    "ts": 1767814498845,
+    "type": "mouse",
+    "data": {
+      "name": "mouse",
+      "ctrl": false,
+      "meta": false,
+      "shift": false,
+      "type": "X10",
+      "raw": [
+        32,
+        42,
+        35,
+        "\u001b[M *#"
+      ],
+      "buf": {
+        "type": "Buffer",
+        "data": [
+          27,
+          91,
+          77,
+          32,
+          42,
+          35,
+          27,
+          91,
+          77,
+          35,
+          42,
+          35
+        ]
+      },
+      "x": 9,
+      "y": 2,
+      "action": "mousedown",
+      "button": "left"
+    }
+  },
+  {
+    "ts": 1767814499308,
+    "type": "mouse",
+    "data": {
+      "name": "mouse",
+      "ctrl": false,
+      "meta": false,
+      "shift": false,
+      "type": "X10",
+      "raw": [
+        32,
+        48,
+        34,
+        "\u001b[M 0\""
+      ],
+      "buf": {
+        "type": "Buffer",
+        "data": [
+          27,
+          91,
+          77,
+          32,
+          48,
+          34,
+          27,
+          91,
+          77,
+          35,
+          48,
+          34
+        ]
+      },
+      "x": 15,
+      "y": 1,
+      "action": "mousedown",
+      "button": "left"
+    }
+  },
+  {
+    "ts": 1767814499872,
+    "type": "mouse",
+    "data": {
+      "name": "mouse",
+      "ctrl": false,
+      "meta": false,
+      "shift": false,
+      "type": "X10",
+      "raw": [
+        32,
+        55,
+        35,
+        "\u001b[M 7#"
+      ],
+      "buf": {
+        "type": "Buffer",
+        "data": [
+          27,
+          91,
+          77,
+          32,
+          55,
+          35,
+          27,
+          91,
+          77,
+          35,
+          55,
+          35
+        ]
+      },
+      "x": 22,
+      "y": 2,
+      "action": "mousedown",
+      "button": "left"
+    }
+  },
+  {
+    "ts": 1767814501315,
+    "type": "keypress",
+    "data": {
+      "ch": "\u0003",
+      "key": {
+        "sequence": "\u0003",
+        "name": "c",
+        "ctrl": true,
+        "meta": false,
+        "shift": false,
+        "full": "C-c"
+      }
+    }
+  },
+  {
+    "ts": 1767814711399,
+    "type": "focus",
+    "data": {
+      "element": "list"
+    }
+  },
+  {
+    "ts": 1767814713312,
+    "type": "resize",
+    "data": {
+      "cols": 66,
+      "rows": 57
+    }
+  },
+  {
+    "ts": 1767814714047,
+    "type": "mouse",
+    "data": {
+      "name": "mouse",
+      "ctrl": false,
+      "meta": false,
+      "shift": false,
+      "type": "X10",
+      "raw": [
+        97,
+        57,
+        80,
+        "\u001b[Ma9P"
+      ],
+      "buf": {
+        "type": "Buffer",
+        "data": [
+          27,
+          91,
+          77,
+          97,
+          57,
+          80
+        ]
+      },
+      "x": 24,
+      "y": 47,
+      "action": "wheeldown",
+      "button": "middle"
+    }
+  },
+  {
+    "ts": 1767814714067,
+    "type": "mouse",
+    "data": {
+      "name": "mouse",
+      "ctrl": false,
+      "meta": false,
+      "shift": false,
+      "type": "X10",
+      "raw": [
+        97,
+        57,
+        80,
+        "\u001b[Ma9P"
+      ],
+      "buf": {
+        "type": "Buffer",
+        "data": [
+          27,
+          91,
+          77,
+          97,
+          57,
+          80
+        ]
+      },
+      "x": 24,
+      "y": 47,
+      "action": "wheeldown",
+      "button": "middle"
+    }
+  },
+  {
+    "ts": 1767814714104,
+    "type": "mouse",
+    "data": {
+      "name": "mouse",
+      "ctrl": false,
+      "meta": false,
+      "shift": false,
+      "type": "X10",
+      "raw": [
+        97,
+        57,
+        80,
+        "\u001b[Ma9P"
+      ],
+      "buf": {
+        "type": "Buffer",
+        "data": [
+          27,
+          91,
+          77,
+          97,
+          57,
+          80
+        ]
+      },
+      "x": 24,
+      "y": 47,
+      "action": "wheeldown",
+      "button": "middle"
+    }
+  },
+  {
+    "ts": 1767814714121,
+    "type": "mouse",
+    "data": {
+      "name": "mouse",
+      "ctrl": false,
+      "meta": false,
+      "shift": false,
+      "type": "X10",
+      "raw": [
+        97,
+        57,
+        80,
+        "\u001b[Ma9P"
+      ],
+      "buf": {
+        "type": "Buffer",
+        "data": [
+          27,
+          91,
+          77,
+          97,
+          57,
+          80
+        ]
+      },
+      "x": 24,
+      "y": 47,
+      "action": "wheeldown",
+      "button": "middle"
+    }
+  },
+  {
+    "ts": 1767814714152,
+    "type": "mouse",
+    "data": {
+      "name": "mouse",
+      "ctrl": false,
+      "meta": false,
+      "shift": false,
+      "type": "X10",
+      "raw": [
+        97,
+        57,
+        80,
+        "\u001b[Ma9P"
+      ],
+      "buf": {
+        "type": "Buffer",
+        "data": [
+          27,
+          91,
+          77,
+          97,
+          57,
+          80
+        ]
+      },
+      "x": 24,
+      "y": 47,
+      "action": "wheeldown",
+      "button": "middle"
+    }
+  },
+  {
+    "ts": 1767814714167,
+    "type": "mouse",
+    "data": {
+      "name": "mouse",
+      "ctrl": false,
+      "meta": false,
+      "shift": false,
+      "type": "X10",
+      "raw": [
+        97,
+        57,
+        80,
+        "\u001b[Ma9P"
+      ],
+      "buf": {
+        "type": "Buffer",
+        "data": [
+          27,
+          91,
+          77,
+          97,
+          57,
+          80
+        ]
+      },
+      "x": 24,
+      "y": 47,
+      "action": "wheeldown",
+      "button": "middle"
+    }
+  },
+  {
+    "ts": 1767814714199,
+    "type": "mouse",
+    "data": {
+      "name": "mouse",
+      "ctrl": false,
+      "meta": false,
+      "shift": false,
+      "type": "X10",
+      "raw": [
+        97,
+        57,
+        80,
+        "\u001b[Ma9P"
+      ],
+      "buf": {
+        "type": "Buffer",
+        "data": [
+          27,
+          91,
+          77,
+          97,
+          57,
+          80
+        ]
+      },
+      "x": 24,
+      "y": 47,
+      "action": "wheeldown",
+      "button": "middle"
+    }
+  },
+  {
+    "ts": 1767814714233,
+    "type": "mouse",
+    "data": {
+      "name": "mouse",
+      "ctrl": false,
+      "meta": false,
+      "shift": false,
+      "type": "X10",
+      "raw": [
+        97,
+        57,
+        80,
+        "\u001b[Ma9P"
+      ],
+      "buf": {
+        "type": "Buffer",
+        "data": [
+          27,
+          91,
+          77,
+          97,
+          57,
+          80
+        ]
+      },
+      "x": 24,
+      "y": 47,
+      "action": "wheeldown",
+      "button": "middle"
+    }
+  },
+  {
+    "ts": 1767814714249,
+    "type": "mouse",
+    "data": {
+      "name": "mouse",
+      "ctrl": false,
+      "meta": false,
+      "shift": false,
+      "type": "X10",
+      "raw": [
+        97,
+        57,
+        80,
+        "\u001b[Ma9P"
+      ],
+      "buf": {
+        "type": "Buffer",
+        "data": [
+          27,
+          91,
+          77,
+          97,
+          57,
+          80
+        ]
+      },
+      "x": 24,
+      "y": 47,
+      "action": "wheeldown",
+      "button": "middle"
+    }
+  },
+  {
+    "ts": 1767814714289,
+    "type": "mouse",
+    "data": {
+      "name": "mouse",
+      "ctrl": false,
+      "meta": false,
+      "shift": false,
+      "type": "X10",
+      "raw": [
+        97,
+        57,
+        80,
+        "\u001b[Ma9P"
+      ],
+      "buf": {
+        "type": "Buffer",
+        "data": [
+          27,
+          91,
+          77,
+          97,
+          57,
+          80
+        ]
+      },
+      "x": 24,
+      "y": 47,
+      "action": "wheeldown",
+      "button": "middle"
+    }
+  },
+  {
+    "ts": 1767814714315,
+    "type": "mouse",
+    "data": {
+      "name": "mouse",
+      "ctrl": false,
+      "meta": false,
+      "shift": false,
+      "type": "X10",
+      "raw": [
+        97,
+        57,
+        80,
+        "\u001b[Ma9P"
+      ],
+      "buf": {
+        "type": "Buffer",
+        "data": [
+          27,
+          91,
+          77,
+          97,
+          57,
+          80
+        ]
+      },
+      "x": 24,
+      "y": 47,
+      "action": "wheeldown",
+      "button": "middle"
+    }
+  },
+  {
+    "ts": 1767814714348,
+    "type": "mouse",
+    "data": {
+      "name": "mouse",
+      "ctrl": false,
+      "meta": false,
+      "shift": false,
+      "type": "X10",
+      "raw": [
+        97,
+        57,
+        80,
+        "\u001b[Ma9P"
+      ],
+      "buf": {
+        "type": "Buffer",
+        "data": [
+          27,
+          91,
+          77,
+          97,
+          57,
+          80
+        ]
+      },
+      "x": 24,
+      "y": 47,
+      "action": "wheeldown",
+      "button": "middle"
+    }
+  },
+  {
+    "ts": 1767814714382,
+    "type": "mouse",
+    "data": {
+      "name": "mouse",
+      "ctrl": false,
+      "meta": false,
+      "shift": false,
+      "type": "X10",
+      "raw": [
+        97,
+        57,
+        80,
+        "\u001b[Ma9P"
+      ],
+      "buf": {
+        "type": "Buffer",
+        "data": [
+          27,
+          91,
+          77,
+          97,
+          57,
+          80
+        ]
+      },
+      "x": 24,
+      "y": 47,
+      "action": "wheeldown",
+      "button": "middle"
+    }
+  },
+  {
+    "ts": 1767814714398,
+    "type": "mouse",
+    "data": {
+      "name": "mouse",
+      "ctrl": false,
+      "meta": false,
+      "shift": false,
+      "type": "X10",
+      "raw": [
+        97,
+        57,
+        80,
+        "\u001b[Ma9P"
+      ],
+      "buf": {
+        "type": "Buffer",
+        "data": [
+          27,
+          91,
+          77,
+          97,
+          57,
+          80
+        ]
+      },
+      "x": 24,
+      "y": 47,
+      "action": "wheeldown",
+      "button": "middle"
+    }
+  },
+  {
+    "ts": 1767814714434,
+    "type": "mouse",
+    "data": {
+      "name": "mouse",
+      "ctrl": false,
+      "meta": false,
+      "shift": false,
+      "type": "X10",
+      "raw": [
+        97,
+        57,
+        80,
+        "\u001b[Ma9P"
+      ],
+      "buf": {
+        "type": "Buffer",
+        "data": [
+          27,
+          91,
+          77,
+          97,
+          57,
+          80
+        ]
+      },
+      "x": 24,
+      "y": 47,
+      "action": "wheeldown",
+      "button": "middle"
+    }
+  },
+  {
+    "ts": 1767814714472,
+    "type": "mouse",
+    "data": {
+      "name": "mouse",
+      "ctrl": false,
+      "meta": false,
+      "shift": false,
+      "type": "X10",
+      "raw": [
+        97,
+        57,
+        80,
+        "\u001b[Ma9P"
+      ],
+      "buf": {
+        "type": "Buffer",
+        "data": [
+          27,
+          91,
+          77,
+          97,
+          57,
+          80
+        ]
+      },
+      "x": 24,
+      "y": 47,
+      "action": "wheeldown",
+      "button": "middle"
+    }
+  },
+  {
+    "ts": 1767814714502,
+    "type": "mouse",
+    "data": {
+      "name": "mouse",
+      "ctrl": false,
+      "meta": false,
+      "shift": false,
+      "type": "X10",
+      "raw": [
+        97,
+        57,
+        80,
+        "\u001b[Ma9P"
+      ],
+      "buf": {
+        "type": "Buffer",
+        "data": [
+          27,
+          91,
+          77,
+          97,
+          57,
+          80
+        ]
+      },
+      "x": 24,
+      "y": 47,
+      "action": "wheeldown",
+      "button": "middle"
+    }
+  },
+  {
+    "ts": 1767814714519,
+    "type": "mouse",
+    "data": {
+      "name": "mouse",
+      "ctrl": false,
+      "meta": false,
+      "shift": false,
+      "type": "X10",
+      "raw": [
+        97,
+        57,
+        80,
+        "\u001b[Ma9P"
+      ],
+      "buf": {
+        "type": "Buffer",
+        "data": [
+          27,
+          91,
+          77,
+          97,
+          57,
+          80
+        ]
+      },
+      "x": 24,
+      "y": 47,
+      "action": "wheeldown",
+      "button": "middle"
+    }
+  },
+  {
+    "ts": 1767814714550,
+    "type": "mouse",
+    "data": {
+      "name": "mouse",
+      "ctrl": false,
+      "meta": false,
+      "shift": false,
+      "type": "X10",
+      "raw": [
+        97,
+        57,
+        80,
+        "\u001b[Ma9P"
+      ],
+      "buf": {
+        "type": "Buffer",
+        "data": [
+          27,
+          91,
+          77,
+          97,
+          57,
+          80
+        ]
+      },
+      "x": 24,
+      "y": 47,
+      "action": "wheeldown",
+      "button": "middle"
+    }
+  },
+  {
+    "ts": 1767814714591,
+    "type": "mouse",
+    "data": {
+      "name": "mouse",
+      "ctrl": false,
+      "meta": false,
+      "shift": false,
+      "type": "X10",
+      "raw": [
+        97,
+        57,
+        80,
+        "\u001b[Ma9P"
+      ],
+      "buf": {
+        "type": "Buffer",
+        "data": [
+          27,
+          91,
+          77,
+          97,
+          57,
+          80
+        ]
+      },
+      "x": 24,
+      "y": 47,
+      "action": "wheeldown",
+      "button": "middle"
+    }
+  },
+  {
+    "ts": 1767814714632,
+    "type": "mouse",
+    "data": {
+      "name": "mouse",
+      "ctrl": false,
+      "meta": false,
+      "shift": false,
+      "type": "X10",
+      "raw": [
+        97,
+        57,
+        80,
+        "\u001b[Ma9P"
+      ],
+      "buf": {
+        "type": "Buffer",
+        "data": [
+          27,
+          91,
+          77,
+          97,
+          57,
+          80
+        ]
+      },
+      "x": 24,
+      "y": 47,
+      "action": "wheeldown",
+      "button": "middle"
+    }
+  },
+  {
+    "ts": 1767814714671,
+    "type": "mouse",
+    "data": {
+      "name": "mouse",
+      "ctrl": false,
+      "meta": false,
+      "shift": false,
+      "type": "X10",
+      "raw": [
+        97,
+        57,
+        80,
+        "\u001b[Ma9P"
+      ],
+      "buf": {
+        "type": "Buffer",
+        "data": [
+          27,
+          91,
+          77,
+          97,
+          57,
+          80
+        ]
+      },
+      "x": 24,
+      "y": 47,
+      "action": "wheeldown",
+      "button": "middle"
+    }
+  },
+  {
+    "ts": 1767814714711,
+    "type": "mouse",
+    "data": {
+      "name": "mouse",
+      "ctrl": false,
+      "meta": false,
+      "shift": false,
+      "type": "X10",
+      "raw": [
+        97,
+        57,
+        80,
+        "\u001b[Ma9P"
+      ],
+      "buf": {
+        "type": "Buffer",
+        "data": [
+          27,
+          91,
+          77,
+          97,
+          57,
+          80
+        ]
+      },
+      "x": 24,
+      "y": 47,
+      "action": "wheeldown",
+      "button": "middle"
+    }
+  },
+  {
+    "ts": 1767814714726,
+    "type": "mouse",
+    "data": {
+      "name": "mouse",
+      "ctrl": false,
+      "meta": false,
+      "shift": false,
+      "type": "X10",
+      "raw": [
+        97,
+        57,
+        80,
+        "\u001b[Ma9P"
+      ],
+      "buf": {
+        "type": "Buffer",
+        "data": [
+          27,
+          91,
+          77,
+          97,
+          57,
+          80,
+          27,
+          91,
+          77,
+          97,
+          57,
+          80,
+          27,
+          91,
+          77,
+          97,
+          57,
+          80
+        ]
+      },
+      "x": 24,
+      "y": 47,
+      "action": "wheeldown",
+      "button": "middle"
+    }
+  },
+  {
+    "ts": 1767814714743,
+    "type": "mouse",
+    "data": {
+      "name": "mouse",
+      "ctrl": false,
+      "meta": false,
+      "shift": false,
+      "type": "X10",
+      "raw": [
+        97,
+        57,
+        80,
+        "\u001b[Ma9P"
+      ],
+      "buf": {
+        "type": "Buffer",
+        "data": [
+          27,
+          91,
+          77,
+          97,
+          57,
+          80
+        ]
+      },
+      "x": 24,
+      "y": 47,
+      "action": "wheeldown",
+      "button": "middle"
+    }
+  },
+  {
+    "ts": 1767814714760,
+    "type": "mouse",
+    "data": {
+      "name": "mouse",
+      "ctrl": false,
+      "meta": false,
+      "shift": false,
+      "type": "X10",
+      "raw": [
+        97,
+        57,
+        80,
+        "\u001b[Ma9P"
+      ],
+      "buf": {
+        "type": "Buffer",
+        "data": [
+          27,
+          91,
+          77,
+          97,
+          57,
+          80
+        ]
+      },
+      "x": 24,
+      "y": 47,
+      "action": "wheeldown",
+      "button": "middle"
+    }
+  },
+  {
+    "ts": 1767814714778,
+    "type": "mouse",
+    "data": {
+      "name": "mouse",
+      "ctrl": false,
+      "meta": false,
+      "shift": false,
+      "type": "X10",
+      "raw": [
+        97,
+        57,
+        80,
+        "\u001b[Ma9P"
+      ],
+      "buf": {
+        "type": "Buffer",
+        "data": [
+          27,
+          91,
+          77,
+          97,
+          57,
+          80
+        ]
+      },
+      "x": 24,
+      "y": 47,
+      "action": "wheeldown",
+      "button": "middle"
+    }
+  },
+  {
+    "ts": 1767814715604,
+    "type": "mouse",
+    "data": {
+      "name": "mouse",
+      "ctrl": false,
+      "meta": false,
+      "shift": false,
+      "type": "X10",
+      "raw": [
+        96,
+        57,
+        58,
+        "\u001b[M`9:"
+      ],
+      "buf": {
+        "type": "Buffer",
+        "data": [
+          27,
+          91,
+          77,
+          96,
+          57,
+          58
+        ]
+      },
+      "x": 24,
+      "y": 25,
+      "action": "wheelup",
+      "button": "middle"
+    }
+  },
+  {
+    "ts": 1767814715632,
+    "type": "mouse",
+    "data": {
+      "name": "mouse",
+      "ctrl": false,
+      "meta": false,
+      "shift": false,
+      "type": "X10",
+      "raw": [
+        96,
+        57,
+        58,
+        "\u001b[M`9:"
+      ],
+      "buf": {
+        "type": "Buffer",
+        "data": [
+          27,
+          91,
+          77,
+          96,
+          57,
+          58
+        ]
+      },
+      "x": 24,
+      "y": 25,
+      "action": "wheelup",
+      "button": "middle"
+    }
+  },
+  {
+    "ts": 1767814715660,
+    "type": "mouse",
+    "data": {
+      "name": "mouse",
+      "ctrl": false,
+      "meta": false,
+      "shift": false,
+      "type": "X10",
+      "raw": [
+        96,
+        57,
+        58,
+        "\u001b[M`9:"
+      ],
+      "buf": {
+        "type": "Buffer",
+        "data": [
+          27,
+          91,
+          77,
+          96,
+          57,
+          58
+        ]
+      },
+      "x": 24,
+      "y": 25,
+      "action": "wheelup",
+      "button": "middle"
+    }
+  },
+  {
+    "ts": 1767814715684,
+    "type": "mouse",
+    "data": {
+      "name": "mouse",
+      "ctrl": false,
+      "meta": false,
+      "shift": false,
+      "type": "X10",
+      "raw": [
+        96,
+        57,
+        58,
+        "\u001b[M`9:"
+      ],
+      "buf": {
+        "type": "Buffer",
+        "data": [
+          27,
+          91,
+          77,
+          96,
+          57,
+          58
+        ]
+      },
+      "x": 24,
+      "y": 25,
+      "action": "wheelup",
+      "button": "middle"
+    }
+  },
+  {
+    "ts": 1767814715707,
+    "type": "mouse",
+    "data": {
+      "name": "mouse",
+      "ctrl": false,
+      "meta": false,
+      "shift": false,
+      "type": "X10",
+      "raw": [
+        96,
+        57,
+        58,
+        "\u001b[M`9:"
+      ],
+      "buf": {
+        "type": "Buffer",
+        "data": [
+          27,
+          91,
+          77,
+          96,
+          57,
+          58
+        ]
+      },
+      "x": 24,
+      "y": 25,
+      "action": "wheelup",
+      "button": "middle"
+    }
+  },
+  {
+    "ts": 1767814715733,
+    "type": "mouse",
+    "data": {
+      "name": "mouse",
+      "ctrl": false,
+      "meta": false,
+      "shift": false,
+      "type": "X10",
+      "raw": [
+        96,
+        57,
+        58,
+        "\u001b[M`9:"
+      ],
+      "buf": {
+        "type": "Buffer",
+        "data": [
+          27,
+          91,
+          77,
+          96,
+          57,
+          58
+        ]
+      },
+      "x": 24,
+      "y": 25,
+      "action": "wheelup",
+      "button": "middle"
+    }
+  },
+  {
+    "ts": 1767814715766,
+    "type": "mouse",
+    "data": {
+      "name": "mouse",
+      "ctrl": false,
+      "meta": false,
+      "shift": false,
+      "type": "X10",
+      "raw": [
+        96,
+        57,
+        58,
+        "\u001b[M`9:"
+      ],
+      "buf": {
+        "type": "Buffer",
+        "data": [
+          27,
+          91,
+          77,
+          96,
+          57,
+          58
+        ]
+      },
+      "x": 24,
+      "y": 25,
+      "action": "wheelup",
+      "button": "middle"
+    }
+  },
+  {
+    "ts": 1767814715792,
+    "type": "mouse",
+    "data": {
+      "name": "mouse",
+      "ctrl": false,
+      "meta": false,
+      "shift": false,
+      "type": "X10",
+      "raw": [
+        96,
+        57,
+        58,
+        "\u001b[M`9:"
+      ],
+      "buf": {
+        "type": "Buffer",
+        "data": [
+          27,
+          91,
+          77,
+          96,
+          57,
+          58
+        ]
+      },
+      "x": 24,
+      "y": 25,
+      "action": "wheelup",
+      "button": "middle"
+    }
+  },
+  {
+    "ts": 1767814715822,
+    "type": "mouse",
+    "data": {
+      "name": "mouse",
+      "ctrl": false,
+      "meta": false,
+      "shift": false,
+      "type": "X10",
+      "raw": [
+        96,
+        57,
+        58,
+        "\u001b[M`9:"
+      ],
+      "buf": {
+        "type": "Buffer",
+        "data": [
+          27,
+          91,
+          77,
+          96,
+          57,
+          58
+        ]
+      },
+      "x": 24,
+      "y": 25,
+      "action": "wheelup",
+      "button": "middle"
+    }
+  },
+  {
+    "ts": 1767814715847,
+    "type": "mouse",
+    "data": {
+      "name": "mouse",
+      "ctrl": false,
+      "meta": false,
+      "shift": false,
+      "type": "X10",
+      "raw": [
+        96,
+        57,
+        58,
+        "\u001b[M`9:"
+      ],
+      "buf": {
+        "type": "Buffer",
+        "data": [
+          27,
+          91,
+          77,
+          96,
+          57,
+          58
+        ]
+      },
+      "x": 24,
+      "y": 25,
+      "action": "wheelup",
+      "button": "middle"
+    }
+  },
+  {
+    "ts": 1767814715870,
+    "type": "mouse",
+    "data": {
+      "name": "mouse",
+      "ctrl": false,
+      "meta": false,
+      "shift": false,
+      "type": "X10",
+      "raw": [
+        96,
+        57,
+        58,
+        "\u001b[M`9:"
+      ],
+      "buf": {
+        "type": "Buffer",
+        "data": [
+          27,
+          91,
+          77,
+          96,
+          57,
+          58,
+          27,
+          91,
+          77,
+          96,
+          57,
+          58
+        ]
+      },
+      "x": 24,
+      "y": 25,
+      "action": "wheelup",
+      "button": "middle"
+    }
+  },
+  {
+    "ts": 1767814715898,
+    "type": "mouse",
+    "data": {
+      "name": "mouse",
+      "ctrl": false,
+      "meta": false,
+      "shift": false,
+      "type": "X10",
+      "raw": [
+        96,
+        57,
+        58,
+        "\u001b[M`9:"
+      ],
+      "buf": {
+        "type": "Buffer",
+        "data": [
+          27,
+          91,
+          77,
+          96,
+          57,
+          58,
+          27,
+          91,
+          77,
+          96,
+          57,
+          58
+        ]
+      },
+      "x": 24,
+      "y": 25,
+      "action": "wheelup",
+      "button": "middle"
+    }
+  },
+  {
+    "ts": 1767814715927,
+    "type": "mouse",
+    "data": {
+      "name": "mouse",
+      "ctrl": false,
+      "meta": false,
+      "shift": false,
+      "type": "X10",
+      "raw": [
+        96,
+        57,
+        58,
+        "\u001b[M`9:"
+      ],
+      "buf": {
+        "type": "Buffer",
+        "data": [
+          27,
+          91,
+          77,
+          96,
+          57,
+          58
+        ]
+      },
+      "x": 24,
+      "y": 25,
+      "action": "wheelup",
+      "button": "middle"
+    }
+  },
+  {
+    "ts": 1767814715958,
+    "type": "mouse",
+    "data": {
+      "name": "mouse",
+      "ctrl": false,
+      "meta": false,
+      "shift": false,
+      "type": "X10",
+      "raw": [
+        96,
+        57,
+        58,
+        "\u001b[M`9:"
+      ],
+      "buf": {
+        "type": "Buffer",
+        "data": [
+          27,
+          91,
+          77,
+          96,
+          57,
+          58
+        ]
+      },
+      "x": 24,
+      "y": 25,
+      "action": "wheelup",
+      "button": "middle"
+    }
+  },
+  {
+    "ts": 1767814715987,
+    "type": "mouse",
+    "data": {
+      "name": "mouse",
+      "ctrl": false,
+      "meta": false,
+      "shift": false,
+      "type": "X10",
+      "raw": [
+        96,
+        57,
+        58,
+        "\u001b[M`9:"
+      ],
+      "buf": {
+        "type": "Buffer",
+        "data": [
+          27,
+          91,
+          77,
+          96,
+          57,
+          58,
+          27,
+          91,
+          77,
+          96,
+          57,
+          58
+        ]
+      },
+      "x": 24,
+      "y": 25,
+      "action": "wheelup",
+      "button": "middle"
+    }
+  },
+  {
+    "ts": 1767814716013,
+    "type": "mouse",
+    "data": {
+      "name": "mouse",
+      "ctrl": false,
+      "meta": false,
+      "shift": false,
+      "type": "X10",
+      "raw": [
+        96,
+        57,
+        58,
+        "\u001b[M`9:"
+      ],
+      "buf": {
+        "type": "Buffer",
+        "data": [
+          27,
+          91,
+          77,
+          96,
+          57,
+          58
+        ]
+      },
+      "x": 24,
+      "y": 25,
+      "action": "wheelup",
+      "button": "middle"
+    }
+  },
+  {
+    "ts": 1767814716037,
+    "type": "mouse",
+    "data": {
+      "name": "mouse",
+      "ctrl": false,
+      "meta": false,
+      "shift": false,
+      "type": "X10",
+      "raw": [
+        96,
+        57,
+        58,
+        "\u001b[M`9:"
+      ],
+      "buf": {
+        "type": "Buffer",
+        "data": [
+          27,
+          91,
+          77,
+          96,
+          57,
+          58
+        ]
+      },
+      "x": 24,
+      "y": 25,
+      "action": "wheelup",
+      "button": "middle"
+    }
+  },
+  {
+    "ts": 1767814716063,
+    "type": "mouse",
+    "data": {
+      "name": "mouse",
+      "ctrl": false,
+      "meta": false,
+      "shift": false,
+      "type": "X10",
+      "raw": [
+        96,
+        57,
+        58,
+        "\u001b[M`9:"
+      ],
+      "buf": {
+        "type": "Buffer",
+        "data": [
+          27,
+          91,
+          77,
+          96,
+          57,
+          58,
+          27,
+          91,
+          77,
+          96,
+          57,
+          58
+        ]
+      },
+      "x": 24,
+      "y": 25,
+      "action": "wheelup",
+      "button": "middle"
+    }
+  },
+  {
+    "ts": 1767814716098,
+    "type": "mouse",
+    "data": {
+      "name": "mouse",
+      "ctrl": false,
+      "meta": false,
+      "shift": false,
+      "type": "X10",
+      "raw": [
+        96,
+        57,
+        58,
+        "\u001b[M`9:"
+      ],
+      "buf": {
+        "type": "Buffer",
+        "data": [
+          27,
+          91,
+          77,
+          96,
+          57,
+          58
+        ]
+      },
+      "x": 24,
+      "y": 25,
+      "action": "wheelup",
+      "button": "middle"
+    }
+  },
+  {
+    "ts": 1767814716124,
+    "type": "mouse",
+    "data": {
+      "name": "mouse",
+      "ctrl": false,
+      "meta": false,
+      "shift": false,
+      "type": "X10",
+      "raw": [
+        96,
+        57,
+        58,
+        "\u001b[M`9:"
+      ],
+      "buf": {
+        "type": "Buffer",
+        "data": [
+          27,
+          91,
+          77,
+          96,
+          57,
+          58
+        ]
+      },
+      "x": 24,
+      "y": 25,
+      "action": "wheelup",
+      "button": "middle"
+    }
+  },
+  {
+    "ts": 1767814716173,
+    "type": "mouse",
+    "data": {
+      "name": "mouse",
+      "ctrl": false,
+      "meta": false,
+      "shift": false,
+      "type": "X10",
+      "raw": [
+        96,
+        57,
+        58,
+        "\u001b[M`9:"
+      ],
+      "buf": {
+        "type": "Buffer",
+        "data": [
+          27,
+          91,
+          77,
+          96,
+          57,
+          58,
+          27,
+          91,
+          77,
+          96,
+          57,
+          58,
+          27,
+          91,
+          77,
+          96,
+          57,
+          58,
+          27,
+          91,
+          77,
+          96,
+          57,
+          58
+        ]
+      },
+      "x": 24,
+      "y": 25,
+      "action": "wheelup",
+      "button": "middle"
+    }
+  },
+  {
+    "ts": 1767814716197,
+    "type": "mouse",
+    "data": {
+      "name": "mouse",
+      "ctrl": false,
+      "meta": false,
+      "shift": false,
+      "type": "X10",
+      "raw": [
+        96,
+        57,
+        58,
+        "\u001b[M`9:"
+      ],
+      "buf": {
+        "type": "Buffer",
+        "data": [
+          27,
+          91,
+          77,
+          96,
+          57,
+          58,
+          27,
+          91,
+          77,
+          96,
+          57,
+          58,
+          27,
+          91,
+          77,
+          96,
+          57,
+          58
+        ]
+      },
+      "x": 24,
+      "y": 25,
+      "action": "wheelup",
+      "button": "middle"
+    }
+  },
+  {
+    "ts": 1767814716224,
+    "type": "mouse",
+    "data": {
+      "name": "mouse",
+      "ctrl": false,
+      "meta": false,
+      "shift": false,
+      "type": "X10",
+      "raw": [
+        96,
+        57,
+        58,
+        "\u001b[M`9:"
+      ],
+      "buf": {
+        "type": "Buffer",
+        "data": [
+          27,
+          91,
+          77,
+          96,
+          57,
+          58,
+          27,
+          91,
+          77,
+          96,
+          57,
+          58
+        ]
+      },
+      "x": 24,
+      "y": 25,
+      "action": "wheelup",
+      "button": "middle"
+    }
+  },
+  {
+    "ts": 1767814716250,
+    "type": "mouse",
+    "data": {
+      "name": "mouse",
+      "ctrl": false,
+      "meta": false,
+      "shift": false,
+      "type": "X10",
+      "raw": [
+        96,
+        57,
+        58,
+        "\u001b[M`9:"
+      ],
+      "buf": {
+        "type": "Buffer",
+        "data": [
+          27,
+          91,
+          77,
+          96,
+          57,
+          58
+        ]
+      },
+      "x": 24,
+      "y": 25,
+      "action": "wheelup",
+      "button": "middle"
+    }
+  },
+  {
+    "ts": 1767814717268,
+    "type": "resize",
+    "data": {
+      "cols": 66,
+      "rows": 29
+    }
+  },
+  {
+    "ts": 1767814718342,
+    "type": "keypress",
+    "data": {
+      "ch": "\u0001",
+      "key": {
+        "sequence": "\u0001",
+        "name": "a",
+        "ctrl": true,
+        "meta": false,
+        "shift": false,
+        "full": "C-a"
+      }
+    }
+  },
+  {
+    "ts": 1767814721309,
+    "type": "keypress",
+    "data": {
+      "ch": "\u0003",
+      "key": {
+        "sequence": "\u0003",
+        "name": "c",
+        "ctrl": true,
+        "meta": false,
+        "shift": false,
+        "full": "C-c"
+      }
+    }
+  }
+]

@@ -1,0 +1,34 @@
+bisc-bot/
+├── index.js                # Arquivo principal; inicializa o bot, banco de dados e handlers
+├── package.json            # Manifesto do projeto; lista dependências e scripts de execução
+├── .env                    # Armazena variáveis sensíveis (Token do bot, URI do MongoDB)
+├── cnv.js                  # Script utilitário para escanear o projeto e gerar relatórios
+│
+├── config/                 # Configurações estáticas
+│   ├── config.json         # Definições gerais e prefixos
+│   └── welcome_data.json   # Dados temporários de boas-vindas (antes da migração)
+│
+├── database/               # Camada de persistência de dados
+│   ├── connect.js          # Configuração da conexão com o MongoDB via Mongoose
+│   └── models/             # Esquemas do banco de dados (Economia, Reputação, Welcome, etc.)
+│
+├── handlers/               # Inicializadores de sistema
+│   ├── commandHandler.js   # Registra e carrega os comandos Slash no Discord
+│   └── eventHandler.js     # Lê a pasta src/events e ativa os ouvintes de eventos
+│
+├── src/                    # Código fonte lógico
+│   ├── commands/           # Diretório de comandos divididos por categoria
+│   │   ├── admin/          # Comandos de moderação e gerenciamento
+│   │   ├── economy/        # Lógica de banco, cassino e transações
+│   │   ├── fun/            # Comandos de entretenimento e interação
+│   │   └── general/        # Comandos informativos e utilitários
+│   │
+│   └── events/             # Listeners de eventos da API do Discord
+│       ├── ready.js        # Executado quando o bot fica online
+│       ├── messageCreate.js# Gerencia mensagens recebidas
+│       └── guildMemberAdd.js# Dispara ações quando alguém entra no servidor
+│
+├── scripts/                # Ferramentas de manutenção
+│   └── maintenance/        # Scripts de migração de dados (ex: JSON para MongoDB)
+│
+└── assets/                 # Recursos visuais (Ícones e imagens do projeto)

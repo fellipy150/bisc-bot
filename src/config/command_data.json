@@ -1,0 +1,172 @@
+{
+  "ping": {
+    "nome": "ping",
+    "apelidos": [],
+    "descricao": "Responde com Pong!",
+    "uso": "..ping",
+    "categoria": "info"
+  },
+  "addprefix": {
+    "nome": "addprefix",
+    "apelidos": [
+      "botarprefixo"
+    ],
+    "descricao": "Adiciona um novo prefixo",
+    "uso": "..addprefix <prefixo>",
+    "categoria": "config"
+  },
+  "removeprefix": {
+    "nome": "removeprefix",
+    "apelidos": [
+      "tirarprefixo"
+    ],
+    "descricao": "Remove um prefixo",
+    "uso": "..removeprefix <prefixo>",
+    "categoria": "config"
+  },
+  "listprefixes": {
+    "nome": "listprefixes",
+    "apelidos": [
+      "listaprefixo"
+    ],
+    "descricao": "Lista todos os prefixos",
+    "uso": "..listprefixes",
+    "categoria": "config"
+  },
+  "prefix": {
+    "nome": "prefix",
+    "apelidos": [],
+    "descricao": "Gerencia prefixos via subcomandos: add/remove/list",
+    "uso": "..prefix <add|remove|list> [prefixo]",
+    "categoria": "config"
+  },
+  "help": {
+    "nome": "help",
+    "apelidos": [
+      "ajuda",
+      "h"
+    ],
+    "descricao": "fornece descrição e outras informações úteis sobre outros comandos",
+    "uso": "..help",
+    "categoria": "info"
+  },
+  "mkcmd": {
+    "nome": "mkcmd",
+    "apelidos": [],
+    "descricao": "Cria um novo comando dinamicamente via perguntas",
+    "uso": "..mkcmd",
+    "categoria": "config"
+  },
+  "setwelcome": {
+    "nome": "setwelcome",
+    "apelidos": [],
+    "descricao": "comando para configurar um sistema de boas-vindas",
+    "uso": "..setwelcome",
+    "categoria": "welcome"
+  },
+  "removewelcome": {
+    "nome": "removewelcome",
+    "apelidos": [],
+    "descricao": "comando para remover a configuração de um sistema de boas-vindas de um canal",
+    "uso": "..removewelcome",
+    "categoria": "welcome"
+  },
+  "TESTE": {
+    "nome": "TESTE",
+    "apelidos": [],
+    "descricao": "RESTESTESTESTES",
+    "uso": "..TESTE",
+    "categoria": "info"
+  },
+  "twimg": {
+    "nome": "twimg",
+    "apelidos": [],
+    "descricao": "extrai o link do .mp4 do video do twitter",
+    "uso": "..twimg",
+    "categoria": "util"
+  },
+  "viewwelcome": {
+    "nome": "viewwelcome",
+    "apelidos": [],
+    "descricao": "um comando para ver como está configurado a mensagem de boas-vindas do servidor",
+    "uso": "..viewwelcome",
+    "categoria": "welcome"
+  },
+  "welcome": {
+    "nome": "welcome",
+    "apelidos": [],
+    "descricao": "sistema de boas-vindas",
+    "uso": "..welcome",
+    "categoria": "welcome"
+  },
+  "editcmdmsg": {
+    "nome": "editcmdmsg",
+    "apelidos": [],
+    "descricao": "usuário vai executar esse comando mencionando algum comando que ele executou, aí então ele vai procurar por todas as mensagens que esse comando envia, vai listar, vai mandar para o usuário escolher qual mensagem ser editada, após o usuário enviar nova mensagem, vai editar o arquivo com a nova mensagem do usuário",
+    "uso": "..editcmdmsg",
+    "categoria": "config"
+  },
+  "bye": {
+    "nome": "bye",
+    "apelidos": [],
+    "descricao": "mensagem de adeus para quando um membro sair",
+    "uso": "..bye",
+    "categoria": "bye"
+  },
+  "setbye": {
+    "nome": "setbye",
+    "apelidos": [],
+    "descricao": "altera a mensagem enviada quando alguém sai",
+    "uso": "..setbye",
+    "categoria": "bye"
+  },
+  "removebye": {
+    "nome": "removebye",
+    "apelidos": [],
+    "descricao": "ele desativa uma mensagem que é enviada quando alguém sai",
+    "uso": "..removebye",
+    "categoria": "bye"
+  },
+  "viewbye": {
+    "nome": "viewbye",
+    "apelidos": [],
+    "descricao": "faz uma preview de como é uma mensagem que é enviada quando alguém sai do servidor",
+    "uso": "..viewbye",
+    "categoria": "bye"
+  },
+  "perfil": {
+    "nome": "perfil",
+    "apelidos": [],
+    "descricao": "mostra o avatar o nome, o dinheiro, XP e o nível em uma embed",
+    "uso": "..perfil",
+    "categoria": "economy"
+  },
+  "carteira": {
+    "nome": "carteira",
+    "apelidos": [],
+    "descricao": "comando para ver o saldo de dinheiro, seu ou de outra pessoa marcando pelo @",
+    "uso": "..carteira",
+    "categoria": "economy"
+  },
+  "pay": {
+    "nome": "pay",
+    "apelidos": [],
+    "descricao": "transferir dinheiro da carteira de usuário pro outro",
+    "uso": "..pay",
+    "categoria": "economy"
+  },
+  "daily": {
+    "nome": "daily",
+    "apelidos": [],
+    "descricao": "comando de recompensa diária, xp e dinheiro a cada 24h",
+    "uso": "..daily",
+    "categoria": "economy"
+  },
+  "banco": {
+    "nome": "banco",
+    "apelidos": [],
+    "descricao": "sistema pra guardar e sacar o dinheiro, evitar ter a carteira roubada",
+    "uso": "..banco",
+    "categoria": "economy"
+  }
+}
