@@ -5,7 +5,7 @@ import fsSync from 'fs';
 import path from 'path';
 import { exec } from 'child_process';
 import os from 'os';
-import ./blessed.json from 'blessed';
+import blessed from 'blessed';
 
 // =======================
 // CONFIGURAÇÃO VISUAL
