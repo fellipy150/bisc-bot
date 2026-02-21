@@ -71,8 +71,16 @@ class BotProcessManager extends EventEmitter {
      Bun (spawn + streams)
      ----------------------- */
   _startWithBun() {
+    // Detecta se estamos no Termux e pega o caminho absoluto da pasta raiz (PREFIX)
+    const isTermux = !!process.env.PREFIX && process.env.PREFIX.includes('termux');
+    
+    // Se for Termux, process.execPath aponta para o 'grun'. Usamos o caminho absoluto do Bun.
+    const bunCommand = isTermux
+      ? [`${process.env.PREFIX}/bin/grun`, `${process.env.HOME}/.bun/bin/bun`, LAUNCHER_PATH]
+      : [process.execPath, LAUNCHER_PATH];
+
     this.child = Bun.spawn(
-      ['bun', LAUNCHER_PATH],
+      bunCommand,
       {
         stdin: 'pipe',
         stdout: 'pipe',
@@ -93,7 +101,9 @@ class BotProcessManager extends EventEmitter {
 
   async _readBunStdout() {
     for await (const chunk of this.child.stdout) {
-      const lines = chunk.toString().split('\n');
+      // Buffer.from garante que o Uint8Array seja convertido para string de texto
+      const text = Buffer.from(chunk).toString('utf-8');
+      const lines = text.split('\n');
       for (const line of lines) {
         if (!line.trim()) continue;
 
@@ -113,7 +123,8 @@ class BotProcessManager extends EventEmitter {
 
   async _readBunStderr() {
     for await (const chunk of this.child.stderr) {
-      this._emitLog(chunk.toString(), true);
+      const text = Buffer.from(chunk).toString('utf-8');
+      this._emitLog(text, true);
     }
   }
 

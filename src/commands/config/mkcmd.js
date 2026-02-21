@@ -76,15 +76,14 @@ export default {
       if (!fs.existsSync(finalDir)) fs.mkdirSync(finalDir, { recursive: true });
 
       const configDepth = categoria === "none" ? ".." : "../..";
-      const cmdFile = path.join(finalDir, `${name}.js`);
-      
-      // --- NOVO TEMPLATE CONCILIADO ---
+      const cmdFile = path.join(finalDir, `${name}.js`);      // --- NOVO TEMPLATE CONCILIADO ---
       const template =
 `import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import fs from 'fs';
 import path from 'path';
 import { EmbedBuilder, PermissionFlagsBits } from 'discord.js';
+import msg from '${configDepth}/config/msg-handler.js';
 import allData from '${configDepth}/config/command_data.json' with { type: 'json' };
 
 // Configuração de ambiente ESM
@@ -108,7 +107,7 @@ export default {
     try {
       // 1. Verificações Iniciais (Sanity Checks)
       if (this.data.usage && args.length === 0 && this.data.usage.includes('<')) {
-        return message.reply(\`⚠️ Uso incorreto! Tente: \\\`\${d.uso}\\\` \`);
+        return message.reply( msg("${name}.uso_incorreto", { uso: d.uso }) );
       }
 
       // 2. Rascunho da Lógica:
@@ -116,21 +115,25 @@ export default {
 
       // TODO: Implementar lógica de ${name}
       console.log(\`Comando \${d.nome} executado por \${message.author.tag}\`);
+      await message.reply( msg("${name}.resposta_exemplo") );
 
     } catch (error) {
       console.error(\`[Erro no Comando \${d.nome}]:\`, error);
       
-      const errorEmbed = new EmbedBuilder()
-        .setColor('#ff0000')
-        .setTitle('❌ Erro Interno')
-        .setDescription('Ocorreu um erro ao processar este comando. Tente novamente mais tarde.');
-      
-      return message.reply({ embeds: [errorEmbed] });
+      return message.reply( msg("${name}.erro_interno") );
     }
   }
-};`;
+};
 
-      fs.writeFileSync(cmdFile, template, "utf8");
+/* @register-messages
+{
+  "${name}": {
+    "uso_incorreto": "⚠️ Uso incorreto! Tente: {uso}",
+    "resposta_exemplo": "Mensagem inicial do comando ${name}.",
+    "erro_interno": "❌ Ocorreu um erro ao processar este comando."
+  }
+}
+@end */`;fs.writeFileSync(cmdFile, template, "utf8");
       channel.send(`✅ Comando \`${name}\` criado com sucesso!`);
 
     } catch (err) {

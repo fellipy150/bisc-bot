@@ -54,9 +54,7 @@ if (isBun) {
   // Usamos import dinâmico para evitar carregar código Node quando estivermos em Bun.
   // Nenhum log ou saída extra — detecção silenciosa.
   await import("./bun-launcher.js");
-  // Garantimos que nada mais rode aqui.
-  export default undefined;
-}
+} else {
 
 // --------------------------
 // Ramo Node.js (fork + IPC)
@@ -138,3 +136,4 @@ process.on("uncaughtException", (err) => {
     process.exit(1);
   }
 })();
+}
