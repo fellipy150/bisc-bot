@@ -1,170 +1,276 @@
 {
   "ping": {
-  "nome": "ping",
-  "apelidos": ["latencia", "pong"],
-  "descricao": "Responde com 'Pong!' para verificar se o bot está online.",
-  "uso": "..ping",
-  "categoria": "info"
-},
+    "nome": "ping",
+    "apelidos": [
+      "latencia",
+      "pong"
+    ],
+    "descricao": "Responde com 'Pong!' para verificar se o bot está online.",
+    "uso": "..ping",
+    "categoria": "info"
+  },
   "addprefix": {
     "nome": "addprefix",
-    "apelidos": ["botarprefixo", "novoprefixo", "adicionarprefixo"],
+    "apelidos": [
+      "botarprefixo",
+      "novoprefixo",
+      "adicionarprefixo"
+    ],
     "descricao": "Adiciona um novo prefixo.",
     "uso": "..addprefix <prefixo>",
     "categoria": "config"
   },
   "removeprefix": {
     "nome": "removeprefix",
-    "apelidos": ["tirarprefixo", "removerprefixo", "deletarprefixo"],
+    "apelidos": [
+      "tirarprefixo",
+      "removerprefixo",
+      "deletarprefixo"
+    ],
     "descricao": "Remove um prefixo.",
     "uso": "..removeprefix <prefixo>",
     "categoria": "config"
   },
   "listprefixes": {
     "nome": "listprefixes",
-    "apelidos": ["listaprefixo", "prefixos", "verprefixos"],
+    "apelidos": [
+      "listaprefixo",
+      "prefixos",
+      "verprefixos"
+    ],
     "descricao": "Lista todos os prefixos.",
     "uso": "..listprefixes",
     "categoria": "config"
   },
   "prefix": {
     "nome": "prefix",
-    "apelidos": ["prefixos", "gprefixo"],
+    "apelidos": [
+      "prefixos",
+      "gprefixo"
+    ],
     "descricao": "Gerencia prefixos (add/remove/list).",
     "uso": "..prefix <add|remove|list> [prefixo]",
     "categoria": "config"
   },
   "help": {
     "nome": "help",
-    "apelidos": ["ajuda", "h", "comandos"],
+    "apelidos": [
+      "ajuda",
+      "h",
+      "comandos"
+    ],
     "descricao": "Mostra ajuda sobre comandos.",
     "uso": "..help",
     "categoria": "info"
   },
   "mkcmd": {
     "nome": "mkcmd",
-    "apelidos": ["criarcomando", "novocomando", "fazercmd"],
+    "apelidos": [
+      "criarcomando",
+      "novocomando",
+      "fazercmd"
+    ],
     "descricao": "Cria um comando personalizado.",
     "uso": "..mkcmd",
     "categoria": "config"
   },
   "setwelcome": {
     "nome": "setwelcome",
-    "apelidos": ["configwelcome", "bemvindo", "welcomeon"],
+    "apelidos": [
+      "configwelcome",
+      "bemvindo",
+      "welcomeon"
+    ],
     "descricao": "Ativa mensagem de boas-vindas.",
     "uso": "..setwelcome",
     "categoria": "welcome"
   },
   "removewelcome": {
     "nome": "removewelcome",
-    "apelidos": ["welcomeoff", "retirarwelcome", "deswelcome"],
+    "apelidos": [
+      "welcomeoff",
+      "retirarwelcome",
+      "deswelcome"
+    ],
     "descricao": "Desativa mensagem de boas-vindas.",
     "uso": "..removewelcome",
     "categoria": "welcome"
   },
   "twimg": {
     "nome": "twimg",
-    "apelidos": ["twitter", "twvideo", "twlink"],
+    "apelidos": [
+      "twitter",
+      "twvideo",
+      "twlink"
+    ],
     "descricao": "Extrai link MP4 de vídeo do Twitter.",
     "uso": "..twimg",
     "categoria": "util"
   },
   "viewwelcome": {
     "nome": "viewwelcome",
-    "apelidos": ["verwelcome", "prevwelcome", "welcomeview"],
+    "apelidos": [
+      "verwelcome",
+      "prevwelcome",
+      "welcomeview"
+    ],
     "descricao": "Visualiza mensagem de boas-vindas configurada.",
     "uso": "..viewwelcome",
     "categoria": "welcome"
   },
   "welcome": {
     "nome": "welcome",
-    "apelidos": ["boasvindas", "entrada"],
+    "apelidos": [
+      "boasvindas",
+      "entrada"
+    ],
     "descricao": "Gerencia sistema de boas-vindas.",
     "uso": "..welcome",
     "categoria": "welcome"
   },
   "editcmdmsg": {
     "nome": "editcmdmsg",
-    "apelidos": ["editarmensagem", "msgcmd", "editarcomando"],
+    "apelidos": [
+      "editarmensagem",
+      "msgcmd",
+      "editarcomando"
+    ],
     "descricao": "Edita a mensagem enviada por um comando.",
     "uso": "..editcmdmsg",
     "categoria": "config"
   },
   "bye": {
     "nome": "bye",
-    "apelidos": ["adeus", "saida"],
+    "apelidos": [
+      "adeus",
+      "saida"
+    ],
     "descricao": "Gerencia mensagens de despedida.",
     "uso": "..bye",
     "categoria": "bye"
   },
   "setbye": {
     "nome": "setbye",
-    "apelidos": ["configbye", "byeon", "despedida"],
+    "apelidos": [
+      "configbye",
+      "byeon",
+      "despedida"
+    ],
     "descricao": "Ativa mensagem de despedida.",
     "uso": "..setbye",
     "categoria": "bye"
   },
   "removebye": {
     "nome": "removebye",
-    "apelidos": ["byeoff", "retirarbye", "desbye"],
+    "apelidos": [
+      "byeoff",
+      "retirarbye",
+      "desbye"
+    ],
     "descricao": "Desativa mensagem de despedida.",
     "uso": "..removebye",
     "categoria": "bye"
   },
   "viewbye": {
     "nome": "viewbye",
-    "apelidos": ["verbye", "prevbye", "byeview"],
+    "apelidos": [
+      "verbye",
+      "prevbye",
+      "byeview"
+    ],
     "descricao": "Visualiza mensagem de despedida configurada.",
     "uso": "..viewbye",
     "categoria": "bye"
   },
   "perfil": {
     "nome": "perfil",
-    "apelidos": ["profile", "info", "userinfo"],
+    "apelidos": [
+      "profile",
+      "info",
+      "userinfo"
+    ],
     "descricao": "Mostra perfil com avatar, nível, XP e dinheiro.",
     "uso": "..perfil",
     "categoria": "economy"
   },
   "carteira": {
     "nome": "carteira",
-    "apelidos": ["money", "saldo", "dinheiro"],
+    "apelidos": [
+      "money",
+      "saldo",
+      "dinheiro"
+    ],
     "descricao": "Consulta saldo da carteira.",
     "uso": "..carteira",
     "categoria": "economy"
   },
   "pay": {
     "nome": "pay",
-    "apelidos": ["pagar", "transferir", "enviardinheiro"],
+    "apelidos": [
+      "pagar",
+      "transferir",
+      "enviardinheiro"
+    ],
     "descricao": "Transfere dinheiro para outro usuário.",
     "uso": "..pay",
     "categoria": "economy"
   },
   "daily": {
     "nome": "daily",
-    "apelidos": ["diaria", "recompensa", "bonus"],
+    "apelidos": [
+      "diaria",
+      "recompensa",
+      "bonus"
+    ],
     "descricao": "Resgata recompensa diária (XP e dinheiro).",
     "uso": "..daily",
     "categoria": "economy"
   },
   "banco": {
     "nome": "banco",
-    "apelidos": ["bank", "bancoinfo", "salbancario"],
+    "apelidos": [
+      "bank",
+      "bancoinfo",
+      "salbancario"
+    ],
     "descricao": "Consulta saldo do banco.",
     "uso": "..banco",
     "categoria": "economy"
   },
   "depositar": {
     "nome": "depositar",
-    "apelidos": ["deposit", "guardar", "porbanco"],
+    "apelidos": [
+      "deposit",
+      "guardar",
+      "porbanco"
+    ],
     "descricao": "Deposita dinheiro no banco.",
     "uso": "..depositar",
     "categoria": "economy"
   },
   "sacar": {
     "nome": "sacar",
-    "apelidos": ["withdraw", "retirar", "tirarbanco"],
+    "apelidos": [
+      "withdraw",
+      "retirar",
+      "tirarbanco"
+    ],
     "descricao": "Saca dinheiro do banco.",
     "uso": "..sacar",
     "categoria": "economy"
+  },
+  "store_chat": {
+    "nome": "store_chat",
+    "apelidos": [],
+    "descricao": "Grava o histórico de uma conversa, em um chat ou tópico",
+    "uso": "..store_chat",
+    "categoria": "util"
+  },
+  "sync": {
+    "nome": "sync",
+    "apelidos": [],
+    "descricao": "utilitario para fazer sincronias das informações do comando no banco de dados",
+    "uso": "..sync",
+    "categoria": "config"
   }
 }
