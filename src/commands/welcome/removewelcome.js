@@ -1,4 +1,5 @@
 import { ActionRowBuilder, ButtonBuilder, ButtonStyle, ComponentType } from 'discord.js';
+import msg from '../../config/msg-handler.js';
 import allData from '../../config/command_data.json' with { type: 'json' };
 const d = allData['removewelcome'];
 
@@ -15,7 +16,7 @@ export default {
   },
   async execute(message, args, client) {
     if (!message.member.permissions.has('Administrator')) {
-      return message.reply('❌ Você precisa ser administrador para usar este comando!');
+      return message.reply(msg("removewelcome.no_admin"));
     }
 
     const guildId = message.guild.id;
@@ -24,23 +25,22 @@ export default {
     const hasConfig = await WelcomeService.hasWelcomeConfig(guildId);
 
     if (!hasConfig) {
-      return message.reply('⚠️ Nenhuma configuração de boas-vindas foi encontrada neste servidor.');
+      return message.reply(msg("removewelcome.no_config"));
     }
 
     const row = new ActionRowBuilder().addComponents(
       new ButtonBuilder()
         .setCustomId('confirmar_remocao')
-        .setLabel('Sim, desativar')
+        .setLabel(msg("removewelcome.btn_confirm"))
         .setStyle(ButtonStyle.Danger),
       new ButtonBuilder()
         .setCustomId('cancelar_remocao')
-        .setLabel('Cancelar')
+        .setLabel(msg("removewelcome.btn_cancel"))
         .setStyle(ButtonStyle.Secondary)
     );
 
     const confirmMsg = await message.channel.send({
-      content:
-        '🚨 **Atenção:** Você tem certeza que deseja **desativar e apagar** o sistema de boas-vindas deste servidor?',
+      content: msg("removewelcome.warning"),
       components: [row],
     });
 
@@ -60,25 +60,43 @@ export default {
           const configJson = JSON.stringify(oldConfig.toObject(), null, 2).substring(0, 1900);
 
           await interaction.update({
-            content: `✅ **Sistema de boas-vindas desativado.**\n\nBackup da configuração removida:\n\`\`\`json\n${configJson}\n\`\`\``,
+            content: msg("removewelcome.success", { configJson }),
             components: [],
           });
         } else {
           await interaction.update({
-            content: '❌ Erro ao remover a configuração. Tente novamente.',
+            content: msg("removewelcome.error_remove"),
             components: [],
           });
         }
       } else {
-        await interaction.update({ content: '❌ Operação cancelada.', components: [] });
+        await interaction.update({ content: msg("removewelcome.cancelled"), components: [] });
       }
     } catch (err) {
       // Ignora erro de timeout, apenas edita a mensagem
       if (confirmMsg.editable) {
         confirmMsg
-          .edit({ content: '⏳ Tempo esgotado. Operação cancelada.', components: [] })
+          .edit({ content: msg("removewelcome.timeout"), components: [] })
           .catch(() => {});
       }
     }
   },
 };
+
+/*
+@register-messages
+{
+  "removewelcome": {
+    "no_admin": "❌ Você precisa ser administrador para usar este comando!",
+    "no_config": "⚠️ Nenhuma configuração de boas-vindas foi encontrada neste servidor.",
+    "btn_confirm": "Sim, desativar",
+    "btn_cancel": "Cancelar",
+    "warning": "🚨 **Atenção:** Você tem certeza que deseja **desativar e apagar** o sistema de boas-vindas deste servidor?",
+    "success": "✅ **Sistema de boas-vindas desativado.**\n\nBackup da configuração removida:\n```json\n{configJson}\n```",
+    "error_remove": "❌ Erro ao remover a configuração. Tente novamente.",
+    "cancelled": "❌ Operação cancelada.",
+    "timeout": "⏳ Tempo esgotado. Operação cancelada."
+  }
+}
+@end
+*/

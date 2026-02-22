@@ -5,6 +5,7 @@ import {
   ButtonStyle,
   ComponentType,
 } from 'discord.js';
+import msg from '../../config/msg-handler.js';
 import allData from '../../config/command_data.json' with { type: 'json' };
 const d = allData['viewwelcome'];
 
@@ -28,9 +29,7 @@ export default {
     const guildConfig = await WelcomeService.getGuildWelcome(guildId);
 
     if (!guildConfig || !guildConfig.message) {
-      return message.reply(
-        '⚠️ Nenhuma mensagem de boas-vindas configurada neste servidor. Use `welcome add` para configurar.'
-      );
+      return message.reply(msg("viewwelcome.no_welcome"));
     }
 
     const welcome = guildConfig.message;
@@ -131,17 +130,17 @@ export default {
     // Botões
     const row = new ActionRowBuilder().addComponents(
       new ButtonBuilder()
-        .setLabel('Editar')
+        .setLabel(msg("viewwelcome.btn_edit"))
         .setStyle(ButtonStyle.Primary)
         .setCustomId('edit_welcome'),
       new ButtonBuilder()
-        .setLabel('Fechar')
+        .setLabel(msg("viewwelcome.btn_close"))
         .setStyle(ButtonStyle.Secondary)
         .setCustomId('fechar_viewwelcome')
     );
 
     const reply = await message.channel.send({
-      content: content || '**Visualização da mensagem de boas-vindas:**',
+      content: content || msg("viewwelcome.preview_text"),
       embeds: embed ? [embed] : [],
       components: [row],
     });
@@ -156,14 +155,13 @@ export default {
     collector.on('collect', async (interaction) => {
       try {
         if (interaction.customId === 'edit_welcome') {
-          // Aqui você poderia chamar o setwelcome.js, mas avisar é mais seguro por enquanto
           await interaction.reply({
-            content: 'Para editar, use o comando `welcome edit` e envie a nova URL.',
+            content: msg("viewwelcome.edit_instruction"),
             ephemeral: true,
           });
         } else if (interaction.customId === 'fechar_viewwelcome') {
           await interaction.update({
-            content: 'Visualização encerrada.',
+            content: msg("viewwelcome.view_closed"),
             embeds: [],
             components: [],
           });
@@ -181,3 +179,18 @@ export default {
     });
   },
 };
+
+/*
+@register-messages
+{
+  "viewwelcome": {
+    "no_welcome": "⚠️ Nenhuma mensagem de boas-vindas configurada neste servidor. Use `welcome add` para configurar.",
+    "btn_edit": "Editar",
+    "btn_close": "Fechar",
+    "preview_text": "**Visualização da mensagem de boas-vindas:**",
+    "edit_instruction": "Para editar, use o comando `welcome edit` e envie a nova URL.",
+    "view_closed": "Visualização encerrada."
+  }
+}
+@end
+*/
