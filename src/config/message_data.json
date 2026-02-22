@@ -1,0 +1,21 @@
+{
+  "${name}": {
+    "uso_incorreto": "⚠️ Uso incorreto! Tente: {uso}",
+    "resposta_exemplo": "Mensagem inicial do comando ${name}.",
+    "erro_interno": "❌ Ocorreu um erro ao processar este comando."
+  },
+  "sync": {
+    "uso_incorreto": "⚠️ Uso incorreto! Tente: {uso}",
+    "resposta_exemplo": "Mensagem inicial do comando sync.",
+    "erro_interno": "❌ Ocorreu um erro ao processar este comando.",
+    "cat_verificando": "🔍 Verificando sincronia de categorias...",
+    "cat_sincronizadas": "✅ Todas as categorias estão sincronizadas!",
+    "cat_dessincronizados": "⚠️ **Comandos dessincronizados encontrados:**\n",
+    "cat_pergunta": "\nDeseja sincronizar essas categorias? (Responda com `s` ou `n` no chat em até 30s)",
+    "cat_sucesso": "✅ Categorias sincronizadas com sucesso!",
+    "cat_cancelada": "❌ Operação cancelada.",
+    "cat_timeout": "⏳ Tempo esgotado. Operação cancelada.",
+    "msg_iniciando": "🔄 Iniciando sincronização de mensagens...",
+    "msg_concluida": "✨ Sincronização concluída."
+  }
+}
