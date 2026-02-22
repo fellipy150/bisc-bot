@@ -5,6 +5,7 @@ import {
   ChannelType,
   ComponentType,
 } from 'discord.js';
+import msg from '../../config/msg-handler.js';
 import allData from '../../config/command_data.json' with { type: 'json' };
 const d = allData['setwelcome'];
 
@@ -22,16 +23,14 @@ export default {
   async execute(message, args, client) {
     // 1. Verificação de uma Permissão
     if (!message.member.permissions.has('Administrator')) {
-      return message.reply('❌ Você precisa ser administrador para usar este comando!');
+      return message.reply(msg("setwelcome.no_admin"));
     }
 
     const guildId = message.guild.id;
     const filterAuthor = (m) => m.author.id === message.author.id;
 
     // 2. Pergunta o Canal
-    await message.channel.send(
-      '📢 Em qual canal você quer ativar o sistema de boas-vindas? (Mencione o canal com `#`)'
-    );
+    await message.channel.send(msg("setwelcome.ask_channel"));
 
     try {
       const collectedChannel = await message.channel.awaitMessages({
@@ -44,18 +43,11 @@ export default {
       const canal = canalMsg.mentions.channels.first();
 
       if (!canal || canal.type !== ChannelType.GuildText) {
-        return message.channel.send('❌ Canal inválido ou não mencionado. Operação cancelada.');
+        return message.channel.send(msg("setwelcome.invalid_channel"));
       }
 
       // 3. Pede a URL do Site
-      const instructions = `
-🔗 **Configuração da Mensagem**
-1. Acesse este site: <https://sheeptester.github.io/javascripts/webhook-sender.html>
-2. Configure a mensagem, título, cor, imagem, etc. como desejar.
-3. Quando terminar, copie a **URL completa** do navegador.
-4. **Cole a URL aqui neste chat.**
-      `;
-      await message.channel.send(instructions);
+      await message.channel.send(msg("setwelcome.instructions"));
 
       // 4. Coleta a URL
       const collectedUrl = await message.channel.awaitMessages({
@@ -71,25 +63,20 @@ export default {
       const parsedData = parseSheepTesterUrl(urlContent);
 
       if (!parsedData) {
-        return message.channel.send(
-          '❌ URL inválida ou não contém os dados JSON esperados. Tente novamente executando o comando.'
-        );
+        return message.channel.send(msg("setwelcome.invalid_url"));
       }
 
       // 6. Prepara o Preview
-      // Nota: parsedData.apiPayload é o formato que o Discord lê agora.
-      // parsedData.dbPayload é o formato para salvar no seu banco.
-
       const confirmButton = new ActionRowBuilder().addComponents(
         new ButtonBuilder()
           .setCustomId('confirm_welcome')
-          .setLabel('Aceitar e Salvar')
+          .setLabel(msg("setwelcome.btn_accept"))
           .setStyle(ButtonStyle.Success)
           .setEmoji('✅')
       );
 
       const previewMsg = await message.channel.send({
-        content: `**⬇️ PREVIEW DA MENSAGEM ⬇️**\n\n${parsedData.apiPayload.content || ''}`,
+        content: msg("setwelcome.preview", { content: parsedData.apiPayload.content || '' }),
         embeds: parsedData.apiPayload.embeds,
         components: [confirmButton],
       });
@@ -104,13 +91,12 @@ export default {
       collector.on('collect', async (interaction) => {
         if (interaction.user.id !== message.author.id) {
           return interaction.reply({
-            content: 'Apenas quem usou o comando pode aceitar.',
+            content: msg("setwelcome.btn_not_author"),
             ephemeral: true,
           });
         }
 
         // Salva no MongoDB
-        // Importante: Passamos parsedData.dbPayload pois seu serviço parece esperar { content, embed } (singular)
         const success = await WelcomeService.setGuildWelcome(
           guildId,
           canal.id,
@@ -119,13 +105,13 @@ export default {
 
         if (success) {
           await interaction.update({
-            content: `✅ **Configurado!** A mensagem de boas-vindas foi salva e será enviada no canal ${canal}.`,
+            content: msg("setwelcome.success", { canal: canal.toString() }),
             components: [],
-            embeds: [], // Remove a embed de preview para limpar o chat, ou mantenha se preferir
+            embeds: [],
           });
         } else {
           await interaction.update({
-            content: '❌ Houve um erro ao salvar no banco de dados.',
+            content: msg("setwelcome.db_error"),
             components: [],
           });
         }
@@ -134,17 +120,16 @@ export default {
       collector.on('end', (collected, reason) => {
         if (reason === 'time') {
           previewMsg
-            .edit({ content: '⏳ Tempo esgotado para confirmação.', components: [] })
+            .edit({ content: msg("setwelcome.timeout_confirm"), components: [] })
             .catch(() => {});
         }
       });
     } catch (error) {
       console.error(error);
       if (error.message === 'time') {
-        // Erro do awaitMessages por timeout
-        return message.channel.send('⏳ Tempo esgotado. Tente novamente.');
+        return message.channel.send(msg("setwelcome.timeout"));
       }
-      message.channel.send('❌ Ocorreu um erro inesperado.');
+      message.channel.send(msg("setwelcome.unexpected_error"));
     }
   },
 };
@@ -173,19 +158,11 @@ function parseSheepTesterUrl(urlString) {
     if (embedsList.length > 0) {
       embedsList.forEach((embed) => {
         if (embed.color) {
-          // O site manda 14327 (number) ou "14327" (string)
-          // O Discord exige 14327 (number)
-
           if (typeof embed.color === 'string' && embed.color.startsWith('#')) {
-            // Se por acaso vier Hex (#ffffff), converte para Int
             embed.color = parseInt(embed.color.replace('#', ''), 16);
           } else {
-            // Garante que é um Inteiro base 10
             embed.color = parseInt(embed.color);
           }
-        } else {
-          // Se não tiver cor, você pode definir uma padrão ou deixar sem
-          // embed.color = 0xffffff; // Branco
         }
       });
     }
@@ -219,3 +196,25 @@ function cleanNulls(obj) {
     }
   });
 }
+
+/*
+@register-messages
+{
+  "setwelcome": {
+    "no_admin": "❌ Você precisa ser administrador para usar este comando!",
+    "ask_channel": "📢 Em qual canal você quer ativar o sistema de boas-vindas? (Mencione o canal com `#`)",
+    "invalid_channel": "❌ Canal inválido ou não mencionado. Operação cancelada.",
+    "instructions": "🔗 **Configuração da Mensagem**\n1. Acesse este site: <https://sheeptester.github.io/javascripts/webhook-sender.html>\n2. Configure a mensagem, título, cor, imagem, etc. como desejar.\n3. Quando terminar, copie a **URL completa** do navegador.\n4. **Cole a URL aqui neste chat.**",
+    "invalid_url": "❌ URL inválida ou não contém os dados JSON esperados. Tente novamente executando o comando.",
+    "btn_accept": "Aceitar e Salvar",
+    "preview": "**⬇️ PREVIEW DA MENSAGEM ⬇️**\n\n{content}",
+    "btn_not_author": "Apenas quem usou o comando pode aceitar.",
+    "success": "✅ **Configurado!** A mensagem de boas-vindas foi salva e será enviada no canal {canal}.",
+    "db_error": "❌ Houve um erro ao salvar no banco de dados.",
+    "timeout_confirm": "⏳ Tempo esgotado para confirmação.",
+    "timeout": "⏳ Tempo esgotado. Tente novamente.",
+    "unexpected_error": "❌ Ocorreu um erro inesperado."
+  }
+}
+@end
+*/

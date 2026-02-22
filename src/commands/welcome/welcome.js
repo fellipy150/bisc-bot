@@ -1,4 +1,5 @@
 import { EmbedBuilder, PermissionsBitField } from 'discord.js';
+import msg from '../../config/msg-handler.js';
 import allData from '../../config/command_data.json' with { type: 'json' };
 import WelcomeService from '../../infra/database/services/welcomeService.js';
 import setwelcome from './setwelcome.js';
@@ -18,32 +19,30 @@ export default {
 
   async execute(message, args, client) {
     if (!message.member.permissions.has(PermissionsBitField.Flags.Administrator)) {
-      return message.reply('Você precisa ser um administrador para usar esse comando.');
+      return message.reply(msg("welcome.no_admin"));
     }
 
     const subcomando = args[0]?.toLowerCase();
 
     switch (subcomando) {
       case 'add':
-        message.reply('Iniciando configuração de boas-vindas. Usando comando `setwelcome`...');
+        message.reply(msg("welcome.add_start"));
         await setwelcome.execute(message, args.slice(1), client);
         break;
       case 'edit':
-        message.reply('Editando mensagem de boas-vindas. Usando comando `setwelcome`...');
+        message.reply(msg("welcome.edit_start"));
         await setwelcome.execute(message, args.slice(1), client);
         break;
       case 'remove':
-        message.reply('Removendo sistema de boas-vindas. Usando comando `removewelcome`...');
+        message.reply(msg("welcome.remove_start"));
         await removewelcome.execute(message, args.slice(1), client);
         break;
       case 'view':
-        message.reply('Visualizando mensagem de boas-vindas. Usando comando `viewwelcome`...');
+        message.reply(msg("welcome.view_start"));
         await viewwelcome.execute(message, args.slice(1), client);
         break;
       default:
-        message.reply(
-          `**Sistema de Boas-Vindas - Central de Ajuda**\nUse: \`welcome add\`, \`welcome edit\`, \`welcome remove\` ou \`welcome view\`.`
-        );
+        message.reply(msg("welcome.help"));
     }
   },
 
@@ -169,3 +168,18 @@ export default {
     }
   },
 };
+
+/*
+@register-messages
+{
+  "welcome": {
+    "no_admin": "Você precisa ser um administrador para usar esse comando.",
+    "add_start": "Iniciando configuração de boas-vindas. Usando comando `setwelcome`...",
+    "edit_start": "Editando mensagem de boas-vindas. Usando comando `setwelcome`...",
+    "remove_start": "Removendo sistema de boas-vindas. Usando comando `removewelcome`...",
+    "view_start": "Visualizando mensagem de boas-vindas. Usando comando `viewwelcome`...",
+    "help": "**Sistema de Boas-Vindas - Central de Ajuda**\nUse: `welcome add`, `welcome edit`, `welcome remove` ou `welcome view`."
+  }
+}
+@end
+*/
