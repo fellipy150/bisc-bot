@@ -6,8 +6,8 @@ import { fileURLToPath } from "url";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const commandsDir = path.join(__dirname, "../commands");
-const messageFile = path.join(__dirname, "../config/message_data.json");
+const commandsDir = path.join(__dirname, "../src/commands");
+const messageFile = path.join(__dirname, "../src/config/message_data.json");
 
 // Regex para detectar bloco especial
 const REGISTER_REGEX = /\/\*\s*@register-messages([\s\S]*?)@end\s*\*\//g;

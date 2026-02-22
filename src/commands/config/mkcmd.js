@@ -1,8 +1,10 @@
-import { fileURLToPath } from 'url';
-import { dirname } from 'path';
-import fs from 'fs';
-import path from 'path';
-import { getOwners } from '../../config/config.js'; 
+import msg from "../../config/msg-handler.js";
+import allData from "../../config/command_data.json" with { type: "json" };
+import { fileURLToPath } from "url";
+import { dirname } from "path";
+import fs from "fs";
+import path from "path";
+import { getOwners } from "../../config/config.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -10,57 +12,88 @@ const __dirname = dirname(__filename);
 const jsonPath = path.join(__dirname, "../../config/command_data.json");
 const commandsDir = path.join(__dirname, "../../commands");
 
+const d = allData["mkcmd"];
+
 export default {
   data: {
-    name: "mkcmd",
-    aliases: ["criarcf"],
-    description: "Cria um novo comando dinamicamente com template avançado",
-    usage: "..mkcmd",
-    category: "config"
+    name: d?.nome || "mkcmd",
+    aliases: d?.apelidos || ["criarcf"],
+    description: d?.descricao || "Cria um novo comando dinamicamente com template compatível com sistema de mensagens",
+    usage: d?.uso || "..mkcmd",
+    category: d?.categoria || "config",
+    ownerOnly: true
   },
-  async execute(message) {
+
+  async execute(message, args, client) {
     if (!getOwners().includes(message.author.id)) {
-      return message.reply("❌ Você não tem permissão para usar este comando.");
+      return message.reply(msg("mkcmd.no_permission"));
     }
 
     const channel = message.channel;
     const filter = m => m.author.id === message.author.id;
 
     try {
-      // 1. Perguntar Nome
-      await channel.send("Qual será o nome do comando?");
-      const collectedName = await channel.awaitMessages({ filter, max: 1, time: 180000, errors: ["time"] });
+      // 1️⃣ Nome
+      await channel.send(msg("mkcmd.ask_name"));
+      const collectedName = await channel.awaitMessages({
+        filter,
+        max: 1,
+        time: 180000,
+        errors: ["time"]
+      });
+
       const name = collectedName.first().content.trim().toLowerCase();
       if (!name) throw new Error("Nome inválido.");
 
-      // 2. Perguntar Descrição
-      await channel.send("📝 Descreva o que o comando faz:");
-      const collectedDesc = await channel.awaitMessages({ filter, max: 1, time: 180000, errors: ["time"] });
+      // 2️⃣ Descrição
+      await channel.send(msg("mkcmd.ask_desc"));
+      const collectedDesc = await channel.awaitMessages({
+        filter,
+        max: 1,
+        time: 180000,
+        errors: ["time"]
+      });
+
       const descricao = collectedDesc.first().content.trim();
 
-      // 3. Perguntar Categoria
-      const folders = fs.readdirSync(commandsDir, { withFileTypes: true })
+      // 3️⃣ Categoria
+      const folders = fs
+        .readdirSync(commandsDir, { withFileTypes: true })
         .filter(dirent => dirent.isDirectory())
         .map(dirent => dirent.name);
+
       const folderOptions = [...folders, "none"];
 
-      await channel.send(`📂 Selecione a categoria: [${folderOptions.join(", ")}]`);
-      const collectedCat = await channel.awaitMessages({ filter, max: 1, time: 180000, errors: ["time"] });
+      await channel.send(msg("mkcmd.ask_category", { options: folderOptions.join(", ") }));
+      const collectedCat = await channel.awaitMessages({
+        filter,
+        max: 1,
+        time: 180000,
+        errors: ["time"]
+      });
+
       const categoria = collectedCat.first().content.trim();
-      
+
       if (!folderOptions.includes(categoria)) {
-        throw new Error(`Categoria inválida.`);
+        throw new Error("Categoria inválida.");
       }
 
-      // 4. Perguntar Rascunho
-      await channel.send("✍️ Rascunho da lógica (será inserido como comentário):");
-      const collectedDraft = await channel.awaitMessages({ filter, max: 1, time: 180000, errors: ["time"] });
+      // 4️⃣ Rascunho
+      await channel.send(msg("mkcmd.ask_draft"));
+      const collectedDraft = await channel.awaitMessages({
+        filter,
+        max: 1,
+        time: 180000,
+        errors: ["time"]
+      });
+
       const draft = collectedDraft.first().content.trim();
 
-      // Atualização do JSON
+      // 🔄 Atualizar command_data.json
       const all = JSON.parse(fs.readFileSync(jsonPath, "utf8"));
+
       if (all[name]) {
-        return channel.send("⚠️ Já existe um comando com esse nome no JSON.");
+        return channel.send(msg("mkcmd.already_exists"));
       }
 
       all[name] = {
@@ -70,25 +103,24 @@ export default {
         uso: `..${name}`,
         categoria: categoria === "none" ? "misc" : categoria
       };
+
       fs.writeFileSync(jsonPath, JSON.stringify(all, null, 2), "utf8");
 
-      const finalDir = categoria === "none" ? commandsDir : path.join(commandsDir, categoria);
-      if (!fs.existsSync(finalDir)) fs.mkdirSync(finalDir, { recursive: true });
+      // 📁 Criar diretório final
+      const finalDir =
+        categoria === "none" ? commandsDir : path.join(commandsDir, categoria);
+
+      if (!fs.existsSync(finalDir)) {
+        fs.mkdirSync(finalDir, { recursive: true });
+      }
 
       const configDepth = categoria === "none" ? ".." : "../..";
-      const cmdFile = path.join(finalDir, `${name}.js`);      // --- NOVO TEMPLATE CONCILIADO ---
-      const template =
-`import { fileURLToPath } from 'url';
-import { dirname } from 'path';
-import fs from 'fs';
-import path from 'path';
-import { EmbedBuilder, PermissionFlagsBits } from 'discord.js';
-import msg from '${configDepth}/config/msg-handler.js';
-import allData from '${configDepth}/config/command_data.json' with { type: 'json' };
+      const cmdFile = path.join(finalDir, `${name}.js`);
 
-// Configuração de ambiente ESM
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+      // 🧠 TEMPLATE FINAL
+      const template = 
+`import msg from '${configDepth}/config/msg-handler.js';
+import allData from '${configDepth}/config/command_data.json' with { type: 'json' };
 
 const d = allData["${name}"];
 
@@ -99,46 +131,88 @@ export default {
     description: d.descricao,
     usage: d.uso,
     category: d.categoria,
-    permissions: [PermissionFlagsBits.SendMessages],
     ownerOnly: false
   },
 
   async execute(message, args, client) {
     try {
-      // 1. Verificações Iniciais (Sanity Checks)
+
+      // Validação básica de uso
       if (this.data.usage && args.length === 0 && this.data.usage.includes('<')) {
-        return message.reply( msg("${name}.uso_incorreto", { uso: d.uso }) );
+        return message.reply(
+          msg("${name}.uso_incorreto", { uso: d.uso })
+        );
       }
 
-      // 2. Rascunho da Lógica:
-      ${draft ? draft.split("\n").map(line => `// ${line}`).join("\n      ") : "// Nenhuma lógica inicial fornecida."}
+      // 🔹 Rascunho inicial
+${draft
+  ? draft.split("\n").map(line => `      // ${line}`).join("\n")
+  : "      // Nenhuma lógica inicial fornecida."}
 
-      // TODO: Implementar lógica de ${name}
-      console.log(\`Comando \${d.nome} executado por \${message.author.tag}\`);
-      await message.reply( msg("${name}.resposta_exemplo") );
+      // TODO: Implementar lógica principal
+
+      await message.reply(
+        msg("${name}.resposta_exemplo")
+      );
 
     } catch (error) {
-      console.error(\`[Erro no Comando \${d.nome}]:\`, error);
-      
-      return message.reply( msg("${name}.erro_interno") );
+      console.error(\`[Erro no comando ${name}]:\`, error);
+
+      return message.reply(
+        msg("${name}.erro_interno")
+      );
     }
   }
 };
 
-/* @register-messages
+/*
+@register-messages
+O JSON abaixo pode conter QUALQUER estrutura válida.
+Você pode adicionar objetos aninhados, múltiplas chaves,
+ou qualquer outro conteúdo necessário para o comando.
+O utilitário de sincronização fará merge profundo automaticamente.
+
 {
   "${name}": {
     "uso_incorreto": "⚠️ Uso incorreto! Tente: {uso}",
     "resposta_exemplo": "Mensagem inicial do comando ${name}.",
-    "erro_interno": "❌ Ocorreu um erro ao processar este comando."
+    "erro_interno": "❌ Ocorreu um erro ao processar este comando.",
+    "inserirnomedamsg": "Pode colocar qualquer valor "
   }
 }
-@end */`;fs.writeFileSync(cmdFile, template, "utf8");
-      channel.send(`✅ Comando \`${name}\` criado com sucesso!`);
+@end
+*/
+`;
+
+      fs.writeFileSync(cmdFile, template, "utf8");
+
+      channel.send(msg("mkcmd.success", { name }));
 
     } catch (err) {
       console.error(err);
-      message.channel.send("❌ Erro: " + (err.message || "Tempo esgotado."));
+      message.channel.send(msg("mkcmd.error", { err: err.message || "Tempo esgotado." }));
     }
   }
 };
+
+/*
+@register-messages
+O JSON abaixo pode conter QUALQUER estrutura válida.
+Você pode adicionar objetos aninhados, múltiplas chaves,
+ou qualquer outro conteúdo necessário para o comando.
+O utilitário de sincronização fará merge profundo automaticamente.
+
+{
+  "mkcmd": {
+    "no_permission": "❌ Você não tem permissão para usar este comando.",
+    "ask_name": "Qual será o nome do comando?",
+    "ask_desc": "📝 Descreva o que o comando faz:",
+    "ask_category": "📂 Selecione a categoria: [{options}]",
+    "ask_draft": "✍️ Rascunho da lógica (será inserido como comentário):",
+    "already_exists": "⚠️ Já existe um comando com esse nome no JSON.",
+    "success": "✅ Comando `{name}` criado com sucesso!",
+    "error": "❌ Erro: {err}"
+  }
+}
+@end
+*/

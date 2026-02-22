@@ -2,32 +2,26 @@ import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
-
-#!/usr/bin/env node
 import fs from 'fs';
 import path from 'path';
-import readline from 'readline';
-
-// caminhos
-const base = path.join(__dirname, "../src/comandos");
+import readline from 'readline';// caminhos
+const base = path.join(__dirname, "../src/commands");
 const dataPath = path.join(__dirname, "../src/config/command_data.json");
 
 // carregar o JSON atual
 let json = JSON.parse(fs.readFileSync(dataPath, "utf8"));
 
-let dessincronizados = [];
-
-// função recursiva para percorrer pastas e arquivos
-function verificar(dir) {
+let dessincronizados = [];// função recursiva para percorrer pastas e arquivos
+async function verificar(dir) {
   const entries = fs.readdirSync(dir, { withFileTypes: true });
 
   for (const entry of entries) {
     const fullPath = path.join(dir, entry.name);
 
     if (entry.isDirectory()) {
-      verificar(fullPath); // recursivo
+      await verificar(fullPath); // recursivo
     } else if (entry.isFile() && entry.name.endsWith(".js")) {
-      const cmd = require(fullPath);
+      const cmd = (await import(`file://${fullPath}`)).default;
 
       const name = cmd.data && cmd.data.name;
       if (!name) {
@@ -59,9 +53,7 @@ function verificar(dir) {
 }
 
 // executar a verificação
-verificar(base);
-
-// mostrar o resultado
+await verificar(base);// mostrar o resultado
 if (dessincronizados.length === 0) {
   console.log("✅ Todas as categorias estão sincronizadas!");
   process.exit(0);
