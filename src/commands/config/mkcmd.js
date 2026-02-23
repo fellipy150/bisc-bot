@@ -167,13 +167,9 @@ ${draft
 
 /*
 @register-messages
-O JSON abaixo pode conter QUALQUER estrutura válida.
-Você pode adicionar objetos aninhados, múltiplas chaves,
-ou qualquer outro conteúdo necessário para o comando.
-O utilitário de sincronização fará merge profundo automaticamente.
-
 {
   "${name}": {
+    "_nota": "O JSON abaixo pode conter QUALQUER estrutura válida. Você pode adicionar objetos aninhados, múltiplas chaves, ou qualquer outro conteúdo necessário para o comando. O utilitário de sincronização fará merge profundo automaticamente.",
     "uso_incorreto": "⚠️ Uso incorreto! Tente: {uso}",
     "resposta_exemplo": "Mensagem inicial do comando ${name}.",
     "erro_interno": "❌ Ocorreu um erro ao processar este comando.",
@@ -182,6 +178,7 @@ O utilitário de sincronização fará merge profundo automaticamente.
 }
 @end
 */
+
 `;
 
       fs.writeFileSync(cmdFile, template, "utf8");
@@ -197,11 +194,6 @@ O utilitário de sincronização fará merge profundo automaticamente.
 
 /*
 @register-messages
-O JSON abaixo pode conter QUALQUER estrutura válida.
-Você pode adicionar objetos aninhados, múltiplas chaves,
-ou qualquer outro conteúdo necessário para o comando.
-O utilitário de sincronização fará merge profundo automaticamente.
-
 {
   "mkcmd": {
     "no_permission": "❌ Você não tem permissão para usar este comando.",

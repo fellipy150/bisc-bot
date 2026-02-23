@@ -2,7 +2,9 @@
   "${name}": {
     "uso_incorreto": "⚠️ Uso incorreto! Tente: {uso}",
     "resposta_exemplo": "Mensagem inicial do comando ${name}.",
-    "erro_interno": "❌ Ocorreu um erro ao processar este comando."
+    "erro_interno": "❌ Ocorreu um erro ao processar este comando.",
+    "_nota": "O JSON abaixo pode conter QUALQUER estrutura válida. Você pode adicionar objetos aninhados, múltiplas chaves, ou qualquer outro conteúdo necessário para o comando. O utilitário de sincronização fará merge profundo automaticamente.",
+    "inserirnomedamsg": "Pode colocar qualquer valor "
   },
   "sync": {
     "uso_incorreto": "⚠️ Uso incorreto! Tente: {uso}",
@@ -17,5 +19,64 @@
     "cat_timeout": "⏳ Tempo esgotado. Operação cancelada.",
     "msg_iniciando": "🔄 Iniciando sincronização de mensagens...",
     "msg_concluida": "✨ Sincronização concluída."
+  },
+  "removewelcome": {
+    "no_admin": "❌ Você precisa ser administrador para usar este comando!",
+    "no_config": "⚠️ Nenhuma configuração de boas-vindas foi encontrada neste servidor.",
+    "btn_confirm": "Sim, desativar",
+    "btn_cancel": "Cancelar",
+    "warning": "🚨 **Atenção:** Você tem certeza que deseja **desativar e apagar** o sistema de boas-vindas deste servidor?",
+    "success": "✅ **Sistema de boas-vindas desativado.**\n\nBackup da configuração removida:\n```json\n{configJson}\n```",
+    "error_remove": "❌ Erro ao remover a configuração. Tente novamente.",
+    "cancelled": "❌ Operação cancelada.",
+    "timeout": "⏳ Tempo esgotado. Operação cancelada."
+  },
+  "setwelcome": {
+    "no_admin": "❌ Você precisa ser administrador para usar este comando!",
+    "ask_channel": "📢 Em qual canal você quer ativar o sistema de boas-vindas? (Mencione o canal com `#`)",
+    "invalid_channel": "❌ Canal inválido ou não mencionado. Operação cancelada.",
+    "instructions": "🔗 **Configuração da Mensagem**\n1. Acesse este site: <https://sheeptester.github.io/javascripts/webhook-sender.html>\n2. Configure a mensagem, título, cor, imagem, etc. como desejar.\n3. Quando terminar, copie a **URL completa** do navegador.\n4. **Cole a URL aqui neste chat.**",
+    "invalid_url": "❌ URL inválida ou não contém os dados JSON esperados. Tente novamente executando o comando.",
+    "btn_accept": "Aceitar e Salvar",
+    "preview": "**⬇️ PREVIEW DA MENSAGEM ⬇️**\n\n{content}",
+    "btn_not_author": "Apenas quem usou o comando pode aceitar.",
+    "success": "✅ **Configurado!** A mensagem de boas-vindas foi salva e será enviada no canal {canal}.",
+    "db_error": "❌ Houve um erro ao salvar no banco de dados.",
+    "timeout_confirm": "⏳ Tempo esgotado para confirmação.",
+    "timeout": "⏳ Tempo esgotado. Tente novamente.",
+    "unexpected_error": "❌ Ocorreu um erro inesperado."
+  },
+  "viewwelcome": {
+    "no_welcome": "⚠️ Nenhuma mensagem de boas-vindas configurada neste servidor. Use `welcome add` para configurar.",
+    "btn_edit": "Editar",
+    "btn_close": "Fechar",
+    "preview_text": "**Visualização da mensagem de boas-vindas:**",
+    "edit_instruction": "Para editar, use o comando `welcome edit` e envie a nova URL.",
+    "view_closed": "Visualização encerrada."
+  },
+  "welcome": {
+    "no_admin": "Você precisa ser um administrador para usar esse comando.",
+    "add_start": "Iniciando configuração de boas-vindas. Usando comando `setwelcome`...",
+    "edit_start": "Editando mensagem de boas-vindas. Usando comando `setwelcome`...",
+    "remove_start": "Removendo sistema de boas-vindas. Usando comando `removewelcome`...",
+    "view_start": "Visualizando mensagem de boas-vindas. Usando comando `viewwelcome`...",
+    "help": "**Sistema de Boas-Vindas - Central de Ajuda**\nUse: `welcome add`, `welcome edit`, `welcome remove` ou `welcome view`."
+  },
+  "comando": {
+    "_nota": "O JSON abaixo pode conter QUALQUER estrutura válida. Você pode adicionar objetos aninhados, múltiplas chaves, ou qualquer outro conteúdo necessário para o comando. O utilitário de sincronização fará merge profundo automaticamente.",
+    "uso_incorreto": "⚠️ Uso incorreto! Tente: {uso}",
+    "resposta_exemplo": "Mensagem inicial do comando comando.",
+    "erro_interno": "❌ Ocorreu um erro ao processar este comando.",
+    "inserirnomedamsg": "Pode colocar qualquer valor "
+  },
+  "mkcmd": {
+    "no_permission": "❌ Você não tem permissão para usar este comando.",
+    "ask_name": "Qual será o nome do comando?",
+    "ask_desc": "📝 Descreva o que o comando faz:",
+    "ask_category": "📂 Selecione a categoria: [{options}]",
+    "ask_draft": "✍️ Rascunho da lógica (será inserido como comentário):",
+    "already_exists": "⚠️ Já existe um comando com esse nome no JSON.",
+    "success": "✅ Comando `{name}` criado com sucesso!",
+    "error": "❌ Erro: {err}"
   }
 }

@@ -272,5 +272,12 @@
     "descricao": "utilitario para fazer sincronias das informações do comando no banco de dados",
     "uso": "..sync",
     "categoria": "config"
+  },
+  "comando": {
+    "nome": "comando",
+    "apelidos": [],
+    "descricao": "descricao",
+    "uso": "..comando",
+    "categoria": "misc"
   }
 }
