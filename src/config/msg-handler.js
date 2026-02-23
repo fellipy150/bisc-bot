@@ -4,14 +4,14 @@ import { fileURLToPath } from "url";
 
 // Resolver caminho absoluto (ESM safe)
 const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
-const jsonPath = path.join(__dirname, "message_data.json");
+const __dirname = path.dirname(__filename);const jsonPath = path.join(__dirname, "message_data.json");
+const cmdsDir = path.join(__dirname, "../commands");
+const REGISTER_REGEX = /\/\*\s*@register-messages([\s\S]*?)@end\s*\*\//g;
 
 // Cache em memória
 let messagesCache = null;
-
-/**
+const syncAttempted = new Set();
+  /**
  * Carrega JSON apenas uma vez.
  */
 function loadMessages() {
@@ -48,6 +48,56 @@ function applyVariables(template, variables) {
       ? variables[key]
       : `{${key}}`; // mantém placeholder se não enviado
   });
+}function deepMergeSafe(target, source) {
+  for (const key in source) {
+    if (typeof source[key] === "object" && source[key] !== null && !Array.isArray(source[key])) {
+      if (!target[key]) target[key] = {};
+      deepMergeSafe(target[key], source[key]);
+    } else if (target[key] === undefined) {
+      target[key] = source[key];
+    }
+  }
+}
+
+function autoSyncMessages() {
+  if (!fs.existsSync(cmdsDir)) return;
+  
+  const messageData = loadMessages();
+  let updated = false;
+
+  function processFile(filePath) {
+    const content = fs.readFileSync(filePath, "utf8");
+    content.replace(REGISTER_REGEX, (_, jsonBlock) => {
+      try {
+        const parsed = JSON.parse(jsonBlock.trim());
+        deepMergeSafe(messageData, parsed);
+        updated = true;
+      } catch (err) {
+        console.error(`❌ JSON inválido detectado pelo auto-sync em: ${filePath}`);
+      }
+    });
+  }
+
+  function walk(dir) {
+    if (!fs.existsSync(dir)) return;
+    const entries = fs.readdirSync(dir, { withFileTypes: true });
+
+    for (const entry of entries) {
+      const fullPath = path.join(dir, entry.name);
+      if (entry.isDirectory()) {
+        walk(fullPath);
+      } else if (entry.isFile() && entry.name.endsWith(".js")) {
+        processFile(fullPath);
+      }
+    }
+  }
+
+  walk(cmdsDir);
+
+  if (updated) {
+    fs.writeFileSync(jsonPath, JSON.stringify(messageData, null, 2), "utf8");
+    messagesCache = messageData;
+  }
 }
 
 /**
@@ -58,11 +108,21 @@ function applyVariables(template, variables) {
 export default function msg(path, variables = {}) {
   const messages = loadMessages();
 
-  const value = resolvePath(messages, path);
+  let value = resolvePath(messages, path);
 
   if (!value) {
-    console.warn(`⚠️ Mensagem não encontrada: ${path}`);
-    return `__missing_message__: ${path}`;
+    if (!syncAttempted.has(path)) {
+      console.log(`🔄 Mensagem '${path}' não encontrada. Iniciando auto-sync...`);
+      autoSyncMessages();
+      syncAttempted.add(path); 
+      
+      value = resolvePath(messagesCache, path);
+    }
+
+    if (!value) {
+      console.warn(`❌ Mensagem definitivamente não encontrada: ${path}`);
+      return `__missing_message__: ${path}`;
+    }
   }
 
   if (typeof value !== "string") {
@@ -72,3 +132,4 @@ export default function msg(path, variables = {}) {
 
   return applyVariables(value, variables);
 }
+  

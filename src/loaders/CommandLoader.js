@@ -3,7 +3,7 @@
  */
 import fs from "fs";
 import path from "path";
-import { fileURLToPath, pathToFileURL } from "url"; // Adicionado pathToFileURL
+import { fileURLToPath, pathToFileURL } from "url";
 import { Logger } from '../infra/logger/index.js'; 
 
 const __filename = fileURLToPath(import.meta.url);
@@ -18,6 +18,10 @@ export default async (client) => {
     return;
   }
 
+  // Variáveis de contagem declaradas no escopo do loader
+  let commandCount = 0;
+  let aliasCount = 0;
+
   async function loadCommands(dir) {
     const entries = fs.readdirSync(dir, { withFileTypes: true });
 
@@ -27,14 +31,13 @@ export default async (client) => {
       if (entry.isDirectory()) {
         await loadCommands(fullPath);
       } else if (entry.isFile() && entry.name.endsWith(".js")) {
-        // 1. Usar pathToFileURL garante que o caminho funcione em Windows/Linux sem erros de "/"
         const fileUrl = pathToFileURL(fullPath).href;
 
         try {
           const module = await import(fileUrl);
           const cmd = module.default || module;
 
-          // 2. Validação detalhada da estrutura
+          // Validação da estrutura do comando
           if (!cmd.data || !cmd.execute) {
             Logger.warn(`⚠️ Comando ignorado em ${entry.name}: Falta propriedade "data" ou "execute".`);
             continue;
@@ -45,21 +48,27 @@ export default async (client) => {
             continue;
           }
 
+          // Registra comando principal e incrementa contador
           client.commands.set(cmd.data.name, cmd);
+          commandCount++;
           
+          // Registra aliases e incrementa contador (evitando duplicatas no Map)
           if (cmd.data.aliases && Array.isArray(cmd.data.aliases)) {
-            cmd.data.aliases.forEach(a => client.commands.set(a, cmd));
+            cmd.data.aliases.forEach(a => {
+              if (!client.commands.has(a)) {
+                client.commands.set(a, cmd);
+                aliasCount++;
+              }
+            });
           }
 
           Logger.debug(`✅ Carregado: ${cmd.data.name}`);
 
         } catch (e) {
-          // 3. Debug Profundo: Mostra o arquivo exato e o stack trace completo
           Logger.error(`\n❌ ERRO CRÍTICO NO ARQUIVO: ${entry.name}`);
           Logger.error(`Caminho Completo: ${fullPath}`);
           Logger.error(`Mensagem: ${e.message}`);
           
-          // O stack trace dirá a linha exata do erro de sintaxe
           if (e.stack) {
             console.error(e.stack); 
           }
@@ -76,5 +85,9 @@ export default async (client) => {
   await loadCommands(commandsPath);
   
   const end = Date.now();
-  Logger.info(`✨ ${client.commands.size} comandos carregados em ${end - start}ms.`);
+  
+  // Log final com a separação solicitada
+  Logger.info(
+    `✨ ${commandCount} comandos carregados e ${aliasCount} aliases carregados em ${end - start}ms.`
+  );
 };
