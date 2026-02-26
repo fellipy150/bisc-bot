@@ -6,386 +6,269 @@ import { PermissionFlagsBits } from 'discord.js';
 import msg from '../../config/msg-handler.js';
 import allData from '../../config/command_data.json' with { type: 'json' };
 
-// Configuração de ambiente ESM
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-// Definição de Caminhos
+[cite_start]// Definição de Caminhos[span_4](end_span)[span_5](end_span)
 const CMDS_DIR = path.join(__dirname, "../../commands");
 const MSG_FILE = path.join(__dirname, "../../config/message_data.json");
 const CMD_DATA_FILE = path.join(__dirname, "../../config/command_data.json");
+const SNAPSHOT_FILE = path.join(__dirname, "../../config/sync_snapshot.json");
 
 const d = allData["sync"];
 
-// --- ESTADO GLOBAL E CONTROLE DE SINAL ---
+[span_6](start_span)[span_7](start_span)[span_8](start_span)[span_9](start_span)// --- ESTADO GLOBAL E CONTROLE DE SINAL [cite: 89-94, 223-228] ---
 let isSyncing = false;
 let restartRequested = false;
 
-// Interceptador de sinal do Nodemon (SIGUSR2)
 process.on('SIGUSR2', () => {
   if (isSyncing) {
-    console.log('⚠️ [Nodemon] Reinício detectado durante sincronização. Aguardando conclusão...');
+    console.log('⚠️ [Sync] Reinício do Nodemon suspenso até o fim da sincronização.');
     restartRequested = true;
   } else {
     process.exit(0);
   }
 });
 
-// --- FUNÇÕES UTILITÁRIAS ---
+[cite_start]// --- FUNÇÕES UTILITÁRIAS [cite: 95-120, 229-254] ---
 
-/**
- * Encerra o processo com um atraso para permitir que as operações de rede (Discord) finalizem.
- */
-function safeExit() {
-  if (restartRequested) {
-    console.log('♻️ [Sync] Finalizando processo para reinício do Nodemon...');
-    setTimeout(() => {
-      process.exit(0);
-    }, 2000); // 2 segundos de margem de segurança
-  }
-}
-
-/**
- * Escrita Atômica: Escreve num ficheiro temporário e renomeia para evitar corrupção.
- */
 function atomicWrite(filePath, content) {
-  try {
-    const tmpPath = filePath + '.tmp';
-    fs.writeFileSync(tmpPath, content, 'utf8');
-    fs.renameSync(tmpPath, filePath);
-  } catch (error) {
-    console.error(`❌ [Erro Escrita Atómica] Falha em ${filePath}:`, error.message);
-    throw error;
-  }
+  const tmpPath = filePath + '.tmp';
+  fs.writeFileSync(tmpPath, content, 'utf8');
+  fs.renameSync(tmpPath, filePath);
 }
 
-/**
- * Busca recursiva de ficheiros .js
- */
 const getAllFiles = (dir) => {
   let results = [];
-  try {
-    if (!fs.existsSync(dir)) return results;
-    const list = fs.readdirSync(dir);
-    for (const file of list) {
-      const fullPath = path.join(dir, file);
-      if (fs.statSync(fullPath).isDirectory()) {
-        results = results.concat(getAllFiles(fullPath));
-      } else if (fullPath.endsWith('.js')) {
-        results.push(fullPath);
-      }
+  if (!fs.existsSync(dir)) return results;
+  const list = fs.readdirSync(dir);
+  for (const file of list) {
+    const fullPath = path.join(dir, file);
+    if (fs.statSync(fullPath).isDirectory()) {
+      results = results.concat(getAllFiles(fullPath));
+    } else if (fullPath.endsWith('.js')) {
+      results.push(fullPath);
     }
-  } catch (error) {
-    console.error(`❌ [Erro getAllFiles] Erro ao ler diretório ${dir}:`, error.message);
   }
   return results;
 };
 
-/**
- * Extrai o bloco @register-messages evitando auto-deteção através de fragmentação de strings.
- */
 function extractRegisterBlock(content) {
-  try {
-    const START_TAG = "@register" + "-messages"; // Fragmentado para não encontrar no código
-    const END_TAG = "@" + "end";
+  const START_TAG = "@register-messages";
+  const END_TAG = "@end";
+  const sIdx = content.lastIndexOf(START_TAG);
+  const eIdx = content.lastIndexOf(END_TAG, sIdx);
+  if (sIdx === -1 || eIdx === -1) return null;
 
-    // Usamos lastIndexOf para priorizar o bloco de comentário no fim do ficheiro
-    const sIdx = content.lastIndexOf(START_TAG);
-    const eIdx = content.lastIndexOf(END_TAG);
+  const commentOpen = content.lastIndexOf("/*", sIdx);
+  const commentClose = content.indexOf("*/", eIdx);
+  if (commentOpen === -1 || commentClose === -1) return null;
 
-    if (sIdx === -1 || eIdx === -1 || eIdx < sIdx) return null;
-
-    const commentOpen = content.lastIndexOf("/*", sIdx);
-    const commentClose = content.indexOf("*/", eIdx);
-    if (commentOpen === -1 || commentClose === -1) return null;
-
-    const afterNewline = content.indexOf("\n", sIdx);
-    const innerStart = afterNewline === -1 ? sIdx + START_TAG.length : afterNewline + 1;
-    
-    return {
-      fullStart: commentOpen,
-      fullEnd: commentClose + 2,
-      inner: content.slice(innerStart, eIdx).trim(),
-      fullText: content.slice(commentOpen, commentClose + 2)
-    };
-  } catch (error) {
-    console.error("❌ [Erro extractRegisterBlock] Falha no parser:", error.message);
-    return null;
-  }
+  const afterNewline = content.indexOf("\n", sIdx);
+  const innerStart = afterNewline === -1 ? sIdx + START_TAG.length : afterNewline + 1;
+  
+  return {
+    fullStart: commentOpen,
+    fullEnd: commentClose + 2,
+    inner: content.slice(innerStart, eIdx).trim(),
+    fullText: content.slice(commentOpen, commentClose + 2)
+  };
 }
 
-/**
- * Localiza o fecho de aspas respeitando escapes (essencial para o replaceMessageKey)
- */
-function findClosingQuote(text, startIndex, quoteChar) {
-  for (let i = startIndex; i < text.length; i++) {
-    if (text[i] === quoteChar) {
-      let backslashes = 0;
-      let j = i - 1;
-      while (j >= 0 && text[j] === "\\") { backslashes++; j--; }
-      if (backslashes % 2 === 0) return i;
-    }
-  }
-  return -1;
-}
-
-/**
- * Substitui chaves msg('key') de forma cirúrgica no código fonte.
- */
 function replaceMessageKey(content, cmdName, oldKey, newKey) {
-  try {
-    let result = content;
-    let searchIndex = 0;
-    const needle = "msg(";
-    const targetKey = `${cmdName}.${oldKey}`;
+  let result = content;
+  let searchIndex = 0;
+  const needle = "msg(";
+  const targetKey = `${cmdName}.${oldKey}`;
 
-    while (true) {
-      const msgIndex = result.indexOf(needle, searchIndex);
-      if (msgIndex === -1) break;
+  while (true) {
+    const msgIndex = result.indexOf(needle, searchIndex);
+    if (msgIndex === -1) break;
 
-      let i = msgIndex + needle.length;
-      while (i < result.length && /\s/.test(result[i])) i++; 
+    let i = msgIndex + needle.length;
+    while (i < result.length && /\s/.test(result[i])) i++; 
 
-      const quote = result[i];
-      if (!["'", '"', "`"].includes(quote)) {
-        searchIndex = i;
-        continue;
-      }
+    const quote = result[i];
+    if (!["'", '"', "`"].includes(quote)) { searchIndex = i; continue; }
 
-      const keyStart = i + 1;
-      const keyEnd = findClosingQuote(result, keyStart, quote);
-      if (keyEnd === -1) break;
+    const keyStart = i + 1;
+    const keyEnd = result.indexOf(quote, keyStart);
+    if (keyEnd === -1) break;
 
-      if (result.slice(keyStart, keyEnd) === targetKey) {
-        const replacement = `${cmdName}.${newKey}`;
-        result = result.slice(0, keyStart) + replacement + result.slice(keyEnd);
-        searchIndex = keyStart + replacement.length;
-      } else {
-        searchIndex = keyEnd + 1;
-      }
+    if (result.slice(keyStart, keyEnd) === targetKey) {
+      const replacement = `${cmdName}.${newKey}`;
+      result = result.slice(0, keyStart) + replacement + result.slice(keyEnd);
+      searchIndex = keyStart + replacement.length;
+    } else {
+      searchIndex = keyEnd + 1;
     }
-    return result;
-  } catch (error) {
-    console.error(`❌ [Erro replaceMessageKey] Falha no comando ${cmdName}:`, error.message);
-    return content;
   }
+  return result;
 }
 
-// --- HANDLERS (SUBCOMANDOS) ---
+// --- HANDLERS ---
 
 const handlers = {
-  /**
-   * Sincroniza as pastas físicas com a propriedade 'categoria' no JSON de dados.
+  [cite_start]/** * Sincronização de Categorias [cite: 121-144, 255-278]
    */
   cat: async (message) => {
     isSyncing = true;
     try {
-      await message.reply("🔍 Analisando categorias e estrutura de ficheiros...");
-      
-      let json;
-      try {
-        json = JSON.parse(fs.readFileSync(CMD_DATA_FILE, "utf8"));
-      } catch (e) {
-        throw new Error(`Falha ao ler ${CMD_DATA_FILE}: ${e.message}`);
-      }
-
+      let json = JSON.parse(fs.readFileSync(CMD_DATA_FILE, "utf8"));
       let dessincronizados = [];
 
-      const verificar = async (dir) => {
-        const entries = fs.readdirSync(dir, { withFileTypes: true });
-        for (const entry of entries) {
-          const fullPath = path.join(dir, entry.name);
-          if (entry.isDirectory()) {
-            await verificar(fullPath);
-          } else if (entry.isFile() && entry.name.endsWith(".js")) {
-            try {
-              const fileUrl = 'file://' + fullPath.replace(/\\/g, '/');
-              const cmdModule = await import(`${fileUrl}?update=${Date.now()}`);
-              const cmd = cmdModule.default;
+      const files = getAllFiles(CMDS_DIR);
+      for (const filePath of files) {
+        const fileUrl = 'file://' + filePath.replace(/\\/g, '/');
+        const cmd = (await import(`${fileUrl}?update=${Date.now()}`)).default;
+        const name = cmd?.data?.name;
+        if (!name || !json[name]) continue;
 
-              const name = cmd?.data?.name;
-              if (!name || !json[name]) continue;
+        const relative = path.relative(CMDS_DIR, filePath);
+        const pastaCategoria = relative.split(path.sep)[0] || "misc";
 
-              const relative = path.relative(CMDS_DIR, fullPath);
-              const parts = relative.split(path.sep);
-              const pastaCategoria = parts.length > 1 ? parts[0] : "misc";
-
-              if (json[name].category !== pastaCategoria) {
-                dessincronizados.push({ nome: name, atual: json[name].category, correta: pastaCategoria });
-              }
-            } catch (err) {
-              console.error(`⚠️ [Aviso] Falha ao importar ${entry.name} para verificação de categoria.`);
-            }
-          }
+        if (json[name].category !== pastaCategoria) {
+          dessincronizados.push({ nome: name, atual: json[name].category, correta: pastaCategoria });
         }
-      };
-
-      await verificar(CMDS_DIR);
-
-      if (dessincronizados.length === 0) {
-        return await message.channel.send(msg("sync.mensagem_1"));
       }
 
-      let relatorio = "⚠️ **Dessincronias encontradas:**\n" + 
-        dessincronizados.map(c => `- \`${c.nome}\`: ${c.atual} -> **${c.correta}**`).join("\n") +
-        "\n\nDeseja sincronizar? (Responda com `s` em 30s)";
+      if (dessincronizados.length === 0) return message.reply(msg("sync.mensagem_1"));
 
-      await message.channel.send(relatorio);
-      const filter = m => m.author.id === message.author.id && m.content.toLowerCase() === 's';
-      const collected = await message.channel.awaitMessages({ filter, max: 1, time: 30000 });
+      await message.channel.send("⚠️ **Dessincronias de pasta:**\n" + dessincronizados.map(c => `- \`${c.nome}\`: ${c.atual} -> **${c.correta}**`).join("\n") + "\nConfirmar? (`s`)");
+      const collected = await message.channel.awaitMessages({ filter: m => m.author.id === message.author.id && m.content.toLowerCase() === 's', max: 1, time: 30000 });
 
       if (collected.size > 0) {
-        dessincronizados.forEach(c => { if(json[c.nome]) json[c.nome].category = c.correta; });
+        dessincronizados.forEach(c => json[c.nome].category = c.correta);
         atomicWrite(CMD_DATA_FILE, JSON.stringify(json, null, 2));
         await message.channel.send(msg("sync.mensagem_2"));
-      } else {
-        await message.channel.send(msg("sync.mensagem_3"));
       }
-    } catch (error) {
-      console.error("❌ [Erro Handler Cat]:", error);
-      await message.channel.send("❌ Ocorreu um erro ao processar a sincronização de categorias.");
     } finally {
       isSyncing = false;
-      safeExit();
+      if (restartRequested) process.exit(0);
     }
   },
 
   /**
-   * Sincroniza mensagens entre o ficheiro global e o código fonte de cada comando.
+   * Sincronização Inteligente de Mensagens (Snapshot 3-Way Merge)
    */
   msg: async (message) => {
     isSyncing = true;
-    const statusMsg = await message.reply("🔄 Sincronizando mensagens (Bidirecional)...");
+    const statusMsg = await message.reply("🔄 Iniciando sincronização inteligente...");
 
     try {
-      const jsonMTime = fs.existsSync(MSG_FILE) ? fs.statSync(MSG_FILE).mtimeMs : 0;
-      let mainData = {};
-      
-      try {
-        mainData = JSON.parse(fs.readFileSync(MSG_FILE, "utf8"));
-      } catch (e) {
-        console.error("⚠️ [Aviso] Message file vazio ou inválido, iniciando novo.");
-      }
-
+      let mainData = JSON.parse(fs.readFileSync(MSG_FILE, "utf8"));
+      let snapshot = fs.existsSync(SNAPSHOT_FILE) ? JSON.parse(fs.readFileSync(SNAPSHOT_FILE, "utf8")) : {};
       let pendingWrites = [];
       let jsonChanged = false;
 
       const files = getAllFiles(CMDS_DIR);
 
       for (const filePath of files) {
-        try {
-          const fileContent = fs.readFileSync(filePath, "utf8");
-          const fileMTime = fs.statSync(filePath).mtimeMs;
-          const register = extractRegisterBlock(fileContent);
-          
-          if (!register) continue;
+        const fileContent = fs.readFileSync(filePath, "utf8");
+        const register = extractRegisterBlock(fileContent);
+        if (!register) continue;
 
-          let localData;
-          try { 
-            localData = JSON.parse(register.inner); 
-          } catch (e) {
-            console.error(`\n❌ [Erro Sintaxe JSON] no comando: ${path.basename(filePath)}`);
-            console.error(`| Texto capturado: "${register.inner.substring(0, 50)}..."`);
-            continue; 
-          }
+        let L_Cmd;
+        try { L_Cmd = JSON.parse(register.inner); } catch { continue; }
 
-          const cmdName = Object.keys(localData)[0];
-          if (!cmdName) continue;
-          
-          const localMessages = localData[cmdName];
+        const cmdName = Object.keys(L_Cmd)[0];
+        const localMessages = L_Cmd[cmdName];
+        const globalMessages = mainData[cmdName] || {};
+        const snapMessages = snapshot[cmdName] || {};
 
-          // CASO A: Código é mais novo que o JSON -> Atualiza o JSON
-          if (fileMTime > jsonMTime) {
-            console.log(`[Sync Msg] 🆙 Atualizando JSON global via: ${cmdName}`);
-            mainData[cmdName] = { _nota: mainData[cmdName]?._nota, ...localMessages };
-            // Remove chaves que não existem mais no local
-            Object.keys(mainData[cmdName]).forEach(k => {
-              if (k !== '_nota' && !localMessages[k]) delete mainData[cmdName][k];
-            });
-            jsonChanged = true;
+        let mergedMessages = { ...snapMessages };
+        let localNeedsUpdate = false;
+        let globalNeedsUpdate = false;
+        let newFileContent = fileContent;
+
+        const allKeys = new Set([...Object.keys(localMessages), ...Object.keys(globalMessages), ...Object.keys(snapMessages)]);
+
+        for (const key of allKeys) {
+          if (key === '_nota') continue;
+          const valL = localMessages[key];
+          const valG = globalMessages[key];
+          const valS = snapMessages[key];
+
+          // LÓGICA DE DECISÃO (SNAPSHOT)
+          if (valL === valG) {
+            mergedMessages[key] = valL;
           } 
-          // CASO B: JSON é mais novo que o Código -> Atualiza o ficheiro do Comando
-          else if (jsonMTime > fileMTime) {
-            console.log(`[Sync Msg] ⬇️ Atualizando código fonte de: ${cmdName}`);
-            const globalMessages = mainData[cmdName];
-            if (!globalMessages) continue;
-
-            let newFileContent = fileContent;
-            let contentModified = false;
-
-            // 1. Atualiza bloco de comentário
-            const newBlock = `/*\n@register-messages\n${JSON.stringify({ [cmdName]: globalMessages }, null, 2)}\n@end\n*/`;
-            if (register.fullText !== newBlock) {
-              newFileContent = newFileContent.slice(0, register.fullStart) + newBlock + newFileContent.slice(register.fullEnd);
-              contentModified = true;
-            }
-
-            // 2. Atualiza chamadas msg('...') dinamicamente
-            for (const [gKey, gVal] of Object.entries(globalMessages)) {
-              if (gKey === '_nota') continue;
-              const oldKeyEntry = Object.entries(localMessages).find(([lk, lv]) => lv === gVal && lk !== gKey);
-              if (oldKeyEntry) {
-                const prev = newFileContent;
-                newFileContent = replaceMessageKey(newFileContent, cmdName, oldKeyEntry[0], gKey);
-                if (newFileContent !== prev) contentModified = true;
-              }
-            }
-
-            if (contentModified) pendingWrites.push({ path: filePath, content: newFileContent });
+          else if (valL === valS && valG !== valS) {
+            // Alteração no JSON vence
+            mergedMessages[key] = valG;
+            localNeedsUpdate = true;
+          } 
+          else if (valG === valS && valL !== valS) {
+            // Alteração no Código vence
+            mergedMessages[key] = valL;
+            globalNeedsUpdate = true;
+          } 
+          else {
+            // CONFLITO ou CHAVE NOVA: Código prevalece (Cenário 3)
+            mergedMessages[key] = valL ?? valG;
+            globalNeedsUpdate = true;
+            localNeedsUpdate = true;
           }
-        } catch (fileErr) {
-          console.error(`❌ [Erro Processar Ficheiro] ${filePath}:`, fileErr.message);
+
+          // Detecção de Renomeação (Cenário 1)
+          if (valL === undefined && valG !== undefined) {
+             const oldKey = Object.keys(localMessages).find(k => localMessages[k] === valG);
+             if (oldKey) {
+                newFileContent = replaceMessageKey(newFileContent, cmdName, oldKey, key);
+                localNeedsUpdate = true;
+             }
+          }
         }
+
+        if (globalNeedsUpdate) {
+          mainData[cmdName] = { _nota: globalMessages._nota, ...mergedMessages };
+          jsonChanged = true;
+        }
+
+        if (localNeedsUpdate || newFileContent !== fileContent) {
+          const finalBlock = `/*\n@register-messages\n${JSON.stringify({ [cmdName]: mainData[cmdName] }, null, 2)}\n@end\n*/`;
+          const updatedContent = newFileContent.slice(0, register.fullStart) + finalBlock + newFileContent.slice(register.fullEnd);
+          pendingWrites.push({ path: filePath, content: updatedContent });
+        }
+
+        snapshot[cmdName] = mainData[cmdName];
       }
 
-      if (jsonChanged) {
-        atomicWrite(MSG_FILE, JSON.stringify(mainData, null, 2));
-      }
+      if (jsonChanged) atomicWrite(MSG_FILE, JSON.stringify(mainData, null, 2));
+      for (const w of pendingWrites) atomicWrite(w.path, w.content);
+      atomicWrite(SNAPSHOT_FILE, JSON.stringify(snapshot, null, 2));
 
-      for (const w of pendingWrites) {
-        atomicWrite(w.path, w.content);
-      }
-
-      await statusMsg.edit("✅ Todas as mensagens foram sincronizadas com sucesso!");
-    } catch (error) {
-      console.error("❌ [Erro Handler Msg]:", error);
-      await statusMsg.edit("❌ Ocorreu um erro crítico durante a sincronização de mensagens.");
+      await statusMsg.edit(`✨ Sincronia concluída!\nJSON: ${jsonChanged ? 'Sim' : 'Não'} | Arquivos: ${pendingWrites.length}`);
     } finally {
       isSyncing = false;
-      safeExit();
+      if (restartRequested) process.exit(0);
     }
   }
 };
-
-// --- EXPORTAÇÃO DO COMANDO ---
 
 export default {
   data: {
     name: d.nome,
     aliases: d.apelidos,
-    description: d.descricao,
-    usage: d.uso,
-    category: d.categoria,
+    description: d.description,
+    usage: d.usage,
+    category: d.category,
     permissions: [PermissionFlagsBits.SendMessages],
     ownerOnly: true
   },
 
-  async execute(message, args, client) {
+  async execute(message, args) {
     const sub = args[0]?.toLowerCase();
     const run = handlers[sub];
-
-    if (!run) {
-      return await message.reply(msg("sync.uso_incorreto", { uso: d.uso }));
-    }
+    if (!run) return message.reply(msg("sync.uso_incorreto", { uso: d.usage }));
 
     try {
-      if (isSyncing) return await message.reply("⏳ Já existe uma sincronização em curso. Aguarde...");
-      await run(message, args, client);
+      if (isSyncing) return message.reply("⏳ Sincronização em curso...");
+      await run(message);
     } catch (error) {
-      console.error(`❌ [Erro Comando Sync]: Erro no subcomando ${sub}:`, error);
+      console.error(error);
       isSyncing = false;
-      await message.reply(msg("sync.erro_interno"));
-      safeExit();
+      return message.reply(msg("sync.erro_interno"));
     }
   }
 };
@@ -394,14 +277,13 @@ export default {
 @register-messages
 {
   "sync": {
-    "_nota": "Utilitário de sincronização atómica e bidirecional.",
+    "_nota": "Utilitário de sincronização atómica e bidirecional baseada em snapshots.",
     "uso_incorreto": "⚠️ Uso incorreto! Tente: {uso}",
     "erro_interno": "❌ Ocorreu um erro ao processar este comando.",
     "mensagem_1": "✅ Todas as categorias estão sincronizadas!",
-    "mensagem_2": "✅ Categorias atualizadas atomicamente.",
+    "mensagem_2": "🔄 Iniciando sincronização de mensagens...",
     "mensagem_3": "❌ Cancelado."
   }
 }
 @end
 */
-
