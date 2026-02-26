@@ -44,79 +44,115 @@ function findClosingParen(str, startIndex) {
 }
 
 /**
- * Super Parser: Extrai a string, traduz variáveis ${expr} e limpa caracteres de escape.
+ * Super Parser V2: Extrai a string, traduz variáveis ${expr}, limpa escapes
+ * E suporta múltiplas strings concatenadas com sinal de '+'.
  */
 function parseArgumentString(str) {
     let i = 0;
     while(i < str.length && /\s/.test(str[i])) i++; // Pula espaços iniciais
-    
+
     let isObject = false;
-    
+    let parseStart = i;
+    let parseEnd = str.length;
+
     // Suporte para { content: "..." }
     if (str[i] === '{') {
-        let contentMatch = str.slice(i).match(/content\s*:\s*(['"`])/);
+        const contentMatch = str.slice(i).match(/^\{\s*content\s*:\s*/);
         if (!contentMatch) return null;
-        i = i + contentMatch.index + contentMatch[0].length - 1;
+        
         isObject = true;
-    }
+        parseStart = i + contentMatch[0].length;
 
-    const quote = str[i];
-    if (!['"', "'", '`'].includes(quote)) return null;
+        // Acha onde o valor do content termina (na vírgula ou fim do objeto)
+        let depth = 0;
+        let inStr = false;
+        let quote = '';
+        for (let j = parseStart; j < str.length; j++) {
+            if (inStr) {
+                if (str[j] === '\\') j++;
+                else if (str[j] === quote) inStr = false;
+            } else {
+                if (str[j] === '"' || str[j] === "'" || str[j] === '`') { inStr = true; quote = str[j]; }
+                else if (str[j] === '{' || str[j] === '[' || str[j] === '(') depth++;
+                else if (str[j] === '}' || str[j] === ']' || str[j] === ')') depth--;
+                else if (str[j] === ',' && depth === 0) {
+                    parseEnd = j;
+                    break;
+                }
+            }
+        }
+    }
 
     let text = "";
     let vars = [];
-    let stringStart = i;
-    i++; 
+    let stringFragmentsFound = false;
+    let j = parseStart;
 
-    while (i < str.length) {
-        if (str[i] === '\\') {
-            let next = str[i+1];
-            // Traduz escapes para caracteres reais (evita barras invertidas duplas no JSON)
-            if (next === 'n') text += '\n';
-            else if (next === 't') text += '\t';
-            else if (next === 'r') text += '\r';
-            else if (next === '\\') text += '\\';
-            else text += next; 
-            i += 2;
-        } else if (quote === '`' && str[i] === '$' && str[i+1] === '{') {
-            i += 2;
-            let exprStart = i;
-            let depth = 1;
-            while (i < str.length && depth > 0) {
-                if (str[i] === '{') depth++;
-                else if (str[i] === '}') depth--;
-                i++;
+    // Varre todo o bloco em busca de TODAS as strings (lidando com concatenações)
+    while (j < parseEnd) {
+        const ch = str[j];
+        if (ch === '"' || ch === "'" || ch === '`') {
+            stringFragmentsFound = true;
+            const quote = ch;
+            j++;
+            while (j < parseEnd && str[j] !== quote) {
+                if (str[j] === '\\') {
+                    let next = str[j+1];
+                    if (next === 'n') text += '\n';
+                    else if (next === 't') text += '\t';
+                    else if (next === 'r') text += '\r';
+                    else if (next === '\\') text += '\\';
+                    else text += next; 
+                    j += 2;
+                } else if (quote === '`' && str[j] === '$' && str[j+1] === '{') {
+                    j += 2;
+                    let exprStart = j;
+                    let depth = 1;
+                    while (j < parseEnd && depth > 0) {
+                        if (str[j] === '{') depth++;
+                        else if (str[j] === '}') depth--;
+                        j++;
+                    }
+                    let expr = str.slice(exprStart, j - 1).trim();
+                    
+                    let safeKey = expr.split('.').pop().replace(/[^a-zA-Z0-9_$]/g, '');
+                    if (!safeKey || safeKey.match(/^\d/)) safeKey = "var" + (vars.length + 1);
+                    
+                    let finalKey = safeKey;
+                    let counter = 2;
+                    while (vars.some(v => v.key === finalKey)) {
+                        finalKey = safeKey + counter++;
+                    }
+                    
+                    vars.push({ key: finalKey, expr: expr });
+                    text += `{${finalKey}}`;
+                } else {
+                    text += str[j];
+                    j++;
+                }
             }
-            let expr = str.slice(exprStart, i - 1).trim();
-            
-            // Gera uma chave segura para o JSON a partir da expressão JS
-            let safeKey = expr.split('.').pop().replace(/[^a-zA-Z0-9_$]/g, '');
-            if (!safeKey || safeKey.match(/^\d/)) safeKey = "var" + (vars.length + 1);
-            
-            // Previne chaves duplicadas (ex: dois ${user.name} geram 'name' e 'name2')
-            let finalKey = safeKey;
-            let counter = 2;
-            while (vars.some(v => v.key === finalKey)) {
-                finalKey = safeKey + counter++;
-            }
-            
-            vars.push({ key: finalKey, expr: expr });
-            text += `{${finalKey}}`;
-        } else if (str[i] === quote) {
-            i++; break; // Fim da string
+            j++; // Pula aspa de fechamento
         } else {
-            text += str[i];
-            i++;
+            // Se estiver fora de uma string (ex: sinal de +, espaços, quebras de linha no código), apenas ignore e avance
+            j++;
         }
     }
     
+    if (!stringFragmentsFound) return null;
+
     return {
         extractedText: text.trim(),
         variables: vars,
-        startIdx: stringStart,
-        endIdx: i
+        startIdx: parseStart,
+        endIdx: isObject ? parseEnd : str.length
     };
 }
+
+
+
+
+
+
 
 function isSendCallValid(content, matchIndex) {
     const lookBehind = content.slice(Math.max(0, matchIndex - 80), matchIndex + 6);
