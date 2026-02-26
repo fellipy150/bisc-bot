@@ -4,14 +4,16 @@ import { fileURLToPath } from "url";
 
 // Resolver caminho absoluto (ESM safe)
 const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);const jsonPath = path.join(__dirname, "message_data.json");
+const __dirname = path.dirname(__filename);
+const jsonPath = path.join(__dirname, "message_data.json");
 const cmdsDir = path.join(__dirname, "../commands");
 const REGISTER_REGEX = /\/\*\s*@register-messages([\s\S]*?)@end\s*\*\//g;
 
 // Cache em memória
 let messagesCache = null;
 const syncAttempted = new Set();
-  /**
+
+/**
  * Carrega JSON apenas uma vez.
  */
 function loadMessages() {
@@ -40,15 +42,34 @@ function resolvePath(obj, pathString) {
 }
 
 /**
- * Aplica placeholders {variavel}
+ * Processa variáveis em Strings ou Objetos (Embeds) recursivamente
  */
-function applyVariables(template, variables) {
-  return template.replace(/\{(.*?)\}/g, (_, key) => {
-    return variables[key] !== undefined
-      ? variables[key]
-      : `{${key}}`; // mantém placeholder se não enviado
-  });
-}function deepMergeSafe(target, source) {
+function processContent(content, variables) {
+  if (typeof content === "string") {
+    return content.replace(/\{(.*?)\}/g, (match, key) => {
+      const val = variables[key];
+      if (val !== undefined) return val;
+      
+      // Log de aviso apenas em desenvolvimento
+      if (process.env.NODE_ENV !== 'production') {
+          console.warn(`⚠️ Placeholder {${key}} não fornecido no objeto de variáveis.`);
+      }
+      return match;
+    });
+  }
+
+  if (typeof content === "object" && content !== null && !Array.isArray(content)) {
+    const newObj = {};
+    for (const key in content) {
+      newObj[key] = processContent(content[key], variables);
+    }
+    return newObj;
+  }
+
+  return content;
+}
+
+function deepMergeSafe(target, source) {
   for (const key in source) {
     if (typeof source[key] === "object" && source[key] !== null && !Array.isArray(source[key])) {
       if (!target[key]) target[key] = {};
@@ -125,11 +146,10 @@ export default function msg(path, variables = {}) {
     }
   }
 
-  if (typeof value !== "string") {
+  if (value === null || value === undefined) {
     console.warn(`⚠️ Valor inválido para: ${path}`);
     return `__invalid_message__: ${path}`;
   }
 
-  return applyVariables(value, variables);
+  return processContent(value, variables);
 }
-  
