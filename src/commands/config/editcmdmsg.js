@@ -1,3 +1,4 @@
+import msg from '../../config/msg-handler.js';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import fs from 'fs';
@@ -278,3 +279,29 @@ export default {
     return message.reply('❌ Mencione um comando ou responda a uma mensagem.');
   },
 };
+
+/*
+@register-messages
+{
+  "editcmdmsg": {
+    "_nota": "O JSON abaixo pode conter QUALQUER estrutura válida. Você pode adicionar objetos aninhados, múltiplas chaves, ou qualquer outro conteúdo necessário para o comando. O utilitário de sincronização fará merge profundo automaticamente.",
+    "uso_incorreto": "⚠️ Uso incorreto! Tente: {uso}",
+    "erro_interno": "❌ Ocorreu um erro ao processar este comando.",
+    "mensagem_1": "Arquivo não encontrado em: \\",
+    "mensagem_2": "o arquivo \\",
+    "mensagem_3": "Operação cancelada.",
+    "mensagem_4": "❌ Opção inválida.",
+    "mensagem_5": "Copie e edite a mensagem abaixo (envie o novo texto):\\n\\",
+    "mensagem_6": "❌ O arquivo mudou enquanto você digitava. Operação abortada.",
+    "mensagem_7": "Comando \\",
+    "mensagem_8": "⏳ Tempo esgotado.",
+    "mensagem_9": "❌ Erro ao processar.",
+    "mensagem_10": "❌ Comando \\",
+    "mensagem_11": "❌ Não encontrei a origem dessa mensagem.",
+    "mensagem_12": "Inválido.",
+    "mensagem_13": "Tempo esgotado.",
+    "mensagem_14": "❌ Mencione um comando ou responda a uma mensagem."
+  }
+}
+@end
+*/

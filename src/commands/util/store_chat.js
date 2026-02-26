@@ -1,3 +1,4 @@
+import msg from '../../config/msg-handler.js';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import fs from 'fs';
@@ -205,3 +206,16 @@ export default {
     }
   }
 };
+
+/*
+@register-messages
+{
+  "store_chat": {
+    "_nota": "O JSON abaixo pode conter QUALQUER estrutura válida. Você pode adicionar objetos aninhados, múltiplas chaves, ou qualquer outro conteúdo necessário para o comando. O utilitário de sincronização fará merge profundo automaticamente.",
+    "uso_incorreto": "⚠️ Uso incorreto! Tente: {uso}",
+    "erro_interno": "❌ Ocorreu um erro ao processar este comando.",
+    "mensagem_1": "⚠️ Uso incorreto! Tente: \\"
+  }
+}
+@end
+*/
