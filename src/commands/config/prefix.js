@@ -1,3 +1,4 @@
+import msg from '../../config/msg-handler.js';
 import allData from '../../config/command_data.json' with { type: 'json' };
 const d = allData["prefix"];
 import { addPrefix, removePrefix, getPrefixes } from '../../config/config.js';
@@ -41,3 +42,23 @@ export default {
     }
   }
 };
+/*
+@register-messages
+{
+  "prefix": {
+    "_nota": "O JSON abaixo pode conter QUALQUER estrutura válida. Você pode adicionar objetos aninhados, múltiplas chaves, ou qualquer outro conteúdo necessário para o comando. O utilitário de sincronização fará merge profundo automaticamente.",
+    "uso_incorreto": "⚠️ Uso incorreto! Tente: {uso}",
+    "erro_interno": "❌ Ocorreu um erro ao processar este comando.",
+    "mensagem_1": "Uso: ${this.data.usage}",
+    "mensagem_2": "Use: ${this.data.usage}",
+    "mensagem_3": "✅ Prefixo ‘${p}’ adicionado.\\nAtuais: ${getPrefixes().join(\", \")}",
+    "mensagem_4": "⚠️ Prefixo ‘${p}’ já existe.",
+    "mensagem_5": "Use: ${this.data.usage}",
+    "mensagem_6": "✅ Prefixo ‘${p}’ removido.\\nAtuais: ${getPrefixes().join(\", \")}",
+    "mensagem_7": "⚠️ Prefixo ‘${p}’ não encontrado.",
+    "mensagem_8": "📋 Prefixos atuais: ${getPrefixes().join(\", \")}",
+    "mensagem_9": "Subcomando inválido. Use: add, remove ou list."
+  }
+}
+@end
+*/

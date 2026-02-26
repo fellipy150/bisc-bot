@@ -1,3 +1,4 @@
+import msg from '../../config/msg-handler.js';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import { EmbedBuilder, PermissionFlagsBits } from 'discord.js';
@@ -92,3 +93,20 @@ export default {
   }
 };
 
+
+/*
+@register-messages
+{
+  "sacar": {
+    "_nota": "O JSON abaixo pode conter QUALQUER estrutura válida. Você pode adicionar objetos aninhados, múltiplas chaves, ou qualquer outro conteúdo necessário para o comando. O utilitário de sincronização fará merge profundo automaticamente.",
+    "uso_incorreto": "⚠️ Uso incorreto! Tente: {uso}",
+    "erro_interno": "❌ Ocorreu um erro ao processar este comando.",
+    "mensagem_1": "⚠️ **Uso incorreto!** Tente: \\",
+    "mensagem_2": "❌ Por favor, insira um valor numérico válido e maior que zero para sacar.",
+    "mensagem_3": "❌ Você não possui Biscoins guardadas no banco para realizar um saque.",
+    "mensagem_4": "❌ Você não tem essa quantia no banco. Seu saldo bancário atual é de **${userData.bank.toLocaleString()} Biscoins**.",
+    "mensagem_5": "❌ **Falha na operação:** ${result.reason}"
+  }
+}
+@end
+*/
