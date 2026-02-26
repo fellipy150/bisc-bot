@@ -9,7 +9,7 @@ import allData from '../../config/command_data.json' with { type: 'json' };
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-[cite_start]// Definição de Caminhos[span_4](end_span)[span_5](end_span)
+// Definição de Caminhos[span_4](end_span)[span_5](end_span)
 const CMDS_DIR = path.join(__dirname, "../../commands");
 const MSG_FILE = path.join(__dirname, "../../config/message_data.json");
 const CMD_DATA_FILE = path.join(__dirname, "../../config/command_data.json");
@@ -17,7 +17,7 @@ const SNAPSHOT_FILE = path.join(__dirname, "../../config/sync_snapshot.json");
 
 const d = allData["sync"];
 
-[span_6](start_span)[span_7](start_span)[span_8](start_span)[span_9](start_span)// --- ESTADO GLOBAL E CONTROLE DE SINAL [cite: 89-94, 223-228] ---
+// ESTADO GLOBAL E CONTROLE DE SINAL 
 let isSyncing = false;
 let restartRequested = false;
 
@@ -30,7 +30,7 @@ process.on('SIGUSR2', () => {
   }
 });
 
-[cite_start]// --- FUNÇÕES UTILITÁRIAS [cite: 95-120, 229-254] ---
+// --- FUNÇÕES UTILITÁRIAS 
 
 function atomicWrite(filePath, content) {
   const tmpPath = filePath + '.tmp';
@@ -109,8 +109,7 @@ function replaceMessageKey(content, cmdName, oldKey, newKey) {
 // --- HANDLERS ---
 
 const handlers = {
-  [cite_start]/** * Sincronização de Categorias [cite: 121-144, 255-278]
-   */
+  /** * Sincronização de Categorias */
   cat: async (message) => {
     isSyncing = true;
     try {
@@ -277,12 +276,11 @@ export default {
 @register-messages
 {
   "sync": {
-    "_nota": "Utilitário de sincronização atómica e bidirecional baseada em snapshots.",
+    "_nota": "O JSON abaixo pode conter QUALQUER estrutura válida. Você pode adicionar objetos aninhados, múltiplas chaves, ou qualquer outro conteúdo necessário para o comando. O utilitário de sincronização fará merge profundo automaticamente.",
     "uso_incorreto": "⚠️ Uso incorreto! Tente: {uso}",
     "erro_interno": "❌ Ocorreu um erro ao processar este comando.",
     "mensagem_1": "✅ Todas as categorias estão sincronizadas!",
-    "mensagem_2": "🔄 Iniciando sincronização de mensagens...",
-    "mensagem_3": "❌ Cancelado."
+    "mensagem_2": "🔄 Iniciando sincronização de mensagens..."
   }
 }
 @end
