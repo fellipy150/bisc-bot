@@ -1,21 +1,17 @@
 import fs from 'fs';
 import path from 'path';
 
-// ⚠️ Pasta onde ficam seus comandos (Executando de dentro de src/)
+// ⚠️ Ajuste os caminhos se necessário (considerando execução da raiz do src)
 const COMMANDS_DIR = './commands/';
+const GLOBAL_MSG_FILE = './config/message_data.json'; 
 
-// ─── Objetos receptores válidos de .send() ────────────────────────────────────
-// Evita capturar fs.send(), socket.send(), etc.
 const VALID_SEND_RECEIVERS = /\b(message\.channel|interaction\.channel|channel|thread)\s*\.\s*send\s*\(/;
-
-// ─────────────────────────────────────────────────────────────────────────────
 
 function getAllJsFiles(dirPath, arrayOfFiles = [], isRoot = true) {
     const files = fs.readdirSync(dirPath);
     files.forEach((file) => {
         const fullPath = path.join(dirPath, file);
-        const isDirectory = fs.statSync(fullPath).isDirectory();
-        if (isDirectory) {
+        if (fs.statSync(fullPath).isDirectory()) {
             arrayOfFiles = getAllJsFiles(fullPath, arrayOfFiles, false);
         } else if (file.endsWith('.js') && !isRoot) {
             arrayOfFiles.push(fullPath);
@@ -33,20 +29,14 @@ function findClosingParen(str, startIndex) {
     while (i < str.length && depth > 0) {
         const ch = str[i];
         if (inString) {
-            if (ch === '\\') {
-                i++;
-            } else if (ch === stringChar) {
-                inString = false;
-            }
+            if (ch === '\\') i++; // Pula o escape
+            else if (ch === stringChar) inString = false;
         } else {
             if (ch === '"' || ch === "'" || ch === '`') {
                 inString = true;
                 stringChar = ch;
-            } else if (ch === '(') {
-                depth++;
-            } else if (ch === ')') {
-                depth--;
-            }
+            } else if (ch === '(') depth++;
+            else if (ch === ')') depth--;
         }
         i++;
     }
@@ -54,125 +44,96 @@ function findClosingParen(str, startIndex) {
 }
 
 /**
- * Extrai TODO o conteúdo textual dos argumentos de uma chamada,
- * juntando strings simples e template literals concatenados.
- * Interpolações ${expr} viram {expr} no JSON.
+ * Super Parser: Extrai a string, traduz variáveis ${expr} e limpa caracteres de escape.
  */
-function extractFullText(args) {
-    const parts = [];
+function parseArgumentString(str) {
     let i = 0;
+    while(i < str.length && /\s/.test(str[i])) i++; // Pula espaços iniciais
+    
+    let isObject = false;
+    
+    // Suporte para { content: "..." }
+    if (str[i] === '{') {
+        let contentMatch = str.slice(i).match(/content\s*:\s*(['"`])/);
+        if (!contentMatch) return null;
+        i = i + contentMatch.index + contentMatch[0].length - 1;
+        isObject = true;
+    }
 
-    while (i < args.length) {
-        const ch = args[i];
-        if (ch === '"' || ch === "'") {
-            const quote = ch;
-            i++;
-            let str = '';
-            while (i < args.length && args[i] !== quote) {
-                if (args[i] === '\\') {
-                    str += args[i] + args[i + 1];
-                    i += 2;
-                } else {
-                    str += args[i];
-                    i++;
-                }
+    const quote = str[i];
+    if (!['"', "'", '`'].includes(quote)) return null;
+
+    let text = "";
+    let vars = [];
+    let stringStart = i;
+    i++; 
+
+    while (i < str.length) {
+        if (str[i] === '\\') {
+            let next = str[i+1];
+            // Traduz escapes para caracteres reais (evita barras invertidas duplas no JSON)
+            if (next === 'n') text += '\n';
+            else if (next === 't') text += '\t';
+            else if (next === 'r') text += '\r';
+            else if (next === '\\') text += '\\';
+            else text += next; 
+            i += 2;
+        } else if (quote === '`' && str[i] === '$' && str[i+1] === '{') {
+            i += 2;
+            let exprStart = i;
+            let depth = 1;
+            while (i < str.length && depth > 0) {
+                if (str[i] === '{') depth++;
+                else if (str[i] === '}') depth--;
+                i++;
             }
-            parts.push(str);
-            i++;
-        } else if (ch === '`') {
-            i++;
-            let str = '';
-            while (i < args.length && args[i] !== '`') {
-                if (args[i] === '\\') {
-                    str += args[i] + args[i + 1];
-                    i += 2;
-                } else if (args[i] === '$' && args[i + 1] === '{') {
-                    i += 2;
-                    let expr = '';
-                    let depth = 1;
-                    while (i < args.length && depth > 0) {
-                        if (args[i] === '{') depth++;
-                        else if (args[i] === '}') depth--;
-                        if (depth > 0) expr += args[i];
-                        i++;
-                    }
-                    str += `{${expr.trim()}}`;
-                } else {
-                    str += args[i];
-                    i++;
-                }
+            let expr = str.slice(exprStart, i - 1).trim();
+            
+            // Gera uma chave segura para o JSON a partir da expressão JS
+            let safeKey = expr.split('.').pop().replace(/[^a-zA-Z0-9_$]/g, '');
+            if (!safeKey || safeKey.match(/^\d/)) safeKey = "var" + (vars.length + 1);
+            
+            // Previne chaves duplicadas (ex: dois ${user.name} geram 'name' e 'name2')
+            let finalKey = safeKey;
+            let counter = 2;
+            while (vars.some(v => v.key === finalKey)) {
+                finalKey = safeKey + counter++;
             }
-            parts.push(str);
-            i++;
+            
+            vars.push({ key: finalKey, expr: expr });
+            text += `{${finalKey}}`;
+        } else if (str[i] === quote) {
+            i++; break; // Fim da string
         } else {
+            text += str[i];
             i++;
         }
     }
-    return parts.join('');
+    
+    return {
+        extractedText: text.trim(),
+        variables: vars,
+        startIdx: stringStart,
+        endIdx: i
+    };
 }
 
-/**
- * Tenta extrair string de um objeto { content: "..." } do Discord.js.
- * Retorna null se não for esse padrão.
- */
-function extractContentFromObject(args) {
-    const match = args.match(/^\s*\{\s*content\s*:\s*(['"`])/);
-    if (!match) return null;
-    const quoteStart = args.indexOf(match[1]);
-    if (quoteStart === -1) return null;
-    const text = extractFullText(args.slice(quoteStart));
-    return text || null;
-}
-
-/**
- * Determina se um método capturado deve ser migrado e retorna o texto extraído.
- * Retorna null se deve ser ignorado.
- */
-function resolveArgs(methodName, args) {
-    const trimmed = args.trimStart();
-
-    // Caso 1: Primeiro argumento é string literal
-    if (/^['"`]/.test(trimmed)) {
-        const text = extractFullText(trimmed);
-        return text.trim() !== '' ? text : null;
-    }
-
-    // Caso 2: Objeto { content: "..." } (Discord.js v10+)
-    if (/^\{/.test(trimmed)) {
-        return extractContentFromObject(trimmed);
-    }
-
-    // Caso 3: Variável ou expressão — NÃO migrar
-    return null;
-}
-
-/**
- * Valida se um .send() encontrado tem um receptor Discord legítimo.
- */
 function isSendCallValid(content, matchIndex) {
     const lookBehind = content.slice(Math.max(0, matchIndex - 80), matchIndex + 6);
     return VALID_SEND_RECEIVERS.test(lookBehind);
 }
 
-/**
- * Extrai o objeto de mensagens do bloco @register-messages existente.
- * Retorna {} se não houver bloco ou se o JSON for inválido.
- */
-function extractExistingMessages(content, commandName) {
+function extractExistingMessages(content) {
     const blockMatch = content.match(/\/\*[\s\n]*@register-messages([\s\S]*?)@end[\s\n]*\*\//);
     if (!blockMatch) return {};
     try {
         const parsed = JSON.parse(blockMatch[1].trim());
-        return parsed[commandName] ?? {};
+        return Object.values(parsed)[0] ?? {};
     } catch {
         return {};
     }
 }
 
-/**
- * Coleta todas as chaves msg("cmd.key") já em uso no código.
- * Retorna um array ordenado pela ordem de aparição, sem duplicatas.
- */
 function collectUsedMsgKeys(content, commandName) {
     const seen = new Set();
     const ordered = [];
@@ -187,45 +148,45 @@ function collectUsedMsgKeys(content, commandName) {
     return ordered;
 }
 
-// ─────────────────────────────────────────────────────────────────────────────
+// Carrega o JSON global uma vez para salvar dados que não estão nos arquivos
+let globalMessagesData = {};
+if (fs.existsSync(GLOBAL_MSG_FILE)) {
+    try {
+        globalMessagesData = JSON.parse(fs.readFileSync(GLOBAL_MSG_FILE, 'utf8'));
+    } catch (e) {
+        console.error("⚠️ Aviso: Arquivo message_data.json global inválido.");
+    }
+}
 
 function migrateCommand(filePath) {
     if (filePath.endsWith('migrator.js')) return;
-
     let content = fs.readFileSync(filePath, 'utf8');
-
-    console.log(`🔄 Processando: ${filePath}`);
 
     // 1. Extrai o nome do comando (antes de remover o bloco)
     const cmdMatch = content.match(/allData\[["']([^"']+)["']\]/);
     const commandName = cmdMatch ? cmdMatch[1] : path.basename(filePath, '.js');
 
-    // 2. Salva mensagens já registradas no bloco anterior (valores por chave)
-    const previousMessages = extractExistingMessages(content, commandName);
+    console.log(`🔄 Processando: ${commandName} (${filePath})`);
 
-    // 3. Remove bloco @register-messages antigo para recriar do zero
-    content = content.replace(/\/\*[\s\n]*@register-messages[\s\S]*?@end[\s\n]*\*\//g, '');
-    content = content.trimEnd();
+    // 2. Busca mensagens antigas (Arquivo Local + JSON Global)
+    const localMessages = extractExistingMessages(content);
+    const globalMessages = globalMessagesData[commandName] ?? {};
+    const previousMessages = { ...globalMessages, ...localMessages };
+
+    // 3. Remove bloco antigo
+    content = content.replace(/\/\*[\s\n]*@register-messages[\s\S]*?@end[\s\n]*\*\//g, '').trimEnd();
 
     const messagesFound = {};
-
-    // ── Detecta se o arquivo já foi migrado ──────────────────────────────────
-    // Um arquivo migrado usa msg("cmd.key") em vez de strings literais nas chamadas.
     const alreadyMigrated = new RegExp(`msg\\s*\\(\\s*['"\`]${commandName}\\.`).test(content);
 
     if (alreadyMigrated) {
-        // ── MODO RECONCILIAÇÃO ────────────────────────────────────────────────
-        // Coleta as chaves usadas no código e preserva seus valores do bloco
-        // anterior. O resultado reflete EXATAMENTE o que o código referencia.
+        // --- MODO RECONCILIAÇÃO ---
         const usedKeys = collectUsedMsgKeys(content, commandName);
-
         for (const key of usedKeys) {
-            // Preserva valor existente; placeholder apenas se chave for nova
             messagesFound[key] = previousMessages[key] ?? `[TODO: ${key}]`;
         }
     } else {
-        // ── MODO MIGRAÇÃO ─────────────────────────────────────────────────────
-        // Arquivo bruto: substitui strings literais por msg() e extrai textos.
+        // --- MODO MIGRAÇÃO PROFUNDA ---
         const methodRegex = /\.(reply|edit|send|followUp|editReply)\s*\(/g;
         let result = '';
         let lastIndex = 0;
@@ -238,30 +199,39 @@ function migrateCommand(filePath) {
 
             if (methodName === 'send' && !isSendCallValid(content, match.index)) {
                 result += content.slice(lastIndex, argsStart);
-                lastIndex = argsStart;
-                methodRegex.lastIndex = argsStart;
-                continue;
+                lastIndex = argsStart; methodRegex.lastIndex = argsStart; continue;
             }
 
             const closingIndex = findClosingParen(content, argsStart);
             if (closingIndex === -1) continue;
 
             const args = content.slice(argsStart, closingIndex);
-            const extractedText = resolveArgs(methodName, args);
+            const parsed = parseArgumentString(args);
 
-            if (extractedText === null) {
+            if (!parsed || !parsed.extractedText) {
                 result += content.slice(lastIndex, argsStart);
-                lastIndex = argsStart;
-                methodRegex.lastIndex = argsStart;
-                continue;
+                lastIndex = argsStart; methodRegex.lastIndex = argsStart; continue;
             }
 
-            const msgKey = `mensagem_${msgCounter}`;
-            messagesFound[msgKey] = extractedText;
-            msgCounter++;
+            const msgKey = `mensagem_${msgCounter++}`;
+            messagesFound[msgKey] = parsed.extractedText;
+
+            // Monta o objeto de variáveis: { tempoTotal, name: user.name }
+            let varString = "";
+            if (parsed.variables.length > 0) {
+                const props = parsed.variables.map(v => 
+                    v.key === v.expr ? v.key : `"${v.key}": ${v.expr}`
+                ).join(', ');
+                varString = `, { ${props} }`;
+            }
+
+            const replacement = `msg("${commandName}.${msgKey}"${varString})`;
+            
+            // Substitui APENAS a string dentro dos argumentos, preservando objetos
+            const newArgs = args.slice(0, parsed.startIdx) + replacement + args.slice(parsed.endIdx);
 
             result += content.slice(lastIndex, match.index);
-            result += `.${methodName}(msg("${commandName}.${msgKey}"))`;
+            result += `.${methodName}(${newArgs})`;
 
             lastIndex = closingIndex + 1;
             methodRegex.lastIndex = lastIndex;
@@ -271,20 +241,16 @@ function migrateCommand(filePath) {
         content = result;
     }
 
-    // 4. Injeta o import do msg handler no topo (se ainda não houver)
+    // 4. Injeta import se não existir
     if (!content.includes('msg-handler.js')) {
         const dir = path.dirname(filePath);
-        let relativePath = path.relative(dir, 'config');
-        if (relativePath === '') relativePath = '.';
+        let relativePath = path.relative(dir, 'config') || '.';
         if (!relativePath.startsWith('.')) relativePath = './' + relativePath;
         content = `import msg from '${relativePath}/msg-handler.js';\n` + content;
     }
 
-    // 5. Monta o bloco JSON final
-    //    "uso_incorreto" e "erro_interno" só entram se o código realmente os usar.
-    const usesKey = (key) =>
-        new RegExp(`msg\\s*\\(\\s*['"\`]${commandName}\\.${key}['"\`]`).test(content);
-
+    // 5. Bloco JSON Final
+    const usesKey = (k) => new RegExp(`msg\\s*\\(\\s*['"\`]${commandName}\\.${k}['"\`]`).test(content);
     const defaults = {};
     if (usesKey('uso_incorreto')) defaults['uso_incorreto'] = previousMessages['uso_incorreto'] ?? '⚠️ Uso incorreto! Tente: {uso}';
     if (usesKey('erro_interno'))  defaults['erro_interno']  = previousMessages['erro_interno']  ?? '❌ Ocorreu um erro ao processar este comando.';
@@ -299,12 +265,10 @@ function migrateCommand(filePath) {
 
     const finalFooter = `\n\n/*\n@register-messages\n${JSON.stringify(jsonBlock, null, 2)}\n@end\n*/\n`;
 
-    // 6. Sobrescreve o arquivo
     fs.writeFileSync(filePath, content + finalFooter, 'utf8');
-    console.log(`✅ Atualizado com sucesso: ${filePath}`);
+    console.log(`✅ Atualizado com sucesso: ${commandName}`);
 }
 
-// Iniciar
 const files = getAllJsFiles(COMMANDS_DIR);
 files.forEach(migrateCommand);
 console.log('\n🎉 Varredura concluída! Verifique seus arquivos.');
