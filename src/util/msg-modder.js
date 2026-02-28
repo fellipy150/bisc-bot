@@ -1,109 +1,106 @@
-const fs = require('fs');
-const path = require('path');
-const yaml = require('js-yaml');
-const readline = require('readline');
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import yaml from 'js-yaml';
+import readline from 'node:readline/promises';
+import { stdin as input, stdout as output } from 'node:process';
 
-// Caminhos dos arquivos
-const jsonPath = path.join(__dirname, '../config/message_data.json');
-const yamlPath = path.join(__dirname, 'message_mod.yaml');
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
-const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout
-});
+const jsonPath = path.resolve(__dirname, '../config/message_data.json');
+const yamlPath = path.resolve(__dirname, 'message_mod.yaml');
 
-// Função utilitária para fazer perguntas ao usuário
-const ask = (query) => new Promise((resolve) => rl.question(query, resolve));
+const rl = readline.createInterface({ input, output });
 
 async function main() {
     try {
-        // 1. Carregar o JSON
-        if (!fs.existsSync(jsonPath)) {
-            console.error('❌ Arquivo message_data.json não encontrado!');
-            process.exit(1);
-        }
-        let data = JSON.parse(fs.readFileSync(jsonPath, 'utf8'));
-
-        let modConfig = null;
-
-        // 2. Verificar se o YAML existe
-        if (fs.existsSync(yamlPath)) {
-            console.log('📄 Arquivo message_mod.yaml encontrado. Carregando configurações...');
-            modConfig = yaml.load(fs.readFileSync(yamlPath, 'utf8'));
-        } else {
-            console.log('❓ Arquivo message_mod.yaml não encontrado.');
-            const choice = await ask('Deseja modificar (1) Chaves ou (2) Conteúdo? ');
+        // 1. Verificar se o YAML existe
+        if (!fs.existsSync(yamlPath)) {
+            console.log('⚠️ Arquivo "message_mod.yaml" não encontrado.');
+            console.log('Vou gerar um template para você preencher.');
             
+            const choice = await rl.question('\nO que deseja fazer?\n(1) Alterar NOME de uma chave\n(2) Alterar CONTEÚDO de uma mensagem\nEscolha: ');
+
+            let template = {};
             if (choice === '1') {
-                modConfig = { 
-                    key: await ask('Nome antigo da chave: '),
-                    new_key: '',
-                    content: await ask('Conteúdo (deixe em branco para localizar por chave): ')
+                template = {
+                    key: 'nome_antigo_da_chave',
+                    new_key: '', // Deixe vazio para o script perguntar ou preencha aqui
+                    content: ''  // Opcional: use para filtrar se houver chaves duplicadas
                 };
             } else if (choice === '2') {
-                modConfig = {
-                    key: await ask('Nome da chave: '),
-                    new_content: '',
-                    content: await ask('Antigo conteúdo (deixe em branco para localizar por chave): ')
+                template = {
+                    key: 'nome_da_chave',
+                    content: '', // Opcional: conteúdo antigo para verificação
+                    new_content: '' // Novo texto da mensagem
                 };
             } else {
-                console.log('Operação cancelada.');
-                process.exit(0);
+                console.log('Opção inválida. Operação cancelada.');
+                return;
             }
+
+            // Salva o arquivo YAML
+            fs.writeFileSync(yamlPath, yaml.dump(template), 'utf8');
+            console.log('\n✅ Arquivo "message_mod.yaml" criado com sucesso!');
+            console.log('👉 Edite o arquivo com os dados desejados e execute este script novamente.');
+            return;
         }
 
-        // 3. Processar Alterações
-        const isKeyMod = 'new_key' in modConfig;
+        // 2. Se o YAML existe, processar a alteração no JSON
+        console.log('🚀 Arquivo de modificação encontrado. Iniciando processamento...');
         
-        // Se os novos valores estiverem em branco, pergunta ao usuário
-        if (isKeyMod && !modConfig.new_key) {
-            modConfig.new_key = await ask(`Digite o novo nome para a chave "${modConfig.key}": `);
-        } else if (!isKeyMod && !modConfig.new_content) {
-            modConfig.new_content = await ask(`Digite o novo conteúdo para a chave "${modConfig.key}": `);
+        if (!fs.existsSync(jsonPath)) {
+            console.error(`❌ Erro: O arquivo ${jsonPath} não foi encontrado.`);
+            return;
         }
 
-        let totalAlteracoes = 0;
+        const modConfig = yaml.load(fs.readFileSync(yamlPath, 'utf8'));
+        let jsonData = JSON.parse(fs.readFileSync(jsonPath, 'utf8'));
+        
+        const isKeyMod = Object.hasOwn(modConfig, 'new_key');
+        
+        // Se o campo de destino estiver vazio no YAML, pergunta no terminal
+        if (isKeyMod && !modConfig.new_key) {
+            modConfig.new_key = await rl.question(`Digite o NOVO NOME para a chave "${modConfig.key}": `);
+        } else if (!isKeyMod && !modConfig.new_content) {
+            modConfig.new_content = await rl.question(`Digite o NOVO CONTEÚDO para a chave "${modConfig.key}": `);
+        }
 
-        // Iterar sobre as categorias do JSON (${name}, sync, etc)
-        for (let category in data) {
-            const section = data[category];
+        let totalChanges = 0;
 
-            if (isKeyMod) {
-                // LÓGICA DE ALTERAÇÃO DE CHAVE
-                for (let k in section) {
-                    const matchKey = k === modConfig.key;
-                    const matchContent = modConfig.content ? section[k] === modConfig.content : true;
+        // Itera sobre as categorias (${name}, sync, etc)
+        for (const category in jsonData) {
+            const section = jsonData[category];
 
-                    if (matchKey && matchContent) {
+            for (const k in section) {
+                const matchKey = k === modConfig.key;
+                const matchContent = modConfig.content ? section[k] === modConfig.content : true;
+
+                if (matchKey && matchContent) {
+                    if (isKeyMod) {
                         section[modConfig.new_key] = section[k];
                         delete section[k];
-                        totalAlteracoes++;
-                    }
-                }
-            } else {
-                // LÓGICA DE ALTERAÇÃO DE CONTEÚDO
-                for (let k in section) {
-                    const matchKey = k === modConfig.key;
-                    const matchContent = modConfig.content ? section[k] === modConfig.content : true;
-
-                    if (matchKey && matchContent) {
+                    } else {
                         section[k] = modConfig.new_content;
-                        totalAlteracoes++;
                     }
+                    totalChanges++;
                 }
             }
         }
 
-        // 4. Salvar e Finalizar
-        if (totalAlteracoes > 0) {
-            fs.writeFileSync(jsonPath, JSON.stringify(data, null, 2), 'utf8');
-            console.log(`✅ Sucesso! ${totalAlteracoes} alteração(ões) realizada(s).`);
+        if (totalChanges > 0) {
+            fs.writeFileSync(jsonPath, JSON.stringify(jsonData, null, 2), 'utf8');
+            console.log(`\n✅ Sucesso! ${totalChanges} alteração(ões) aplicada(s) ao JSON.`);
+            
+            // Opcional: Deleta o YAML após aplicar para não repetir o erro
+            // fs.unlinkSync(yamlPath); 
         } else {
-            console.log('⚠️ Nenhuma correspondência encontrada para realizar alterações.');
+            console.log('\n⚠️ Nenhuma correspondência encontrada. Verifique se a "key" ou o "content" no YAML estão corretos.');
         }
 
     } catch (error) {
-        console.error('❌ Erro ao processar:', error.message);
+        console.error('❌ Erro inesperado:', error.message);
     } finally {
         rl.close();
     }

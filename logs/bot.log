@@ -628,3 +628,19 @@
 [2026-02-28T22:22:24.531Z] [INFO] ✅ Eventos vinculados: 4
 [2026-02-28T22:22:26.533Z] [INFO] Sessão iniciada como project-bot#3069
 [2026-02-28T22:22:26.536Z] [INFO] Prefixos configurados: .., ,,
+[2026-02-28T22:27:23.133Z] [INFO] Modo direto ativado. Iniciando bot sem TUI...
+[2026-02-28T22:27:24.648Z] [INFO] ✅ MongoDB Conectado.
+[2026-02-28T22:27:24.650Z] [INFO] 🔄 Iniciando carregamento do sistema de comandos...
+[2026-02-28T22:27:24.937Z] [INFO] ✨ 28 comandos carregados e 66 aliases carregados em 287ms.
+[2026-02-28T22:27:24.939Z] [INFO] 🔄 Registrando eventos do sistema...
+[2026-02-28T22:27:24.962Z] [INFO] ✅ Eventos vinculados: 4
+[2026-02-28T22:27:26.787Z] [INFO] Sessão iniciada como project-bot#3069
+[2026-02-28T22:27:26.789Z] [INFO] Prefixos configurados: .., ,,
+[2026-02-28T22:30:43.360Z] [INFO] Modo direto ativado. Iniciando bot sem TUI...
+[2026-02-28T22:30:44.978Z] [INFO] ✅ MongoDB Conectado.
+[2026-02-28T22:30:44.980Z] [INFO] 🔄 Iniciando carregamento do sistema de comandos...
+[2026-02-28T22:30:45.262Z] [INFO] ✨ 28 comandos carregados e 66 aliases carregados em 282ms.
+[2026-02-28T22:30:45.263Z] [INFO] 🔄 Registrando eventos do sistema...
+[2026-02-28T22:30:45.290Z] [INFO] ✅ Eventos vinculados: 4
+[2026-02-28T22:30:46.967Z] [INFO] Sessão iniciada como project-bot#3069
+[2026-02-28T22:30:46.971Z] [INFO] Prefixos configurados: .., ,,
