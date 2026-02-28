@@ -279,5 +279,19 @@
     "descricao": "descricao",
     "uso": "..comando",
     "categoria": "misc"
+  },
+  "syncmsg": {
+    "nome": "syncmsg",
+    "apelidos": [],
+    "descricao": "comando pra sincronizar sincronizar as mensagens do comando com a do sistema",
+    "uso": "..syncmsg",
+    "categoria": "config"
+  },
+  "synccat": {
+    "nome": "synccat",
+    "apelidos": [],
+    "descricao": "comando pra sincronizar a categoria do comando com o sistema",
+    "uso": "..synccat",
+    "categoria": "config"
   }
 }
