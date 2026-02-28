@@ -92,15 +92,15 @@ export default {
 @register-messages
 {
   "mkcmd": {
-    "_nota": "Configuração do próprio comando mkcmd",
     "no_permission": "❌ Você não tem permissão para usar este comando.",
     "ask_name": "Qual será o nome do comando?",
     "ask_desc": "📝 Descreva o que o comando faz:",
     "ask_category": "📂 Selecione a categoria: [{options}]",
-    "ask_draft": "✍️ Rascunho da lógica:",
-    "already_exists": "⚠️ Já existe um comando com esse nome.",
+    "ask_draft": "✍️ Rascunho da lógica (será inserido como comentário):",
+    "already_exists": "⚠️ Já existe um comando com esse nome no JSON.",
     "success": "✅ Comando `{name}` criado com sucesso!",
-    "error": "❌ Erro: {err}"
+    "error": "❌ Erro: {err}",
+    "_nota": "Configuração do próprio comando mkcmd"
   }
 }
 @end
