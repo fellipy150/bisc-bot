@@ -1,40 +1,39 @@
 {
   "bye": {
-    "_observacao": "O JSON abaixo pode conter QUALQUER estrutura válida. Você pode adicionar objetos aninhados, múltiplas chaves, ou qualquer outro conteúdo necessário para o comando. O utilitário de sincronização fará merge profundo automaticamente.",
     "permissao_administrador": "❌ Você precisa ser um administrador para configurar o sistema de saídas.",
-    "instrucao_uso": "ℹ️ Use `{nome} add` para configurar a mensagem de saída."
+    "instrucao_uso": "ℹ️ Use `{nome} add` para configurar a mensagem de saída.",
+    "_observacao": "O JSON abaixo pode conter QUALQUER estrutura válida. Você pode adicionar objetos aninhados, múltiplas chaves, ou qualquer outro conteúdo necessário para o comando. O utilitário de sincronização fará merge profundo automaticamente."
   },
   "removebye": {
-    "mensagem_3": "🚨 **Atenção:** Você tem certeza que deseja **desativar e apagar** o sistema de saída (bye) deste servidor?",
-    "mensagem_4": "⏳ Tempo esgotado. Operação cancelada.",
-    "_observacao": "O JSON abaixo pode conter QUALQUER estrutura válida. Você pode adicionar objetos aninhados, múltiplas chaves, ou qualquer outro conteúdo necessário para o comando. O utilitário de sincronização fará merge profundo automaticamente.",
     "permissao_negada": "❌ Você precisa ser administrador para usar este comando!",
-    "config_ausente": "⚠️ Nenhuma configuração de saída (bye) encontrada neste servidor."
+    "config_ausente": "⚠️ Nenhuma configuração de saída (bye) encontrada neste servidor.",
+    "_observacao": "O JSON abaixo pode conter QUALQUER estrutura válida. Você pode adicionar objetos aninhados, múltiplas chaves, ou qualquer outro conteúdo necessário para o comando. O utilitário de sincronização fará merge profundo automaticamente.",
+    "aviso_confirmacao": "🚨 **Atenção:** Você tem certeza que deseja **desativar e apagar** o sistema de saída (bye) deste servidor?",
+    "tempo_esgotado": "⏳ Tempo esgotado. Operação cancelada."
   },
   "setbye": {
-    "mensagem_2": "📢 Em qual canal você quer ativar o sistema de **Saída**? (Mencione o canal com `#`)",
-    "mensagem_3": "❌ Canal inválido ou não mencionado. Operação cancelada.",
-    "mensagem_4": "❌ URL inválida ou mal formatada.",
-    "mensagem_5": "**⬇️ PREVIEW DA DESPEDIDA ⬇️**\n\n{content}",
-    "mensagem_6": "❌ Tempo esgotado para confirmação.",
-    "mensagem_7": "❌ Operação cancelada ou tempo esgotado.",
+    "permissao_negada": "❌ Você precisa ser administrador para usar este comando!",
     "_observacao": "O JSON abaixo pode conter QUALQUER estrutura válida. Você pode adicionar objetos aninhados, múltiplas chaves, ou qualquer outro conteúdo necessário para o comando. O utilitário de sincronização fará merge profundo automaticamente.",
-    "permissao_negada": "❌ Você precisa ser administrador para usar este comando!"
+    "solicitar_canal": "📢 Em qual canal você quer ativar o sistema de **Saída**? (Mencione o canal com `#`)",
+    "canal_invalido": "❌ Canal inválido ou não mencionado. Operação cancelada.",
+    "url_invalida": "❌ URL inválida ou mal formatada.",
+    "visualizacao_despedida": "**⬇️ PREVIEW DA DESPEDIDA ⬇️**\n\n{content}",
+    "tempo_confirmacao": "❌ Tempo esgotado para confirmação.",
+    "cancelado_ou_tempo": "❌ Operação cancelada ou tempo esgotado."
   },
   "viewbye": {
-    "mensagem_2": "**Visualização da mensagem de saída:**",
-    "mensagem_3": "Para editar, use o comando `bye add` (ou `bye set`) e envie a nova URL do SheepTester.",
+    "sem_configuracao": "⚠️ Nenhuma mensagem de saída (bye) configurada neste servidor. Use `bye add` para configurar.",
     "_observacao": "O JSON abaixo pode conter QUALQUER estrutura válida. Você pode adicionar objetos aninhados, múltiplas chaves, ou qualquer outro conteúdo necessário para o comando. O utilitário de sincronização fará merge profundo automaticamente.",
-    "sem_configuracao": "⚠️ Nenhuma mensagem de saída (bye) configurada neste servidor. Use `bye add` para configurar."
+    "texto_visualizacao": "**Visualização da mensagem de saída:**",
+    "instrucao_edicao": "Para editar, use o comando `bye add` (ou `bye set`) e envie a nova URL do SheepTester."
   },
   "addprefix": {
-    "_observacao": "O JSON abaixo pode conter QUALQUER estrutura válida. Você pode adicionar objetos aninhados, múltiplas chaves, ou qualquer outro conteúdo necessário para o comando. O utilitário de sincronização fará merge profundo automaticamente.",
     "instrucao_uso": "Use: {usage}",
     "sucesso_adicao": "✅ Prefixo ‘{p}’ adicionado.\nAtuais: {join}",
-    "prefixo_existente": "⚠️ Prefixo ‘{p}’ já existe."
+    "prefixo_existente": "⚠️ Prefixo ‘{p}’ já existe.",
+    "_observacao": "O JSON abaixo pode conter QUALQUER estrutura válida. Você pode adicionar objetos aninhados, múltiplas chaves, ou qualquer outro conteúdo necessário para o comando. O utilitário de sincronização fará merge profundo automaticamente."
   },
   "editcmdmsg": {
-    "_observacao": "O JSON abaixo pode conter QUALQUER estrutura válida. Você pode adicionar objetos aninhados, múltiplas chaves, ou qualquer outro conteúdo necessário para o comando. O utilitário de sincronização fará merge profundo automaticamente.",
     "arquivo_nao_encontrado": "Arquivo não encontrado em: `{targetPath}`",
     "referencia_arquivo": "o arquivo `{nome}.js` não possui mensagens compatíveis.",
     "operacao_cancelada": "Operação cancelada.",
@@ -48,11 +47,12 @@
     "origem_nao_encontrada": "❌ Não encontrei a origem dessa mensagem.",
     "valor_invalido": "Inválido.",
     "tempo_excedido": "Tempo esgotado.",
-    "referencia_necessaria": "❌ Mencione um comando ou responda a uma mensagem."
+    "referencia_necessaria": "❌ Mencione um comando ou responda a uma mensagem.",
+    "_observacao": "O JSON abaixo pode conter QUALQUER estrutura válida. Você pode adicionar objetos aninhados, múltiplas chaves, ou qualquer outro conteúdo necessário para o comando. O utilitário de sincronização fará merge profundo automaticamente."
   },
   "listprefixes": {
-    "_observacao": "O JSON abaixo pode conter QUALQUER estrutura válida. Você pode adicionar objetos aninhados, múltiplas chaves, ou qualquer outro conteúdo necessário para o comando. O utilitário de sincronização fará merge profundo automaticamente.",
-    "lista_prefixos": "📋 Prefixos atuais: {join}"
+    "lista_prefixos": "📋 Prefixos atuais: {join}",
+    "_observacao": "O JSON abaixo pode conter QUALQUER estrutura válida. Você pode adicionar objetos aninhados, múltiplas chaves, ou qualquer outro conteúdo necessário para o comando. O utilitário de sincronização fará merge profundo automaticamente."
   },
   "mkcmd": {
     "permissao_negada": "❌ Você não tem permissão para usar este comando.",
@@ -66,7 +66,6 @@
     "_observacao": "O JSON abaixo pode conter QUALQUER estrutura válida. Você pode adicionar objetos aninhados, múltiplas chaves, ou qualquer outro conteúdo necessário para o comando. O utilitário de sincronização fará merge profundo automaticamente."
   },
   "prefix": {
-    "_observacao": "O JSON abaixo pode conter QUALQUER estrutura válida. Você pode adicionar objetos aninhados, múltiplas chaves, ou qualquer outro conteúdo necessário para o comando. O utilitário de sincronização fará merge profundo automaticamente.",
     "instrucao_uso_1": "Uso: {usage}",
     "instrucao_uso_2": "Use: {usage}",
     "sucesso_adicao": "✅ Prefixo ‘{p}’ adicionado.\nAtuais: {join}",
@@ -75,94 +74,91 @@
     "sucesso_remocao": "✅ Prefixo ‘{p}’ removido.\nAtuais: {join}",
     "prefixo_inexistente": "⚠️ Prefixo ‘{p}’ não encontrado.",
     "lista_prefixos": "📋 Prefixos atuais: {join}",
-    "subcomando_invalido": "Subcomando inválido. Use: add, remove ou list."
+    "subcomando_invalido": "Subcomando inválido. Use: add, remove ou list.",
+    "_observacao": "O JSON abaixo pode conter QUALQUER estrutura válida. Você pode adicionar objetos aninhados, múltiplas chaves, ou qualquer outro conteúdo necessário para o comando. O utilitário de sincronização fará merge profundo automaticamente."
   },
   "removeprefix": {
-    "_observacao": "O JSON abaixo pode conter QUALQUER estrutura válida. Você pode adicionar objetos aninhados, múltiplas chaves, ou qualquer outro conteúdo necessário para o comando. O utilitário de sincronização fará merge profundo automaticamente.",
     "instrucao_uso": "Use: {usage}",
     "sucesso_remocao": "✅ Prefixo ‘{p}’ removido.\nAtuais: {join}",
-    "prefixo_inexistente": "⚠️ Prefixo ‘{p}’ não encontrado."
+    "prefixo_inexistente": "⚠️ Prefixo ‘{p}’ não encontrado.",
+    "_observacao": "O JSON abaixo pode conter QUALQUER estrutura válida. Você pode adicionar objetos aninhados, múltiplas chaves, ou qualquer outro conteúdo necessário para o comando. O utilitário de sincronização fará merge profundo automaticamente."
   },
   "sync": {
-    "_nota": "O JSON abaixo pode conter QUALQUER estrutura válida. Você pode adicionar objetos aninhados, múltiplas chaves, ou qualquer outro conteúdo necessário para o comando. O utilitário de sincronização fará merge profundo automaticamente.",
-    "sintaxe_incorreta": "⚠️ Uso incorreto! Tente: `..sync cat` ou `..sync msg`"
+    "sintaxe_incorreta": "⚠️ Uso incorreto! Tente: `..sync cat` ou `..sync msg`",
+    "_nota": "O JSON abaixo pode conter QUALQUER estrutura válida. Você pode adicionar objetos aninhados, múltiplas chaves, ou qualquer outro conteúdo necessário para o comando. O utilitário de sincronização fará merge profundo automaticamente."
   },
   "banco": {
-    "mensagem_5": "❌ Você precisa informar um valor.",
-    "mensagem_6": "❌ Valor inválido informado.",
-    "mensagem_7": "❌ **Erro:** {reason}",
-    "_observacao": "O JSON abaixo pode conter QUALQUER estrutura válida. Você pode adicionar objetos aninhados, múltiplas chaves, ou qualquer outro conteúdo necessário para o comando. O utilitário de sincronização fará merge profundo automaticamente.",
     "erro_acesso": "❌ Este menu não é para você.",
-    "valor_necessario": "💰 **Quanto você deseja {actionName}?**\nDigite o valor ou `all` no chat agora. (30s restante)",
-    "valor_invalido": "⏳ O tempo para informar o valor acabou.",
-    "motivo_erro": "❌ Ocorreu um erro ao acessar o banco."
+    "valor_necessario": "❌ Você precisa informar um valor.",
+    "valor_invalido": "❌ Valor inválido informado.",
+    "motivo_erro": "❌ Ocorreu um erro ao acessar o banco.",
+    "_observacao": "O JSON abaixo pode conter QUALQUER estrutura válida. Você pode adicionar objetos aninhados, múltiplas chaves, ou qualquer outro conteúdo necessário para o comando. O utilitário de sincronização fará merge profundo automaticamente.",
+    "erro_motivo": "❌ **Erro:** {reason}"
   },
   "carteira": {
-    "_observacao": "O JSON abaixo pode conter QUALQUER estrutura válida. Você pode adicionar objetos aninhados, múltiplas chaves, ou qualquer outro conteúdo necessário para o comando. O utilitário de sincronização fará merge profundo automaticamente.",
     "usuario_nao_registrado": "❌ {idVocnoestregistradonosistemaEsteusurionoestregistradonosistema} Use algum comando para se registrar.",
-    "erro_consulta": "❌ Ocorreu um erro ao verificar o saldo da carteira. Por favor, tente novamente mais tarde."
+    "erro_consulta": "❌ Ocorreu um erro ao verificar o saldo da carteira. Por favor, tente novamente mais tarde.",
+    "_observacao": "O JSON abaixo pode conter QUALQUER estrutura válida. Você pode adicionar objetos aninhados, múltiplas chaves, ou qualquer outro conteúdo necessário para o comando. O utilitário de sincronização fará merge profundo automaticamente."
   },
   "daily": {
-    "mensagem_2": "❌ Ocorreu um erro ao processar seu daily. Tente novamente.",
-    "_observacao": "O JSON abaixo pode conter QUALQUER estrutura válida. Você pode adicionar objetos aninhados, múltiplas chaves, ou qualquer outro conteúdo necessário para o comando. O utilitário de sincronização fará merge profundo automaticamente.",
-    "erro_daily": "🎉 Parabéns {author}! Você subiu para o **Nível {level}**!"
+    "erro_daily": "❌ Ocorreu um erro ao processar seu daily. Tente novamente.",
+    "_observacao": "O JSON abaixo pode conter QUALQUER estrutura válida. Você pode adicionar objetos aninhados, múltiplas chaves, ou qualquer outro conteúdo necessário para o comando. O utilitário de sincronização fará merge profundo automaticamente."
   },
   "depositar": {
-    "_observacao": "O JSON abaixo pode conter QUALQUER estrutura válida. Você pode adicionar objetos aninhados, múltiplas chaves, ou qualquer outro conteúdo necessário para o comando. O utilitário de sincronização fará merge profundo automaticamente.",
     "instrucao_uso": "⚠️ **Uso incorreto!** Tente: `{uso}` (ex: `depositar 100` ou `depositar all`)",
     "valor_numerico_necessario": "❌ Por favor, insira um valor numérico válido para depositar.",
     "carteira_vazia": "❌ Sua carteira está vazia! Você não tem Biscoins para depositar.",
     "saldo_insuficiente": "❌ Você não tem essa quantia na carteira. Seu saldo atual é de **{toLocaleString} Biscoins**.",
-    "falha_transacao": "❌ **Erro na transação:** {reason}"
+    "falha_transacao": "❌ **Erro na transação:** {reason}",
+    "_observacao": "O JSON abaixo pode conter QUALQUER estrutura válida. Você pode adicionar objetos aninhados, múltiplas chaves, ou qualquer outro conteúdo necessário para o comando. O utilitário de sincronização fará merge profundo automaticamente."
   },
   "pay": {
-    "_observacao": "O JSON abaixo pode conter QUALQUER estrutura válida. Você pode adicionar objetos aninhados, múltiplas chaves, ou qualquer outro conteúdo necessário para o comando. O utilitário de sincronização fará merge profundo automaticamente.",
     "instrucao_uso": "**Uso incorreto.** Use: `{commandPrefix}pay @usuario <valor>`",
     "valor_invalido": "Especifique um valor numérico válido.",
     "saldo_insuficiente": "**Saldo insuficiente.** Você tentou enviar {transferAmount}, mas possui apenas {wallet} na carteira.",
-    "erro_transacao": "Ocorreu um erro interno na transação. O dinheiro não foi descontado."
+    "erro_transacao": "Ocorreu um erro interno na transação. O dinheiro não foi descontado.",
+    "_observacao": "O JSON abaixo pode conter QUALQUER estrutura válida. Você pode adicionar objetos aninhados, múltiplas chaves, ou qualquer outro conteúdo necessário para o comando. O utilitário de sincronização fará merge profundo automaticamente."
   },
   "perfil": {
-    "_observacao": "O JSON abaixo pode conter QUALQUER estrutura válida. Você pode adicionar objetos aninhados, múltiplas chaves, ou qualquer outro conteúdo necessário para o comando. O utilitário de sincronização fará merge profundo automaticamente.",
     "perfil_nao_encontrado": "❌ Perfil não encontrado! Use algum comando para ser registrado no sistema.",
-    "erro_exibicao": "❌ Ocorreu um erro ao exibir o perfil. Tente novamente mais tarde."
+    "erro_exibicao": "❌ Ocorreu um erro ao exibir o perfil. Tente novamente mais tarde.",
+    "_observacao": "O JSON abaixo pode conter QUALQUER estrutura válida. Você pode adicionar objetos aninhados, múltiplas chaves, ou qualquer outro conteúdo necessário para o comando. O utilitário de sincronização fará merge profundo automaticamente."
   },
   "sacar": {
-    "_observacao": "O JSON abaixo pode conter QUALQUER estrutura válida. Você pode adicionar objetos aninhados, múltiplas chaves, ou qualquer outro conteúdo necessário para o comando. O utilitário de sincronização fará merge profundo automaticamente.",
     "instrucao_uso": "⚠️ **Uso incorreto!** Tente: `{uso}` (ex: `sacar 100` ou `sacar all`)",
     "valor_invalido": "❌ Por favor, insira um valor numérico válido e maior que zero para sacar.",
     "banco_vazio": "❌ Você não possui Biscoins guardadas no banco para realizar um saque.",
     "saldo_bancario_insuficiente": "❌ Você não tem essa quantia no banco. Seu saldo bancário atual é de **{toLocaleString} Biscoins**.",
-    "falha_operacao": "❌ **Falha na operação:** {reason}"
+    "falha_operacao": "❌ **Falha na operação:** {reason}",
+    "_observacao": "O JSON abaixo pode conter QUALQUER estrutura válida. Você pode adicionar objetos aninhados, múltiplas chaves, ou qualquer outro conteúdo necessário para o comando. O utilitário de sincronização fará merge profundo automaticamente."
   },
   "help": {
-    "_observacao": "O JSON abaixo pode conter QUALQUER estrutura válida. Você pode adicionar objetos aninhados, múltiplas chaves, ou qualquer outro conteúdo necessário para o comando. O utilitário de sincronização fará merge profundo automaticamente.",
-    "comando_inexistente": "❌ Comando não encontrado."
+    "comando_inexistente": "❌ Comando não encontrado.",
+    "_observacao": "O JSON abaixo pode conter QUALQUER estrutura válida. Você pode adicionar objetos aninhados, múltiplas chaves, ou qualquer outro conteúdo necessário para o comando. O utilitário de sincronização fará merge profundo automaticamente."
   },
   "ping": {
-    "_observacao": "O JSON abaixo pode conter QUALQUER estrutura válida. Você pode adicionar objetos aninhados, múltiplas chaves, ou qualquer outro conteúdo necessário para o comando. O utilitário de sincronização fará merge profundo automaticamente.",
     "calculando_latencias": "🏓 Pong! Calculando latências...",
-    "resultado_ping": "🏓 **Pong!**\n\n**Detalhes do Tempo de Resposta:**\n* **Envio até Processamento:** `{envioParaProcessamento}ms`\n* **Processamento até Resposta:** `{processamentoParaResposta}ms`\n* **Tempo Total (Envio até Resposta):** `{tempoTotal}ms`"
+    "resultado_ping": "🏓 **Pong!**\n\n**Detalhes do Tempo de Resposta:**\n* **Envio até Processamento:** `{envioParaProcessamento}ms`\n* **Processamento até Resposta:** `{processamentoParaResposta}ms`\n* **Tempo Total (Envio até Resposta):** `{tempoTotal}ms`",
+    "_observacao": "O JSON abaixo pode conter QUALQUER estrutura válida. Você pode adicionar objetos aninhados, múltiplas chaves, ou qualquer outro conteúdo necessário para o comando. O utilitário de sincronização fará merge profundo automaticamente."
   },
   "store_chat": {
-    "mensagem_2": "⏳ Tempo esgotado. Comando cancelado.",
-    "mensagem_3": "❌ Formato de data inválido. Comando cancelado.",
-    "mensagem_4": "❌ Nenhum usuário ou ID válido foi encontrado na sua resposta. Comando cancelado.",
-    "mensagem_5": "⏳ Buscando o histórico, aguarde...",
-    "mensagem_6": "ℹ️ Nenhuma mensagem encontrada para esses critérios ou período.",
-    "mensagem_7": "✅ O histórico foi capturado com sucesso! ({length} mensagens processadas)",
+    "instrucao_uso": "⚠️ Uso incorreto! Tente: `{uso}`",
     "_observacao": "O JSON abaixo pode conter QUALQUER estrutura válida. Você pode adicionar objetos aninhados, múltiplas chaves, ou qualquer outro conteúdo necessário para o comando. O utilitário de sincronização fará merge profundo automaticamente.",
-    "instrucao_uso": "⚠️ Uso incorreto! Tente: `{uso}`"
+    "tempo_esgotado": "⏳ Tempo esgotado. Comando cancelado.",
+    "data_invalida": "❌ Formato de data inválido. Comando cancelado.",
+    "usuario_nao_encontrado": "❌ Nenhum usuário ou ID válido foi encontrado na sua resposta. Comando cancelado.",
+    "buscando_historico": "⏳ Buscando o histórico, aguarde...",
+    "sem_mensagens": "ℹ️ Nenhuma mensagem encontrada para esses critérios ou período.",
+    "sucesso_captura": "✅ O histórico foi capturado com sucesso! ({length} mensagens processadas)"
   },
   "twimg": {
-    "_observacao": "O JSON abaixo pode conter QUALQUER estrutura válida. Você pode adicionar objetos aninhados, múltiplas chaves, ou qualquer outro conteúdo necessário para o comando. O utilitário de sincronização fará merge profundo automaticamente.",
     "link_necessario": "Você precisa enviar o link do tweet. Ex: `..twimg https://x.com/...`",
     "url_invalida": "URL inválida ou link incompleto.",
     "video_nao_encontrado": "Não consegui encontrar um vídeo nesse link. O tweet pode ser privado ou o serviço está instável.",
-    "erro_processamento_video": "Ocorreu um erro ao tentar processar o vídeo."
+    "erro_processamento_video": "Ocorreu um erro ao tentar processar o vídeo.",
+    "_observacao": "O JSON abaixo pode conter QUALQUER estrutura válida. Você pode adicionar objetos aninhados, múltiplas chaves, ou qualquer outro conteúdo necessário para o comando. O utilitário de sincronização fará merge profundo automaticamente."
   },
   "removewelcome": {
-    "_nota": "O JSON abaixo pode conter QUALQUER estrutura válida. Você pode adicionar objetos aninhados, múltiplas chaves, ou qualquer outro conteúdo necessário para o comando. O utilitário de sincronização fará merge profundo automaticamente.",
     "permissao_negada": "❌ Você precisa ser administrador para usar este comando!",
     "config_ausente": "⚠️ Nenhuma configuração de boas-vindas foi encontrada neste servidor.",
     "botao_confirmar": "Sim, desativar",
@@ -171,10 +167,10 @@
     "sucesso_remocao": "✅ **Sistema de boas-vindas desativado.**\n\nBackup da configuração removida:\n```json\n{configJson}\n```",
     "falha_remocao": "❌ Erro ao remover a configuração. Tente novamente.",
     "operacao_cancelada": "❌ Operação cancelada.",
-    "tempo_esgotado": "⏳ Tempo esgotado. Operação cancelada."
+    "tempo_esgotado": "⏳ Tempo esgotado. Operação cancelada.",
+    "_nota": "O JSON abaixo pode conter QUALQUER estrutura válida. Você pode adicionar objetos aninhados, múltiplas chaves, ou qualquer outro conteúdo necessário para o comando. O utilitário de sincronização fará merge profundo automaticamente."
   },
   "setwelcome": {
-    "_nota": "O JSON abaixo pode conter QUALQUER estrutura válida. Você pode adicionar objetos aninhados, múltiplas chaves, ou qualquer outro conteúdo necessário para o comando. O utilitário de sincronização fará merge profundo automaticamente.",
     "permissao_negada": "❌ Você precisa ser administrador para usar este comando!",
     "solicitar_canal": "📢 Em qual canal você quer ativar o sistema de boas-vindas? (Mencione o canal com `#`)",
     "canal_invalido": "❌ Canal inválido ou não mencionado. Operação cancelada.",
@@ -187,40 +183,41 @@
     "erro_banco": "❌ Houve um erro ao salvar no banco de dados.",
     "tempo_confirmacao": "⏳ Tempo esgotado para confirmação.",
     "tempo_excedido": "⏳ Tempo esgotado. Tente novamente.",
-    "erro_inesperado": "❌ Ocorreu um erro inesperado."
+    "erro_inesperado": "❌ Ocorreu um erro inesperado.",
+    "_nota": "O JSON abaixo pode conter QUALQUER estrutura válida. Você pode adicionar objetos aninhados, múltiplas chaves, ou qualquer outro conteúdo necessário para o comando. O utilitário de sincronização fará merge profundo automaticamente."
   },
   "viewwelcome": {
-    "_nota": "O JSON abaixo pode conter QUALQUER estrutura válida. Você pode adicionar objetos aninhados, múltiplas chaves, ou qualquer outro conteúdo necessário para o comando. O utilitário de sincronização fará merge profundo automaticamente.",
     "sem_boasvindas": "⚠️ Nenhuma mensagem de boas-vindas configurada neste servidor. Use `welcome add` para configurar.",
     "botao_editar": "Editar",
     "botao_fechar": "Fechar",
     "texto_previa": "**Visualização da mensagem de boas-vindas:**",
     "instrucao_edicao": "Para editar, use o comando `welcome edit` e envie a nova URL.",
-    "visualizacao_encerrada": "Visualização encerrada."
+    "visualizacao_encerrada": "Visualização encerrada.",
+    "_nota": "O JSON abaixo pode conter QUALQUER estrutura válida. Você pode adicionar objetos aninhados, múltiplas chaves, ou qualquer outro conteúdo necessário para o comando. O utilitário de sincronização fará merge profundo automaticamente."
   },
   "welcome": {
-    "_nota": "O JSON abaixo pode conter QUALQUER estrutura válida. Você pode adicionar objetos aninhados, múltiplas chaves, ou qualquer outro conteúdo necessário para o comando. O utilitário de sincronização fará merge profundo automaticamente.",
     "permissao_negada": "Você precisa ser um administrador para usar esse comando.",
     "inicio_adicao": "Iniciando configuração de boas-vindas. Usando comando `setwelcome`...",
     "inicio_edicao": "Editando mensagem de boas-vindas. Usando comando `setwelcome`...",
     "inicio_remocao": "Removendo sistema de boas-vindas. Usando comando `removewelcome`...",
     "inicio_visualizacao": "Visualizando mensagem de boas-vindas. Usando comando `viewwelcome`...",
-    "ajuda_comando": "**Sistema de Boas-Vindas - Central de Ajuda**\nUse: `welcome add`, `welcome edit`, `welcome remove` ou `welcome view`."
+    "ajuda_comando": "**Sistema de Boas-Vindas - Central de Ajuda**\nUse: `welcome add`, `welcome edit`, `welcome remove` ou `welcome view`.",
+    "_nota": "O JSON abaixo pode conter QUALQUER estrutura válida. Você pode adicionar objetos aninhados, múltiplas chaves, ou qualquer outro conteúdo necessário para o comando. O utilitário de sincronização fará merge profundo automaticamente."
   },
   "synccat": {
-    "_nota": "O JSON abaixo pode conter QUALQUER estrutura válida. Você pode adicionar objetos aninhados, múltiplas chaves, ou qualquer outro conteúdo necessário para o comando. O utilitário de sincronização fará merge profundo automaticamente.",
     "uso_invalido": "⚠️ Uso incorreto! Tente: {uso}",
     "sincronizacao_andamento": "⏳ Sincronização de categorias em curso. Aguarde...",
     "categorias_sincronizadas": "✅ Todas as categorias estão devidamente sincronizadas com a estrutura de pastas!",
     "inconsistencias_encontradas": "⚠️ **Dessincronias de pasta encontradas:**\n{lista}\n\nConfirmar sincronização? (Responda com `s` em 30s)",
     "atualizacao_concluida": "✅ Categorias atualizadas atomicamente com sucesso!",
     "operacao_cancelada": "❌ Sincronização cancelada por falta de confirmação (ou tempo esgotado).",
-    "falha_sincronizacao": "❌ Ocorreu um erro ao processar a sincronização de categorias."
+    "falha_sincronizacao": "❌ Ocorreu um erro ao processar a sincronização de categorias.",
+    "_nota": "O JSON abaixo pode conter QUALQUER estrutura válida. Você pode adicionar objetos aninhados, múltiplas chaves, ou qualquer outro conteúdo necessário para o comando. O utilitário de sincronização fará merge profundo automaticamente."
   },
   "syncmsg": {
-    "_nota": "O JSON abaixo pode conter QUALQUER estrutura válida. Você pode adicionar objetos aninhados, múltiplas chaves, ou qualquer outro conteúdo necessário para o comando. O utilitário de sincronização fará merge profundo automaticamente.",
     "sincronizacao_andamento": "⏳ Sincronização em curso. Aguarde...",
     "sincronizacao_concluida": "✨ Sincronia concluída!\nJSON Alterado: **{jsonStatus}**\nFicheiros Alterados: **{filesCount}**",
-    "falha_critica": "❌ Erro crítico: {err}"
+    "falha_critica": "❌ Erro crítico: {err}",
+    "_nota": "O JSON abaixo pode conter QUALQUER estrutura válida. Você pode adicionar objetos aninhados, múltiplas chaves, ou qualquer outro conteúdo necessário para o comando. O utilitário de sincronização fará merge profundo automaticamente."
   }
 }

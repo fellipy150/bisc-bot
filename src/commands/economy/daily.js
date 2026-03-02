@@ -185,9 +185,8 @@ export default {
 @register-messages
 {
   "daily": {
-    "mensagem_2": "❌ Ocorreu um erro ao processar seu daily. Tente novamente.",
-    "_observacao": "O JSON abaixo pode conter QUALQUER estrutura válida. Você pode adicionar objetos aninhados, múltiplas chaves, ou qualquer outro conteúdo necessário para o comando. O utilitário de sincronização fará merge profundo automaticamente.",
-    "erro_daily": "🎉 Parabéns {author}! Você subiu para o **Nível {level}**!"
+    "erro_daily": "❌ Ocorreu um erro ao processar seu daily. Tente novamente.",
+    "_observacao": "O JSON abaixo pode conter QUALQUER estrutura válida. Você pode adicionar objetos aninhados, múltiplas chaves, ou qualquer outro conteúdo necessário para o comando. O utilitário de sincronização fará merge profundo automaticamente."
   }
 }
 @end

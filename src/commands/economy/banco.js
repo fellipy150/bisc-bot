@@ -136,7 +136,7 @@ export default {
     const result = await bankTransaction(userId, guildId, amount, type);
 
     if (!result.success) {
-      return message.reply(msg("banco.mensagem_7", { "reason": result.reason }));
+      return message.reply(msg("banco.erro_motivo", { "reason": result.reason }));
     }
 
     const embed = new EmbedBuilder()
@@ -156,14 +156,12 @@ export default {
 @register-messages
 {
   "banco": {
-    "mensagem_5": "❌ Você precisa informar um valor.",
-    "mensagem_6": "❌ Valor inválido informado.",
-    "mensagem_7": "❌ **Erro:** {reason}",
-    "_observacao": "O JSON abaixo pode conter QUALQUER estrutura válida. Você pode adicionar objetos aninhados, múltiplas chaves, ou qualquer outro conteúdo necessário para o comando. O utilitário de sincronização fará merge profundo automaticamente.",
     "erro_acesso": "❌ Este menu não é para você.",
-    "valor_necessario": "💰 **Quanto você deseja {actionName}?**\nDigite o valor ou `all` no chat agora. (30s restante)",
-    "valor_invalido": "⏳ O tempo para informar o valor acabou.",
-    "motivo_erro": "❌ Ocorreu um erro ao acessar o banco."
+    "valor_necessario": "❌ Você precisa informar um valor.",
+    "valor_invalido": "❌ Valor inválido informado.",
+    "motivo_erro": "❌ Ocorreu um erro ao acessar o banco.",
+    "_observacao": "O JSON abaixo pode conter QUALQUER estrutura válida. Você pode adicionar objetos aninhados, múltiplas chaves, ou qualquer outro conteúdo necessário para o comando. O utilitário de sincronização fará merge profundo automaticamente.",
+    "erro_motivo": "❌ **Erro:** {reason}"
   }
 }
 @end
