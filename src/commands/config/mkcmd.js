@@ -28,7 +28,7 @@ export default {
 
   async execute(message, args, client) {
     if (!getOwners().includes(message.author.id)) {
-      return message.reply(msg("mkcmd.no_permission"));
+      return message.reply(msg("mkcmd.permissao_negada"));
     }
 
     const channel = message.channel;
@@ -36,20 +36,20 @@ export default {
 
     try {
       // 1. Coleta de dados (Nome, Desc, Cat, Draft) - Mantemos sua lógica atual
-      await channel.send(msg("mkcmd.ask_name"));
+      await channel.send(msg("mkcmd.solicitar_nome"));
       const collectedName = await channel.awaitMessages({ filter, max: 1, time: 180000, errors: ["time"] });
       const name = collectedName.first().content.trim().toLowerCase();
       
-      await channel.send(msg("mkcmd.ask_desc"));
+      await channel.send(msg("mkcmd.solicitar_descricao"));
       const collectedDesc = await channel.awaitMessages({ filter, max: 1, time: 180000, errors: ["time"] });
       const descricao = collectedDesc.first().content.trim();
 
       const folders = fs.readdirSync(commandsDir, { withFileTypes: true }).filter(d => d.isDirectory()).map(d => d.name);
-      await channel.send(msg("mkcmd.ask_category", { options: [...folders, "none"].join(", ") }));
+      await channel.send(msg("mkcmd.solicitar_categoria", { options: [...folders, "none"].join(", ") }));
       const collectedCat = await channel.awaitMessages({ filter, max: 1, time: 180000, errors: ["time"] });
       const categoria = collectedCat.first().content.trim();
 
-      await channel.send(msg("mkcmd.ask_draft"));
+      await channel.send(msg("mkcmd.solicitar_rascunho"));
       const collectedDraft = await channel.awaitMessages({ filter, max: 1, time: 180000, errors: ["time"] });
       const draftRaw = collectedDraft.first().content.trim();
 
@@ -70,7 +70,7 @@ export default {
 
       // 3. Salvando arquivos e Banco de Dados
       const all = JSON.parse(fs.readFileSync(jsonPath, "utf8"));
-      if (all[name]) return channel.send(msg("mkcmd.already_exists"));
+      if (all[name]) return channel.send(msg("mkcmd.comando_existente"));
 
       all[name] = { nome: name, apelidos: [], descricao, uso: `..${name}`, categoria: categoria === "none" ? "misc" : categoria };
       fs.writeFileSync(jsonPath, JSON.stringify(all, null, 2), "utf8");
@@ -79,11 +79,11 @@ export default {
       if (!fs.existsSync(finalDir)) fs.mkdirSync(finalDir, { recursive: true });
       
       fs.writeFileSync(path.join(finalDir, `${name}.js`), template, "utf8");
-      channel.send(msg("mkcmd.success", { name }));
+      channel.send(msg("mkcmd.sucesso_criacao", { name }));
 
     } catch (err) {
       console.error(err);
-      message.channel.send(msg("mkcmd.error", { err: err.message }));
+      message.channel.send(msg("mkcmd.falha_criacao", { err: err.message }));
     }
   }
 };
@@ -92,15 +92,15 @@ export default {
 @register-messages
 {
   "mkcmd": {
-    "no_permission": "❌ Você não tem permissão para usar este comando.",
-    "ask_name": "Qual será o nome do comando?",
-    "ask_desc": "📝 Descreva o que o comando faz:",
-    "ask_category": "📂 Selecione a categoria: [{options}]",
-    "ask_draft": "✍️ Rascunho da lógica (será inserido como comentário):",
-    "already_exists": "⚠️ Já existe um comando com esse nome no JSON.",
-    "success": "✅ Comando `{name}` criado com sucesso!",
-    "error": "❌ Erro: {err}",
-    "_nota": "Configuração do próprio comando mkcmd"
+    "permissao_negada": "❌ Você não tem permissão para usar este comando.",
+    "solicitar_nome": "Qual será o nome do comando?",
+    "solicitar_descricao": "📝 Descreva o que o comando faz:",
+    "solicitar_categoria": "📂 Selecione a categoria: [{options}]",
+    "solicitar_rascunho": "✍️ Rascunho da lógica (será inserido como comentário):",
+    "comando_existente": "⚠️ Já existe um comando com esse nome no JSON.",
+    "sucesso_criacao": "✅ Comando `{name}` criado com sucesso!",
+    "falha_criacao": "❌ Erro: {err}",
+    "_observacao": "O JSON abaixo pode conter QUALQUER estrutura válida. Você pode adicionar objetos aninhados, múltiplas chaves, ou qualquer outro conteúdo necessário para o comando. O utilitário de sincronização fará merge profundo automaticamente."
   }
 }
 @end

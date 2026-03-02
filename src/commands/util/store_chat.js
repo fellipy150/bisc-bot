@@ -28,7 +28,7 @@ export default {
     try {
       // 1. Verificações Iniciais (Sanity Checks)
       if (this.data.usage && args.length === 0 && this.data.usage.includes('<')) {
-        return message.reply(`⚠️ Uso incorreto! Tente: \`${d.uso}\` `);
+        return message.reply(msg("store_chat.instrucao_uso", { "uso": d.uso }));
       }
 
       console.log(`Comando ${d.nome} executado por ${message.author.tag}`);
@@ -42,7 +42,7 @@ export default {
           const collected = await channel.awaitMessages({ filter, max: 1, time: 60000, errors: ['time'] });
           return collected.first(); // Retorna o objeto da mensagem
         } catch (error) {
-          await channel.send("⏳ Tempo esgotado. Comando cancelado.");
+          await channel.send(msg("store_chat.mensagem_2"));
           return null;
         }
       };
@@ -54,7 +54,7 @@ export default {
       // Passa a resposta para o utilitário e desestrutura o novo formato de objeto
       const parsedTime = await parseInputTime(timeMsg.content);
       if (!parsedTime || !parsedTime.inicio) {
-        return channel.send("❌ Formato de data inválido. Comando cancelado.");
+        return channel.send(msg("store_chat.mensagem_3"));
       }
       const startTimestamp = parsedTime.inicio;
       const endTimestamp = parsedTime.fim;
@@ -76,11 +76,11 @@ export default {
         targetIds = [...new Set([...mentionedIds, ...rawIds])];
         
         if (targetIds.length === 0) {
-          return channel.send("❌ Nenhum usuário ou ID válido foi encontrado na sua resposta. Comando cancelado.");
+          return channel.send(msg("store_chat.mensagem_4"));
         }
       }
 
-      await channel.send("⏳ Buscando o histórico, aguarde...");
+      await channel.send(msg("store_chat.mensagem_5"));
 
       // 4. Lógica de Busca de Mensagens
       const snowflake = SnowflakeUtil.generate({ timestamp: startTimestamp });
@@ -175,7 +175,7 @@ export default {
       }
 
       if (!historyText) {
-        return channel.send("ℹ️ Nenhuma mensagem encontrada para esses critérios ou período.");
+        return channel.send(msg("store_chat.mensagem_6"));
       }
 
       // 6. Salvamento e Envio
@@ -187,7 +187,7 @@ export default {
 
       const attachment = new AttachmentBuilder(filePath);
       await channel.send({ 
-        content: `✅ O histórico foi capturado com sucesso! (${messagesFetch.length} mensagens processadas)`, 
+        content: msg("store_chat.mensagem_7", { "length": messagesFetch.length }), 
         files: [attachment] 
       });
 
@@ -211,10 +211,14 @@ export default {
 @register-messages
 {
   "store_chat": {
-    "_nota": "O JSON abaixo pode conter QUALQUER estrutura válida. Você pode adicionar objetos aninhados, múltiplas chaves, ou qualquer outro conteúdo necessário para o comando. O utilitário de sincronização fará merge profundo automaticamente.",
-    "uso_incorreto": "⚠️ Uso incorreto! Tente: {uso}",
-    "erro_interno": "❌ Ocorreu um erro ao processar este comando.",
-    "mensagem_1": "⚠️ Uso incorreto! Tente: \\"
+    "mensagem_2": "⏳ Tempo esgotado. Comando cancelado.",
+    "mensagem_3": "❌ Formato de data inválido. Comando cancelado.",
+    "mensagem_4": "❌ Nenhum usuário ou ID válido foi encontrado na sua resposta. Comando cancelado.",
+    "mensagem_5": "⏳ Buscando o histórico, aguarde...",
+    "mensagem_6": "ℹ️ Nenhuma mensagem encontrada para esses critérios ou período.",
+    "mensagem_7": "✅ O histórico foi capturado com sucesso! ({length} mensagens processadas)",
+    "_observacao": "O JSON abaixo pode conter QUALQUER estrutura válida. Você pode adicionar objetos aninhados, múltiplas chaves, ou qualquer outro conteúdo necessário para o comando. O utilitário de sincronização fará merge profundo automaticamente.",
+    "instrucao_uso": "⚠️ Uso incorreto! Tente: `{uso}`"
   }
 }
 @end

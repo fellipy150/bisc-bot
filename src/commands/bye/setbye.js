@@ -31,7 +31,7 @@ export default {
   async execute(message, args, client) {
     // Verifica permissões
     if (!message.member.permissions.has('Administrator')) {
-      return message.reply('❌ Você precisa ser administrador para usar este comando!');
+      return message.reply(msg("setbye.permissao_negada"));
     }
 
     const guildId = message.guild.id;
@@ -39,8 +39,7 @@ export default {
 
     // 1. Pergunta o Canal
     await message.channel.send(
-      '📢 Em qual canal você quer ativar o sistema de **Saída**? (Mencione o canal com `#`)'
-    );
+      msg("setbye.mensagem_2"));
 
     try {
       const collectedChannel = await message.channel.awaitMessages({
@@ -53,7 +52,7 @@ export default {
       const canal = canalMsg.mentions.channels.first();
 
       if (!canal || canal.type !== ChannelType.GuildText) {
-        return message.channel.send('❌ Canal inválido ou não mencionado. Operação cancelada.');
+        return message.channel.send(msg("setbye.mensagem_3"));
       }
 
       // 2. Instruções para o JSON
@@ -79,7 +78,7 @@ export default {
       const parsedData = parseSheepTesterUrl(urlContent);
 
       if (!parsedData) {
-        return message.channel.send('❌ URL inválida ou mal formatada.');
+        return message.channel.send(msg("setbye.mensagem_4"));
       }
 
       // 4. Cria botão de confirmação
@@ -93,7 +92,7 @@ export default {
 
       // 5. Envia Preview
       const previewMsg = await message.channel.send({
-        content: `**⬇️ PREVIEW DA DESPEDIDA ⬇️**\n\n${parsedData.apiPayload.content || ''}`,
+        content: msg("setbye.mensagem_5", { "content": parsedData.apiPayload.content || '' }),
         embeds: parsedData.apiPayload.embeds,
         components: [confirmButton],
       });
@@ -128,13 +127,13 @@ export default {
       collector.on('end', (collected) => {
         if (collected.size === 0) {
           previewMsg
-            .edit({ content: '❌ Tempo esgotado para confirmação.', components: [] })
+            .edit({ content: msg("setbye.mensagem_6"), components: [] })
             .catch(() => {});
         }
       });
     } catch (error) {
       console.error(error);
-      message.channel.send('❌ Operação cancelada ou tempo esgotado.');
+      message.channel.send(msg("setbye.mensagem_7"));
     }
   },
 };
@@ -197,10 +196,14 @@ function cleanNulls(obj) {
 @register-messages
 {
   "setbye": {
-    "_nota": "O JSON abaixo pode conter QUALQUER estrutura válida. Você pode adicionar objetos aninhados, múltiplas chaves, ou qualquer outro conteúdo necessário para o comando. O utilitário de sincronização fará merge profundo automaticamente.",
-    "uso_incorreto": "⚠️ Uso incorreto! Tente: {uso}",
-    "erro_interno": "❌ Ocorreu um erro ao processar este comando.",
-    "mensagem_1": "❌ Você precisa ser administrador para usar este comando!"
+    "mensagem_2": "📢 Em qual canal você quer ativar o sistema de **Saída**? (Mencione o canal com `#`)",
+    "mensagem_3": "❌ Canal inválido ou não mencionado. Operação cancelada.",
+    "mensagem_4": "❌ URL inválida ou mal formatada.",
+    "mensagem_5": "**⬇️ PREVIEW DA DESPEDIDA ⬇️**\n\n{content}",
+    "mensagem_6": "❌ Tempo esgotado para confirmação.",
+    "mensagem_7": "❌ Operação cancelada ou tempo esgotado.",
+    "_observacao": "O JSON abaixo pode conter QUALQUER estrutura válida. Você pode adicionar objetos aninhados, múltiplas chaves, ou qualquer outro conteúdo necessário para o comando. O utilitário de sincronização fará merge profundo automaticamente.",
+    "permissao_negada": "❌ Você precisa ser administrador para usar este comando!"
   }
 }
 @end

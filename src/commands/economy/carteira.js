@@ -29,7 +29,7 @@ export default {
       const userData = await getUser(target.id, message.guild.id);
 
       if (!userData) {
-        return message.reply(`❌ ${target.id === message.author.id ? 'Você não está registrado no sistema!' : 'Este usuário não está registrado no sistema!'} Use algum comando para se registrar.`);
+        return message.reply(msg("carteira.usuario_nao_registrado", { "idVocnoestregistradonosistemaEsteusurionoestregistradonosistema": target.id === message.author.id ? 'Você não está registrado no sistema!' : 'Este usuário não está registrado no sistema!' }));
       }
 
       const isSelf = target.id === message.author.id;
@@ -66,19 +66,18 @@ export default {
 
     } catch (error) {
       console.error('Erro ao executar comando carteira:', error);
-      await message.reply('❌ Ocorreu um erro ao verificar o saldo da carteira. Por favor, tente novamente mais tarde.');
+      await message.reply(msg("carteira.erro_consulta"));
     }
   }
 };
+
 /*
 @register-messages
 {
   "carteira": {
-    "_nota": "O JSON abaixo pode conter QUALQUER estrutura válida. Você pode adicionar objetos aninhados, múltiplas chaves, ou qualquer outro conteúdo necessário para o comando. O utilitário de sincronização fará merge profundo automaticamente.",
-    "uso_incorreto": "⚠️ Uso incorreto! Tente: {uso}",
-    "erro_interno": "❌ Ocorreu um erro ao processar este comando.",
-    "mensagem_1": "❌ ${target.id === message.author.id ? 'Você não está registrado no sistema!' : 'Este usuário não está registrado no sistema!'} Use algum comando para se registrar.",
-    "mensagem_2": "❌ Ocorreu um erro ao verificar o saldo da carteira. Por favor, tente novamente mais tarde."
+    "_observacao": "O JSON abaixo pode conter QUALQUER estrutura válida. Você pode adicionar objetos aninhados, múltiplas chaves, ou qualquer outro conteúdo necessário para o comando. O utilitário de sincronização fará merge profundo automaticamente.",
+    "usuario_nao_registrado": "❌ {idVocnoestregistradonosistemaEsteusurionoestregistradonosistema} Use algum comando para se registrar.",
+    "erro_consulta": "❌ Ocorreu um erro ao verificar o saldo da carteira. Por favor, tente novamente mais tarde."
   }
 }
 @end

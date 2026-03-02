@@ -31,7 +31,7 @@ export default {
 
       // 1. Verificações Iniciais (Sanity Checks)
       if (args.length === 0) {
-        return message.reply(`⚠️ **Uso incorreto!** Tente: \`${d.uso}\` (ex: \`sacar 100\` ou \`sacar all\`)`);
+        return message.reply(msg("sacar.instrucao_uso", { "uso": d.uso }));
       }
 
       // 2. Lógica de Valor
@@ -47,22 +47,22 @@ export default {
 
       // Validações de Negócio
       if (!amount || isNaN(amount) || amount <= 0) {
-        return message.reply('❌ Por favor, insira um valor numérico válido e maior que zero para sacar.');
+        return message.reply(msg("sacar.valor_invalido"));
       }
 
       if (userData.bank <= 0) {
-        return message.reply('❌ Você não possui Biscoins guardadas no banco para realizar um saque.');
+        return message.reply(msg("sacar.banco_vazio"));
       }
 
       if (amount > userData.bank) {
-        return message.reply(`❌ Você não tem essa quantia no banco. Seu saldo bancário atual é de **${userData.bank.toLocaleString()} Biscoins**.`);
+        return message.reply(msg("sacar.saldo_bancario_insuficiente", { "toLocaleString": userData.bank.toLocaleString() }));
       }
 
       // 3. Execução da Transação no Banco de Dados
       const result = await bankTransaction(userId, guildId, amount, 'withdraw');
 
       if (!result.success) {
-        return message.reply(`❌ **Falha na operação:** ${result.reason}`);
+        return message.reply(msg("sacar.falha_operacao", { "reason": result.reason }));
       }
 
       // 4. Feedback Visual
@@ -93,19 +93,16 @@ export default {
   }
 };
 
-
 /*
 @register-messages
 {
   "sacar": {
-    "_nota": "O JSON abaixo pode conter QUALQUER estrutura válida. Você pode adicionar objetos aninhados, múltiplas chaves, ou qualquer outro conteúdo necessário para o comando. O utilitário de sincronização fará merge profundo automaticamente.",
-    "uso_incorreto": "⚠️ Uso incorreto! Tente: {uso}",
-    "erro_interno": "❌ Ocorreu um erro ao processar este comando.",
-    "mensagem_1": "⚠️ **Uso incorreto!** Tente: \\",
-    "mensagem_2": "❌ Por favor, insira um valor numérico válido e maior que zero para sacar.",
-    "mensagem_3": "❌ Você não possui Biscoins guardadas no banco para realizar um saque.",
-    "mensagem_4": "❌ Você não tem essa quantia no banco. Seu saldo bancário atual é de **${userData.bank.toLocaleString()} Biscoins**.",
-    "mensagem_5": "❌ **Falha na operação:** ${result.reason}"
+    "_observacao": "O JSON abaixo pode conter QUALQUER estrutura válida. Você pode adicionar objetos aninhados, múltiplas chaves, ou qualquer outro conteúdo necessário para o comando. O utilitário de sincronização fará merge profundo automaticamente.",
+    "instrucao_uso": "⚠️ **Uso incorreto!** Tente: `{uso}` (ex: `sacar 100` ou `sacar all`)",
+    "valor_invalido": "❌ Por favor, insira um valor numérico válido e maior que zero para sacar.",
+    "banco_vazio": "❌ Você não possui Biscoins guardadas no banco para realizar um saque.",
+    "saldo_bancario_insuficiente": "❌ Você não tem essa quantia no banco. Seu saldo bancário atual é de **{toLocaleString} Biscoins**.",
+    "falha_operacao": "❌ **Falha na operação:** {reason}"
   }
 }
 @end

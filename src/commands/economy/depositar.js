@@ -31,7 +31,7 @@ export default {
 
       // 1. Verificações Iniciais (Sanity Checks)
       if (args.length === 0) {
-        return message.reply(`⚠️ **Uso incorreto!** Tente: \`${d.uso}\` (ex: \`depositar 100\` ou \`depositar all\`)`);
+        return message.reply(msg("depositar.instrucao_uso", { "uso": d.uso }));
       }
 
       // 2. Lógica de Valor
@@ -48,15 +48,15 @@ export default {
 
       // Validações de Negócio
       if (!amount || isNaN(amount) || amount <= 0) {
-        return message.reply('❌ Por favor, insira um valor numérico válido para depositar.');
+        return message.reply(msg("depositar.valor_numerico_necessario"));
       }
 
       if (userData.wallet <= 0) {
-        return message.reply('❌ Sua carteira está vazia! Você não tem Biscoins para depositar.');
+        return message.reply(msg("depositar.carteira_vazia"));
       }
 
       if (amount > userData.wallet) {
-        return message.reply(`❌ Você não tem essa quantia na carteira. Seu saldo atual é de **${userData.wallet.toLocaleString()} Biscoins**.`);
+        return message.reply(msg("depositar.saldo_insuficiente", { "toLocaleString": userData.wallet.toLocaleString() }));
       }
 
       // 3. Execução da Transação no Banco de Dados
@@ -64,7 +64,7 @@ export default {
       const result = await bankTransaction(userId, guildId, amount, 'deposit');
 
       if (!result.success) {
-        return message.reply(`❌ **Erro na transação:** ${result.reason}`);
+        return message.reply(msg("depositar.falha_transacao", { "reason": result.reason }));
       }
 
       // 4. Feedback Visual
@@ -95,19 +95,16 @@ export default {
   }
 };
 
-
 /*
 @register-messages
 {
   "depositar": {
-    "_nota": "O JSON abaixo pode conter QUALQUER estrutura válida. Você pode adicionar objetos aninhados, múltiplas chaves, ou qualquer outro conteúdo necessário para o comando. O utilitário de sincronização fará merge profundo automaticamente.",
-    "uso_incorreto": "⚠️ Uso incorreto! Tente: {uso}",
-    "erro_interno": "❌ Ocorreu um erro ao processar este comando.",
-    "mensagem_1": "⚠️ **Uso incorreto!** Tente: \\",
-    "mensagem_2": "❌ Por favor, insira um valor numérico válido para depositar.",
-    "mensagem_3": "❌ Sua carteira está vazia! Você não tem Biscoins para depositar.",
-    "mensagem_4": "❌ Você não tem essa quantia na carteira. Seu saldo atual é de **${userData.wallet.toLocaleString()} Biscoins**.",
-    "mensagem_5": "❌ **Erro na transação:** ${result.reason}"
+    "_observacao": "O JSON abaixo pode conter QUALQUER estrutura válida. Você pode adicionar objetos aninhados, múltiplas chaves, ou qualquer outro conteúdo necessário para o comando. O utilitário de sincronização fará merge profundo automaticamente.",
+    "instrucao_uso": "⚠️ **Uso incorreto!** Tente: `{uso}` (ex: `depositar 100` ou `depositar all`)",
+    "valor_numerico_necessario": "❌ Por favor, insira um valor numérico válido para depositar.",
+    "carteira_vazia": "❌ Sua carteira está vazia! Você não tem Biscoins para depositar.",
+    "saldo_insuficiente": "❌ Você não tem essa quantia na carteira. Seu saldo atual é de **{toLocaleString} Biscoins**.",
+    "falha_transacao": "❌ **Erro na transação:** {reason}"
   }
 }
 @end

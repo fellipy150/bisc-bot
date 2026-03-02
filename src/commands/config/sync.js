@@ -36,7 +36,7 @@ export default {
       default:
         // Caso não passe argumentos ou passe um inválido, exibe o uso correto
         return message.reply(
-          msg("sync.uso_incorreto", { uso: d.uso })
+          msg("sync.sintaxe_incorreta", { uso: d.uso })
         );
     }
   }
@@ -46,12 +46,9 @@ export default {
 @register-messages
 {
   "sync": {
-    "uso_incorreto": "⚠️ Uso incorreto! Tente: `..sync cat` ou `..sync msg`",
-    "erro_interno": "❌ Ocorreu um erro ao processar o roteamento da sincronização.",
-    "mensagem_1": "✅ Todas as categorias estão sincronizadas!",
-    "mensagem_2": "🔄 Iniciando sincronização inteligente..."
+    "_nota": "O JSON abaixo pode conter QUALQUER estrutura válida. Você pode adicionar objetos aninhados, múltiplas chaves, ou qualquer outro conteúdo necessário para o comando. O utilitário de sincronização fará merge profundo automaticamente.",
+    "sintaxe_incorreta": "⚠️ Uso incorreto! Tente: `..sync cat` ou `..sync msg`"
   }
 }
 @end
 */
-

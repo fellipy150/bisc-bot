@@ -30,7 +30,7 @@ export default {
       const userData = await getUser(target.id, message.guild.id);
 
       if (!userData) {
-        return message.reply('❌ Perfil não encontrado! Use algum comando para ser registrado no sistema.');
+        return message.reply(msg("perfil.perfil_nao_encontrado"));
       }
 
       const xpNeeded = userData.level * 500;
@@ -67,19 +67,18 @@ export default {
       
     } catch (error) {
       console.error('Erro ao executar comando perfil:', error);
-      await message.reply('❌ Ocorreu um erro ao exibir o perfil. Tente novamente mais tarde.');
+      await message.reply(msg("perfil.erro_exibicao"));
     }
   }
 };
+
 /*
 @register-messages
 {
   "perfil": {
-    "_nota": "O JSON abaixo pode conter QUALQUER estrutura válida. Você pode adicionar objetos aninhados, múltiplas chaves, ou qualquer outro conteúdo necessário para o comando. O utilitário de sincronização fará merge profundo automaticamente.",
-    "uso_incorreto": "⚠️ Uso incorreto! Tente: {uso}",
-    "erro_interno": "❌ Ocorreu um erro ao processar este comando.",
-    "mensagem_1": "❌ Perfil não encontrado! Use algum comando para ser registrado no sistema.",
-    "mensagem_2": "❌ Ocorreu um erro ao exibir o perfil. Tente novamente mais tarde."
+    "_observacao": "O JSON abaixo pode conter QUALQUER estrutura válida. Você pode adicionar objetos aninhados, múltiplas chaves, ou qualquer outro conteúdo necessário para o comando. O utilitário de sincronização fará merge profundo automaticamente.",
+    "perfil_nao_encontrado": "❌ Perfil não encontrado! Use algum comando para ser registrado no sistema.",
+    "erro_exibicao": "❌ Ocorreu um erro ao exibir o perfil. Tente novamente mais tarde."
   }
 }
 @end

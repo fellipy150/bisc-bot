@@ -13,24 +13,23 @@ export default {
   },
   async execute(message, args) {
     const p = args[0];
-    if (!p) return message.reply(`Use: ${this.data.usage}`);
+    if (!p) return message.reply(msg("removeprefix.instrucao_uso", { "usage": this.data.usage }));
     if (removePrefix(p)) {
-      message.reply(`✅ Prefixo ‘${p}’ removido.\nAtuais: ${getPrefixes().join(", ")}`);
+      message.reply(msg("removeprefix.sucesso_remocao", { p, "join": getPrefixes().join(", ") }));
     } else {
-      message.reply(`⚠️ Prefixo ‘${p}’ não encontrado.`);
+      message.reply(msg("removeprefix.prefixo_inexistente", { p }));
     }
   }
 };
+
 /*
 @register-messages
 {
   "removeprefix": {
-    "_nota": "O JSON abaixo pode conter QUALQUER estrutura válida. Você pode adicionar objetos aninhados, múltiplas chaves, ou qualquer outro conteúdo necessário para o comando. O utilitário de sincronização fará merge profundo automaticamente.",
-    "uso_incorreto": "⚠️ Uso incorreto! Tente: {uso}",
-    "erro_interno": "❌ Ocorreu um erro ao processar este comando.",
-    "mensagem_1": "Use: ${this.data.usage}",
-    "mensagem_2": "✅ Prefixo ‘${p}’ removido.\\nAtuais: ${getPrefixes().join(\", \")}",
-    "mensagem_3": "⚠️ Prefixo ‘${p}’ não encontrado."
+    "_observacao": "O JSON abaixo pode conter QUALQUER estrutura válida. Você pode adicionar objetos aninhados, múltiplas chaves, ou qualquer outro conteúdo necessário para o comando. O utilitário de sincronização fará merge profundo automaticamente.",
+    "instrucao_uso": "Use: {usage}",
+    "sucesso_remocao": "✅ Prefixo ‘{p}’ removido.\nAtuais: {join}",
+    "prefixo_inexistente": "⚠️ Prefixo ‘{p}’ não encontrado."
   }
 }
 @end

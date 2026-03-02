@@ -59,7 +59,7 @@ async function iniciarEdicao(message, cmdKey, cmdData, searchKeywords = []) {
   const targetPath = path.join(comandosDir, cmdData.categoria, `${cmdData.nome}.js`);
 
   if (!fs.existsSync(targetPath)) {
-    return message.reply(`Arquivo não encontrado em: \`${targetPath}\``);
+    return message.reply(msg("editcmdmsg.arquivo_nao_encontrado", { targetPath }));
   }
 
   const fileContent = fs.readFileSync(targetPath, 'utf8');
@@ -90,7 +90,7 @@ const regex = /((?:message|msg|channel|client)\.(?:reply|send)|throw\s+new\s+Err
   }
 
   if (matches.length === 0) {
-    return message.reply(`o arquivo \`${cmdData.nome}.js\` não possui mensagens compatíveis.`);
+    return message.reply(msg("editcmdmsg.referencia_arquivo", { "nome": cmdData.nome }));
   }
 
   // Ordena por relevância interna (para exibir os mais prováveis primeiro na lista, mas sem ícones)
@@ -132,11 +132,11 @@ const regex = /((?:message|msg|channel|client)\.(?:reply|send)|throw\s+new\s+Err
     });
     const choiceMsg = collectedChoice.first();
 
-    if (choiceMsg.content.toLowerCase() === 'cancelar') return message.reply('Operação cancelada.');
+    if (choiceMsg.content.toLowerCase() === 'cancelar') return message.reply(msg("editcmdmsg.operacao_cancelada"));
 
     const choice = parseInt(choiceMsg.content);
     if (isNaN(choice) || choice < 1 || choice > matches.length)
-      return message.reply('❌ Opção inválida.');
+      return message.reply(msg("editcmdmsg.opcao_invalida"));
 
     const selectedMatch = matches[choice - 1];
 
@@ -144,8 +144,7 @@ const regex = /((?:message|msg|channel|client)\.(?:reply|send)|throw\s+new\s+Err
     const textoParaEdicao = formatarParaUsuario(selectedMatch.content, selectedMatch.quoteType);
 
     await message.reply(
-      `Copie e edite a mensagem abaixo (envie o novo texto):\n\`\`\`markdown\n${textoParaEdicao}\n\`\`\``
-    );
+      msg("editcmdmsg.instrucao_edicao", { textoParaEdicao }));
 
     const collectedText = await message.channel.awaitMessages({
       filter,
@@ -166,7 +165,7 @@ const regex = /((?:message|msg|channel|client)\.(?:reply|send)|throw\s+new\s+Err
     );
 
     if (snippetCheck !== selectedMatch.content) {
-      return message.reply('❌ O arquivo mudou enquanto você digitava. Operação abortada.');
+      return message.reply(msg("editcmdmsg.arquivo_alterado"));
     }
 
     const newFileContent =
@@ -175,12 +174,12 @@ const regex = /((?:message|msg|channel|client)\.(?:reply|send)|throw\s+new\s+Err
       currentFileContent.substring(selectedMatch.indexEnd);
 
     fs.writeFileSync(targetPath, newFileContent, 'utf8');
-    message.reply(`Comando \`${cmdData.nome}\` atualizado com sucesso`);
+    message.reply(msg("editcmdmsg.referencia_comando", { "nome": cmdData.nome }));
     console.log(`[EditCmdMsg] ${cmdData.nome} alterado por ${message.author.tag}`);
   } catch (err) {
-    if (err.size === 0) return message.reply('⏳ Tempo esgotado.');
+    if (err.size === 0) return message.reply(msg("editcmdmsg.tempo_esgotado"));
     console.error(err);
-    return message.reply('❌ Erro ao processar.');
+    return message.reply(msg("editcmdmsg.erro_processamento"));
   }
 }
 
@@ -200,7 +199,7 @@ export default {
         (k) => allData[k].nome === args[0] || allData[k].apelidos.includes(args[0])
       );
       if (cmdKey) return iniciarEdicao(message, cmdKey, allData[cmdKey]);
-      return message.reply(`❌ Comando \`${args[0]}\` não encontrado.`);
+      return message.reply(msg("editcmdmsg.comando_invalido", { "args0": args[0] }));
     }
 
     if (message.reference) {
@@ -240,7 +239,7 @@ export default {
       candidatos.sort((a, b) => b.score - a.score);
 
       if (candidatos.length === 0)
-        return message.reply('❌ Não encontrei a origem dessa mensagem.');
+        return message.reply(msg("editcmdmsg.origem_nao_encontrada"));
 
       const bestScore = candidatos[0].score;
       const topCandidatos = candidatos.filter((c) => c.score === bestScore);
@@ -262,7 +261,7 @@ export default {
           const c = await message.channel.awaitMessages({ filter, max: 1, time: 30000 });
           const idx = parseInt(c.first().content);
           if (isNaN(idx) || idx < 1 || idx > topCandidatos.length)
-            return message.reply('Inválido.');
+            return message.reply(msg("editcmdmsg.valor_invalido"));
 
           return iniciarEdicao(
             message,
@@ -271,12 +270,12 @@ export default {
             keywords
           );
         } catch {
-          return message.reply('Tempo esgotado.');
+          return message.reply(msg("editcmdmsg.tempo_excedido"));
         }
       }
     }
 
-    return message.reply('❌ Mencione um comando ou responda a uma mensagem.');
+    return message.reply(msg("editcmdmsg.referencia_necessaria"));
   },
 };
 
@@ -284,23 +283,21 @@ export default {
 @register-messages
 {
   "editcmdmsg": {
-    "_nota": "O JSON abaixo pode conter QUALQUER estrutura válida. Você pode adicionar objetos aninhados, múltiplas chaves, ou qualquer outro conteúdo necessário para o comando. O utilitário de sincronização fará merge profundo automaticamente.",
-    "uso_incorreto": "⚠️ Uso incorreto! Tente: {uso}",
-    "erro_interno": "❌ Ocorreu um erro ao processar este comando.",
-    "mensagem_1": "Arquivo não encontrado em: \\",
-    "mensagem_2": "o arquivo \\",
-    "mensagem_3": "Operação cancelada.",
-    "mensagem_4": "❌ Opção inválida.",
-    "mensagem_5": "Copie e edite a mensagem abaixo (envie o novo texto):\\n\\",
-    "mensagem_6": "❌ O arquivo mudou enquanto você digitava. Operação abortada.",
-    "mensagem_7": "Comando \\",
-    "mensagem_8": "⏳ Tempo esgotado.",
-    "mensagem_9": "❌ Erro ao processar.",
-    "mensagem_10": "❌ Comando \\",
-    "mensagem_11": "❌ Não encontrei a origem dessa mensagem.",
-    "mensagem_12": "Inválido.",
-    "mensagem_13": "Tempo esgotado.",
-    "mensagem_14": "❌ Mencione um comando ou responda a uma mensagem."
+    "_observacao": "O JSON abaixo pode conter QUALQUER estrutura válida. Você pode adicionar objetos aninhados, múltiplas chaves, ou qualquer outro conteúdo necessário para o comando. O utilitário de sincronização fará merge profundo automaticamente.",
+    "arquivo_nao_encontrado": "Arquivo não encontrado em: `{targetPath}`",
+    "referencia_arquivo": "o arquivo `{nome}.js` não possui mensagens compatíveis.",
+    "operacao_cancelada": "Operação cancelada.",
+    "opcao_invalida": "❌ Opção inválida.",
+    "instrucao_edicao": "Copie e edite a mensagem abaixo (envie o novo texto):\n```markdown\n{textoParaEdicao}\n```",
+    "arquivo_alterado": "❌ O arquivo mudou enquanto você digitava. Operação abortada.",
+    "referencia_comando": "Comando `{nome}` atualizado com sucesso",
+    "tempo_esgotado": "⏳ Tempo esgotado.",
+    "erro_processamento": "❌ Erro ao processar.",
+    "comando_invalido": "❌ Comando `{args0}` não encontrado.",
+    "origem_nao_encontrada": "❌ Não encontrei a origem dessa mensagem.",
+    "valor_invalido": "Inválido.",
+    "tempo_excedido": "Tempo esgotado.",
+    "referencia_necessaria": "❌ Mencione um comando ou responda a uma mensagem."
   }
 }
 @end
