@@ -1,0 +1,618 @@
+${name}:
+  - key: uso_incorreto
+    new_key: uso_invalido
+    content:
+  - key: resposta_exemplo
+    new_key: resposta_padrao
+    content:
+  - key: erro_interno
+    new_key: falha_critica
+    content:
+  - key: _nota
+    new_key: _observacao_geral
+    content:
+  - key: inserirnomedamsg
+    new_key: placeholder_conteudo
+    content:
+sync:
+  - key: uso_incorreto
+    new_key: sintaxe_incorreta
+    content:
+  - key: erro_interno
+    new_key: falha_roteamento
+    content:
+  - key: mensagem_1
+    new_key: sucesso_sincronia
+    content:
+  - key: mensagem_2
+    new_key: inicio_sincronia
+    content:
+removewelcome:
+  - key: no_admin
+    new_key: permissao_negada
+    content:
+  - key: no_config
+    new_key: config_ausente
+    content:
+  - key: btn_confirm
+    new_key: botao_confirmar
+    content:
+  - key: btn_cancel
+    new_key: botao_cancelar
+    content:
+  - key: warning
+    new_key: aviso_atencao
+    content:
+  - key: success
+    new_key: sucesso_remocao
+    content:
+  - key: error_remove
+    new_key: falha_remocao
+    content:
+  - key: cancelled
+    new_key: operacao_cancelada
+    content:
+  - key: timeout
+    new_key: tempo_esgotado
+    content:
+setwelcome:
+  - key: no_admin
+    new_key: permissao_negada
+    content:
+  - key: ask_channel
+    new_key: solicitar_canal
+    content:
+  - key: invalid_channel
+    new_key: canal_invalido
+    content:
+  - key: instructions
+    new_key: instrucoes_url
+    content:
+  - key: invalid_url
+    new_key: url_invalida
+    content:
+  - key: btn_accept
+    new_key: botao_aceitar
+    content:
+  - key: preview
+    new_key: visualizacao_msg
+    content:
+  - key: btn_not_author
+    new_key: autor_necessario
+    content:
+  - key: success
+    new_key: sucesso_config
+    content:
+  - key: db_error
+    new_key: erro_banco
+    content:
+  - key: timeout_confirm
+    new_key: tempo_confirmacao
+    content:
+  - key: timeout
+    new_key: tempo_excedido
+    content:
+  - key: unexpected_error
+    new_key: erro_inesperado
+    content:
+viewwelcome:
+  - key: no_welcome
+    new_key: sem_boasvindas
+    content:
+  - key: btn_edit
+    new_key: botao_editar
+    content:
+  - key: btn_close
+    new_key: botao_fechar
+    content:
+  - key: preview_text
+    new_key: texto_previa
+    content:
+  - key: edit_instruction
+    new_key: instrucao_edicao
+    content:
+  - key: view_closed
+    new_key: visualizacao_encerrada
+    content:
+welcome:
+  - key: no_admin
+    new_key: permissao_negada
+    content:
+  - key: add_start
+    new_key: inicio_adicao
+    content:
+  - key: edit_start
+    new_key: inicio_edicao
+    content:
+  - key: remove_start
+    new_key: inicio_remocao
+    content:
+  - key: view_start
+    new_key: inicio_visualizacao
+    content:
+  - key: help
+    new_key: ajuda_comando
+    content:
+comando:
+  - key: _nota
+    new_key: _observacao_geral
+    content:
+  - key: uso_incorreto
+    new_key: uso_invalido
+    content:
+  - key: resposta_exemplo
+    new_key: resposta_padrao
+    content:
+  - key: erro_interno
+    new_key: falha_processamento
+    content:
+  - key: inserirnomedamsg
+    new_key: placeholder_mensagem
+    content:
+mkcmd:
+  - key: no_permission
+    new_key: permissao_negada
+    content:
+  - key: ask_name
+    new_key: solicitar_nome
+    content:
+  - key: ask_desc
+    new_key: solicitar_descricao
+    content:
+  - key: ask_category
+    new_key: solicitar_categoria
+    content:
+  - key: ask_draft
+    new_key: solicitar_rascunho
+    content:
+  - key: already_exists
+    new_key: comando_existente
+    content:
+  - key: success
+    new_key: sucesso_criacao
+    content:
+  - key: error
+    new_key: falha_criacao
+    content:
+  - key: _nota
+    new_key: _observacao
+    content:
+bye:
+  - key: _nota
+    new_key: _observacao
+    content:
+  - key: uso_incorreto
+    new_key: uso_invalido
+    content:
+  - key: erro_interno
+    new_key: falha_processamento
+    content:
+  - key: mensagem_1
+    new_key: permissao_administrador
+    content:
+  - key: mensagem_2
+    new_key: instrucao_uso
+    content:
+removebye:
+  - key: _nota
+    new_key: _observacao
+    content:
+  - key: uso_incorreto
+    new_key: uso_invalido
+    content:
+  - key: erro_interno
+    new_key: falha_processamento
+    content:
+  - key: mensagem_1
+    new_key: permissao_negada
+    content:
+  - key: mensagem_2
+    new_key: config_ausente
+    content:
+setbye:
+  - key: _nota
+    new_key: _observacao
+    content:
+  - key: uso_incorreto
+    new_key: uso_invalido
+    content:
+  - key: erro_interno
+    new_key: falha_processamento
+    content:
+  - key: mensagem_1
+    new_key: permissao_negada
+    content:
+viewbye:
+  - key: _nota
+    new_key: _observacao
+    content:
+  - key: uso_incorreto
+    new_key: uso_invalido
+    content:
+  - key: erro_interno
+    new_key: falha_processamento
+    content:
+  - key: mensagem_1
+    new_key: sem_configuracao
+    content:
+addprefix:
+  - key: _nota
+    new_key: _observacao
+    content:
+  - key: uso_incorreto
+    new_key: uso_invalido
+    content:
+  - key: erro_interno
+    new_key: falha_processamento
+    content:
+  - key: mensagem_1
+    new_key: instrucao_uso
+    content:
+  - key: mensagem_2
+    new_key: sucesso_adicao
+    content:
+  - key: mensagem_3
+    new_key: prefixo_existente
+    content:
+editcmdmsg:
+  - key: _nota
+    new_key: _observacao
+    content:
+  - key: uso_incorreto
+    new_key: uso_invalido
+    content:
+  - key: erro_interno
+    new_key: falha_processamento
+    content:
+  - key: mensagem_1
+    new_key: arquivo_nao_encontrado
+    content:
+  - key: mensagem_2
+    new_key: referencia_arquivo
+    content:
+  - key: mensagem_3
+    new_key: operacao_cancelada
+    content:
+  - key: mensagem_4
+    new_key: opcao_invalida
+    content:
+  - key: mensagem_5
+    new_key: instrucao_edicao
+    content:
+  - key: mensagem_6
+    new_key: arquivo_alterado
+    content:
+  - key: mensagem_7
+    new_key: referencia_comando
+    content:
+  - key: mensagem_8
+    new_key: tempo_esgotado
+    content:
+  - key: mensagem_9
+    new_key: erro_processamento
+    content:
+  - key: mensagem_10
+    new_key: comando_invalido
+    content:
+  - key: mensagem_11
+    new_key: origem_nao_encontrada
+    content:
+  - key: mensagem_12
+    new_key: valor_invalido
+    content:
+  - key: mensagem_13
+    new_key: tempo_excedido
+    content:
+  - key: mensagem_14
+    new_key: referencia_necessaria
+    content:
+listprefixes:
+  - key: _nota
+    new_key: _observacao
+    content:
+  - key: uso_incorreto
+    new_key: uso_invalido
+    content:
+  - key: erro_interno
+    new_key: falha_processamento
+    content:
+  - key: mensagem_1
+    new_key: lista_prefixos
+    content:
+prefix:
+  - key: _nota
+    new_key: _observacao
+    content:
+  - key: uso_incorreto
+    new_key: uso_invalido
+    content:
+  - key: erro_interno
+    new_key: falha_processamento
+    content:
+  - key: mensagem_1
+    new_key: instrucao_uso_1
+    content:
+  - key: mensagem_2
+    new_key: instrucao_uso_2
+    content:
+  - key: mensagem_3
+    new_key: sucesso_adicao
+    content:
+  - key: mensagem_4
+    new_key: prefixo_existente
+    content:
+  - key: mensagem_5
+    new_key: instrucao_uso_3
+    content:
+  - key: mensagem_6
+    new_key: sucesso_remocao
+    content:
+  - key: mensagem_7
+    new_key: prefixo_inexistente
+    content:
+  - key: mensagem_8
+    new_key: lista_prefixos
+    content:
+  - key: mensagem_9
+    new_key: subcomando_invalido
+    content:
+removeprefix:
+  - key: _nota
+    new_key: _observacao
+    content:
+  - key: uso_incorreto
+    new_key: uso_invalido
+    content:
+  - key: erro_interno
+    new_key: falha_processamento
+    content:
+  - key: mensagem_1
+    new_key: instrucao_uso
+    content:
+  - key: mensagem_2
+    new_key: sucesso_remocao
+    content:
+  - key: mensagem_3
+    new_key: prefixo_inexistente
+    content:
+synccat:
+  - key: uso_incorreto
+    new_key: uso_invalido
+    content:
+  - key: em_curso
+    new_key: sincronizacao_andamento
+    content:
+  - key: sincronizadas
+    new_key: categorias_sincronizadas
+    content:
+  - key: dessincronias
+    new_key: inconsistencias_encontradas
+    content:
+  - key: sucesso
+    new_key: atualizacao_concluida
+    content:
+  - key: cancelado
+    new_key: operacao_cancelada
+    content:
+  - key: erro_interno
+    new_key: falha_sincronizacao
+    content:
+syncmsg:
+  - key: uso_incorreto
+    new_key: uso_invalido
+    content:
+  - key: em_curso
+    new_key: sincronizacao_andamento
+    content:
+  - key: iniciando
+    new_key: inicio_sincronizacao
+    content:
+  - key: concluido
+    new_key: sincronizacao_concluida
+    content:
+  - key: erro_interno
+    new_key: falha_critica
+    content:
+banco:
+  - key: _nota
+    new_key: _observacao
+    content:
+  - key: uso_incorreto
+    new_key: uso_invalido
+    content:
+  - key: erro_interno
+    new_key: falha_processamento
+    content:
+  - key: mensagem_1
+    new_key: erro_acesso
+    content:
+  - key: mensagem_2
+    new_key: valor_necessario
+    content:
+  - key: mensagem_3
+    new_key: valor_invalido
+    content:
+  - key: mensagem_4
+    new_key: motivo_erro
+    content:
+carteira:
+  - key: _nota
+    new_key: _observacao
+    content:
+  - key: uso_incorreto
+    new_key: uso_invalido
+    content:
+  - key: erro_interno
+    new_key: falha_processamento
+    content:
+  - key: mensagem_1
+    new_key: usuario_nao_registrado
+    content:
+  - key: mensagem_2
+    new_key: erro_consulta
+    content:
+daily:
+  - key: _nota
+    new_key: _observacao
+    content:
+  - key: uso_incorreto
+    new_key: uso_invalido
+    content:
+  - key: erro_interno
+    new_key: falha_processamento
+    content:
+  - key: mensagem_1
+    new_key: erro_daily
+    content:
+depositar:
+  - key: _nota
+    new_key: _observacao
+    content:
+  - key: uso_incorreto
+    new_key: uso_invalido
+    content:
+  - key: erro_interno
+    new_key: falha_processamento
+    content:
+  - key: mensagem_1
+    new_key: instrucao_uso
+    content:
+  - key: mensagem_2
+    new_key: valor_numerico_necessario
+    content:
+  - key: mensagem_3
+    new_key: carteira_vazia
+    content:
+  - key: mensagem_4
+    new_key: saldo_insuficiente
+    content:
+  - key: mensagem_5
+    new_key: falha_transacao
+    content:
+pay:
+  - key: _nota
+    new_key: _observacao
+    content:
+  - key: uso_incorreto
+    new_key: uso_invalido
+    content:
+  - key: erro_interno
+    new_key: falha_processamento
+    content:
+  - key: mensagem_1
+    new_key: instrucao_uso
+    content:
+  - key: mensagem_2
+    new_key: valor_invalido
+    content:
+  - key: mensagem_3
+    new_key: saldo_insuficiente
+    content:
+  - key: mensagem_4
+    new_key: erro_transacao
+    content:
+perfil:
+  - key: _nota
+    new_key: _observacao
+    content:
+  - key: uso_incorreto
+    new_key: uso_invalido
+    content:
+  - key: erro_interno
+    new_key: falha_processamento
+    content:
+  - key: mensagem_1
+    new_key: perfil_nao_encontrado
+    content:
+  - key: mensagem_2
+    new_key: erro_exibicao
+    content:
+sacar:
+  - key: _nota
+    new_key: _observacao
+    content:
+  - key: uso_incorreto
+    new_key: uso_invalido
+    content:
+  - key: erro_interno
+    new_key: falha_processamento
+    content:
+  - key: mensagem_1
+    new_key: instrucao_uso
+    content:
+  - key: mensagem_2
+    new_key: valor_invalido
+    content:
+  - key: mensagem_3
+    new_key: banco_vazio
+    content:
+  - key: mensagem_4
+    new_key: saldo_bancario_insuficiente
+    content:
+  - key: mensagem_5
+    new_key: falha_operacao
+    content:
+help:
+  - key: _nota
+    new_key: _observacao
+    content:
+  - key: uso_incorreto
+    new_key: uso_invalido
+    content:
+  - key: erro_interno
+    new_key: falha_processamento
+    content:
+  - key: mensagem_1
+    new_key: comando_inexistente
+    content:
+ping:
+  - key: _nota
+    new_key: _observacao
+    content:
+  - key: uso_incorreto
+    new_key: uso_invalido
+    content:
+  - key: erro_interno
+    new_key: falha_processamento
+    content:
+  - key: mensagem_1
+    new_key: calculando_latencias
+    content:
+  - key: mensagem_2
+    new_key: resultado_ping
+    content:
+store_chat:
+  - key: _nota
+    new_key: _observacao
+    content:
+  - key: uso_incorreto
+    new_key: uso_invalido
+    content:
+  - key: erro_interno
+    new_key: falha_processamento
+    content:
+  - key: mensagem_1
+    new_key: instrucao_uso
+    content:
+twimg:
+  - key: _nota
+    new_key: _observacao
+    content:
+  - key: uso_incorreto
+    new_key: uso_invalido
+    content:
+  - key: erro_interno
+    new_key: falha_processamento
+    content:
+  - key: mensagem_1
+    new_key: link_necessario
+    content:
+  - key: mensagem_2
+    new_key: url_invalida
+    content:
+  - key: mensagem_3
+    new_key: video_nao_encontrado
+    content:
+  - key: mensagem_4
+    new_key: erro_processamento_video
+    content:

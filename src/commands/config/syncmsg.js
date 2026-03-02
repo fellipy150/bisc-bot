@@ -198,49 +198,88 @@ export default {
 
           let action = "";
 
-          if (valL === valG) {
-            mergedMessages[key] = valL;
-          } 
-          else if (valL === undefined && valG !== undefined) {
-            // Removido do código -> Remove do JSON
+          // ==========================================
+          // 1. DETECÇÃO DE RENOMEAÇÃO E CHAVES INÉDITAS
+          // ==========================================
+          if (valL === undefined && valG !== undefined && valS === undefined) {
+            // A chave existe APENAS no JSON (não está no código nem no passado).
+            
+            // Busca se alguma chave antiga com o mesmo valor sumiu do JSON (Renomeação)
+            const oldKey = Object.keys(localMessages).find(k => 
+               localMessages[k] === valG && globalMessages[k] === undefined
+            );
+
+            if (oldKey) {
+               // É UMA RENOMEAÇÃO!
+               mergedMessages[key] = valG; // Salva a chave com o nome novo
+               delete mergedMessages[oldKey]; // Mata a chave com o nome velho
+               
+               newFileContent = replaceMessageKey(newFileContent, cmdName, oldKey, key);
+               localNeedsUpdate = true;
+               globalNeedsUpdate = true;
+               action = `RENOMEADO no código (${oldKey} -> ${key})`;
+            } else {
+               // É UMA CHAVE NOVA! (Adicionada manualmente no JSON)
+               mergedMessages[key] = valG; // Salva a chave
+               localNeedsUpdate = true; // Força a injeção no bloco @register do .js
+               globalNeedsUpdate = true;
+               action = "NOVA CHAVE (Adicionada via JSON)";
+            }
+          }
+          // ==========================================
+          // 2. DELEÇÃO LEGÍTIMA (O dev apagou a chave do .js)
+          // ==========================================
+          else if (valL === undefined && valS !== undefined) {
             delete mergedMessages[key];
             globalNeedsUpdate = true;
-            action = "DELETADO (Falta no Código)";
+            action = "DELETADO (Removido do Código .js)";
           }
+          // ==========================================
+          // 3. ATUALIZAÇÃO DO CÓDIGO (JSON mudou o valor)
+          // ==========================================
           else if (valL === valS && valG !== valS) {
-            // Alteração apenas no JSON -> Propaga para o código
-            mergedMessages[key] = valG;
+            if (valG === undefined) {
+               delete mergedMessages[key]; // A chave foi apagada no JSON
+            } else {
+               mergedMessages[key] = valG;
+            }
             localNeedsUpdate = true;
             action = "CÓDIGO ATUALIZADO (JSON mudou)";
           } 
+          // ==========================================
+          // 4. ATUALIZAÇÃO DO JSON (Código mudou o valor)
+          // ==========================================
           else if (valG === valS && valL !== valS) {
-            // Alteração apenas no Código -> Propaga para o JSON
-            mergedMessages[key] = valL;
+            if (valL === undefined) {
+               delete mergedMessages[key]; // A chave foi apagada no código
+            } else {
+               mergedMessages[key] = valL;
+            }
             globalNeedsUpdate = true;
             action = "JSON ATUALIZADO (Código mudou)";
           } 
-          else {
-            // Conflito ou novo: Código prevalece
-            mergedMessages[key] = valL ?? valG;
+          // ==========================================
+          // 5. CONFLITO (Ambos os lados mudaram ao mesmo tempo)
+          // ==========================================
+          else if (valL !== valS && valG !== valS) {
+            mergedMessages[key] = valL ?? valG; // Código tem prioridade
             globalNeedsUpdate = true;
             localNeedsUpdate = true;
-            action = "CÓDIGO VENCEU (Conflito)";
+            action = "CÓDIGO VENCEU (Conflito resolvido)";
+          } 
+          // ==========================================
+          // 6. TUDO IGUAL (Nenhuma mudança detectada)
+          // ==========================================
+          else {
+            mergedMessages[key] = valL;
           }
 
-          // Detecção de Renomeação
-          if (valL === undefined && valG !== undefined) {
-             const oldKey = Object.keys(localMessages).find(k => localMessages[k] === valG);
-             if (oldKey) {
-                newFileContent = replaceMessageKey(newFileContent, cmdName, oldKey, key);
-                localNeedsUpdate = true;
-                action += " + [Renomeação]";
-             }
-          }
-
+          // Imprime o log apenas se houve alguma ação
           if (action && !isSilent) {
              console.log(`  [${cmdName}] 🔑 ${key.padEnd(20)} -> ${action}`);
           }
         }
+
 
         if (globalNeedsUpdate) {
           mainData[cmdName] = Object.fromEntries(
