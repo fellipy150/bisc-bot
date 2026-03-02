@@ -50,7 +50,7 @@ export default {
 
     const confirmMsg = await message.channel.send({
       content:
-        msg("removebye.mensagem_3"),
+        msg("removebye.aviso_confirmacao"),
       components: [row],
     });
 
@@ -85,7 +85,7 @@ export default {
     } catch (err) {
       if (confirmMsg.editable) {
         confirmMsg
-          .edit({ content: msg("removebye.mensagem_4"), components: [] })
+          .edit({ content: msg("removebye.tempo_esgotado"), components: [] })
           .catch(() => {});
       }
     }
@@ -96,11 +96,11 @@ export default {
 @register-messages
 {
   "removebye": {
-    "mensagem_3": "🚨 **Atenção:** Você tem certeza que deseja **desativar e apagar** o sistema de saída (bye) deste servidor?",
-    "mensagem_4": "⏳ Tempo esgotado. Operação cancelada.",
-    "_observacao": "O JSON abaixo pode conter QUALQUER estrutura válida. Você pode adicionar objetos aninhados, múltiplas chaves, ou qualquer outro conteúdo necessário para o comando. O utilitário de sincronização fará merge profundo automaticamente.",
     "permissao_negada": "❌ Você precisa ser administrador para usar este comando!",
-    "config_ausente": "⚠️ Nenhuma configuração de saída (bye) encontrada neste servidor."
+    "config_ausente": "⚠️ Nenhuma configuração de saída (bye) encontrada neste servidor.",
+    "_observacao": "O JSON abaixo pode conter QUALQUER estrutura válida. Você pode adicionar objetos aninhados, múltiplas chaves, ou qualquer outro conteúdo necessário para o comando. O utilitário de sincronização fará merge profundo automaticamente.",
+    "aviso_confirmacao": "🚨 **Atenção:** Você tem certeza que deseja **desativar e apagar** o sistema de saída (bye) deste servidor?",
+    "tempo_esgotado": "⏳ Tempo esgotado. Operação cancelada."
   }
 }
 @end

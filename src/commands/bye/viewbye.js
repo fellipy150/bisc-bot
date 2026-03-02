@@ -67,7 +67,7 @@ export default {
     );
 
     const reply = await message.channel.send({
-      content: msg("viewbye.mensagem_2"),
+      content: msg("viewbye.texto_visualizacao"),
       embeds: [],
       components: [row],
     });
@@ -84,7 +84,7 @@ export default {
         if (interaction.customId === 'edit_bye') {
           await interaction.reply({
             content:
-              msg("viewbye.mensagem_3"),
+              msg("viewbye.instrucao_edicao"),
             ephemeral: true,
           });
         } else if (interaction.customId === 'fechar_viewbye') {
@@ -112,10 +112,10 @@ export default {
 @register-messages
 {
   "viewbye": {
-    "mensagem_2": "**Visualização da mensagem de saída:**",
-    "mensagem_3": "Para editar, use o comando `bye add` (ou `bye set`) e envie a nova URL do SheepTester.",
+    "sem_configuracao": "⚠️ Nenhuma mensagem de saída (bye) configurada neste servidor. Use `bye add` para configurar.",
     "_observacao": "O JSON abaixo pode conter QUALQUER estrutura válida. Você pode adicionar objetos aninhados, múltiplas chaves, ou qualquer outro conteúdo necessário para o comando. O utilitário de sincronização fará merge profundo automaticamente.",
-    "sem_configuracao": "⚠️ Nenhuma mensagem de saída (bye) configurada neste servidor. Use `bye add` para configurar."
+    "texto_visualizacao": "**Visualização da mensagem de saída:**",
+    "instrucao_edicao": "Para editar, use o comando `bye add` (ou `bye set`) e envie a nova URL do SheepTester."
   }
 }
 @end

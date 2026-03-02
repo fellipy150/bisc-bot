@@ -42,7 +42,7 @@ export default {
           const collected = await channel.awaitMessages({ filter, max: 1, time: 60000, errors: ['time'] });
           return collected.first(); // Retorna o objeto da mensagem
         } catch (error) {
-          await channel.send(msg("store_chat.mensagem_2"));
+          await channel.send(msg("store_chat.tempo_esgotado"));
           return null;
         }
       };
@@ -54,7 +54,7 @@ export default {
       // Passa a resposta para o utilitário e desestrutura o novo formato de objeto
       const parsedTime = await parseInputTime(timeMsg.content);
       if (!parsedTime || !parsedTime.inicio) {
-        return channel.send(msg("store_chat.mensagem_3"));
+        return channel.send(msg("store_chat.data_invalida"));
       }
       const startTimestamp = parsedTime.inicio;
       const endTimestamp = parsedTime.fim;
@@ -76,11 +76,11 @@ export default {
         targetIds = [...new Set([...mentionedIds, ...rawIds])];
         
         if (targetIds.length === 0) {
-          return channel.send(msg("store_chat.mensagem_4"));
+          return channel.send(msg("store_chat.usuario_nao_encontrado"));
         }
       }
 
-      await channel.send(msg("store_chat.mensagem_5"));
+      await channel.send(msg("store_chat.buscando_historico"));
 
       // 4. Lógica de Busca de Mensagens
       const snowflake = SnowflakeUtil.generate({ timestamp: startTimestamp });
@@ -175,7 +175,7 @@ export default {
       }
 
       if (!historyText) {
-        return channel.send(msg("store_chat.mensagem_6"));
+        return channel.send(msg("store_chat.sem_mensagens"));
       }
 
       // 6. Salvamento e Envio
@@ -187,7 +187,7 @@ export default {
 
       const attachment = new AttachmentBuilder(filePath);
       await channel.send({ 
-        content: msg("store_chat.mensagem_7", { "length": messagesFetch.length }), 
+        content: msg("store_chat.sucesso_captura", { "length": messagesFetch.length }), 
         files: [attachment] 
       });
 
@@ -211,14 +211,14 @@ export default {
 @register-messages
 {
   "store_chat": {
-    "mensagem_2": "⏳ Tempo esgotado. Comando cancelado.",
-    "mensagem_3": "❌ Formato de data inválido. Comando cancelado.",
-    "mensagem_4": "❌ Nenhum usuário ou ID válido foi encontrado na sua resposta. Comando cancelado.",
-    "mensagem_5": "⏳ Buscando o histórico, aguarde...",
-    "mensagem_6": "ℹ️ Nenhuma mensagem encontrada para esses critérios ou período.",
-    "mensagem_7": "✅ O histórico foi capturado com sucesso! ({length} mensagens processadas)",
+    "instrucao_uso": "⚠️ Uso incorreto! Tente: `{uso}`",
     "_observacao": "O JSON abaixo pode conter QUALQUER estrutura válida. Você pode adicionar objetos aninhados, múltiplas chaves, ou qualquer outro conteúdo necessário para o comando. O utilitário de sincronização fará merge profundo automaticamente.",
-    "instrucao_uso": "⚠️ Uso incorreto! Tente: `{uso}`"
+    "tempo_esgotado": "⏳ Tempo esgotado. Comando cancelado.",
+    "data_invalida": "❌ Formato de data inválido. Comando cancelado.",
+    "usuario_nao_encontrado": "❌ Nenhum usuário ou ID válido foi encontrado na sua resposta. Comando cancelado.",
+    "buscando_historico": "⏳ Buscando o histórico, aguarde...",
+    "sem_mensagens": "ℹ️ Nenhuma mensagem encontrada para esses critérios ou período.",
+    "sucesso_captura": "✅ O histórico foi capturado com sucesso! ({length} mensagens processadas)"
   }
 }
 @end

@@ -39,7 +39,7 @@ export default {
 
     // 1. Pergunta o Canal
     await message.channel.send(
-      msg("setbye.mensagem_2"));
+      msg("setbye.solicitar_canal"));
 
     try {
       const collectedChannel = await message.channel.awaitMessages({
@@ -52,7 +52,7 @@ export default {
       const canal = canalMsg.mentions.channels.first();
 
       if (!canal || canal.type !== ChannelType.GuildText) {
-        return message.channel.send(msg("setbye.mensagem_3"));
+        return message.channel.send(msg("setbye.canal_invalido"));
       }
 
       // 2. Instruções para o JSON
@@ -78,7 +78,7 @@ export default {
       const parsedData = parseSheepTesterUrl(urlContent);
 
       if (!parsedData) {
-        return message.channel.send(msg("setbye.mensagem_4"));
+        return message.channel.send(msg("setbye.url_invalida"));
       }
 
       // 4. Cria botão de confirmação
@@ -92,7 +92,7 @@ export default {
 
       // 5. Envia Preview
       const previewMsg = await message.channel.send({
-        content: msg("setbye.mensagem_5", { "content": parsedData.apiPayload.content || '' }),
+        content: msg("setbye.visualizacao_despedida", { "content": parsedData.apiPayload.content || '' }),
         embeds: parsedData.apiPayload.embeds,
         components: [confirmButton],
       });
@@ -127,13 +127,13 @@ export default {
       collector.on('end', (collected) => {
         if (collected.size === 0) {
           previewMsg
-            .edit({ content: msg("setbye.mensagem_6"), components: [] })
+            .edit({ content: msg("setbye.tempo_confirmacao"), components: [] })
             .catch(() => {});
         }
       });
     } catch (error) {
       console.error(error);
-      message.channel.send(msg("setbye.mensagem_7"));
+      message.channel.send(msg("setbye.cancelado_ou_tempo"));
     }
   },
 };
@@ -196,14 +196,14 @@ function cleanNulls(obj) {
 @register-messages
 {
   "setbye": {
-    "mensagem_2": "📢 Em qual canal você quer ativar o sistema de **Saída**? (Mencione o canal com `#`)",
-    "mensagem_3": "❌ Canal inválido ou não mencionado. Operação cancelada.",
-    "mensagem_4": "❌ URL inválida ou mal formatada.",
-    "mensagem_5": "**⬇️ PREVIEW DA DESPEDIDA ⬇️**\n\n{content}",
-    "mensagem_6": "❌ Tempo esgotado para confirmação.",
-    "mensagem_7": "❌ Operação cancelada ou tempo esgotado.",
+    "permissao_negada": "❌ Você precisa ser administrador para usar este comando!",
     "_observacao": "O JSON abaixo pode conter QUALQUER estrutura válida. Você pode adicionar objetos aninhados, múltiplas chaves, ou qualquer outro conteúdo necessário para o comando. O utilitário de sincronização fará merge profundo automaticamente.",
-    "permissao_negada": "❌ Você precisa ser administrador para usar este comando!"
+    "solicitar_canal": "📢 Em qual canal você quer ativar o sistema de **Saída**? (Mencione o canal com `#`)",
+    "canal_invalido": "❌ Canal inválido ou não mencionado. Operação cancelada.",
+    "url_invalida": "❌ URL inválida ou mal formatada.",
+    "visualizacao_despedida": "**⬇️ PREVIEW DA DESPEDIDA ⬇️**\n\n{content}",
+    "tempo_confirmacao": "❌ Tempo esgotado para confirmação.",
+    "cancelado_ou_tempo": "❌ Operação cancelada ou tempo esgotado."
   }
 }
 @end
