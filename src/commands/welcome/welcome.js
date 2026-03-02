@@ -19,30 +19,30 @@ export default {
 
   async execute(message, args, client) {
     if (!message.member.permissions.has(PermissionsBitField.Flags.Administrator)) {
-      return message.reply(msg("welcome.no_admin"));
+      return message.reply(msg("welcome.permissao_negada"));
     }
 
     const subcomando = args[0]?.toLowerCase();
 
     switch (subcomando) {
       case 'add':
-        message.reply(msg("welcome.add_start"));
+        message.reply(msg("welcome.inicio_adicao"));
         await setwelcome.execute(message, args.slice(1), client);
         break;
       case 'edit':
-        message.reply(msg("welcome.edit_start"));
+        message.reply(msg("welcome.inicio_edicao"));
         await setwelcome.execute(message, args.slice(1), client);
         break;
       case 'remove':
-        message.reply(msg("welcome.remove_start"));
+        message.reply(msg("welcome.inicio_remocao"));
         await removewelcome.execute(message, args.slice(1), client);
         break;
       case 'view':
-        message.reply(msg("welcome.view_start"));
+        message.reply(msg("welcome.inicio_visualizacao"));
         await viewwelcome.execute(message, args.slice(1), client);
         break;
       default:
-        message.reply(msg("welcome.help"));
+        message.reply(msg("welcome.ajuda_comando"));
     }
   },
 
@@ -173,12 +173,13 @@ export default {
 @register-messages
 {
   "welcome": {
-    "no_admin": "Você precisa ser um administrador para usar esse comando.",
-    "add_start": "Iniciando configuração de boas-vindas. Usando comando `setwelcome`...",
-    "edit_start": "Editando mensagem de boas-vindas. Usando comando `setwelcome`...",
-    "remove_start": "Removendo sistema de boas-vindas. Usando comando `removewelcome`...",
-    "view_start": "Visualizando mensagem de boas-vindas. Usando comando `viewwelcome`...",
-    "help": "**Sistema de Boas-Vindas - Central de Ajuda**\nUse: `welcome add`, `welcome edit`, `welcome remove` ou `welcome view`."
+    "_nota": "O JSON abaixo pode conter QUALQUER estrutura válida. Você pode adicionar objetos aninhados, múltiplas chaves, ou qualquer outro conteúdo necessário para o comando. O utilitário de sincronização fará merge profundo automaticamente.",
+    "permissao_negada": "Você precisa ser um administrador para usar esse comando.",
+    "inicio_adicao": "Iniciando configuração de boas-vindas. Usando comando `setwelcome`...",
+    "inicio_edicao": "Editando mensagem de boas-vindas. Usando comando `setwelcome`...",
+    "inicio_remocao": "Removendo sistema de boas-vindas. Usando comando `removewelcome`...",
+    "inicio_visualizacao": "Visualizando mensagem de boas-vindas. Usando comando `viewwelcome`...",
+    "ajuda_comando": "**Sistema de Boas-Vindas - Central de Ajuda**\nUse: `welcome add`, `welcome edit`, `welcome remove` ou `welcome view`."
   }
 }
 @end

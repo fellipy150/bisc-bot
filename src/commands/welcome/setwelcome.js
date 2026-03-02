@@ -23,14 +23,14 @@ export default {
   async execute(message, args, client) {
     // 1. Verificação de uma Permissão
     if (!message.member.permissions.has('Administrator')) {
-      return message.reply(msg("setwelcome.no_admin"));
+      return message.reply(msg("setwelcome.permissao_negada"));
     }
 
     const guildId = message.guild.id;
     const filterAuthor = (m) => m.author.id === message.author.id;
 
     // 2. Pergunta o Canal
-    await message.channel.send(msg("setwelcome.ask_channel"));
+    await message.channel.send(msg("setwelcome.solicitar_canal"));
 
     try {
       const collectedChannel = await message.channel.awaitMessages({
@@ -43,11 +43,11 @@ export default {
       const canal = canalMsg.mentions.channels.first();
 
       if (!canal || canal.type !== ChannelType.GuildText) {
-        return message.channel.send(msg("setwelcome.invalid_channel"));
+        return message.channel.send(msg("setwelcome.canal_invalido"));
       }
 
       // 3. Pede a URL do Site
-      await message.channel.send(msg("setwelcome.instructions"));
+      await message.channel.send(msg("setwelcome.instrucoes_url"));
 
       // 4. Coleta a URL
       const collectedUrl = await message.channel.awaitMessages({
@@ -63,20 +63,20 @@ export default {
       const parsedData = parseSheepTesterUrl(urlContent);
 
       if (!parsedData) {
-        return message.channel.send(msg("setwelcome.invalid_url"));
+        return message.channel.send(msg("setwelcome.url_invalida"));
       }
 
       // 6. Prepara o Preview
       const confirmButton = new ActionRowBuilder().addComponents(
         new ButtonBuilder()
           .setCustomId('confirm_welcome')
-          .setLabel(msg("setwelcome.btn_accept"))
+          .setLabel(msg("setwelcome.botao_aceitar"))
           .setStyle(ButtonStyle.Success)
           .setEmoji('✅')
       );
 
       const previewMsg = await message.channel.send({
-        content: msg("setwelcome.preview", { content: parsedData.apiPayload.content || '' }),
+        content: msg("setwelcome.visualizacao_msg", { content: parsedData.apiPayload.content || '' }),
         embeds: parsedData.apiPayload.embeds,
         components: [confirmButton],
       });
@@ -91,7 +91,7 @@ export default {
       collector.on('collect', async (interaction) => {
         if (interaction.user.id !== message.author.id) {
           return interaction.reply({
-            content: msg("setwelcome.btn_not_author"),
+            content: msg("setwelcome.autor_necessario"),
             ephemeral: true,
           });
         }
@@ -105,13 +105,13 @@ export default {
 
         if (success) {
           await interaction.update({
-            content: msg("setwelcome.success", { canal: canal.toString() }),
+            content: msg("setwelcome.sucesso_config", { canal: canal.toString() }),
             components: [],
             embeds: [],
           });
         } else {
           await interaction.update({
-            content: msg("setwelcome.db_error"),
+            content: msg("setwelcome.erro_banco"),
             components: [],
           });
         }
@@ -120,16 +120,16 @@ export default {
       collector.on('end', (collected, reason) => {
         if (reason === 'time') {
           previewMsg
-            .edit({ content: msg("setwelcome.timeout_confirm"), components: [] })
+            .edit({ content: msg("setwelcome.tempo_confirmacao"), components: [] })
             .catch(() => {});
         }
       });
     } catch (error) {
       console.error(error);
       if (error.message === 'time') {
-        return message.channel.send(msg("setwelcome.timeout"));
+        return message.channel.send(msg("setwelcome.tempo_excedido"));
       }
-      message.channel.send(msg("setwelcome.unexpected_error"));
+      message.channel.send(msg("setwelcome.erro_inesperado"));
     }
   },
 };
@@ -201,19 +201,20 @@ function cleanNulls(obj) {
 @register-messages
 {
   "setwelcome": {
-    "no_admin": "❌ Você precisa ser administrador para usar este comando!",
-    "ask_channel": "📢 Em qual canal você quer ativar o sistema de boas-vindas? (Mencione o canal com `#`)",
-    "invalid_channel": "❌ Canal inválido ou não mencionado. Operação cancelada.",
-    "instructions": "🔗 **Configuração da Mensagem**\n1. Acesse este site: <https://sheeptester.github.io/javascripts/webhook-sender.html>\n2. Configure a mensagem, título, cor, imagem, etc. como desejar.\n3. Quando terminar, copie a **URL completa** do navegador.\n4. **Cole a URL aqui neste chat.**",
-    "invalid_url": "❌ URL inválida ou não contém os dados JSON esperados. Tente novamente executando o comando.",
-    "btn_accept": "Aceitar e Salvar",
-    "preview": "**⬇️ PREVIEW DA MENSAGEM ⬇️**\n\n{content}",
-    "btn_not_author": "Apenas quem usou o comando pode aceitar.",
-    "success": "✅ **Configurado!** A mensagem de boas-vindas foi salva e será enviada no canal {canal}.",
-    "db_error": "❌ Houve um erro ao salvar no banco de dados.",
-    "timeout_confirm": "⏳ Tempo esgotado para confirmação.",
-    "timeout": "⏳ Tempo esgotado. Tente novamente.",
-    "unexpected_error": "❌ Ocorreu um erro inesperado."
+    "_nota": "O JSON abaixo pode conter QUALQUER estrutura válida. Você pode adicionar objetos aninhados, múltiplas chaves, ou qualquer outro conteúdo necessário para o comando. O utilitário de sincronização fará merge profundo automaticamente.",
+    "permissao_negada": "❌ Você precisa ser administrador para usar este comando!",
+    "solicitar_canal": "📢 Em qual canal você quer ativar o sistema de boas-vindas? (Mencione o canal com `#`)",
+    "canal_invalido": "❌ Canal inválido ou não mencionado. Operação cancelada.",
+    "instrucoes_url": "🔗 **Configuração da Mensagem**\n1. Acesse este site: <https://sheeptester.github.io/javascripts/webhook-sender.html>\n2. Configure a mensagem, título, cor, imagem, etc. como desejar.\n3. Quando terminar, copie a **URL completa** do navegador.\n4. **Cole a URL aqui neste chat.**",
+    "url_invalida": "❌ URL inválida ou não contém os dados JSON esperados. Tente novamente executando o comando.",
+    "botao_aceitar": "Aceitar e Salvar",
+    "visualizacao_msg": "**⬇️ PREVIEW DA MENSAGEM ⬇️**\n\n{content}",
+    "autor_necessario": "Apenas quem usou o comando pode aceitar.",
+    "sucesso_config": "✅ **Configurado!** A mensagem de boas-vindas foi salva e será enviada no canal {canal}.",
+    "erro_banco": "❌ Houve um erro ao salvar no banco de dados.",
+    "tempo_confirmacao": "⏳ Tempo esgotado para confirmação.",
+    "tempo_excedido": "⏳ Tempo esgotado. Tente novamente.",
+    "erro_inesperado": "❌ Ocorreu um erro inesperado."
   }
 }
 @end

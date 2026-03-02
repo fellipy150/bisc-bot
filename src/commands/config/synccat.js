@@ -70,12 +70,12 @@ export default {
       // Validação básica de uso
       if (this.data.usage && args.length > 0 && this.data.usage.includes('<')) {
         return message.reply(
-          msg("synccat.uso_incorreto", { uso: d.uso })
+          msg("synccat.uso_invalido", { uso: d.uso })
         );
       }
 
       if (isSyncing) {
-        return message.reply(msg("synccat.em_curso"));
+        return message.reply(msg("synccat.sincronizacao_andamento"));
       }
 
       isSyncing = true;
@@ -126,14 +126,14 @@ export default {
 
       // 3. Resultado: Nada a fazer
       if (dessincronizados.length === 0) {
-        return message.reply(msg("synccat.sincronizadas"));
+        return message.reply(msg("synccat.categorias_sincronizadas"));
       }
 
       // 4. Resultado: Dessincronias encontradas, pede confirmação
       const listaFormatada = dessincronizados.map(c => `- \`${c.nome}\`: ${c.atual} -> **${c.correta}**`).join("\n");
       
       await message.channel.send(
-        msg("synccat.dessincronias", { lista: listaFormatada })
+        msg("synccat.inconsistencias_encontradas", { lista: listaFormatada })
       );
 
       const filter = m => m.author.id === message.author.id && m.content.toLowerCase() === 's';
@@ -148,15 +148,15 @@ export default {
         });
         
         atomicWrite(CMD_DATA_FILE, JSON.stringify(json, null, 2));
-        await message.channel.send(msg("synccat.sucesso"));
+        await message.channel.send(msg("synccat.atualizacao_concluida"));
       } else {
-        await message.channel.send(msg("synccat.cancelado"));
+        await message.channel.send(msg("synccat.operacao_cancelada"));
       }
 
     } catch (error) {
       console.error(`[Erro no comando synccat]:`, error);
       return message.reply(
-        msg("synccat.erro_interno")
+        msg("synccat.falha_sincronizacao")
       );
     } finally {
       // Liberta o lock e processa reinício se necessário
@@ -170,15 +170,15 @@ export default {
 @register-messages
 {
   "synccat": {
-    "uso_incorreto": "⚠️ Uso incorreto! Tente: {uso}",
-    "em_curso": "⏳ Sincronização de categorias em curso. Aguarde...",
-    "sincronizadas": "✅ Todas as categorias estão devidamente sincronizadas com a estrutura de pastas!",
-    "dessincronias": "⚠️ **Dessincronias de pasta encontradas:**\n{lista}\n\nConfirmar sincronização? (Responda com `s` em 30s)",
-    "sucesso": "✅ Categorias atualizadas atomicamente com sucesso!",
-    "cancelado": "❌ Sincronização cancelada por falta de confirmação (ou tempo esgotado).",
-    "erro_interno": "❌ Ocorreu um erro ao processar a sincronização de categorias."
+    "_nota": "O JSON abaixo pode conter QUALQUER estrutura válida. Você pode adicionar objetos aninhados, múltiplas chaves, ou qualquer outro conteúdo necessário para o comando. O utilitário de sincronização fará merge profundo automaticamente.",
+    "uso_invalido": "⚠️ Uso incorreto! Tente: {uso}",
+    "sincronizacao_andamento": "⏳ Sincronização de categorias em curso. Aguarde...",
+    "categorias_sincronizadas": "✅ Todas as categorias estão devidamente sincronizadas com a estrutura de pastas!",
+    "inconsistencias_encontradas": "⚠️ **Dessincronias de pasta encontradas:**\n{lista}\n\nConfirmar sincronização? (Responda com `s` em 30s)",
+    "atualizacao_concluida": "✅ Categorias atualizadas atomicamente com sucesso!",
+    "operacao_cancelada": "❌ Sincronização cancelada por falta de confirmação (ou tempo esgotado).",
+    "falha_sincronizacao": "❌ Ocorreu um erro ao processar a sincronização de categorias."
   }
 }
 @end
 */
-

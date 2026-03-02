@@ -73,7 +73,7 @@ export default {
 
       collector.on('collect', async (i) => {
         if (i.user.id !== message.author.id) {
-          return i.reply({ content: '❌ Este menu não é para você.', ephemeral: true });
+          return i.reply({ content: msg("banco.erro_acesso"), ephemeral: true });
         }
 
         const actionType = i.customId === 'bank_deposit' ? 'deposit' : 'withdraw';
@@ -81,7 +81,7 @@ export default {
 
         // Pergunta ao usuário
         await i.reply({ 
-          content: `💰 **Quanto você deseja ${actionName}?**\nDigite o valor ou \`all\` no chat agora. (30s restante)`,
+          content: msg("banco.valor_necessario", { actionName }),
           ephemeral: true 
         });
 
@@ -99,7 +99,7 @@ export default {
 
         msgCollector.on('end', (collected, reason) => {
             if (reason === 'time') {
-                i.followUp({ content: '⏳ O tempo para informar o valor acabou.', ephemeral: true }).catch(() => null);
+                i.followUp({ content: msg("banco.valor_invalido"), ephemeral: true }).catch(() => null);
             }
         });
       });
@@ -110,14 +110,14 @@ export default {
 
     } catch (error) {
       console.error(`[Erro no Comando ${d.nome}]:`, error);
-      message.reply('❌ Ocorreu um erro ao acessar o banco.');
+      message.reply(msg("banco.motivo_erro"));
     }
   },
 
   // Lógica de processamento (usada tanto por texto quanto por botão)
   async handleTransaction(message, userId, guildId, amountStr, type) {
     if (!amountStr) {
-      return message.reply(`❌ Você precisa informar um valor.`);
+      return message.reply(msg("banco.mensagem_5"));
     }
 
     const userData = await getUser(userId, guildId);
@@ -130,13 +130,13 @@ export default {
     }
 
     if (!amount || isNaN(amount) || amount <= 0) {
-      return message.reply('❌ Valor inválido informado.');
+      return message.reply(msg("banco.mensagem_6"));
     }
 
     const result = await bankTransaction(userId, guildId, amount, type);
 
     if (!result.success) {
-      return message.reply(`❌ **Erro:** ${result.reason}`);
+      return message.reply(msg("banco.mensagem_7", { "reason": result.reason }));
     }
 
     const embed = new EmbedBuilder()
@@ -152,18 +152,18 @@ export default {
   }
 };
 
-
 /*
 @register-messages
 {
   "banco": {
-    "_nota": "O JSON abaixo pode conter QUALQUER estrutura válida. Você pode adicionar objetos aninhados, múltiplas chaves, ou qualquer outro conteúdo necessário para o comando. O utilitário de sincronização fará merge profundo automaticamente.",
-    "uso_incorreto": "⚠️ Uso incorreto! Tente: {uso}",
-    "erro_interno": "❌ Ocorreu um erro ao processar este comando.",
-    "mensagem_1": "❌ Ocorreu um erro ao acessar o banco.",
-    "mensagem_2": "❌ Você precisa informar um valor.",
-    "mensagem_3": "❌ Valor inválido informado.",
-    "mensagem_4": "❌ **Erro:** ${result.reason}"
+    "mensagem_5": "❌ Você precisa informar um valor.",
+    "mensagem_6": "❌ Valor inválido informado.",
+    "mensagem_7": "❌ **Erro:** {reason}",
+    "_observacao": "O JSON abaixo pode conter QUALQUER estrutura válida. Você pode adicionar objetos aninhados, múltiplas chaves, ou qualquer outro conteúdo necessário para o comando. O utilitário de sincronização fará merge profundo automaticamente.",
+    "erro_acesso": "❌ Este menu não é para você.",
+    "valor_necessario": "💰 **Quanto você deseja {actionName}?**\nDigite o valor ou `all` no chat agora. (30s restante)",
+    "valor_invalido": "⏳ O tempo para informar o valor acabou.",
+    "motivo_erro": "❌ Ocorreu um erro ao acessar o banco."
   }
 }
 @end

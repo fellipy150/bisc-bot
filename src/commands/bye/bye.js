@@ -30,8 +30,7 @@ export default {
     // Verificação de permissão
     if (!message.member.permissions.has(PermissionsBitField.Flags.Administrator)) {
       return message.reply(
-        '❌ Você precisa ser um administrador para configurar o sistema de saídas.'
-      );
+        msg("bye.permissao_administrador"));
     }
 
     const subcomando = args[0]?.toLowerCase();
@@ -46,7 +45,7 @@ export default {
       // Futuras implementações de remove/view podem ser adicionadas aqui
 
       default:
-        message.reply(`ℹ️ Use \`${d.nome} add\` para configurar a mensagem de saída.`);
+        message.reply(msg("bye.instrucao_uso", { "nome": d.nome }));
     }
   },
 
@@ -153,11 +152,9 @@ export default {
 @register-messages
 {
   "bye": {
-    "_nota": "O JSON abaixo pode conter QUALQUER estrutura válida. Você pode adicionar objetos aninhados, múltiplas chaves, ou qualquer outro conteúdo necessário para o comando. O utilitário de sincronização fará merge profundo automaticamente.",
-    "uso_incorreto": "⚠️ Uso incorreto! Tente: {uso}",
-    "erro_interno": "❌ Ocorreu um erro ao processar este comando.",
-    "mensagem_1": "❌ Você precisa ser um administrador para configurar o sistema de saídas.",
-    "mensagem_2": "ℹ️ Use \\"
+    "_observacao": "O JSON abaixo pode conter QUALQUER estrutura válida. Você pode adicionar objetos aninhados, múltiplas chaves, ou qualquer outro conteúdo necessário para o comando. O utilitário de sincronização fará merge profundo automaticamente.",
+    "permissao_administrador": "❌ Você precisa ser um administrador para configurar o sistema de saídas.",
+    "instrucao_uso": "ℹ️ Use `{nome} add` para configurar a mensagem de saída."
   }
 }
 @end

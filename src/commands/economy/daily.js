@@ -149,7 +149,7 @@ export default {
             if (user.xp >= nextLevelXp) {
                 user.level += 1;
                 user.xp = user.xp - nextLevelXp;
-                await message.channel.send(`🎉 Parabéns ${message.author}! Você subiu para o **Nível ${user.level}**!`);
+                await message.channel.send(msg("daily.erro_daily", { "author": message.author, "level": user.level }));
             }
 
             // Salva TODAS as alterações de uma vez só no banco de dados
@@ -176,21 +176,18 @@ export default {
 
         } catch (error) {
             console.error('Erro ao executar comando daily:', error);
-            await message.reply('❌ Ocorreu um erro ao processar seu daily. Tente novamente.');
+            await message.reply(msg("daily.mensagem_2"));
         }
     }
 };
-
-
 
 /*
 @register-messages
 {
   "daily": {
-    "_nota": "O JSON abaixo pode conter QUALQUER estrutura válida. Você pode adicionar objetos aninhados, múltiplas chaves, ou qualquer outro conteúdo necessário para o comando. O utilitário de sincronização fará merge profundo automaticamente.",
-    "uso_incorreto": "⚠️ Uso incorreto! Tente: {uso}",
-    "erro_interno": "❌ Ocorreu um erro ao processar este comando.",
-    "mensagem_1": "❌ Ocorreu um erro ao processar seu daily. Tente novamente."
+    "mensagem_2": "❌ Ocorreu um erro ao processar seu daily. Tente novamente.",
+    "_observacao": "O JSON abaixo pode conter QUALQUER estrutura válida. Você pode adicionar objetos aninhados, múltiplas chaves, ou qualquer outro conteúdo necessário para o comando. O utilitário de sincronização fará merge profundo automaticamente.",
+    "erro_daily": "🎉 Parabéns {author}! Você subiu para o **Nível {level}**!"
   }
 }
 @end

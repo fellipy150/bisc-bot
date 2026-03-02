@@ -29,7 +29,7 @@ export default {
     const guildConfig = await WelcomeService.getGuildWelcome(guildId);
 
     if (!guildConfig || !guildConfig.message) {
-      return message.reply(msg("viewwelcome.no_welcome"));
+      return message.reply(msg("viewwelcome.sem_boasvindas"));
     }
 
     const welcome = guildConfig.message;
@@ -130,17 +130,17 @@ export default {
     // Botões
     const row = new ActionRowBuilder().addComponents(
       new ButtonBuilder()
-        .setLabel(msg("viewwelcome.btn_edit"))
+        .setLabel(msg("viewwelcome.botao_editar"))
         .setStyle(ButtonStyle.Primary)
         .setCustomId('edit_welcome'),
       new ButtonBuilder()
-        .setLabel(msg("viewwelcome.btn_close"))
+        .setLabel(msg("viewwelcome.botao_fechar"))
         .setStyle(ButtonStyle.Secondary)
         .setCustomId('fechar_viewwelcome')
     );
 
     const reply = await message.channel.send({
-      content: content || msg("viewwelcome.preview_text"),
+      content: content || msg("viewwelcome.texto_previa"),
       embeds: embed ? [embed] : [],
       components: [row],
     });
@@ -156,12 +156,12 @@ export default {
       try {
         if (interaction.customId === 'edit_welcome') {
           await interaction.reply({
-            content: msg("viewwelcome.edit_instruction"),
+            content: msg("viewwelcome.instrucao_edicao"),
             ephemeral: true,
           });
         } else if (interaction.customId === 'fechar_viewwelcome') {
           await interaction.update({
-            content: msg("viewwelcome.view_closed"),
+            content: msg("viewwelcome.visualizacao_encerrada"),
             embeds: [],
             components: [],
           });
@@ -184,12 +184,13 @@ export default {
 @register-messages
 {
   "viewwelcome": {
-    "no_welcome": "⚠️ Nenhuma mensagem de boas-vindas configurada neste servidor. Use `welcome add` para configurar.",
-    "btn_edit": "Editar",
-    "btn_close": "Fechar",
-    "preview_text": "**Visualização da mensagem de boas-vindas:**",
-    "edit_instruction": "Para editar, use o comando `welcome edit` e envie a nova URL.",
-    "view_closed": "Visualização encerrada."
+    "_nota": "O JSON abaixo pode conter QUALQUER estrutura válida. Você pode adicionar objetos aninhados, múltiplas chaves, ou qualquer outro conteúdo necessário para o comando. O utilitário de sincronização fará merge profundo automaticamente.",
+    "sem_boasvindas": "⚠️ Nenhuma mensagem de boas-vindas configurada neste servidor. Use `welcome add` para configurar.",
+    "botao_editar": "Editar",
+    "botao_fechar": "Fechar",
+    "texto_previa": "**Visualização da mensagem de boas-vindas:**",
+    "instrucao_edicao": "Para editar, use o comando `welcome edit` e envie a nova URL.",
+    "visualizacao_encerrada": "Visualização encerrada."
   }
 }
 @end

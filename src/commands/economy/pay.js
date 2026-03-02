@@ -58,7 +58,7 @@ export default {
             const sender = message.author;
 
             if (!targetUser) {
-                return message.reply(`**Uso incorreto.** Use: \`${commandPrefix}pay @usuario <valor>\``);
+                return message.reply(msg("pay.instrucao_uso", { commandPrefix }));
             }
 
             if (isInvalidUser(targetUser, sender)) {
@@ -71,7 +71,7 @@ export default {
             const transferAmount = extractAmountFromArguments(args);
             
             if (!transferAmount) {
-                return message.reply('Especifique um valor numérico válido.');
+                return message.reply(msg("pay.valor_invalido"));
             }
 
             if (!isValidAmount(transferAmount)) {
@@ -93,8 +93,7 @@ export default {
             if (!hasSufficientFunds) {
                 const userBalance = await getUser(sender.id, message.guild.id);
                 return message.reply(
-                    `**Saldo insuficiente.** Você tentou enviar ${transferAmount}, mas possui apenas ${userBalance.wallet} na carteira.`
-                );
+                    msg("pay.saldo_insuficiente", { transferAmount, "wallet": userBalance.wallet }));
             }
 
             await addBiscoins(
@@ -116,21 +115,20 @@ export default {
 
         } catch (error) {
             console.error('Erro no comando pay:', error);
-            message.reply('Ocorreu um erro interno na transação. O dinheiro não foi descontado.');
+            message.reply(msg("pay.erro_transacao"));
         }
     }
 };
+
 /*
 @register-messages
 {
   "pay": {
-    "_nota": "O JSON abaixo pode conter QUALQUER estrutura válida. Você pode adicionar objetos aninhados, múltiplas chaves, ou qualquer outro conteúdo necessário para o comando. O utilitário de sincronização fará merge profundo automaticamente.",
-    "uso_incorreto": "⚠️ Uso incorreto! Tente: {uso}",
-    "erro_interno": "❌ Ocorreu um erro ao processar este comando.",
-    "mensagem_1": "**Uso incorreto.** Use: \\",
-    "mensagem_2": "Especifique um valor numérico válido.",
-    "mensagem_3": "**Saldo insuficiente.** Você tentou enviar ${transferAmount}, mas possui apenas ${userBalance.wallet} na carteira.",
-    "mensagem_4": "Ocorreu um erro interno na transação. O dinheiro não foi descontado."
+    "_observacao": "O JSON abaixo pode conter QUALQUER estrutura válida. Você pode adicionar objetos aninhados, múltiplas chaves, ou qualquer outro conteúdo necessário para o comando. O utilitário de sincronização fará merge profundo automaticamente.",
+    "instrucao_uso": "**Uso incorreto.** Use: `{commandPrefix}pay @usuario <valor>`",
+    "valor_invalido": "Especifique um valor numérico válido.",
+    "saldo_insuficiente": "**Saldo insuficiente.** Você tentou enviar {transferAmount}, mas possui apenas {wallet} na carteira.",
+    "erro_transacao": "Ocorreu um erro interno na transação. O dinheiro não foi descontado."
   }
 }
 @end

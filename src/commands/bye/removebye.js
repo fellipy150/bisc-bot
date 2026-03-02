@@ -24,7 +24,7 @@ export default {
   },
   async execute(message, args, client) {
     if (!message.member.permissions.has('Administrator')) {
-      return message.reply('❌ Você precisa ser administrador para usar este comando!');
+      return message.reply(msg("removebye.permissao_negada"));
     }
 
     const guildId = message.guild.id;
@@ -34,7 +34,7 @@ export default {
     const config = await ByeService.getGuildBye(guildId);
 
     if (!config) {
-      return message.reply('⚠️ Nenhuma configuração de saída (bye) encontrada neste servidor.');
+      return message.reply(msg("removebye.config_ausente"));
     }
 
     const row = new ActionRowBuilder().addComponents(
@@ -50,7 +50,7 @@ export default {
 
     const confirmMsg = await message.channel.send({
       content:
-        '🚨 **Atenção:** Você tem certeza que deseja **desativar e apagar** o sistema de saída (bye) deste servidor?',
+        msg("removebye.mensagem_3"),
       components: [row],
     });
 
@@ -85,7 +85,7 @@ export default {
     } catch (err) {
       if (confirmMsg.editable) {
         confirmMsg
-          .edit({ content: '⏳ Tempo esgotado. Operação cancelada.', components: [] })
+          .edit({ content: msg("removebye.mensagem_4"), components: [] })
           .catch(() => {});
       }
     }
@@ -96,11 +96,11 @@ export default {
 @register-messages
 {
   "removebye": {
-    "_nota": "O JSON abaixo pode conter QUALQUER estrutura válida. Você pode adicionar objetos aninhados, múltiplas chaves, ou qualquer outro conteúdo necessário para o comando. O utilitário de sincronização fará merge profundo automaticamente.",
-    "uso_incorreto": "⚠️ Uso incorreto! Tente: {uso}",
-    "erro_interno": "❌ Ocorreu um erro ao processar este comando.",
-    "mensagem_1": "❌ Você precisa ser administrador para usar este comando!",
-    "mensagem_2": "⚠️ Nenhuma configuração de saída (bye) encontrada neste servidor."
+    "mensagem_3": "🚨 **Atenção:** Você tem certeza que deseja **desativar e apagar** o sistema de saída (bye) deste servidor?",
+    "mensagem_4": "⏳ Tempo esgotado. Operação cancelada.",
+    "_observacao": "O JSON abaixo pode conter QUALQUER estrutura válida. Você pode adicionar objetos aninhados, múltiplas chaves, ou qualquer outro conteúdo necessário para o comando. O utilitário de sincronização fará merge profundo automaticamente.",
+    "permissao_negada": "❌ Você precisa ser administrador para usar este comando!",
+    "config_ausente": "⚠️ Nenhuma configuração de saída (bye) encontrada neste servidor."
   }
 }
 @end

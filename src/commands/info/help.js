@@ -73,7 +73,7 @@ export default {
     } else {
       const key = args[0].toLowerCase();
       const cmd = allData[key] || Object.values(allData).find(c => (c.apelidos || []).includes(key));
-      if (!cmd) return message.reply("❌ Comando não encontrado.");
+      if (!cmd) return message.reply(msg("help.comando_inexistente"));
 
       const embed = new EmbedBuilder()
         .setTitle(`ℹ️ Ajuda: ${cmd.nome}`)
@@ -93,10 +93,8 @@ export default {
 @register-messages
 {
   "help": {
-    "_nota": "O JSON abaixo pode conter QUALQUER estrutura válida. Você pode adicionar objetos aninhados, múltiplas chaves, ou qualquer outro conteúdo necessário para o comando. O utilitário de sincronização fará merge profundo automaticamente.",
-    "uso_incorreto": "⚠️ Uso incorreto! Tente: {uso}",
-    "erro_interno": "❌ Ocorreu um erro ao processar este comando.",
-    "mensagem_1": "❌ Comando não encontrado."
+    "_observacao": "O JSON abaixo pode conter QUALQUER estrutura válida. Você pode adicionar objetos aninhados, múltiplas chaves, ou qualquer outro conteúdo necessário para o comando. O utilitário de sincronização fará merge profundo automaticamente.",
+    "comando_inexistente": "❌ Comando não encontrado."
   }
 }
 @end

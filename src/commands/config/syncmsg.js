@@ -148,7 +148,7 @@ export default {
 
     try {
       if (isSyncing) {
-        if (!isSilent) await message.reply(msg("syncmsg.em_curso"));
+        if (!isSilent) await message.reply(msg("syncmsg.sincronizacao_andamento"));
         return;
       }
 
@@ -310,13 +310,13 @@ export default {
       if (!isSilent) {
         const jsonStatus = jsonChanged ? 'Sim' : 'Não';
         await message.reply(
-          msg("syncmsg.concluido", { jsonStatus, filesCount: pendingWrites.length })
+          msg("syncmsg.sincronizacao_concluida", { jsonStatus, filesCount: pendingWrites.length })
         );
       }
 
     } catch (error) {
       console.error(`[Erro Crítico SyncMsg]:`, error);
-      if (!isSilent) await message.reply(msg("syncmsg.erro_interno", { err: error.message }));
+      if (!isSilent) await message.reply(msg("syncmsg.falha_critica", { err: error.message }));
     } finally {
       isSyncing = false;
       if (restartRequested) process.exit(0);
@@ -328,13 +328,11 @@ export default {
 @register-messages
 {
   "syncmsg": {
-    "uso_incorreto": "⚠️ Uso: `..syncmsg`",
-    "em_curso": "⏳ Sincronização em curso. Aguarde...",
-    "iniciando": "🔄 Iniciando sincronização inteligente...",
-    "concluido": "✨ Sincronia concluída!\nJSON Alterado: **{jsonStatus}**\nFicheiros Alterados: **{filesCount}**",
-    "erro_interno": "❌ Erro crítico: {err}"
+    "_nota": "O JSON abaixo pode conter QUALQUER estrutura válida. Você pode adicionar objetos aninhados, múltiplas chaves, ou qualquer outro conteúdo necessário para o comando. O utilitário de sincronização fará merge profundo automaticamente.",
+    "sincronizacao_andamento": "⏳ Sincronização em curso. Aguarde...",
+    "sincronizacao_concluida": "✨ Sincronia concluída!\nJSON Alterado: **{jsonStatus}**\nFicheiros Alterados: **{filesCount}**",
+    "falha_critica": "❌ Erro crítico: {err}"
   }
 }
 @end
 */
-

@@ -13,24 +13,23 @@ export default {
   },
   async execute(message, args) {
     const p = args[0];
-    if (!p) return message.reply(`Use: ${this.data.usage}`);
+    if (!p) return message.reply(msg("addprefix.instrucao_uso", { "usage": this.data.usage }));
     if (addPrefix(p)) {
-      message.reply(`✅ Prefixo ‘${p}’ adicionado.\nAtuais: ${getPrefixes().join(", ")}`);
+      message.reply(msg("addprefix.sucesso_adicao", { p, "join": getPrefixes().join(", ") }));
     } else {
-      message.reply(`⚠️ Prefixo ‘${p}’ já existe.`);
+      message.reply(msg("addprefix.prefixo_existente", { p }));
     }
   }
 };
+
 /*
 @register-messages
 {
   "addprefix": {
-    "_nota": "O JSON abaixo pode conter QUALQUER estrutura válida. Você pode adicionar objetos aninhados, múltiplas chaves, ou qualquer outro conteúdo necessário para o comando. O utilitário de sincronização fará merge profundo automaticamente.",
-    "uso_incorreto": "⚠️ Uso incorreto! Tente: {uso}",
-    "erro_interno": "❌ Ocorreu um erro ao processar este comando.",
-    "mensagem_1": "Use: ${this.data.usage}",
-    "mensagem_2": "✅ Prefixo ‘${p}’ adicionado.\\nAtuais: ${getPrefixes().join(\", \")}",
-    "mensagem_3": "⚠️ Prefixo ‘${p}’ já existe."
+    "_observacao": "O JSON abaixo pode conter QUALQUER estrutura válida. Você pode adicionar objetos aninhados, múltiplas chaves, ou qualquer outro conteúdo necessário para o comando. O utilitário de sincronização fará merge profundo automaticamente.",
+    "instrucao_uso": "Use: {usage}",
+    "sucesso_adicao": "✅ Prefixo ‘{p}’ adicionado.\nAtuais: {join}",
+    "prefixo_existente": "⚠️ Prefixo ‘{p}’ já existe."
   }
 }
 @end
