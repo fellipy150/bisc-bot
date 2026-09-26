@@ -1,6 +1,6 @@
 /**
- * Caminho: app/BotState.js
- * Descrição: Gerenciador de estado (singleton).
+ * Caminho: src/app/BotState.js
+ * Descrição: Gerenciador de estado singleton da aplicação.
  */
 import { EventEmitter } from 'events';
 
@@ -38,11 +38,7 @@ class BotState extends EventEmitter {
     if (newStatus === 'online') this._startTime = Date.now();
     if (newStatus === 'offline') this._startTime = null;
 
-    // 🔹 Novo formato (completo)
     this.emit('statusChange', { newStatus, oldStatus });
-
-    // 🔹 Compatibilidade com o segundo código
-    this.emit('statusChange:simple', newStatus);
   }
 
   setClient(client) {

@@ -12,10 +12,10 @@ export async function connectToMongoDB() {
     await mongoose.connect(config.db.uri, {
       family: 4, // Força IPv4 para evitar timeouts de DNS SRV no Termux/Bun
     });
-    Logger.info('✅ MongoDB Conectado.');
+    Logger.info('MongoDB Conectado.');
     return true;
   } catch (error) {
-    Logger.error('❌ Erro na conexão MongoDB:', error);
+    Logger.error('Falha na conexão com o cluster MongoDB', error);
     return false;
   }
 }

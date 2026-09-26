@@ -4,7 +4,7 @@
 import fs from "fs";
 import path from "path";
 import { fileURLToPath, pathToFileURL } from "url";
-import { Logger } from '../infra/logger/index.js'; 
+import { Logger } from '../infra/logger/index.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -14,7 +14,7 @@ export default async (client) => {
   const commandsPath = path.join(__dirname, "../commands");
 
   if (!fs.existsSync(commandsPath)) {
-    Logger.warn(`❌ Caminho de comandos não encontrado: ${commandsPath}`);
+    Logger.warn(`Caminho de comandos não encontrado: ${commandsPath}`);
     return;
   }
 
@@ -39,19 +39,19 @@ export default async (client) => {
 
           // Validação da estrutura do comando
           if (!cmd.data || !cmd.execute) {
-            Logger.warn(`⚠️ Comando ignorado em ${entry.name}: Falta propriedade "data" ou "execute".`);
+            Logger.warn(`Comando ignorado em ${entry.name}: Falta propriedade "data" ou "execute".`);
             continue;
           }
 
           if (!cmd.data.name) {
-            Logger.warn(`⚠️ Comando ignorado em ${entry.name}: "data.name" está indefinido.`);
+            Logger.warn(`Comando ignorado em ${entry.name}: "data.name" está indefinido.`);
             continue;
           }
 
           // Registra comando principal e incrementa contador
           client.commands.set(cmd.data.name, cmd);
           commandCount++;
-          
+
           // Registra aliases e incrementa contador (evitando duplicatas no Map)
           if (cmd.data.aliases && Array.isArray(cmd.data.aliases)) {
             cmd.data.aliases.forEach(a => {
@@ -62,32 +62,23 @@ export default async (client) => {
             });
           }
 
-          Logger.debug(`✅ Carregado: ${cmd.data.name}`);
+          Logger.debug(`Carregado: ${cmd.data.name}`);
 
         } catch (e) {
-          Logger.error(`\n❌ ERRO CRÍTICO NO ARQUIVO: ${entry.name}`);
-          Logger.error(`Caminho Completo: ${fullPath}`);
-          Logger.error(`Mensagem: ${e.message}`);
-          
-          if (e.stack) {
-            console.error(e.stack); 
-          }
-          
-          Logger.error(`-------------------------------------------\n`);
+          Logger.error(`ERRO CRÍTICO NO ARQUIVO: ${entry.name} - Caminho: ${fullPath}`, e);
         }
       }
     }
   }
 
-  Logger.info("🔄 Iniciando carregamento do sistema de comandos...");
+  Logger.info("Iniciando o carregamento do módulo de comandos");
   const start = Date.now();
-  
+
   await loadCommands(commandsPath);
-  
+
   const end = Date.now();
-  
-  // Log final com a separação solicitada
+
   Logger.info(
-    `✨ ${commandCount} comandos carregados e ${aliasCount} aliases carregados em ${end - start}ms.`
+    `Módulo de comandos carregado com sucesso: ${commandCount} comandos e ${aliasCount} aliases (${end - start}ms)`
   );
 };

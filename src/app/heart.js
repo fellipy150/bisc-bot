@@ -16,7 +16,7 @@ import registrarEventos from '../loaders/EventLoader.js';
 
 async function inicializarDependencias(client) {
   const conexao = await connectToMongoDB();
-  if (!conexao) Logger.warn('⚠️  Sistema operando sem MongoDB.');
+  if (!conexao) Logger.warn('Aplicação operando sem integração com banco de dados MongoDB');
 
   await registrarComandos(client);
   await registrarEventos(client);

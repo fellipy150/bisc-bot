@@ -11,11 +11,11 @@ export default {
   name: Events.ClientReady,
   once: true,
   execute(client) {
-    Logger.info(`Sessão iniciada como ${client.user.tag}`);
-    
+    Logger.info(`Sessão autenticada como ${client.user.tag}`);
+
     try {
       const prefixes = getPrefixes();
-      Logger.info(`Prefixos configurados: ${prefixes.join(", ")}`);
+      Logger.info(`Prefixos operacionais configurados: ${prefixes.join(', ')}`);
     } catch (error) {
       Logger.warn("Não foi possível carregar a lista de prefixos no evento ready.");
     }

@@ -1,22 +1,16 @@
 /**
  * Caminho: index.js (Raiz)
- * Descrição: O "Porteiro" do projeto.
+ * Descrição: Ponto de entrada direto da aplicação em Node.js.
  */
 import { Logger } from './src/infra/logger/index.js';
 import { startBot } from './src/app/heart.js';
-import startTUI from './src/infra/TUI/index.js'; 
+
 async function bootstrap() {
-const useTUI = !process.argv.includes('--direct');
-  if (useTUI) {
-    Logger.info("Iniciando interface de comando...");
-    await startTUI();
-  } else {
-    Logger.info("Modo direto ativado. Iniciando bot sem TUI...");
-    await startBot();
-  }
+  Logger.info("Inicializando o processo da aplicação em ambiente Node.js");
+  await startBot();
 }
-bootstrap().catch(err => {
-  console.error("Erro crítico no bootstrap:", err);
+
+bootstrap().catch((err) => {
+  Logger.error("Falha crítica durante a inicialização da aplicação", err);
   process.exit(1);
 });
-

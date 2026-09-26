@@ -24,7 +24,7 @@ for (const p of possiblePaths) {
 if (envPath) {
   dotenv.config({ path: envPath });
 } else {
-  console.warn("⚠️  Nenhum arquivo .env encontrado. Tentando usar variáveis de ambiente do sistema.");
+  console.warn("[!] Nenhum arquivo .env encontrado. Tentando usar variáveis de ambiente do sistema.");
 }
 
 // Variáveis obrigatórias para o funcionamento do bot
@@ -32,7 +32,7 @@ const REQUIRED_VARS = ['BOT_TOKEN', 'MONGODB_URI'];
 const missingVars = REQUIRED_VARS.filter(key => !process.env[key]);
 
 if (missingVars.length > 0) {
-  console.error(`❌  ERRO FATAL: Variáveis de ambiente faltando: ${missingVars.join(', ')}`);
+  console.error(`[x] Variáveis de ambiente faltando: ${missingVars.join(', ')}`);
   process.exit(1);
 }
 

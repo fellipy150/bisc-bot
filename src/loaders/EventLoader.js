@@ -14,11 +14,11 @@ export default async (client) => {
   const eventsPath = path.join(__dirname, "../events");
   
   if (!fs.existsSync(eventsPath)) {
-    Logger.warn("⚠️ Pasta 'events' ausente.");
+    Logger.warn("Pasta 'events' ausente.");
     return;
   }
 
-  Logger.info("🔄 Registrando eventos do sistema...");
+  Logger.info("Registrando escutadores de eventos do Discord");
 
   const eventFiles = fs.readdirSync(eventsPath).filter(f => f.endsWith(".js"));
   let count = 0;
@@ -43,6 +43,6 @@ export default async (client) => {
       Logger.error(`Erro no evento ${file}:`, error);
     }
   }
-  Logger.info(`✅ Eventos vinculados: ${count}`);
+  Logger.info(`Eventos registrados com sucesso. Total: ${count}`);
 };
 

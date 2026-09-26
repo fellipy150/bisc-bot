@@ -1,6 +1,6 @@
 /**
- * Caminho: infra/logger/Logger.js
- * Descrição: Sistema de logs centralizado com suporte a arquivo, terminal colorido e níveis de log.
+ * Caminho: src/infra/logger/Logger.js
+ * Descrição: Sistema de logs minimalista com marcadores compactos baseados em caracteres.
  */
 import fs from 'fs';
 import path from 'path';
@@ -9,7 +9,6 @@ import { config } from '../../config/env.js';
 const LOG_DIR = path.resolve(process.cwd(), 'logs');
 const LOG_FILE = path.join(LOG_DIR, 'bot.log');
 
-// Garante que a pasta logs existe
 if (!fs.existsSync(LOG_DIR)) {
   fs.mkdirSync(LOG_DIR, { recursive: true });
 }
@@ -21,46 +20,52 @@ const LEVELS = {
   error: 3
 };
 
-const CURRENT_LEVEL = LEVELS[config.log.level.toLowerCase()] ?? LEVELS.info;
+const CURRENT_LEVEL = LEVELS[config.log?.level?.toLowerCase()] ?? LEVELS.info;
 
-function formatMessage(level, message) {
-  const timestamp = new Date().toISOString();
-  return `[${timestamp}] [${level.toUpperCase()}] ${message}`;
+function formatTimestamp() {
+  return new Date().toISOString();
 }
 
-function writeToFile(text) {
-  fs.appendFile(LOG_FILE, text + '\n', (err) => {
-    if (err) console.error('FATAL: Falha ao escrever no arquivo de log.', err);
+function writeToFile(tag, message, details = '') {
+  const line = `[${formatTimestamp()}] [${tag}] ${message}${details ? ' ' + details : ''}\n`;
+  fs.appendFile(LOG_FILE, line, (err) => {
+    if (err) console.error('[x] Falha ao escrever no arquivo de log:', err);
   });
+}
+
+function parseArgs(args) {
+  if (!args.length) return '';
+  return args
+    .map((arg) => (arg instanceof Error ? arg.stack || arg.message : typeof arg === 'object' ? JSON.stringify(arg) : String(arg)))
+    .join(' ');
 }
 
 export const Logger = {
   debug(message, ...args) {
     if (CURRENT_LEVEL > LEVELS.debug) return;
-    const msg = args.length ? `${message} ${JSON.stringify(args)}` : message;
-    console.log(`\x1b[90m🐛 ${message}\x1b[0m`, ...args); 
-    writeToFile(formatMessage('debug', msg));
+    const details = parseArgs(args);
+    console.log(`\x1b[90m[d] ${message}${details ? ' - ' + details : ''}\x1b[0m`);
+    writeToFile('DEBUG', message, details);
   },
 
   info(message, ...args) {
     if (CURRENT_LEVEL > LEVELS.info) return;
-    const msg = args.length ? `${message} ${JSON.stringify(args)}` : message;
-    console.log(`\x1b[36mℹ️  ${message}\x1b[0m`, ...args); 
-    writeToFile(formatMessage('info', msg));
+    const details = parseArgs(args);
+    console.log(`\x1b[36m[i] ${message}${details ? ' - ' + details : ''}\x1b[0m`);
+    writeToFile('INFO', message, details);
   },
 
   warn(message, ...args) {
     if (CURRENT_LEVEL > LEVELS.warn) return;
-    const msg = args.length ? `${message} ${JSON.stringify(args)}` : message;
-    console.warn(`\x1b[33m⚠️  ${message}\x1b[0m`, ...args); 
-    writeToFile(formatMessage('warn', msg));
+    const details = parseArgs(args);
+    console.warn(`\x1b[33m[!] ${message}${details ? ' - ' + details : ''}\x1b[0m`);
+    writeToFile('WARN', message, details);
   },
 
-  error(message, error) {
-    const errorStack = error?.stack || error?.message || error || '';
-    const fullMsg = `${message} | ${errorStack}`;
-    console.error(`\x1b[31m❌ ${message}\x1b[0m`, error || ''); 
-    writeToFile(formatMessage('error', fullMsg));
+  error(message, ...args) {
+    if (CURRENT_LEVEL > LEVELS.error) return;
+    const details = parseArgs(args);
+    console.error(`\x1b[31m[x] ${message}${details ? ' - ' + details : ''}\x1b[0m`);
+    writeToFile('ERROR', message, details);
   }
 };
-

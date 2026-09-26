@@ -1,18 +1,16 @@
 {
   "name": "bisc-bot",
   "version": "BIS.0.4.4-alpha",
-  "description": "bis bot, meu  projeto pessoal de uma sucessora do biscast bot para servidor do discord dos meus amigos.",
+  "description": "bis bot, meu projeto pessoal de uma sucessora do biscast bot para servidor do discord dos meus amigos.",
   "author": "Felos",
   "license": "MIT",
   "type": "module",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "quiet": "nodemon index.js --direct"
+    "dev": "nodemon index.js"
   },
   "dependencies": {
-    "blessdroid": "file:../BlessDroid",
-    "blessed": "^0.1.81",
     "chalk": "^4.1.2",
     "discord.js": "^14.19.3",
     "dotenv": "^16.5.0",
