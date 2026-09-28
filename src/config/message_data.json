@@ -163,11 +163,12 @@
   },
   "banco": {
     "erro_acesso": "❌ Este menu não é para você.",
-    "valor_necessario": "❌ Você precisa informar um valor.",
+    "valor_necessario": "Informe o valor desejado:",
     "valor_invalido": "❌ Valor inválido informado.",
     "motivo_erro": "❌ Ocorreu um erro ao acessar o banco.",
-    "_observacao": "O JSON abaixo pode conter QUALQUER estrutura válida. Você pode adicionar objetos aninhados, múltiplas chaves, ou qualquer outro conteúdo necessário para o comando. O utilitário de sincronização fará merge profundo automaticamente.",
-    "erro_motivo": "❌ **Erro:** {reason}"
+    "erro_motivo": "❌ **Erro:** {reason}",
+    "mensagem_5": "⚠️ Informe um valor para realizar a operação (ex: 100 ou tudo).",
+    "mensagem_6": "❌ Por favor, insira um valor numérico válido e maior que zero."
   },
   "carteira": {
     "usuario_nao_registrado": "❌ {idVocnoestregistradonosistemaEsteusurionoestregistradonosistema} Use algum comando para se registrar.",

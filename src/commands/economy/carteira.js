@@ -1,4 +1,5 @@
 import msg from '../../config/msg-handler.js';
+import { Logger } from '../../infra/logger/index.js';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import fs from 'fs';
@@ -13,7 +14,7 @@ import allData from '../../config/command_data.json' with { type: 'json' };
 const d = allData["carteira"];
 
 // Import do serviço de usuário
-import { getUser } from '../../infra/database/services/userService.js';
+import { getUser } from '../../infra/database/repositories/userRepository.js';
 
 export default {
   data: {
@@ -65,7 +66,7 @@ export default {
       await message.reply(randomResponse + extraInfo);
 
     } catch (error) {
-      console.error('Erro ao executar comando carteira:', error);
+      Logger.error('Erro ao executar comando carteira:', error);
       await message.reply(msg("carteira.erro_consulta"));
     }
   }

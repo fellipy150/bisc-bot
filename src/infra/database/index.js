@@ -1,14 +1,9 @@
 /**
  * Caminho: src/infra/database/index.js
- * Descrição: Barrel file para modelos e serviços do MongoDB.
+ * Descrição: Barrel file para os repositórios Supabase.
  */
 
-// Exportação de Models
-export { default as User } from './models/userModel.js';
-export { default as Welcome } from './models/welcomeModel.js';
-export { default as Bye } from './models/byeModel.js';
-
-// Exportação de Services
-export * as userService from './services/userService.js';
-export * as welcomeService from './services/welcomeService.js';
-export * as byeService from './services/byeService.js';
+// Repositórios (substituem models + services do MongoDB)
+export * as userService from './repositories/userRepository.js';
+export * as welcomeService from './repositories/welcomeRepository.js';
+export * as byeService from './repositories/byeRepository.js';

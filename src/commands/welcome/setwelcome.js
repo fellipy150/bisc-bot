@@ -6,11 +6,12 @@ import {
   ComponentType,
 } from 'discord.js';
 import msg from '../../config/msg-handler.js';
+import { Logger } from '../../infra/logger/index.js';
 import allData from '../../config/command_data.json' with { type: 'json' };
 const d = allData['setwelcome'];
 
-// Importando o serviço de boas-vindas para MongoDB
-import WelcomeService from '../../infra/database/services/welcomeService.js';
+// Importando o serviço de boas-vindas (Supabase)
+import WelcomeService from '../../infra/database/repositories/welcomeRepository.js';
 
 export default {
   data: {
@@ -96,7 +97,7 @@ export default {
           });
         }
 
-        // Salva no MongoDB
+        // Salva no Supabase
         const success = await WelcomeService.setGuildWelcome(
           guildId,
           canal.id,
@@ -125,7 +126,7 @@ export default {
         }
       });
     } catch (error) {
-      console.error(error);
+      Logger.error(error);
       if (error.message === 'time') {
         return message.channel.send(msg("setwelcome.tempo_excedido"));
       }
@@ -181,7 +182,7 @@ function parseSheepTesterUrl(urlString) {
 
     return { apiPayload, dbPayload };
   } catch (e) {
-    console.error('Erro ao parsear URL:', e);
+    Logger.error('Erro ao parsear URL:', e);
     return null;
   }
 }

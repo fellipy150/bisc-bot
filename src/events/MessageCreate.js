@@ -1,5 +1,6 @@
 import { getPrefixes } from '../config/config.js';
-import { addXp } from '../infra/database/services/userService.js';
+import { Logger } from '../infra/logger/index.js';
+import { addXp } from '../infra/database/repositories/userRepository.js';
 import { findBestMatches } from '../util/wrong-sort/index.js'; // Ajustado o caminho para 'util' (sem s) conforme seu import
 import fs from 'fs';
 import path from 'path';
@@ -24,7 +25,7 @@ export default {
         if (result?.leveledUp) {
           await message.reply(`🎉 Parabéns ${message.author}! Você subiu para o **Nível ${result.user.level}**!`).catch(() => {});
         }
-      } catch (error) { console.error(`[XP-SYSTEM] Erro:`, error); }
+      } catch (error) { Logger.error(`[XP-SYSTEM] Erro:`, error); }
 
       // --- TRATAMENTO DE PREFIXO ---
       const prefixes = getPrefixes();
@@ -52,7 +53,7 @@ export default {
             return await message.reply(`❌ Comando não encontrado! Use \`${used}help\`.`);
           }
         } catch (err) {
-          console.error(`[SUGGESTION-ERROR]`, err);
+          Logger.error(`[SUGGESTION-ERROR]`, err);
           return await message.reply(`❌ Comando desconhecido!`);
         }
       }
@@ -61,9 +62,9 @@ export default {
       try {
         await command.execute(message, args);
       } catch (error) {
-        console.error(`[EXECUTION-ERROR]`, error);
+        Logger.error(`[EXECUTION-ERROR]`, error);
         await message.reply("❌ Algo deu errado ao executar este comando.");
       }
-    } catch (globalError) { console.error(`[CRITICAL]`, globalError); }
+    } catch (globalError) { Logger.error(`[CRITICAL]`, globalError); }
   },
 };

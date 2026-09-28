@@ -28,7 +28,7 @@ if (envPath) {
 }
 
 // Variáveis obrigatórias para o funcionamento do bot
-const REQUIRED_VARS = ['BOT_TOKEN', 'MONGODB_URI'];
+const REQUIRED_VARS = ['BOT_TOKEN', 'SUPABASE_URL', 'SUPABASE_SERVICE_ROLE_KEY'];
 const missingVars = REQUIRED_VARS.filter(key => !process.env[key]);
 
 if (missingVars.length > 0) {
@@ -44,7 +44,7 @@ export const config = {
     owners: (process.env.BOT_OWNERS || '').split(','),
   },
   db: {
-    uri: process.env.MONGODB_URI,
+    url: process.env.SUPABASE_URL,
   },
   log: {
     level: process.env.LOG_LEVEL || 'info', // Níveis: debug, info, warn, error

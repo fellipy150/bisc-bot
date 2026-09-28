@@ -3,6 +3,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import msg from '../../config/msg-handler.js';
+import { Logger } from '../../infra/logger/index.js';
 import allData from '../../config/command_data.json' with { type: 'json' };
 
 const __filename = fileURLToPath(import.meta.url);
@@ -29,7 +30,7 @@ let restartRequested = false;
 if (process.listenerCount('SIGUSR2') === 0) {
   process.on('SIGUSR2', () => {
     if (isSyncing) {
-      console.log('⚠️ [SyncMsg] Reinício do Nodemon suspenso até o fim da sincronização.');
+      Logger.warn('⚠️ [SyncMsg] Reinício do Nodemon suspenso até o fim da sincronização.');
       restartRequested = true;
     } else {
       process.exit(0);
@@ -153,7 +154,7 @@ export default {
       }
 
       isSyncing = true;
-      if (!isSilent) console.log("🔄 Sincronização manual iniciada pelo Discord.");
+      if (!isSilent) Logger.info("🔄 Sincronização manual iniciada pelo Discord.");
 
       let mainData = fs.existsSync(MSG_FILE) ? JSON.parse(fs.readFileSync(MSG_FILE, "utf8")) : {};
       let snapshot = fs.existsSync(SNAPSHOT_FILE) ? JSON.parse(fs.readFileSync(SNAPSHOT_FILE, "utf8")) : {};
@@ -162,9 +163,9 @@ export default {
 
       const files = getAllFiles(CMDS_DIR);
 
-      console.log("\n=========================================");
-      console.log("🛠️ DEPURAÇÃO SYNC MSG");
-      console.log("=========================================");
+      Logger.debug("\n=========================================");
+      Logger.debug("🛠️ DEPURAÇÃO SYNC MSG");
+      Logger.debug("=========================================");
 
       for (const filePath of files) {
         const fileContent = fs.readFileSync(filePath, "utf8");
@@ -175,7 +176,7 @@ export default {
         try { 
           L_Cmd = JSON.parse(register.inner); 
         } catch (err) { 
-          console.log(`❌ Erro de sintaxe JSON em: ${path.basename(filePath)}`);
+          Logger.error(`❌ Erro de sintaxe JSON em: ${path.basename(filePath)}`);
           continue; 
         }
 
@@ -276,7 +277,7 @@ export default {
 
           // Imprime o log apenas se houve alguma ação
           if (action && !isSilent) {
-             console.log(`  [${cmdName}] 🔑 ${key.padEnd(20)} -> ${action}`);
+             Logger.debug(`  [${cmdName}] 🔑 ${key.padEnd(20)} -> ${action}`);
           }
         }
 
@@ -305,7 +306,7 @@ export default {
       for (const w of pendingWrites) atomicWrite(w.path, w.content);
       atomicWrite(SNAPSHOT_FILE, JSON.stringify(snapshot, null, 2));
 
-      console.log("\n✅ OPERAÇÃO CONCLUÍDA\n=========================================\n");
+      Logger.info("\n✅ OPERAÇÃO CONCLUÍDA\n=========================================\n");
 
       if (!isSilent) {
         const jsonStatus = jsonChanged ? 'Sim' : 'Não';
@@ -315,7 +316,7 @@ export default {
       }
 
     } catch (error) {
-      console.error(`[Erro Crítico SyncMsg]:`, error);
+      Logger.error(`[Erro Crítico SyncMsg]:`, error);
       if (!isSilent) await message.reply(msg("syncmsg.falha_critica", { err: error.message }));
     } finally {
       isSyncing = false;

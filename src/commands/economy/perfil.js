@@ -1,4 +1,5 @@
 import msg from '../../config/msg-handler.js';
+import { Logger } from '../../infra/logger/index.js';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import fs from 'fs';
@@ -13,7 +14,7 @@ import allData from '../../config/command_data.json' with { type: 'json' };
 const d = allData["perfil"];
 
 // Novos imports
-import { getUser } from '../../infra/database/services/userService.js';
+import { getUser } from '../../infra/database/repositories/userRepository.js';
 import { EmbedBuilder } from 'discord.js';
 
 export default {
@@ -66,7 +67,7 @@ export default {
       await message.reply({ embeds: [embed] });
       
     } catch (error) {
-      console.error('Erro ao executar comando perfil:', error);
+      Logger.error('Erro ao executar comando perfil:', error);
       await message.reply(msg("perfil.erro_exibicao"));
     }
   }

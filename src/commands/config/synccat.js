@@ -3,6 +3,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import msg from '../../config/msg-handler.js';
+import { Logger } from '../../infra/logger/index.js';
 import allData from '../../config/command_data.json' with { type: 'json' };
 
 const __filename = fileURLToPath(import.meta.url);
@@ -22,7 +23,7 @@ let restartRequested = false;
 if (process.listenerCount('SIGUSR2') === 0) {
   process.on('SIGUSR2', () => {
     if (isSyncing) {
-      console.log('⚠️ [SyncCat] Reinício do Nodemon suspenso até o fim da sincronização.');
+      Logger.warn('⚠️ [SyncCat] Reinício do Nodemon suspenso até o fim da sincronização.');
       restartRequested = true;
     } else {
       process.exit(0);
@@ -100,7 +101,7 @@ export default {
           // Import dinâmico com timestamp para evitar cache do Node
           cmd = (await import(`${fileUrl}?update=${Date.now()}`)).default;
         } catch (err) {
-          console.error(`⚠️ [SyncCat] Falha ao importar ${path.basename(filePath)} para verificação.`);
+          Logger.warn(`⚠️ [SyncCat] Falha ao importar ${path.basename(filePath)} para verificação.`);
           continue;
         }
 
@@ -154,7 +155,7 @@ export default {
       }
 
     } catch (error) {
-      console.error(`[Erro no comando synccat]:`, error);
+      Logger.error(`[Erro no comando synccat]:`, error);
       return message.reply(
         msg("synccat.falha_sincronizacao")
       );

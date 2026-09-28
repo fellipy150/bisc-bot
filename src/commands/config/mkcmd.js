@@ -1,4 +1,5 @@
 import msg from "../../config/msg-handler.js";
+import { Logger } from '../../infra/logger/index.js';
 import allData from "../../config/command_data.json" with { type: "json" };
 import { fileURLToPath } from "url";
 import { dirname } from "path";
@@ -82,7 +83,7 @@ export default {
       channel.send(msg("mkcmd.sucesso_criacao", { name }));
 
     } catch (err) {
-      console.error(err);
+      Logger.error(err);
       message.channel.send(msg("mkcmd.falha_criacao", { err: err.message }));
     }
   }

@@ -1,4 +1,5 @@
 import msg from '../../config/msg-handler.js';
+import { Logger } from '../../infra/logger/index.js';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import { EmbedBuilder, PermissionFlagsBits } from 'discord.js';
@@ -9,7 +10,7 @@ const __dirname = dirname(__filename);
 
 // Import do JSON e Serviços
 import allData from '../../config/command_data.json' with { type: 'json' };
-import { getUser, bankTransaction } from '../../infra/database/services/userService.js';
+import { ensureUser, bankTransaction } from '../../infra/database/repositories/userRepository.js';
 
 const d = allData["depositar"];
 
@@ -34,15 +35,15 @@ export default {
         return message.reply(msg("depositar.instrucao_uso", { "uso": d.uso }));
       }
 
-      // 2. Lógica de Valor
-      const userData = await getUser(userId, guildId);
+      // 2. Lógica de Valor (Garante que o usuário existe na base via ensureUser)
+      const userData = await ensureUser(userId, guildId);
       let amount;
       const arg0 = args[0].toLowerCase();
 
       if (arg0 === 'all' || arg0 === 'tudo') {
         amount = userData.wallet;
       } else {
-        // Remove qualquer caractere que não seja número (ex: R$ ou pontos)
+        // Remove qualquer caractere que não seja número
         amount = parseInt(arg0.replace(/[^0-9]/g, ''));
       }
 
@@ -59,8 +60,7 @@ export default {
         return message.reply(msg("depositar.saldo_insuficiente", { "toLocaleString": userData.wallet.toLocaleString() }));
       }
 
-      // 3. Execução da Transação no Banco de Dados
-      // A função bankTransaction lida com a lógica de remover da wallet e somar no bank
+      // 3. Execução da Transação Atômica no Banco de Dados
       const result = await bankTransaction(userId, guildId, amount, 'deposit');
 
       if (!result.success) {
@@ -83,7 +83,7 @@ export default {
       return message.reply({ embeds: [successEmbed] });
 
     } catch (error) {
-      console.error(`[Erro no Comando ${d.nome}]:`, error);
+      Logger.error(`[Erro no Comando ${d.nome}]:`, error);
       
       const errorEmbed = new EmbedBuilder()
         .setColor('#ff0000')

@@ -7,7 +7,7 @@ import {
   config, 
   gerarClienteDiscord, 
   validarAmbiente, 
-  connectToMongoDB 
+  connectToSupabase 
 } from '../infra/index.js';
 
 import BotState from './BotState.js';
@@ -15,8 +15,8 @@ import registrarComandos from '../loaders/CommandLoader.js';
 import registrarEventos from '../loaders/EventLoader.js';
 
 async function inicializarDependencias(client) {
-  const conexao = await connectToMongoDB();
-  if (!conexao) Logger.warn('Aplicação operando sem integração com banco de dados MongoDB');
+  const conexao = await connectToSupabase();
+  if (!conexao) Logger.warn('Aplicação operando sem integração com o banco de dados Supabase');
 
   await registrarComandos(client);
   await registrarEventos(client);

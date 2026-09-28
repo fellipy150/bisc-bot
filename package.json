@@ -8,15 +8,14 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "dev": "nodemon index.js"
+    "dev": "nodemon index.js",
+    "test": "node --test"
   },
   "dependencies": {
-    "chalk": "^4.1.2",
+    "@supabase/supabase-js": "^2.117.2",
     "discord.js": "^14.19.3",
     "dotenv": "^16.5.0",
-    "js-yaml": "^4.1.1",
-    "mongodb": "^6.16.0",
-    "mongoose": "^8.14.1"
+    "js-yaml": "^4.1.1"
   },
   "devDependencies": {
     "globals": "^17.0.0",

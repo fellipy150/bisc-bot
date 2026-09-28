@@ -6,11 +6,12 @@ import {
   ComponentType,
 } from 'discord.js';
 import msg from '../../config/msg-handler.js';
+import { Logger } from '../../infra/logger/index.js';
 import allData from '../../config/command_data.json' with { type: 'json' };
 const d = allData['viewwelcome'];
 
-// Importando o serviço de boas-vindas para MongoDB
-import WelcomeService from '../../infra/database/services/welcomeService.js';
+// Importando o serviço de boas-vindas (Supabase)
+import WelcomeService from '../../infra/database/repositories/welcomeRepository.js';
 
 export default {
   data: {
@@ -25,14 +26,17 @@ export default {
     const guildId = message.guild.id;
     const user = message.author;
 
-    // Busca as configurações de boas-vindas do MongoDB
+    // Busca as configurações de boas-vindas do Supabase
     const guildConfig = await WelcomeService.getGuildWelcome(guildId);
 
-    if (!guildConfig || !guildConfig.message) {
+    if (!guildConfig || !guildConfig.message_embed) {
       return message.reply(msg("viewwelcome.sem_boasvindas"));
     }
 
-    const welcome = guildConfig.message;
+    const welcome = {
+      content: guildConfig.message_content,
+      embed: guildConfig.message_embed,
+    };
 
     // Função auxiliar para substituir placeholders
     const replaceTags = (text) => {
@@ -168,7 +172,7 @@ export default {
           collector.stop();
         }
       } catch (err) {
-        console.error(err);
+        Logger.error(err);
       }
     });
 

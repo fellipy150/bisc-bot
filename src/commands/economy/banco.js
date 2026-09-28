@@ -1,4 +1,5 @@
 import msg from '../../config/msg-handler.js';
+import { Logger } from '../../infra/logger/index.js';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import { 
@@ -7,15 +8,19 @@ import {
   ActionRowBuilder, 
   ButtonBuilder, 
   ButtonStyle,
-  ComponentType 
+  ComponentType,
+  ModalBuilder,
+  TextInputBuilder,
+  TextInputStyle,
+  MessageFlags
 } from 'discord.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 import allData from '../../config/command_data.json' with { type: 'json' };
-import { getUser, bankTransaction } from '../../infra/database/services/userService.js';
-import { getPrefixes } from '../../config/config.js'; // Importação do prefixo
+import { ensureUser, bankTransaction } from '../../infra/database/repositories/userRepository.js';
+import { getPrefixes } from '../../config/config.js';
 
 const d = allData["banco"];
 
@@ -32,30 +37,29 @@ export default {
   async execute(message, args, client) {
     const userId = message.author.id;
     const guildId = message.guild.id;
-    const prefix = getPrefixes()[0] || '..';
 
     try {
-      // 1. Atalho via texto: (ex: ..banco sacar 100)
+      // 1. Atalho via texto no chat (ex: ..banco sacar 100)
       if (args.length > 0) {
         const subCommand = args[0].toLowerCase();
         const amountStr = args[1];
 
         if (['sacar', 'saque', 'withdraw'].includes(subCommand)) {
-          return this.handleTransaction(message, userId, guildId, amountStr, 'withdraw');
+          return this.processTransaction(message, userId, guildId, amountStr, 'withdraw');
         }
         
         if (['depositar', 'dep', 'deposit'].includes(subCommand)) {
-          return this.handleTransaction(message, userId, guildId, amountStr, 'deposit');
+          return this.processTransaction(message, userId, guildId, amountStr, 'deposit');
         }
       }
 
-      // 2. Menu Principal com Botões
-      const userData = await getUser(userId, guildId);
+      // 2. Menu Principal com Botões de Ação
+      const userData = await ensureUser(userId, guildId);
 
-      const embed = new EmbedBuilder()
+      const buildEmbed = (user, data) => new EmbedBuilder()
         .setColor('#e67e22')
         .setTitle('🏦 BiscBank')
-        .setDescription(`Olá **${message.author.username}**!\n\n👛 Carteira: \`${userData.wallet.toLocaleString()}\` ₿\n🏛️ Banco: \`${userData.bank.toLocaleString()}\` ₿`)
+        .setDescription(`Olá **${user.username}**!\n\n👛 Carteira: \`${(data.wallet || 0).toLocaleString()}\` ₿\n🏛️ Banco: \`${(data.bank || 0).toLocaleString()}\` ₿`)
         .setFooter({ text: 'Clique em um botão para movimentar seu saldo.' });
 
       const row = new ActionRowBuilder().addComponents(
@@ -63,45 +67,82 @@ export default {
         new ButtonBuilder().setCustomId('bank_withdraw').setLabel('Sacar').setEmoji('📤').setStyle(ButtonStyle.Danger)
       );
 
-      const response = await message.reply({ embeds: [embed], components: [row] });
+      const response = await message.reply({ embeds: [buildEmbed(message.author, userData)], components: [row] });
 
-      // Coletor dos Botões
+      // Coletor para os botões do menu
       const collector = response.createMessageComponentCollector({
         componentType: ComponentType.Button,
         time: 60000
       });
-
       collector.on('collect', async (i) => {
         if (i.user.id !== message.author.id) {
-          return i.reply({ content: msg("banco.erro_acesso"), ephemeral: true });
+          return i.reply({ content: msg("banco.erro_acesso"), flags: MessageFlags.Ephemeral });
         }
 
         const actionType = i.customId === 'bank_deposit' ? 'deposit' : 'withdraw';
         const actionName = actionType === 'deposit' ? 'depositar' : 'sacar';
 
-        // Pergunta ao usuário
-        await i.reply({ 
-          content: msg("banco.valor_necessario", { actionName }),
-          ephemeral: true 
-        });
+        const modal = new ModalBuilder()
+          .setCustomId(`bank_modal_${actionType}_${i.id}`)
+          .setTitle(`BiscBank — ${actionType === 'deposit' ? 'Depositar' : 'Sacar'}`);
 
-        // Coletor de Mensagem para pegar o valor
-        const filter = (m) => m.author.id === userId;
-        const msgCollector = message.channel.createMessageCollector({ filter, time: 30000, max: 1 });
+        const amountInput = new TextInputBuilder()
+          .setCustomId('bank_amount')
+          .setLabel(`Quanto deseja ${actionName}? (ex: 100 ou tudo)`)
+          .setStyle(TextInputStyle.Short)
+          .setPlaceholder('Digite um valor ou "tudo"')
+          .setRequired(true)
+          .setMaxLength(20);
 
-        msgCollector.on('collect', async (m) => {
-          // Deleta a mensagem do usuário para manter o chat limpo (se tiver permissão)
-          if (m.deletable) m.delete().catch(() => null);
+        modal.addComponents(new ActionRowBuilder().addComponents(amountInput));
 
-          const value = m.content.toLowerCase();
-          await this.handleTransaction(message, userId, guildId, value, actionType);
-        });
+        await i.showModal(modal);
 
-        msgCollector.on('end', (collected, reason) => {
-            if (reason === 'time') {
-                i.followUp({ content: msg("banco.valor_invalido"), ephemeral: true }).catch(() => null);
-            }
-        });
+        try {
+          const modalSubmit = await i.awaitModalSubmit({
+            filter: (m) => m.customId === `bank_modal_${actionType}_${i.id}` && m.user.id === message.author.id,
+            time: 60000
+          });
+
+          await modalSubmit.deferReply({ flags: MessageFlags.Ephemeral });
+
+          const rawAmount = modalSubmit.fields.getTextInputValue('bank_amount').trim().toLowerCase();
+          const freshUser = await ensureUser(userId, guildId);
+          
+          let amount;
+          if (rawAmount === 'all' || rawAmount === 'tudo') {
+            amount = actionType === 'deposit' ? Number(freshUser.wallet) : Number(freshUser.bank);
+          } else {
+            amount = parseInt(rawAmount.replace(/[^0-9]/g, ''), 10);
+          }
+
+          if (!amount || isNaN(amount) || amount <= 0) {
+            return modalSubmit.editReply({ content: msg("banco.mensagem_6") });
+          }
+
+          const result = await bankTransaction(userId, guildId, amount, actionType);
+
+          if (!result.success) {
+            return modalSubmit.editReply({ content: msg("banco.erro_motivo", { reason: result.reason }) });
+          }
+
+          const successEmbed = new EmbedBuilder()
+            .setColor(actionType === 'deposit' ? '#2ecc71' : '#e74c3c')
+            .setTitle(`✅ ${actionType === 'deposit' ? 'Depósito' : 'Saque'} Realizado`)
+            .setDescription(`Valor: **${amount.toLocaleString()} ₿**`)
+            .addFields(
+              { name: '👛 Carteira', value: `\`${result.newWallet.toLocaleString()}\``, inline: true },
+              { name: '🏛️ Banco', value: `\`${result.newBank.toLocaleString()}\``, inline: true }
+            );
+
+          await modalSubmit.editReply({ embeds: [successEmbed] });
+
+          const updatedUserData = await ensureUser(userId, guildId);
+          await response.edit({ embeds: [buildEmbed(message.author, updatedUserData)] }).catch(() => null);
+
+        } catch (modalError) {
+          // Timeout ou fecho do modal ignorado
+        }
       });
 
       collector.on('end', () => {
@@ -109,18 +150,18 @@ export default {
       });
 
     } catch (error) {
-      console.error(`[Erro no Comando ${d.nome}]:`, error);
+      Logger.error(`[Erro no Comando ${d.nome}]:`, error);
       message.reply(msg("banco.motivo_erro"));
     }
   },
 
-  // Lógica de processamento (usada tanto por texto quanto por botão)
-  async handleTransaction(message, userId, guildId, amountStr, type) {
+  // Processamento via comando de texto direto (ex: ..banco depositar 100)
+  async processTransaction(message, userId, guildId, amountStr, type) {
     if (!amountStr) {
       return message.reply(msg("banco.mensagem_5"));
     }
 
-    const userData = await getUser(userId, guildId);
+    const userData = await ensureUser(userId, guildId);
     let amount;
 
     if (amountStr === 'all' || amountStr === 'tudo') {
@@ -136,7 +177,7 @@ export default {
     const result = await bankTransaction(userId, guildId, amount, type);
 
     if (!result.success) {
-      return message.reply(msg("banco.erro_motivo", { "reason": result.reason }));
+      return message.reply(msg("banco.erro_motivo", { reason: result.reason }));
     }
 
     const embed = new EmbedBuilder()
@@ -157,10 +198,11 @@ export default {
 {
   "banco": {
     "erro_acesso": "❌ Este menu não é para você.",
-    "valor_necessario": "❌ Você precisa informar um valor.",
+    "valor_necessario": "Informe o valor desejado:",
     "valor_invalido": "❌ Valor inválido informado.",
     "motivo_erro": "❌ Ocorreu um erro ao acessar o banco.",
-    "_observacao": "O JSON abaixo pode conter QUALQUER estrutura válida. Você pode adicionar objetos aninhados, múltiplas chaves, ou qualquer outro conteúdo necessário para o comando. O utilitário de sincronização fará merge profundo automaticamente.",
+    "mensagem_5": "⚠️ Informe um valor para realizar a operação (ex: 100 ou tudo).",
+    "mensagem_6": "❌ Por favor, insira um valor numérico válido e maior que zero.",
     "erro_motivo": "❌ **Erro:** {reason}"
   }
 }

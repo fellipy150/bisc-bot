@@ -1,4 +1,5 @@
 import msg from '../../config/msg-handler.js';
+import { Logger } from '../../infra/logger/index.js';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 
@@ -6,7 +7,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 import allData from '../../config/command_data.json' with { type: 'json' };
-import { getUser, removeBiscoins, addBiscoins } from '../../infra/database/services/userService.js';
+import { userRepo } from '../../infra/database/repositories/userRepository.js';
 import { getPrefixes } from '../../config/config.js';
 
 const commandData = allData["pay"];
@@ -24,12 +25,6 @@ const extractAmountFromArguments = (args) => {
 
 const isValidAmount = (amount) => {
     return amount > 0 && amount <= MAX_TRANSFER_AMOUNT;
-};
-
-const calculateTransaction = (amount) => {
-    const taxAmount = Math.floor(amount * BANK_TAX_RATE);
-    const finalAmount = amount - taxAmount;
-    return { taxAmount, finalAmount };
 };
 
 const createReceiptMessage = (sender, receiver, amount, taxAmount, finalAmount) => {
@@ -81,40 +76,33 @@ export default {
                 return message.reply(errorMessage);
             }
 
-            const { taxAmount, finalAmount } = calculateTransaction(transferAmount);
-            
-            const hasSufficientFunds = await removeBiscoins(
-                sender.id, 
-                message.guild.id, 
-                transferAmount, 
-                'wallet'
-            );
+            // Execução da transferência atômica via RPC (débito + crédito em uma transação)
+            const result = await userRepo.transferBiscoins(sender.id, targetUser.id, message.guild.id, transferAmount);
 
-            if (!hasSufficientFunds) {
-                const userBalance = await getUser(sender.id, message.guild.id);
-                return message.reply(
-                    msg("pay.saldo_insuficiente", { transferAmount, "wallet": userBalance.wallet }));
+            if (!result.success) {
+                if (result.reason === 'INSUFFICIENT_FUNDS') {
+                    const userBalance = await userRepo.getUser(sender.id, message.guild.id);
+                    return message.reply(
+                        msg("pay.saldo_insuficiente", { transferAmount, "wallet": userBalance.wallet }));
+                }
+                return message.reply(msg("pay.erro_transacao"));
             }
 
-            await addBiscoins(
-                targetUser.id, 
-                message.guild.id, 
-                finalAmount, 
-                'wallet'
-            );
+            // O resultado já retorna os saldos atualizados e a taxa cobrada
+            const { tax, net } = result;
 
             const receiptMessage = createReceiptMessage(
                 sender,
                 targetUser,
                 transferAmount,
-                taxAmount,
-                finalAmount
+                tax,
+                net
             );
 
             return message.reply(receiptMessage);
 
         } catch (error) {
-            console.error('Erro no comando pay:', error);
+            Logger.error('Erro no comando pay:', error);
             message.reply(msg("pay.erro_transacao"));
         }
     }

@@ -1,4 +1,5 @@
 import msg from '../../config/msg-handler.js';
+import { Logger } from '../../infra/logger/index.js';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import {
@@ -17,8 +18,8 @@ const __dirname = dirname(__filename);
 import allData from '../../config/command_data.json' with { type: 'json' };
 const d = allData['viewbye'];
 
-// Importando o serviço de Saída (Bye)
-import ByeService from '../../infra/database/services/byeService.js';
+// Importando o serviço de Saída (Bye) via Supabase
+import ByeService from '../../infra/database/repositories/byeRepository.js';
 
 export default {
   data: {
@@ -32,15 +33,18 @@ export default {
     const guildId = message.guild.id;
     const user = message.author;
 
-    // Busca as configurações de saída do MongoDB
+    // Busca as configurações de saída do Supabase
     const guildConfig = await ByeService.getGuildBye(guildId);
 
-    if (!guildConfig || !guildConfig.message) {
+    if (!guildConfig || !guildConfig.message_embed) {
       return message.reply(
         msg("viewbye.sem_configuracao"));
     }
 
-    const byeMessage = guildConfig.message;
+    const byeMessage = {
+      content: guildConfig.message_content,
+      embed: guildConfig.message_embed,
+    };
 
     // Função auxiliar para substituir placeholders
     const replaceTags = (text) => {
@@ -96,7 +100,7 @@ export default {
           collector.stop();
         }
       } catch (err) {
-        console.error(err);
+        Logger.error(err);
       }
     });
 

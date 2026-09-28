@@ -1,4 +1,5 @@
 import msg from '../../config/msg-handler.js';
+import { Logger } from '../../infra/logger/index.js';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import { EmbedBuilder, PermissionFlagsBits } from 'discord.js';
@@ -9,7 +10,7 @@ const __dirname = dirname(__filename);
 
 // Import do JSON e Serviços
 import allData from '../../config/command_data.json' with { type: 'json' };
-import { getUser, bankTransaction } from '../../infra/database/services/userService.js';
+import { ensureUser, bankTransaction } from '../../infra/database/repositories/userRepository.js';
 
 const d = allData["sacar"];
 
@@ -34,8 +35,8 @@ export default {
         return message.reply(msg("sacar.instrucao_uso", { "uso": d.uso }));
       }
 
-      // 2. Lógica de Valor
-      const userData = await getUser(userId, guildId);
+      // 2. Lógica de Valor (Assegura que o registo do usuário existe na base)
+      const userData = await ensureUser(userId, guildId);
       let amount;
       const arg0 = args[0].toLowerCase();
 
@@ -81,7 +82,7 @@ export default {
       return message.reply({ embeds: [successEmbed] });
 
     } catch (error) {
-      console.error(`[Erro no Comando ${d.nome}]:`, error);
+      Logger.error(`[Erro no Comando ${d.nome}]:`, error);
       
       const errorEmbed = new EmbedBuilder()
         .setColor('#ff0000')

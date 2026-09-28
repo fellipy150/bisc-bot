@@ -11,8 +11,8 @@ const __dirname = dirname(__filename);
 import allData from '../../config/command_data.json' with { type: 'json' };
 const d = allData['removebye'];
 
-// Importando o serviço de Saída (Bye)
-import ByeService from '../../infra/database/services/byeService.js';
+// Importando o serviço de Saída (Bye) via Supabase
+import ByeService from '../../infra/database/repositories/byeRepository.js';
 
 export default {
   data: {
@@ -67,7 +67,7 @@ export default {
 
         if (oldConfig) {
           // Backup em JSON
-          const configJson = JSON.stringify(oldConfig.toObject(), null, 2).substring(0, 1900);
+          const configJson = JSON.stringify(oldConfig, null, 2).substring(0, 1900);
 
           await interaction.update({
             content: `✅ **Sistema de saída desativado.**\n\nBackup da configuração removida:\n\`\`\`json\n${configJson}\n\`\`\``,

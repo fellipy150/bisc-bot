@@ -1,4 +1,5 @@
 import msg from '../../config/msg-handler.js';
+import { Logger } from '../../infra/logger/index.js';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import fs from 'fs';
@@ -10,7 +11,7 @@ import {
   ChannelType,
   ComponentType,
 } from 'discord.js';
-import ByeService from '../../infra/database/services/byeService.js';
+import ByeService from '../../infra/database/repositories/byeRepository.js';
 
 // Configuração de __dirname para ESM
 const __filename = fileURLToPath(import.meta.url);
@@ -132,7 +133,7 @@ export default {
         }
       });
     } catch (error) {
-      console.error(error);
+      Logger.error(error);
       message.channel.send(msg("setbye.cancelado_ou_tempo"));
     }
   },

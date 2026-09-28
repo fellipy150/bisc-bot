@@ -1,4 +1,5 @@
 import msg from '../../config/msg-handler.js';
+import { Logger } from '../../infra/logger/index.js';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 
@@ -6,8 +7,8 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 import allData from '../../config/command_data.json' with { type: 'json' };
-// Vamos usar apenas getUser. Vamos salvar as alterações diretamente no objeto.
-import { getUser } from '../../infra/database/services/userService.js';
+// Vamos usar apenas ensureUser. Com o Supabase, as linhas são imutáveis — cada mudança vai ao banco.
+import { ensureUser, addXp, addBiscoins, updateUser, checkCooldown } from '../../infra/database/repositories/userRepository.js';
 
 const COMMAND_DATA = allData["daily"];
 const DAILY_COOLDOWN_HOURS = 24;
@@ -101,31 +102,26 @@ export default {
             const userId = message.author.id;
             const guildId = message.guild.id;
             
-            // Pega o documento do usuário (Mongoose Document)
-            const user = await getUser(userId, guildId);
+            // Pega a linha do usuário (Supabase)
+            let user = await ensureUser(userId, guildId);
             
             const now = Date.now();
-            
-            // Garante que o objeto cooldowns existe
-            if (!user.cooldowns) {
-                user.cooldowns = {};
-            }
 
-            // Pega o timestamp corretamente acessando o objeto
-            const lastDailyTime = user.cooldowns.daily ? new Date(user.cooldowns.daily).getTime() : 0;
-            const timeSinceLastDaily = now - lastDailyTime;
-
-            // 1. Verificação de Cooldown
-            if (timeSinceLastDaily < COOLDOWN_MS) {
-                const remainingTime = COOLDOWN_MS - timeSinceLastDaily;
-                const cooldownPercentage = (timeSinceLastDaily / COOLDOWN_MS) * 100;
+            // 1. Verificação de Cooldown — atômica no banco (evita recompensa dupla em corrida)
+            const cooldown = await checkCooldown(userId, guildId, 'daily', COOLDOWN_MS);
+            if (!cooldown.canUse) {
+                const remainingTime = cooldown.timeLeft;
+                const cooldownPercentage = ((COOLDOWN_MS - remainingTime) / COOLDOWN_MS) * 100;
                 
                 const cooldownMessage = createCooldownMessage(remainingTime, cooldownPercentage);
                 return message.reply(cooldownMessage);
             }
 
             // 2. Cálculo de Streak
-            let currentStreak = user.dailyStreak || 0;
+            // Leitura local apenas para o reset de streak (48h) — o gate de cooldown é atômico
+            let currentStreak = user.daily_streak || 0;
+            const lastDailyTime = user.cooldowns?.daily ? new Date(user.cooldowns.daily).getTime() : 0;
+            const timeSinceLastDaily = now - lastDailyTime;
             
             // Reset se passou mais de 48h
             if (timeSinceLastDaily > RESET_STREAK_MS && lastDailyTime !== 0) {
@@ -135,25 +131,23 @@ export default {
             const newStreak = currentStreak + 1;
             const rewards = calculateRewards(newStreak);
             
-            // 3. Modificação Direta no Objeto (A CORREÇÃO PRINCIPAL)
-            // Ao invés de usar updateUser, modificamos as propriedades diretamente.
-            // O Mongoose detecta mudanças em propriedades aninhadas assim.
+            // 3. Persistência (Supabase) — cada mudança vai ao banco por operação atômica
             
-            user.cooldowns.daily = now; // Atualiza o cooldown
-            user.dailyStreak = newStreak; // Atualiza o streak
-            user.xp += rewards.xpReward; // Adiciona XP
-            user.wallet += rewards.cashReward; // Adiciona dinheiro direto na carteira
+            // Cooldown + streak em uma única atualização
+            user = await updateUser(userId, guildId, {
+                daily_streak: newStreak,
+                cooldowns: { ...user.cooldowns, daily: now }
+            });
             
-            // Verifica Level Up
-            const nextLevelXp = user.level * 500;
-            if (user.xp >= nextLevelXp) {
-                user.level += 1;
-                user.xp = user.xp - nextLevelXp;
-                await message.channel.send(msg("daily.erro_daily", { "author": message.author, "level": user.level }));
+            // XP via RPC atômica (verifica level up)
+            const xpResult = await addXp(userId, guildId, rewards.xpReward);
+            if (xpResult.leveledUp) {
+                await message.channel.send(msg("daily.erro_daily", { "author": message.author, "level": xpResult.newLevel }));
             }
-
-            // Salva TODAS as alterações de uma vez só no banco de dados
-            await user.save();
+            
+            // Dinheiro direto na carteira via RPC atômica
+            await addBiscoins(userId, guildId, rewards.cashReward, 'wallet');
+            user = await ensureUser(userId, guildId);
             
             // 4. Resposta Visual
             const embed = createSuccessEmbed(
@@ -164,7 +158,7 @@ export default {
                     guildIcon: message.guild.iconURL()
                 },
                 rewards,
-                { dailyStreak: newStreak },
+                { dailyStreak: user.daily_streak },
                 message.author.displayAvatarURL({ dynamic: true })
             );
 
@@ -175,7 +169,7 @@ export default {
             } catch {}
 
         } catch (error) {
-            console.error('Erro ao executar comando daily:', error);
+            Logger.error('Erro ao executar comando daily:', error);
             await message.reply(msg("daily.mensagem_2"));
         }
     }

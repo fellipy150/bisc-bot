@@ -3,8 +3,8 @@ import msg from '../../config/msg-handler.js';
 import allData from '../../config/command_data.json' with { type: 'json' };
 const d = allData['removewelcome'];
 
-// Importando o serviço de boas-vindas para MongoDB
-import WelcomeService from '../../infra/database/services/welcomeService.js';
+// Importando o serviço de boas-vindas (Supabase)
+import WelcomeService from '../../infra/database/repositories/welcomeRepository.js';
 
 export default {
   data: {
@@ -21,7 +21,7 @@ export default {
 
     const guildId = message.guild.id;
 
-    // Verifica se existe configuração usando MongoDB
+    // Verifica se existe configuração usando o Supabase
     const hasConfig = await WelcomeService.hasWelcomeConfig(guildId);
 
     if (!hasConfig) {
@@ -52,12 +52,12 @@ export default {
       });
 
       if (interaction.customId === 'confirmar_remocao') {
-        // Remove a configuração usando MongoDB
+        // Remove a configuração usando o Supabase
         const oldConfig = await WelcomeService.removeGuildWelcome(guildId);
 
         if (oldConfig) {
           // Converte para string segura para evitar erros de limite
-          const configJson = JSON.stringify(oldConfig.toObject(), null, 2).substring(0, 1900);
+          const configJson = JSON.stringify(oldConfig, null, 2).substring(0, 1900);
 
           await interaction.update({
             content: msg("removewelcome.sucesso_remocao", { configJson }),

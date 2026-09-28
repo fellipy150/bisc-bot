@@ -1,4 +1,5 @@
 import msg from '../../config/msg-handler.js';
+import { Logger } from '../../infra/logger/index.js';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import fs from 'fs';
@@ -175,10 +176,10 @@ const regex = /((?:message|msg|channel|client)\.(?:reply|send)|throw\s+new\s+Err
 
     fs.writeFileSync(targetPath, newFileContent, 'utf8');
     message.reply(msg("editcmdmsg.referencia_comando", { "nome": cmdData.nome }));
-    console.log(`[EditCmdMsg] ${cmdData.nome} alterado por ${message.author.tag}`);
+    Logger.info(`[EditCmdMsg] ${cmdData.nome} alterado por ${message.author.tag}`);
   } catch (err) {
     if (err.size === 0) return message.reply(msg("editcmdmsg.tempo_esgotado"));
-    console.error(err);
+    Logger.error(err);
     return message.reply(msg("editcmdmsg.erro_processamento"));
   }
 }

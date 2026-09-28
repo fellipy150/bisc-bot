@@ -1,4 +1,5 @@
 import msg from '../../config/msg-handler.js';
+import { Logger } from '../../infra/logger/index.js';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import fs from 'fs';
@@ -31,7 +32,7 @@ export default {
         return message.reply(msg("store_chat.instrucao_uso", { "uso": d.uso }));
       }
 
-      console.log(`Comando ${d.nome} executado por ${message.author.tag}`);
+      Logger.info(`Comando ${d.nome} executado por ${message.author.tag}`);
       const channel = message.channel;
 
       // Função auxiliar para coletar respostas do usuário
@@ -195,7 +196,7 @@ export default {
       fs.unlinkSync(filePath);
 
     } catch (error) {
-      console.error(`[Erro no Comando ${d.nome}]:`, error);
+      Logger.error(`[Erro no Comando ${d.nome}]:`, error);
       
       const errorEmbed = new EmbedBuilder()
         .setColor('#ff0000')

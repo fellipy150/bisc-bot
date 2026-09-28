@@ -9,4 +9,4 @@ export { config } from '../config/env.js';
 
 // Discord & DB
 export { gerarClienteDiscord, validarAmbiente } from './DiscordClient.js';
-export { connectToMongoDB } from './MongoDB.js';
+export { connectToSupabase, supabase } from './Supabase.js';
